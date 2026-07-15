@@ -22,37 +22,4 @@
     <img src="https://skillicons.dev/icons?i=java,git,github,idea,vscode" alt="Java, Git, GitHub, IntelliJ IDEA, and VS Code" />
   </p>
 
-  ```text
-  Java • Object-Oriented Programming • Data Structures • Algorithms
-  Problem Solving • Time & Space Complexity • Interview Preparation
-
-  ## Learning resources in progress
-
-   Repository                      What it will cover
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   Java DSA Roadmap                A step-by-step learning path from Java basics to advanced DSA
-  ──────────────────────────────  ──────────────────────────────────────────────────────────────────────────────────────────────
-   Java DSA Patterns               Two pointers, sliding window, binary search, recursion, DP, graphs, and more
-  ──────────────────────────────  ──────────────────────────────────────────────────────────────────────────────────────────────
-   DSA Problem Solutions – Java    Categorised practice problems with approach, code, and complexity analysis
-  ──────────────────────────────  ──────────────────────────────────────────────────────────────────────────────────────────────
-   Data Structures in Java         Implementations of arrays, linked lists, stacks, queues, trees, heaps, hash maps, and graphs
-  ──────────────────────────────  ──────────────────────────────────────────────────────────────────────────────────────────────
-   Java DSA Interview Kit          Revision sheets, frequently asked questions, and mock interview practice
-
-  ## Teaching philosophy
-
-  > Learn the concept. Recognise the pattern. Practise deliberately. Explain the solution clearly.
-
-  I believe strong DSA skills come from understanding why an approach works—not memorising solutions.
-
-  ## Let’s connect
-
-  - 💬 Ask me about Java, DSA, problem-solving patterns, and interview preparation
-  - ⭐ Follow this profile to see new Java and DSA learning resources as they are published
-
-  ———
-  <p align="center">
-    <i>Turning complex DSA ideas into confident problem-solving skills.</i>
-  </p>
-  ```
+  
