@@ -17,7 +17,7 @@
 ## 🏛️ 3D Contribution Architecture
 
 <div align="center">
-  <h3>🏙️ Isometric Contribution Towers</h3>
+  <h3>🏙️ Isometric Contribution Grid</h3>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-view.svg">
     <source media="(prefers-color-scheme: light)" srcset="profile-3d-contrib/profile-night-view.svg">
@@ -38,6 +38,24 @@
 
 ---
 
+## 📊 3D Profile Summary & Activity Matrix
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Pradeep-B28&theme=tokyonight" alt="Profile Details" width="100%" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Pradeep-B28&theme=tokyonight" width="49%" alt="Commit Stats" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Pradeep-B28&theme=tokyonight" width="49%" alt="Productive Time" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Pradeep-B28&theme=tokyonight" width="49%" alt="Repos per Language" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Pradeep-B28&theme=tokyonight" width="49%" alt="Most Commit Language" />
+</p>
+
+---
+
 ## 🎯 About Me
 
 I am a **Java & Data Structures / Algorithms Trainer** with a mission to make coding interviews accessible to everyone.  
@@ -51,7 +69,7 @@ I transform beginners into job-ready developers through structured, practical tr
 
 ---
 
-## 🛠️ Core Stack & Technology Matrix
+## 🛠️ Software Engineering & Technology Matrix
 
 ```gdb
 +-------------------------------------------------------------------------------+
@@ -112,19 +130,6 @@ I transform beginners into job-ready developers through structured, practical tr
     </td>
   </tr>
 </table>
-
----
-
-## 📊 Analytics & Performance Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Pradeep-B28&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="Pradeep's GitHub Stats" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Pradeep-B28&theme=tokyonight&hide_border=true" alt="Pradeep's Streak Stats" width="48%" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pradeep-B28&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" width="400" />
-</p>
 
 ---
 

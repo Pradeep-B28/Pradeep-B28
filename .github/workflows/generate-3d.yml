@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate 3D Contribution Graphs
-        uses: yoshi382/github-profile-3d-contrib@0.7.1
+        uses: yoshi389111/github-profile-3d-contrib@0.9.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
