@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 160" width="100%" height="160">
+  <defs>
+    <linearGradient id="gridBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="snakeGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" rx="12" fill="url(#gridBg)" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Matrix of contribution dots -->
+  <g transform="translate(40, 25)">
+    <!-- Simulated 52-week contribution grid -->
+    <path d="M 0 0 L 760 0 M 0 16 L 760 16 M 0 32 L 760 32 M 0 48 L 760 48 M 0 64 L 760 64 M 0 80 L 760 80 M 0 96 L 760 96" stroke="#21262d" stroke-width="10" stroke-dasharray="10 4"/>
+
+    <!-- Active green/cyan dots -->
+    <circle cx="42" cy="16" r="5" fill="#0e4429"/>
+    <circle cx="84" cy="48" r="5" fill="#006d32"/>
+    <circle cx="126" cy="32" r="5" fill="#26a641"/>
+    <circle cx="168" cy="80" r="5" fill="#39d353"/>
+    <circle cx="210" cy="16" r="5" fill="#22d3ee"/>
+    <circle cx="252" cy="64" r="5" fill="#006d32"/>
+    <circle cx="294" cy="32" r="5" fill="#26a641"/>
+    <circle cx="336" cy="48" r="5" fill="#39d353"/>
+    <circle cx="378" cy="80" r="5" fill="#22d3ee"/>
+    <circle cx="420" cy="16" r="5" fill="#006d32"/>
+    <circle cx="462" cy="64" r="5" fill="#26a641"/>
+    <circle cx="504" cy="32" r="5" fill="#39d353"/>
+    <circle cx="546" cy="48" r="5" fill="#22d3ee"/>
+    <circle cx="588" cy="80" r="5" fill="#26a641"/>
+    <circle cx="630" cy="16" r="5" fill="#39d353"/>
+    <circle cx="672" cy="64" r="5" fill="#22d3ee"/>
+
+    <!-- Animated Snake Body -->
+    <path d="M 336 48 L 378 48 L 378 80 L 420 80 L 462 80 L 462 64 L 504 64" fill="none" stroke="#22d3ee" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#snakeGlow)">
+      <animate attributeName="stroke-dashoffset" values="100;0" dur="3s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Snake Head -->
+    <circle cx="504" cy="64" r="7" fill="#a855f7" filter="url(#snakeGlow)">
+      <animate attributeName="r" values="6;8;6" dur="1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <text x="40" y="142" fill="#8b949e" font-family="'Fira Code', monospace" font-size="11">🐍 3D Contribution Snake Eating Commits · Pradeep-B28</text>
+</svg>
