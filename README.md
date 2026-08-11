@@ -32,11 +32,7 @@ I am a **Java and Data Structures & Algorithms Trainer** dedicated to bridging t
 ## 🔮 3D Contribution Landscape
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/profile-3d-contrib/profile-night-rainbow.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/profile-3d-contrib/profile-green-animate.svg" />
-    <img alt="Pradeep's 3D GitHub contribution graph" src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/profile-3d-contrib/profile-night-rainbow.svg" width="100%" />
-  </picture>
+  <img src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/profile-3d-contrib/profile-night-rainbow.svg?v=3" width="100%" alt="Pradeep's 3D GitHub contribution graph" />
 </div>
 
 ---
@@ -60,7 +56,7 @@ I am a **Java and Data Structures & Algorithms Trainer** dedicated to bridging t
 ## 🏆 Developer Trophies & Milestones
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/assets/images/trophies-card.svg" width="100%" alt="Pradeep's Trophies" />
+  <img src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/assets/images/trophies-card.svg?v=3" width="100%" alt="Pradeep's Trophies" />
 </div>
 
 ---
@@ -68,9 +64,9 @@ I am a **Java and Data Structures & Algorithms Trainer** dedicated to bridging t
 ## 📊 Analytics & Activity
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/assets/images/stats-card.svg" width="100%" alt="Developer Stats & Tech Stack" />
+  <img src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/assets/images/stats-card.svg?v=3" width="100%" alt="Developer Stats & Tech Stack" />
   <br /><br />
-  <img src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/assets/images/streak-card.svg" width="100%" alt="GitHub Streak & Velocity Stats" />
+  <img src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/assets/images/streak-card.svg?v=3" width="100%" alt="GitHub Streak & Velocity Stats" />
 </div>
 
 ---
@@ -78,11 +74,7 @@ I am a **Java and Data Structures & Algorithms Trainer** dedicated to bridging t
 ## 🐍 3D Contribution Snake Animation
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/dist/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/dist/github-contribution-grid-snake.svg" />
-    <img alt="Animated 3D snake eating contributions" src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/dist/github-contribution-grid-snake-dark.svg" width="100%" />
-  </picture>
+  <img src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/dist/github-contribution-grid-snake-dark.svg?v=3" width="100%" alt="Animated 3D snake eating contributions" />
 </div>
 
 ---
