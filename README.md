@@ -57,10 +57,10 @@ I am a **Java and Data Structures & Algorithms Trainer** dedicated to bridging t
 
 ---
 
-## 🏆 GitHub Readme Trophies
+## 🏆 Developer Trophies & Milestones
 
 <div align="center">
-  <img src="https://github-readme-trophies.vercel.app/?username=Pradeep-B28&theme=onedark&column=4&margin-w=15&margin-h=15&no-frame=true&no-background=true" alt="Pradeep's Trophies" />
+  <img src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/assets/images/trophies-card.svg" width="100%" alt="Pradeep's Trophies" />
 </div>
 
 ---
@@ -68,10 +68,9 @@ I am a **Java and Data Structures & Algorithms Trainer** dedicated to bridging t
 ## 📊 Analytics & Activity
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Pradeep-B28&show_icons=true&hide_border=true&bg_color=0D1117&title_color=22D3EE&icon_color=22D3EE&text_color=E5E7EB&rank_icon=github" alt="GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pradeep-B28&layout=compact&hide_border=true&bg_color=0D1117&title_color=22D3EE&text_color=E5E7EB" alt="Top languages" />
-  <br />
-  <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=Pradeep-B28&theme=dark&background=0D1117&ring=22D3EE&fire=22D3EE&currStreakLabel=22D3EE" alt="GitHub Streak Stats" />
+  <img src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/assets/images/stats-card.svg" width="100%" alt="Developer Stats & Tech Stack" />
+  <br /><br />
+  <img src="https://raw.githubusercontent.com/Pradeep-B28/Pradeep-B28/main/assets/images/streak-card.svg" width="100%" alt="GitHub Streak & Velocity Stats" />
 </div>
 
 ---
