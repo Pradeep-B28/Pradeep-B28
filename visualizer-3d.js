@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PRADEEP 3D PORTFOLIO - INTERACTIVE 3D DSA SANDBOX VISUALIZER
+   PRADEEP 3D PORTFOLIO - INTERACTIVE 3D DSA & SKYLINE SANDBOX VISUALIZER
    ========================================================================== */
 
 (function () {
@@ -9,6 +9,7 @@
   // Buttons & Controls
   const btnSort = document.getElementById('btn-mode-sort');
   const btnTree = document.getElementById('btn-mode-tree');
+  const btnSkyline = document.getElementById('btn-mode-skyline');
   const btnTrigger = document.getElementById('btn-action-trigger');
   const btnReset = document.getElementById('btn-action-reset');
   const statusText = document.getElementById('viz-status-text');
@@ -42,11 +43,11 @@
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
   scene.add(ambientLight);
 
-  const dirLight = new THREE.DirectionalLight(0x22d3ee, 1.2);
+  const dirLight = new THREE.DirectionalLight(0x22d3ee, 1.4);
   dirLight.position.set(10, 20, 15);
   scene.add(dirLight);
 
-  const pointLight = new THREE.PointLight(0xa855f7, 1.5, 50);
+  const pointLight = new THREE.PointLight(0xa855f7, 1.8, 50);
   pointLight.position.set(-10, 10, 10);
   scene.add(pointLight);
 
@@ -55,7 +56,7 @@
   const COLOR_COMPARE = 0xa855f7;
   const COLOR_SORTED = 0x10b981;
 
-  let currentMode = 'sort'; // 'sort' or 'tree'
+  let currentMode = 'sort'; // 'sort', 'tree', or 'skyline'
   let isRunning = false;
 
   // --- 1. 3D ARRAY SORTING SCENE ---
@@ -89,13 +90,11 @@
       barMeshes.push(mesh);
     });
 
-    // Add 3D Grid Floor
     const gridHelper = new THREE.GridHelper(30, 20, 0x22d3ee, 0x1e293b);
     gridHelper.position.y = 0;
     sortGroup.add(gridHelper);
   }
 
-  // Bubble Sort Async Animation
   async function runSortAnimation() {
     if (isRunning) return;
     isRunning = true;
@@ -106,20 +105,17 @@
       for (let j = 0; j < len - i - 1; j++) {
         if (!isRunning) return;
 
-        // Highlight active bars
         barMeshes[j].material.color.setHex(COLOR_COMPARE);
         barMeshes[j + 1].material.color.setHex(COLOR_COMPARE);
         await sleep(250);
 
         if (barMeshes[j].userData.value > barMeshes[j + 1].userData.value) {
-          // Swap positions
           const x1 = barMeshes[j].position.x;
           const x2 = barMeshes[j + 1].position.x;
 
           barMeshes[j].position.x = x2;
           barMeshes[j + 1].position.x = x1;
 
-          // Swap references in array
           const temp = barMeshes[j];
           barMeshes[j] = barMeshes[j + 1];
           barMeshes[j + 1] = temp;
@@ -127,11 +123,9 @@
           await sleep(250);
         }
 
-        // Reset color
         barMeshes[j].material.color.setHex(COLOR_IDLE);
         barMeshes[j + 1].material.color.setHex(COLOR_IDLE);
       }
-      // Set sorted color for last element
       barMeshes[len - i - 1].material.color.setHex(COLOR_SORTED);
     }
 
@@ -176,7 +170,6 @@
       treeMeshes.push(mesh);
     });
 
-    // Draw tree branches
     const connections = [
       [0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6]
     ];
@@ -199,7 +192,7 @@
     isRunning = true;
     statusText.innerText = "Mode: 3D BST Search · Searching target value '11'...";
 
-    const searchPath = [0, 1, 4]; // Indices for 15 -> 8 -> 11
+    const searchPath = [0, 1, 4];
 
     for (let idx of searchPath) {
       if (!isRunning) return;
@@ -210,6 +203,82 @@
     treeMeshes[4].material.color.setHex(COLOR_SORTED);
     isRunning = false;
     statusText.innerText = "Mode: 3D BST Search · Target '11' Located ✓";
+  }
+
+  // --- 3. 3D GITHUB SKYLINE SCENE ---
+  let skylineGroup = new THREE.Group();
+  scene.add(skylineGroup);
+  skylineGroup.visible = false;
+  let skylineMeshes = [];
+
+  function buildSkylineScene() {
+    clearGroup(skylineGroup);
+    skylineMeshes = [];
+
+    const cols = 16;
+    const rows = 5;
+    const gap = 1.1;
+    const xOff = (cols * gap) / 2;
+    const zOff = (rows * gap) / 2;
+
+    const palette = [0x1e293b, 0x0e4429, 0x006d32, 0x26a641, 0x39d353];
+
+    for (let c = 0; c < cols; c++) {
+      for (let r = 0; r < rows; r++) {
+        const lvl = Math.floor(Math.random() * 5);
+        const height = lvl === 0 ? 0.3 : lvl * 2.2 + Math.random() * 0.8;
+        const color = palette[lvl];
+
+        const geo = new THREE.BoxGeometry(0.8, 1, 0.8);
+        geo.translate(0, 0.5, 0);
+        const mat = new THREE.MeshStandardMaterial({
+          color,
+          roughness: 0.3,
+          emissive: color,
+          emissiveIntensity: lvl > 0 ? 0.3 : 0.05
+        });
+
+        const mesh = new THREE.Mesh(geo, mat);
+        mesh.position.set(c * gap - xOff, 0, r * gap - zOff);
+        mesh.scale.set(1, height, 1);
+        skylineGroup.add(mesh);
+        skylineMeshes.push({ mesh, targetH: height, lvl });
+
+        if (lvl === 4) {
+          const antGeo = new THREE.CylinderGeometry(0.04, 0.04, 1.5, 6);
+          const antMat = new THREE.MeshBasicMaterial({ color: 0xff0055 });
+          const antenna = new THREE.Mesh(antGeo, antMat);
+          antenna.position.set(c * gap - xOff, height + 0.75, r * gap - zOff);
+          skylineGroup.add(antenna);
+        }
+      }
+    }
+
+    const gridHelper = new THREE.GridHelper(26, 18, 0x39d353, 0x1e293b);
+    gridHelper.position.y = 0;
+    skylineGroup.add(gridHelper);
+  }
+
+  async function runSkylineAnimation() {
+    if (isRunning) return;
+    isRunning = true;
+    statusText.innerText = "Mode: 3D Skyline · Animating annual contribution pulse...";
+
+    skylineMeshes.forEach(item => {
+      item.mesh.scale.y = 0.1;
+    });
+
+    for (let i = 0; i < skylineMeshes.length; i += 4) {
+      if (!isRunning) return;
+      for (let k = 0; k < 4 && (i + k) < skylineMeshes.length; k++) {
+        const item = skylineMeshes[i + k];
+        item.mesh.scale.y = item.targetH;
+      }
+      await sleep(40);
+    }
+
+    isRunning = false;
+    statusText.innerText = "Mode: 3D Skyline · Click 'Launch 3D Visualizer' above for full app!";
   }
 
   // --- HELPER FUNCTIONS ---
@@ -232,9 +301,11 @@
       currentMode = 'sort';
       isRunning = false;
       btnSort.classList.add('active');
-      btnTree.classList.remove('active');
+      if (btnTree) btnTree.classList.remove('active');
+      if (btnSkyline) btnSkyline.classList.remove('active');
       sortGroup.visible = true;
       treeGroup.visible = false;
+      skylineGroup.visible = false;
       buildSortScene();
       statusText.innerText = "Mode: 3D Bubble Sort · Ready to step";
     });
@@ -245,11 +316,28 @@
       currentMode = 'tree';
       isRunning = false;
       btnTree.classList.add('active');
-      btnSort.classList.remove('active');
+      if (btnSort) btnSort.classList.remove('active');
+      if (btnSkyline) btnSkyline.classList.remove('active');
       sortGroup.visible = false;
       treeGroup.visible = true;
+      skylineGroup.visible = false;
       buildTreeScene();
       statusText.innerText = "Mode: 3D Binary Search Tree · Ready to search";
+    });
+  }
+
+  if (btnSkyline) {
+    btnSkyline.addEventListener('click', () => {
+      currentMode = 'skyline';
+      isRunning = false;
+      btnSkyline.classList.add('active');
+      if (btnSort) btnSort.classList.remove('active');
+      if (btnTree) btnTree.classList.remove('active');
+      sortGroup.visible = false;
+      treeGroup.visible = false;
+      skylineGroup.visible = true;
+      buildSkylineScene();
+      statusText.innerText = "Mode: 3D GitHub Skyline · Ready to animate";
     });
   }
 
@@ -257,8 +345,10 @@
     btnTrigger.addEventListener('click', () => {
       if (currentMode === 'sort') {
         runSortAnimation();
-      } else {
+      } else if (currentMode === 'tree') {
         runTreeAnimation();
+      } else if (currentMode === 'skyline') {
+        runSkylineAnimation();
       }
     });
   }
@@ -270,9 +360,12 @@
         arrayValues = [6, 12, 4, 15, 8, 3, 11, 7, 14, 5];
         buildSortScene();
         statusText.innerText = "Mode: 3D Bubble Sort · Scene Reset";
-      } else {
+      } else if (currentMode === 'tree') {
         buildTreeScene();
         statusText.innerText = "Mode: 3D BST Search · Scene Reset";
+      } else if (currentMode === 'skyline') {
+        buildSkylineScene();
+        statusText.innerText = "Mode: 3D GitHub Skyline · Scene Reset";
       }
     });
   }
@@ -280,6 +373,7 @@
   // Initial Load
   buildSortScene();
   buildTreeScene();
+  buildSkylineScene();
 
   // Render Loop
   function animate() {
@@ -288,8 +382,10 @@
 
     if (currentMode === 'sort') {
       sortGroup.rotation.y += 0.002;
-    } else {
+    } else if (currentMode === 'tree') {
       treeGroup.rotation.y += 0.002;
+    } else if (currentMode === 'skyline') {
+      skylineGroup.rotation.y += 0.003;
     }
 
     renderer.render(scene, camera);

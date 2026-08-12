@@ -71,9 +71,12 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#3d-visualizer" class="btn btn-lg btn-primary btn-glow">
-            <span>Explore 3D Sandbox</span>
+          <a href="https://pradeep-b28.github.io/GIT---viz/" target="_blank" rel="noopener" class="btn btn-lg btn-primary btn-glow">
+            <span>Launch 3D GitHub Visualizer</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#3d-visualizer" class="btn btn-lg btn-secondary">
+            <span>Explore 3D Sandbox</span>
           </a>
           <a href="https://github.com/Pradeep-B28" target="_blank" rel="noopener" class="btn btn-lg btn-secondary">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -149,6 +152,7 @@
             <div class="control-group">
               <button class="viz-btn active" id="btn-mode-sort">3D Array Sorting</button>
               <button class="viz-btn" id="btn-mode-tree">3D Binary Search Tree</button>
+              <button class="viz-btn" id="btn-mode-skyline">🏙️ 3D GitHub Skyline</button>
             </div>
             <div class="control-group">
               <button class="btn btn-sm btn-primary" id="btn-action-trigger">Run Algorithm</button>
@@ -253,14 +257,96 @@
         </div>
 
         <div class="projects-grid">
-          <!-- Project 1 -->
+          <!-- Project 1: GIT---viz -->
+          <div class="project-card glass-panel tilt-card">
+            <div class="project-banner">
+              <div class="project-viz-placeholder" style="background: linear-gradient(135deg, rgba(88,166,255,0.2), rgba(124,58,237,0.2)); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;">
+                <span style="font-size: 2.2rem;">🎨 🏙️ 🌌</span>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #58a6ff; font-weight: 700;">Three.js · Shaders · Web Audio</span>
+              </div>
+              <div class="project-badge">Flagship 3D Web App</div>
+            </div>
+            <div class="project-content">
+              <h3>🎨 GIT---viz: 3D Profile & Galaxy Visualizer</h3>
+              <p>Transforms any GitHub profile into a 3D city skyline, orbital repo galaxy, tech archipelago, or developer duel with WASD drone flight, bloom shaders, and Web Audio melodic synth.</p>
+              <div class="project-tags">
+                <span class="tag">Three.js</span>
+                <span class="tag">WebGL</span>
+                <span class="tag">Shaders</span>
+                <span class="tag">Web Audio</span>
+              </div>
+              <div class="project-footer" style="gap: 8px;">
+                <a href="https://pradeep-b28.github.io/GIT---viz/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                  <span>Launch 3D App</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+                <a href="https://github.com/Pradeep-B28/GIT---viz" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Rel_Notes -->
+          <div class="project-card glass-panel tilt-card">
+            <div class="project-banner">
+              <div class="project-viz-placeholder" style="background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(14,165,233,0.2)); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;">
+                <span style="font-size: 2.2rem;">📝 🤖 ⚡</span>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #10b981; font-weight: 700;">TypeScript · Groq AI</span>
+              </div>
+              <div class="project-badge">AI Tool</div>
+            </div>
+            <div class="project-content">
+              <h3>📝 Rel_Notes: AI Release Notes Generator</h3>
+              <p>Automated AI-powered release notes generator built with TypeScript and Groq API. Reads raw Git commit histories and structures clean, polished release notes in seconds.</p>
+              <div class="project-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Groq AI</span>
+                <span class="tag">Git CLI</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/Pradeep-B28/Rel_Notes" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
+                  <span>View Repository</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Devstarter -->
+          <div class="project-card glass-panel tilt-card">
+            <div class="project-banner">
+              <div class="project-viz-placeholder" style="background: linear-gradient(135deg, rgba(234,179,8,0.2), rgba(239,68,68,0.2)); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;">
+                <span style="font-size: 2.2rem;">🐳 📦 ⚡</span>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #eab308; font-weight: 700;">Dockerfile · Devcontainers</span>
+              </div>
+              <div class="project-badge">Dev Environment</div>
+            </div>
+            <div class="project-content">
+              <h3>🐳 Devstarter: Zero-Config Devcontainers</h3>
+              <p>Production-ready devcontainer configurations for Python, Node, Go, Rust, C++, and Java. Allows developers to launch fully configured containers in VS Code instantly.</p>
+              <div class="project-tags">
+                <span class="tag">Docker</span>
+                <span class="tag">Devcontainers</span>
+                <span class="tag">VS Code</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/Pradeep-B28/Devstarter" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
+                  <span>View Repository</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: JAVA-DSA-Roadmap -->
           <div class="project-card glass-panel tilt-card">
             <div class="project-banner">
               <img src="assets/images/banner.jpg" alt="Java + DSA Roadmap Banner" class="project-img" />
               <div class="project-badge">Popular Repository</div>
             </div>
             <div class="project-content">
-              <h3>🗺️ Java + DSA Comprehensive Roadmap</h3>
+              <h3>🗺️ Java + DSA Master Roadmap</h3>
               <p>A structured step-by-step master path guiding students from basic syntax to interview-ready data structures and complex graph algorithms.</p>
               <div class="project-tags">
                 <span class="tag">Java</span>
@@ -276,7 +362,7 @@
             </div>
           </div>
 
-          <!-- Project 2 -->
+          <!-- Project 5: JAVA-Searching-Sorting-Visualizer -->
           <div class="project-card glass-panel tilt-card">
             <div class="project-banner">
               <div class="project-viz-placeholder">
@@ -307,7 +393,7 @@
             </div>
           </div>
 
-          <!-- Project 3 -->
+          <!-- Project 6: DSA Visualizer Core -->
           <div class="project-card glass-panel tilt-card">
             <div class="project-banner">
               <div class="project-viz-placeholder dsa-nodes">
