@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PRADEEP 3D PORTFOLIO - INTERACTIVE 3D DSA & SKYLINE SANDBOX VISUALIZER
+   PRADEEP 3D PORTFOLIO - INTERACTIVE 3D DSA, FINANCIAL & SKYLINE SANDBOX
    ========================================================================== */
 
 (function () {
@@ -9,6 +9,7 @@
   // Buttons & Controls
   const btnSort = document.getElementById('btn-mode-sort');
   const btnTree = document.getElementById('btn-mode-tree');
+  const btnFinance = document.getElementById('btn-mode-finance');
   const btnSkyline = document.getElementById('btn-mode-skyline');
   const btnTrigger = document.getElementById('btn-action-trigger');
   const btnReset = document.getElementById('btn-action-reset');
@@ -40,14 +41,14 @@
   }
 
   // Lighting
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
   scene.add(ambientLight);
 
-  const dirLight = new THREE.DirectionalLight(0x22d3ee, 1.4);
+  const dirLight = new THREE.DirectionalLight(0x22d3ee, 1.5);
   dirLight.position.set(10, 20, 15);
   scene.add(dirLight);
 
-  const pointLight = new THREE.PointLight(0xa855f7, 1.8, 50);
+  const pointLight = new THREE.PointLight(0xa855f7, 2.0, 50);
   pointLight.position.set(-10, 10, 10);
   scene.add(pointLight);
 
@@ -55,8 +56,9 @@
   const COLOR_IDLE = 0x22d3ee;
   const COLOR_COMPARE = 0xa855f7;
   const COLOR_SORTED = 0x10b981;
+  const COLOR_GOLD = 0xf59e0b;
 
-  let currentMode = 'sort'; // 'sort', 'tree', or 'skyline'
+  let currentMode = 'sort'; // 'sort', 'tree', 'finance', 'skyline'
   let isRunning = false;
 
   // --- 1. 3D ARRAY SORTING SCENE ---
@@ -205,7 +207,80 @@
     statusText.innerText = "Mode: 3D BST Search · Target '11' Located ✓";
   }
 
-  // --- 3. 3D GITHUB SKYLINE SCENE ---
+  // --- 3. 3D FINANCIAL NODE FLOW (LEDGER APP DEMO) ---
+  let financeGroup = new THREE.Group();
+  scene.add(financeGroup);
+  financeGroup.visible = false;
+  let financeNodes = [];
+
+  function buildFinanceScene() {
+    clearGroup(financeGroup);
+    financeNodes = [];
+
+    const centerGeo = new THREE.IcosahedronGeometry(2.2, 2);
+    const centerMat = new THREE.MeshStandardMaterial({
+      color: COLOR_GOLD,
+      emissive: 0xd97706,
+      emissiveIntensity: 0.5,
+      wireframe: true
+    });
+    const centerMesh = new THREE.Mesh(centerGeo, centerMat);
+    centerMesh.position.set(0, 6, 0);
+    financeGroup.add(centerMesh);
+
+    const categories = [
+      { name: 'Income (+)', x: -8, y: 10, z: -3, color: 0x10b981 },
+      { name: 'Groceries', x: 8, y: 10, z: -3, color: 0x3b82f6 },
+      { name: 'Dining', x: -8, y: 2, z: 3, color: 0xf59e0b },
+      { name: 'Rent', x: 8, y: 2, z: 3, color: 0xec4899 },
+      { name: 'Savings Goal', x: 0, y: 0, z: -6, color: 0x8b5cf6 },
+    ];
+
+    const sphereGeo = new THREE.SphereGeometry(1.4, 24, 24);
+
+    categories.forEach(cat => {
+      const mat = new THREE.MeshStandardMaterial({
+        color: cat.color,
+        roughness: 0.2,
+        metalness: 0.4
+      });
+      const mesh = new THREE.Mesh(sphereGeo, mat);
+      mesh.position.set(cat.x, cat.y, cat.z);
+      financeGroup.add(mesh);
+      financeNodes.push(mesh);
+
+      // Connecting Beam Line
+      const lineMat = new THREE.LineBasicMaterial({ color: cat.color, linewidth: 2 });
+      const lineGeo = new THREE.BufferGeometry().setFromPoints([
+        new THREE.Vector3(0, 6, 0),
+        new THREE.Vector3(cat.x, cat.y, cat.z)
+      ]);
+      const line = new THREE.Line(lineGeo, lineMat);
+      financeGroup.add(line);
+    });
+
+    const gridHelper = new THREE.GridHelper(30, 20, 0xf59e0b, 0x1e293b);
+    gridHelper.position.y = 0;
+    financeGroup.add(gridHelper);
+  }
+
+  async function runFinanceAnimation() {
+    if (isRunning) return;
+    isRunning = true;
+    statusText.innerText = "Mode: 3D Ledger Flow · Simulating live 0ms financial transactions...";
+
+    for (let i = 0; i < financeNodes.length; i++) {
+      if (!isRunning) return;
+      financeNodes[i].scale.set(1.4, 1.4, 1.4);
+      await sleep(350);
+      financeNodes[i].scale.set(1.0, 1.0, 1.0);
+    }
+
+    isRunning = false;
+    statusText.innerText = "Mode: 3D Ledger Flow · Real-Time Financial Sync Complete ✓";
+  }
+
+  // --- 4. 3D GITHUB SKYLINE SCENE ---
   let skylineGroup = new THREE.Group();
   scene.add(skylineGroup);
   skylineGroup.visible = false;
@@ -278,7 +353,7 @@
     }
 
     isRunning = false;
-    statusText.innerText = "Mode: 3D Skyline · Click 'Launch 3D Visualizer' above for full app!";
+    statusText.innerText = "Mode: 3D Skyline · GitHub Skyline render complete ✓";
   }
 
   // --- HELPER FUNCTIONS ---
@@ -296,15 +371,21 @@
   }
 
   // Mode Switch Handlers
+  function deactivateAllBtns() {
+    [btnSort, btnTree, btnFinance, btnSkyline].forEach(b => {
+      if (b) b.classList.remove('active');
+    });
+  }
+
   if (btnSort) {
     btnSort.addEventListener('click', () => {
       currentMode = 'sort';
       isRunning = false;
+      deactivateAllBtns();
       btnSort.classList.add('active');
-      if (btnTree) btnTree.classList.remove('active');
-      if (btnSkyline) btnSkyline.classList.remove('active');
       sortGroup.visible = true;
       treeGroup.visible = false;
+      financeGroup.visible = false;
       skylineGroup.visible = false;
       buildSortScene();
       statusText.innerText = "Mode: 3D Bubble Sort · Ready to step";
@@ -315,14 +396,29 @@
     btnTree.addEventListener('click', () => {
       currentMode = 'tree';
       isRunning = false;
+      deactivateAllBtns();
       btnTree.classList.add('active');
-      if (btnSort) btnSort.classList.remove('active');
-      if (btnSkyline) btnSkyline.classList.remove('active');
       sortGroup.visible = false;
       treeGroup.visible = true;
+      financeGroup.visible = false;
       skylineGroup.visible = false;
       buildTreeScene();
       statusText.innerText = "Mode: 3D Binary Search Tree · Ready to search";
+    });
+  }
+
+  if (btnFinance) {
+    btnFinance.addEventListener('click', () => {
+      currentMode = 'finance';
+      isRunning = false;
+      deactivateAllBtns();
+      btnFinance.classList.add('active');
+      sortGroup.visible = false;
+      treeGroup.visible = false;
+      financeGroup.visible = true;
+      skylineGroup.visible = false;
+      buildFinanceScene();
+      statusText.innerText = "Mode: 3D Ledger Flow · Ready to simulate transactions";
     });
   }
 
@@ -330,11 +426,11 @@
     btnSkyline.addEventListener('click', () => {
       currentMode = 'skyline';
       isRunning = false;
+      deactivateAllBtns();
       btnSkyline.classList.add('active');
-      if (btnSort) btnSort.classList.remove('active');
-      if (btnTree) btnTree.classList.remove('active');
       sortGroup.visible = false;
       treeGroup.visible = false;
+      financeGroup.visible = false;
       skylineGroup.visible = true;
       buildSkylineScene();
       statusText.innerText = "Mode: 3D GitHub Skyline · Ready to animate";
@@ -347,6 +443,8 @@
         runSortAnimation();
       } else if (currentMode === 'tree') {
         runTreeAnimation();
+      } else if (currentMode === 'finance') {
+        runFinanceAnimation();
       } else if (currentMode === 'skyline') {
         runSkylineAnimation();
       }
@@ -363,6 +461,9 @@
       } else if (currentMode === 'tree') {
         buildTreeScene();
         statusText.innerText = "Mode: 3D BST Search · Scene Reset";
+      } else if (currentMode === 'finance') {
+        buildFinanceScene();
+        statusText.innerText = "Mode: 3D Ledger Flow · Scene Reset";
       } else if (currentMode === 'skyline') {
         buildSkylineScene();
         statusText.innerText = "Mode: 3D GitHub Skyline · Scene Reset";
@@ -373,6 +474,7 @@
   // Initial Load
   buildSortScene();
   buildTreeScene();
+  buildFinanceScene();
   buildSkylineScene();
 
   // Render Loop
@@ -384,6 +486,8 @@
       sortGroup.rotation.y += 0.002;
     } else if (currentMode === 'tree') {
       treeGroup.rotation.y += 0.002;
+    } else if (currentMode === 'finance') {
+      financeGroup.rotation.y += 0.003;
     } else if (currentMode === 'skyline') {
       skylineGroup.rotation.y += 0.003;
     }
