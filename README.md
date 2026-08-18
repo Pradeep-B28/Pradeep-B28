@@ -16,7 +16,7 @@
 
 ---
 
-### 🌐 [Launch My Interactive 3D WebGL Portfolio & Sandbox](https://pradeep-b28.github.io/)
+### 🌐 [Launch My Interactive 3D WebGL Portfolio & Sandbox](https://pradeep-b28.github.io/Pradeep-B28/)
 > *Featuring live 3D sorting simulations, binary search tree renders, 3D skyline constellations, glassmorphism UI, and interactive curriculum modules.*
 
 ---
