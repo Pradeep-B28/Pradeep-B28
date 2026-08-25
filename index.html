@@ -168,40 +168,75 @@
       </div>
     </section>
 
-    <!-- 3D SANDBOX / INTERACTIVE VISUALIZER -->
-    <section class="section visualizer-section" id="3d-visualizer">
+    <!-- 3D TOURIST WORLD & DEVELOPER QUEST GAME -->
+    <section class="section visualizer-section" id="3d-tourist-world">
       <div class="section-container">
         <div class="section-header center">
-          <span class="section-tag">3D INTERACTIVE SANDBOX</span>
-          <h2 class="section-title">Real-Time Algorithmic & App <span class="gradient-text">3D Simulation</span></h2>
-          <p class="section-subtitle">Interact with glowing 3D data structures and financial node graphs in real time. Switch modes below to watch 3D sorting, tree assembly, or Ledger node flow live in WebGL.</p>
+          <span class="section-tag">🎮 3D GAME & TOURIST MAP</span>
+          <h2 class="section-title">The Archipelago of Pradeep: <span class="gradient-text">Developer Quest World</span></h2>
+          <p class="section-subtitle">Step into an interactive 3D Tourist Island mapping my engineering flagship projects, achievements, and 6,000+ mentored students. Explore 5 landmark zones, solve SQL & Algorithm puzzles, and collect your Tourist Passport stamps!</p>
         </div>
 
         <div class="visualizer-wrapper glass-panel">
           <div class="visualizer-controls">
-            <div class="control-group">
-              <button class="viz-btn active" id="btn-mode-sort">3D Array Sorting</button>
-              <button class="viz-btn" id="btn-mode-tree">3D Binary Search Tree</button>
-              <button class="viz-btn" id="btn-mode-finance">💸 3D Ledger Flow</button>
-              <button class="viz-btn" id="btn-mode-skyline">🏙️ 3D GitHub Skyline</button>
+            <div class="control-group mode-btns">
+              <button class="viz-btn active" id="btn-mode-world">🏝️ Island Map</button>
+              <button class="viz-btn" id="btn-mode-sentinel">🏰 Sentinel Citadel</button>
+              <button class="viz-btn" id="btn-mode-ledger">💸 Ledger Vault</button>
+              <button class="viz-btn" id="btn-mode-skyline">🏙️ GIT-viz Skyline</button>
+              <button class="viz-btn" id="btn-mode-dsa">🌲 Mentorship Forest</button>
             </div>
-            <div class="control-group">
-              <button class="btn btn-sm btn-primary" id="btn-action-trigger">Run Simulation</button>
-              <button class="btn btn-sm btn-secondary" id="btn-action-reset">Reset Scene</button>
+            <div class="control-group action-btns">
+              <button class="btn btn-sm btn-primary" id="btn-guided-tour">🚁 Guided Flyover Tour</button>
+              <button class="btn btn-sm btn-accent" id="btn-passport-toggle">🏆 Tourist Passport (<span id="passport-count">0/5</span>)</button>
             </div>
           </div>
 
           <div class="canvas-3d-box" id="viz-3d-container">
+            <!-- Floating Status Badge -->
             <div class="viz-overlay-info" id="viz-info">
               <span class="viz-status-dot"></span>
-              <span id="viz-status-text">Mode: 3D Bubble Sort · Ready to step</span>
+              <span id="viz-status-text">Welcome to the Archipelago! Click any landmark or run Guided Flyover Tour to explore.</span>
+            </div>
+
+            <!-- Guided Tour Subtitle Bar -->
+            <div class="tour-caption-box hidden" id="tour-caption-box">
+              <div class="tour-caption-title" id="tour-caption-title">🏰 Schema Sentinel Citadel</div>
+              <div class="tour-caption-text" id="tour-caption-text">Production-aware PostgreSQL risk analysis engine & GitHub Action PR gatekeeper.</div>
+            </div>
+
+            <!-- SQL Risk Analyzer Mini-Game Overlay -->
+            <div class="sql-game-panel hidden" id="sql-game-panel">
+              <div class="sql-panel-header">
+                <span>🔍 Schema Sentinel SQL Risk Analyzer Station</span>
+                <span class="badge badge-risk-low" id="sql-risk-badge">🟢 LOW RISK</span>
+              </div>
+              <div class="sql-input-row">
+                <select id="sql-preset-select" class="sql-select">
+                  <option value="safe_add_column">SELECT preset query...</option>
+                  <option value="high_drop_table">🔴 HIGH: DROP TABLE users CASCADE;</option>
+                  <option value="high_add_not_null">🔴 HIGH: ALTER TABLE orders ADD COLUMN status INT NOT NULL;</option>
+                  <option value="high_alter_type">🔴 HIGH: ALTER TABLE transactions ALTER COLUMN amount TYPE DECIMAL(15,2);</option>
+                  <option value="med_create_index">🟡 MEDIUM: CREATE INDEX idx_user_email ON users(email);</option>
+                  <option value="low_add_default">🟢 LOW: ALTER TABLE users ADD COLUMN is_active BOOL DEFAULT true;</option>
+                </select>
+                <button class="btn btn-sm btn-primary" id="btn-analyze-sql">Scan 3D Risk</button>
+              </div>
+              <div class="sql-metrics-row" id="sql-metrics-row">
+                <div class="metric-item">Lock Risk: <span id="m-lock">1/10</span></div>
+                <div class="metric-item">Integrity: <span id="m-integrity">1/10</span></div>
+                <div class="metric-item">Compatibility: <span id="m-compat">1/10</span></div>
+                <div class="metric-item">Performance: <span id="m-perf">1/10</span></div>
+              </div>
+              <div class="sql-recommendation" id="sql-recommendation">💡 Status: Select or scan a query above to test database schema risk in 3D.</div>
             </div>
           </div>
 
           <div class="viz-legend">
-            <div class="legend-item"><span class="color-box cyan"></span> Unsorted / Idle</div>
-            <div class="legend-item"><span class="color-box purple"></span> Comparing / Active</div>
-            <div class="legend-item"><span class="color-box green"></span> Sorted / Placed</div>
+            <div class="legend-item"><span class="color-box cyan"></span> Sentinel Citadel</div>
+            <div class="legend-item"><span class="color-box gold"></span> Ledger Vault & AI Node</div>
+            <div class="legend-item"><span class="color-box purple"></span> GIT-viz Skyline Observatory</div>
+            <div class="legend-item"><span class="color-box green"></span> Mentorship Stage & DSA Forest (6,000+ Students)</div>
           </div>
         </div>
       </div>
@@ -547,7 +582,63 @@
         <a href="#hero">Back to top ↑</a>
       </div>
     </div>
-  </footer>
+  <!-- TOURIST PASSPORT MODAL -->
+  <div class="modal-overlay hidden" id="passport-modal">
+    <div class="modal-card glass-panel">
+      <div class="modal-header">
+        <h2>🏆 Developer Tourist Passport & Achievements</h2>
+        <button class="modal-close-btn" id="passport-modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-intro">Explore all 5 landmark zones of Pradeep's 3D Archipelago to collect all 5 official Tourist Passport Stamps and unlock your Master Explorer Certificate!</p>
+
+        <div class="passport-stamps-grid">
+          <div class="stamp-card locked" id="stamp-sentinel">
+            <div class="stamp-icon">🛡️</div>
+            <h4>Sentinel Gatekeeper</h4>
+            <p>Analyzed SQL migration risks at the Schema Sentinel Citadel.</p>
+            <span class="stamp-status">LOCKED</span>
+          </div>
+
+          <div class="stamp-card locked" id="stamp-ledger">
+            <div class="stamp-icon">💸</div>
+            <h4>Ledger Architect</h4>
+            <p>Explored 0ms Optimistic UI financial graph at the Ledger Vault.</p>
+            <span class="stamp-status">LOCKED</span>
+          </div>
+
+          <div class="stamp-card locked" id="stamp-skyline">
+            <div class="stamp-icon">🏙️</div>
+            <h4>Skyline Navigator</h4>
+            <p>Piloted 3D contribution galaxy at the GIT-viz Observatory.</p>
+            <span class="stamp-status">LOCKED</span>
+          </div>
+
+          <div class="stamp-card locked" id="stamp-relnotes">
+            <div class="stamp-icon">📝</div>
+            <h4>AI Release Scribe</h4>
+            <p>Inspected Groq AI Git commit generator at the Scribe Monolith.</p>
+            <span class="stamp-status">LOCKED</span>
+          </div>
+
+          <div class="stamp-card locked" id="stamp-mentor">
+            <div class="stamp-icon">🎓</div>
+            <h4>Grand Mentor Badge</h4>
+            <p>Visited the 6,000+ Students Mentored Stage & DSA Forest.</p>
+            <span class="stamp-status">LOCKED</span>
+          </div>
+        </div>
+
+        <div class="passport-certificate glass-panel">
+          <h3>📜 Pradeep's Engineering Explorer Certificate</h3>
+          <p>Explorer Status: <strong id="explorer-rank">Novice Tourist (0/5 Stamps)</strong></p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="passport-progress" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="three-bg.js"></script>
