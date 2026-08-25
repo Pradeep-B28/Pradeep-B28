@@ -1,11 +1,12 @@
 <div align="center">
   <!-- Dynamic 3D Header Banner -->
   <a href="https://pradeep-b28.github.io/">
-    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=800&size=30&pause=1000&color=22D3EE&center=true&vCenter=true&width=850&lines=Hi%2C+I'm+Pradeep+%F0%9F%91%8B;Java+%26+DSA+Trainer+%7C+Full-Stack+Architect;6%2C000%2B+Students+Mentored;Creator+of+Ledger%2C+GIT-viz+%26+Rel_Notes" alt="Pradeep - Java & DSA Trainer Header" />
+    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=800&size=30&pause=1000&color=22D3EE&center=true&vCenter=true&width=850&lines=Hi%2C+I'm+Pradeep+%F0%9F%91%8B;Java+%26+DSA+Trainer+%7C+Full-Stack+Architect;6%2C000%2B+Students+Mentored;Creator+of+Schema-Sentinel%2C+Ledger%2C+GIT-viz+%26+Rel_Notes" alt="Pradeep - Java & DSA Trainer Header" />
   </a>
 
   <p align="center">
     <a href="https://pradeep-b28.github.io/"><img src="https://img.shields.io/badge/🌐_3D_Interactive_Portfolio-Launch_App-0891B2?style=for-the-badge&logoColor=white" alt="3D Web Portfolio" /></a>
+    <a href="https://github.com/Pradeep-B28/Schema-Sentinel"><img src="https://img.shields.io/badge/🔍_Schema_Sentinel-PostgreSQL_Risk_Analyzer-2563EB?style=for-the-badge&logoColor=white" alt="Schema Sentinel" /></a>
     <a href="https://github.com/Pradeep-B28/ledger-expense-tracker"><img src="https://img.shields.io/badge/💸_Ledger_Expense_App-MERN_|_PWA_|_Android-6366F1?style=for-the-badge&logoColor=white" alt="Ledger Expense App" /></a>
     <a href="https://pradeep-b28.github.io/GIT---viz/"><img src="https://img.shields.io/badge/🏙️_GIT--viz_3D_App-Launch_3D_Skyline-7C3AED?style=for-the-badge&logoColor=white" alt="GIT-viz 3D Skyline" /></a>
     <a href="https://www.linkedin.com/in/pradeepb-2k"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
@@ -27,7 +28,7 @@ I am a **Java and Data Structures & Algorithms Trainer** and **Full-Stack Engine
 
 - 🎓 **Mentored 6,000+ Students** through structured Java, Data Structures, Algorithms, and Full-Stack Engineering bootcamps.
 - 💡 **Specialization**: Core Java, JVM Internals, Collections Framework, Multithreading, DSA, Dynamic Programming, and System Architecture.
-- 🚀 **Open Source & Enterprise Projects**: Creator of **Ledger** (Enterprise AI Expense Suite), **GIT---viz** (3D Profile Galaxy), **Rel_Notes** (AI Release Generator), Devcontainers, and interactive algorithm visualizers.
+- 🚀 **Open Source & Enterprise Projects**: Creator of **Schema Sentinel** (Pre-migration PostgreSQL Risk Engine & GitHub Action), **Ledger** (Enterprise AI Expense Suite), **GIT---viz** (3D Profile Galaxy), **Rel_Notes** (AI Release Generator), **Devstarter** (Devcontainers), and interactive algorithm visualizers.
 
 ---
 
@@ -60,26 +61,26 @@ I am a **Java and Data Structures & Algorithms Trainer** and **Full-Stack Engine
 <table>
   <tr>
     <td width="50%" valign="top">
+      <h3>🔍 <a href="https://github.com/Pradeep-B28/Schema-Sentinel">Schema Sentinel — PostgreSQL Risk Analyzer</a></h3>
+      <p>Production-aware pre-migration risk analysis engine for PostgreSQL. AST SQL parser, safe read-only database profiler, 4-axis risk scoring matrix (0-10), and automated GitHub Action PR gatekeeper.</p>
+      <p><a href="https://github.com/Pradeep-B28/Schema-Sentinel"><b>📦 View Repository & Source Code</b></a></p>
+    </td>
+    <td width="50%" valign="top">
       <h3>💸 <a href="https://github.com/Pradeep-B28/ledger-expense-tracker">Ledger — Enterprise AI Expense Tracker</a></h3>
       <p>Market-ready MERN + PWA + Capacitor Android expense tracker with 0ms Optimistic UI engine, adjacent 3-column live dashboard, AI Chatbot Assistant, multi-currency formatting, 5 themes, and bank cloud sync.</p>
       <p><a href="https://github.com/Pradeep-B28/ledger-expense-tracker"><b>📦 View Repository & Source Code</b></a></p>
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <h3>🎨 <a href="https://github.com/Pradeep-B28/GIT---viz">GIT---viz (3D Profile & Galaxy Visualizer)</a></h3>
       <p>Turn any GitHub profile into a 3D city skyline, orbital repo galaxy, tech archipelago, or developer duel with WASD drone flight, bloom shaders, and Web Audio melodic synth.</p>
       <p><a href="https://pradeep-b28.github.io/GIT---viz/"><b>🚀 Launch Live 3D App</b></a></p>
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <h3>📝 <a href="https://github.com/Pradeep-B28/Rel_Notes">Rel_Notes (AI Release Notes Generator)</a></h3>
       <p>AI-powered release notes generator built with TypeScript and Groq API. Automatically transforms raw Git commit history into clean, formatted release notes in seconds.</p>
       <p><a href="https://github.com/Pradeep-B28/Rel_Notes"><b>📦 Explore Source Code</b></a></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🗺️ <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap">Java + DSA Master Roadmap</a></h3>
-      <p>A comprehensive, beginner-to-advanced curriculum mapping out Core Java, Object-Oriented Design, and interview-ready Data Structures & Algorithms.</p>
-      <p><a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap"><b>📖 View Roadmap</b></a></p>
     </td>
   </tr>
   <tr>
@@ -89,9 +90,9 @@ I am a **Java and Data Structures & Algorithms Trainer** and **Full-Stack Engine
       <p><a href="https://github.com/Pradeep-B28/Devstarter"><b>📦 Explore Templates</b></a></p>
     </td>
     <td width="50%" valign="top">
-      <h3>🌐 <a href="https://github.com/Pradeep-B28/Pradeep-B28">3D Web Portfolio & Sandbox</a></h3>
-      <p>Interactive WebGL 3D web application with real-time 3D algorithm simulations, glassmorphism UI, curriculum matrix, and interactive showcase.</p>
-      <p><a href="https://pradeep-b28.github.io/Pradeep-B28/"><b>🚀 Visit Portfolio Site</b></a></p>
+      <h3>🗺️ <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap">Java + DSA Master Roadmap</a></h3>
+      <p>A comprehensive, beginner-to-advanced curriculum mapping out Core Java, Object-Oriented Design, and interview-ready Data Structures & Algorithms.</p>
+      <p><a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap"><b>📖 View Roadmap</b></a></p>
     </td>
   </tr>
 </table>
