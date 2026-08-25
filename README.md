@@ -1,11 +1,11 @@
 <div align="center">
   <!-- Dynamic 3D Header Banner -->
-  <a href="https://pradeep-b28.github.io/">
+  <a href="https://pradeep-b28.github.io/Pradeep-B28/">
     <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=800&size=30&pause=1000&color=22D3EE&center=true&vCenter=true&width=850&lines=Hi%2C+I'm+Pradeep+%F0%9F%91%8B;Java+%26+DSA+Trainer+%7C+Full-Stack+Architect;6%2C000%2B+Students+Mentored;Creator+of+Schema-Sentinel%2C+Ledger%2C+GIT-viz+%26+Rel_Notes" alt="Pradeep - Java & DSA Trainer Header" />
   </a>
 
   <p align="center">
-    <a href="https://pradeep-b28.github.io/"><img src="https://img.shields.io/badge/🌐_3D_Interactive_Portfolio-Launch_App-0891B2?style=for-the-badge&logoColor=white" alt="3D Web Portfolio" /></a>
+    <a href="https://pradeep-b28.github.io/Pradeep-B28/"><img src="https://img.shields.io/badge/🌐_3D_Interactive_Portfolio-Launch_App-0891B2?style=for-the-badge&logoColor=white" alt="3D Web Portfolio" /></a>
     <a href="https://github.com/Pradeep-B28/Schema-Sentinel"><img src="https://img.shields.io/badge/🔍_Schema_Sentinel-PostgreSQL_Risk_Analyzer-2563EB?style=for-the-badge&logoColor=white" alt="Schema Sentinel" /></a>
     <a href="https://github.com/Pradeep-B28/ledger-expense-tracker"><img src="https://img.shields.io/badge/💸_Ledger_Expense_App-MERN_|_PWA_|_Android-6366F1?style=for-the-badge&logoColor=white" alt="Ledger Expense App" /></a>
     <a href="https://pradeep-b28.github.io/GIT---viz/"><img src="https://img.shields.io/badge/🏙️_GIT--viz_3D_App-Launch_3D_Skyline-7C3AED?style=for-the-badge&logoColor=white" alt="GIT-viz 3D Skyline" /></a>
