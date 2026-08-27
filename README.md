@@ -66,7 +66,7 @@ I am a **Java and Data Structures & Algorithms Trainer** and **Full-Stack Engine
       <p><a href="https://github.com/Pradeep-B28/Schema-Sentinel"><b>📦 View Repository & Source Code</b></a></p>
     </td>
     <td width="50%" valign="top">
-      <h3>💸 <a href="https://github.com/Pradeep-B28/ledger-expense-tracker">Ledger — Enterprise AI Expense Tracker</a></h3>
+      <h3>💸 <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker">Ledger — Enterprise AI Expense Tracker</a></h3>
       <p>Market-ready MERN + PWA + Capacitor Android expense tracker with 0ms Optimistic UI engine, adjacent 3-column live dashboard, AI Chatbot Assistant, multi-currency formatting, 5 themes, and bank cloud sync.</p>
       <p><a href="https://github.com/Pradeep-B28/ledger-expense-tracker"><b>📦 View Repository & Source Code</b></a></p>
     </td>
