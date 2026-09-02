@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PRADEEP 3D PORTFOLIO - THREE.JS BACKGROUND SCENE (SUBTLE & MEDIUM SLOW)
+   PRADEEP 3D PORTFOLIO - THREE.JS BACKGROUND SCENE (CONSTANT MEDIUM SLOW SPEED)
    ========================================================================== */
 
 (function () {
@@ -9,25 +9,11 @@
   // Scene, Camera, Renderer
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.z = 30;
+  camera.position.set(0, 0, 30);
 
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
-
-  // Mouse Interactivity
-  let mouseX = 0;
-  let mouseY = 0;
-  let targetX = 0;
-  let targetY = 0;
-
-  const windowHalfX = window.innerWidth / 2;
-  const windowHalfY = window.innerHeight / 2;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX - windowHalfX) * 0.0003;
-    mouseY = (e.clientY - windowHalfY) * 0.0003;
-  });
 
   // 1. PARTICLES DUST
   const particleCount = 400;
@@ -121,29 +107,20 @@
 
   scene.add(cubeGroup);
 
-  // ANIMATION LOOP (MEDIUM SLOW & PARALLAX BALANCED)
+  // ANIMATION LOOP (CONSTANT MEDIUM SLOW SPEED — ZERO MOUSE SPEED INCREASE)
   function animate() {
     requestAnimationFrame(animate);
 
-    targetX += (mouseX - targetX) * 0.03;
-    targetY += (mouseY - targetY) * 0.03;
-
-    // Elegant constant medium-slow ambient drift
-    particleSystem.rotation.y += 0.0002;
-    nodeGroup.rotation.y += 0.0003;
-
-    // Subtle non-accumulating tilt on vertical mouse shift
-    nodeGroup.rotation.x = targetY * 0.15;
-
-    // Smooth subtle camera parallax shift when mouse moves left/right
-    camera.position.x += (targetX * 1.5 - camera.position.x) * 0.03;
-    camera.position.y += (-targetY * 1.5 - camera.position.y) * 0.03;
-    camera.lookAt(scene.position);
+    // Constant medium-slow ambient drift
+    particleSystem.rotation.y += 0.00025;
+    nodeGroup.rotation.y += 0.00035;
 
     cubeGroup.children.forEach(cube => {
       cube.rotation.x += cube.userData.rotX;
       cube.rotation.y += cube.userData.rotY;
     });
+
+    camera.lookAt(scene.position);
 
     renderer.render(scene, camera);
   }
