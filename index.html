@@ -165,30 +165,31 @@
             <p>Creating custom 3D and 2D visualizers for search algorithms, sorting passes, and tree traversals so abstract pointer shifts become crystal clear.</p>
           </div>
         </div>
-      </div>
-    </section>
-
     <!-- 3D TOURIST WORLD & DEVELOPER QUEST GAME -->
     <section class="section visualizer-section" id="3d-tourist-world">
       <div class="section-container">
         <div class="section-header center">
           <span class="section-tag">🎮 3D GAME & TOURIST MAP</span>
           <h2 class="section-title">The Archipelago of Pradeep: <span class="gradient-text">Developer Quest World</span></h2>
-          <p class="section-subtitle">Step into an interactive 3D Tourist Island mapping my engineering flagship projects, achievements, and 6,000+ mentored students. Explore 5 landmark zones, solve SQL & Algorithm puzzles, and collect your Tourist Passport stamps!</p>
+          <p class="section-subtitle">Step into an interactive 3D Tourist Island mapping all 8 of my engineering repositories, flagship projects, and 6,000+ mentored students. Explore 8 landmark zones, solve SQL & Algorithm puzzles, and collect your Tourist Passport stamps!</p>
         </div>
 
         <div class="visualizer-wrapper glass-panel">
           <div class="visualizer-controls">
             <div class="control-group mode-btns">
               <button class="viz-btn active" id="btn-mode-world">🏝️ Island Map</button>
-              <button class="viz-btn" id="btn-mode-sentinel">🏰 Sentinel Citadel</button>
+              <button class="viz-btn" id="btn-mode-hub">⚡ Portfolio Hub</button>
+              <button class="viz-btn" id="btn-mode-sentinel">🛡️ Sentinel Citadel</button>
               <button class="viz-btn" id="btn-mode-ledger">💸 Ledger Vault</button>
               <button class="viz-btn" id="btn-mode-skyline">🏙️ GIT-viz Skyline</button>
-              <button class="viz-btn" id="btn-mode-dsa">🌲 Mentorship Forest</button>
+              <button class="viz-btn" id="btn-mode-relnotes">📝 Rel_Notes</button>
+              <button class="viz-btn" id="btn-mode-devstarter">🐳 Devstarter</button>
+              <button class="viz-btn" id="btn-mode-dsa">🌲 DSA Forest</button>
+              <button class="viz-btn" id="btn-mode-sorting">🎞️ Sorting Arena</button>
             </div>
             <div class="control-group action-btns">
               <button class="btn btn-sm btn-primary" id="btn-guided-tour">🚁 Guided Flyover Tour</button>
-              <button class="btn btn-sm btn-accent" id="btn-passport-toggle">🏆 Tourist Passport (<span id="passport-count">0/5</span>)</button>
+              <button class="btn btn-sm btn-accent" id="btn-passport-toggle">🏆 Tourist Passport (<span id="passport-count">0/8</span>)</button>
             </div>
           </div>
 
@@ -196,7 +197,7 @@
             <!-- Floating Status Badge -->
             <div class="viz-overlay-info" id="viz-info">
               <span class="viz-status-dot"></span>
-              <span id="viz-status-text">Welcome to the Archipelago! Click any landmark or run Guided Flyover Tour to explore.</span>
+              <span id="viz-status-text">Welcome to the Archipelago! Click any landmark, hover over 3D structures, or run Guided Flyover Tour to explore.</span>
             </div>
 
             <!-- Guided Tour Subtitle Bar -->
@@ -233,10 +234,14 @@
           </div>
 
           <div class="viz-legend">
-            <div class="legend-item"><span class="color-box cyan"></span> Sentinel Citadel</div>
-            <div class="legend-item"><span class="color-box gold"></span> Ledger Vault & AI Node</div>
-            <div class="legend-item"><span class="color-box purple"></span> GIT-viz Skyline Observatory</div>
-            <div class="legend-item"><span class="color-box green"></span> Mentorship Stage & DSA Forest (6,000+ Students)</div>
+            <div class="legend-item"><span class="color-box cyan"></span> Central 3D Hub</div>
+            <div class="legend-item"><span class="color-box blue"></span> Sentinel Citadel</div>
+            <div class="legend-item"><span class="color-box gold"></span> Ledger Vault</div>
+            <div class="legend-item"><span class="color-box purple"></span> GIT-viz Skyline</div>
+            <div class="legend-item"><span class="color-box emerald"></span> Rel_Notes Monolith</div>
+            <div class="legend-item"><span class="color-box yellow"></span> Devstarter Dock</div>
+            <div class="legend-item"><span class="color-box green"></span> DSA Mentorship Forest</div>
+            <div class="legend-item"><span class="color-box pink"></span> Sorting Arena</div>
           </div>
         </div>
       </div>
@@ -317,18 +322,95 @@
     <!-- FEATURED PROJECTS -->
     <section class="section projects-section" id="projects">
       <div class="section-container">
-        <div class="section-header">
-          <span class="section-tag">OPEN SOURCE & ENTERPRISE PROJECTS</span>
-          <h2 class="section-title">Featured Portfolio <span class="gradient-text">Projects</span></h2>
+        <div class="section-header center">
+          <span class="section-tag">OPEN SOURCE & ENTERPRISE REPOSITORIES</span>
+          <h2 class="section-title">All GitHub <span class="gradient-text">Repositories</span></h2>
+          <p class="section-subtitle">Comprehensive collection of 8 open-source repositories spanning 3D WebGL applications, enterprise full-stack suites, Java & DSA pedagogical tools, DevOps security gatekeepers, and AI generators.</p>
+          
+          <div class="repo-counter-badge">
+            <span class="badge-dot"></span>
+            <span>Showing All 8 Public Repositories</span>
+          </div>
         </div>
 
-        <div class="projects-grid">
-          <!-- Project 0: Schema Sentinel -->
-          <div class="project-card glass-panel tilt-card">
+        <!-- Filter Category Tabs -->
+        <div class="project-filter-bar">
+          <button class="filter-btn active" data-filter="all">All Repos (8)</button>
+          <button class="filter-btn" data-filter="flagship">✨ 3D & Flagship (3)</button>
+          <button class="filter-btn" data-filter="fullstack">💻 Full-Stack Apps (2)</button>
+          <button class="filter-btn" data-filter="java">☕ Java & DSA (2)</button>
+          <button class="filter-btn" data-filter="devops">🛡️ DevOps & AI (2)</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Repo 1: Pradeep-B28 (3D Portfolio) -->
+          <div class="project-card glass-panel tilt-card" data-category="flagship">
             <div class="project-banner">
-              <div class="project-viz-placeholder" style="background: linear-gradient(135deg, rgba(37,99,235,0.25), rgba(16,185,129,0.25)); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;">
-                <span style="font-size: 2.2rem;">🔍 🛡️ 📊</span>
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #60a5fa; font-weight: 700;">Python · PostgreSQL · GitHub Action</span>
+              <div class="project-viz-placeholder viz-hub-bg">
+                <span class="viz-icon">⚡ 🏝️ 🌌</span>
+                <span class="viz-tech-label">HTML5 · Three.js · CSS Glassmorphism</span>
+              </div>
+              <div class="project-badge">Flagship 3D Portfolio</div>
+            </div>
+            <div class="project-content">
+              <h3>⚡ Pradeep-B28: 3D Developer Quest Portfolio</h3>
+              <p>Official 3D Interactive Portfolio & Tourist Quest Archipelago built with HTML5, CSS Glassmorphism, Three.js WebGL, particle physics engine, interactive SQL Risk Analyzer, and 6,000+ student mentorship showcase.</p>
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS Glassmorphism</span>
+                <span class="tag">Three.js</span>
+                <span class="tag">WebGL</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="project-footer" style="gap: 8px;">
+                <a href="https://pradeep-b28.github.io/Pradeep-B28/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                  <span>Launch 3D Site</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+                <a href="https://github.com/Pradeep-B28/Pradeep-B28" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repo 2: GIT---viz -->
+          <div class="project-card glass-panel tilt-card" data-category="flagship">
+            <div class="project-banner">
+              <div class="project-viz-placeholder viz-skyline-bg">
+                <span class="viz-icon">🎨 🏙️ 🌌</span>
+                <span class="viz-tech-label">Three.js · Shaders · Web Audio</span>
+              </div>
+              <div class="project-badge">Flagship 3D Web App</div>
+            </div>
+            <div class="project-content">
+              <h3>🎨 GIT---viz: 3D Profile & Galaxy Visualizer</h3>
+              <p>Transforms any GitHub profile into a 3D city skyline, orbital repo galaxy, tech archipelago, or developer duel with WASD drone flight, bloom shaders, and Web Audio melodic synth.</p>
+              <div class="project-tags">
+                <span class="tag">Three.js</span>
+                <span class="tag">WebGL</span>
+                <span class="tag">Shaders</span>
+                <span class="tag">Web Audio</span>
+                <span class="tag">GitHub API</span>
+              </div>
+              <div class="project-footer" style="gap: 8px;">
+                <a href="https://pradeep-b28.github.io/GIT---viz/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                  <span>Launch 3D App</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+                <a href="https://github.com/Pradeep-B28/GIT---viz" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repo 3: Schema-Sentinel -->
+          <div class="project-card glass-panel tilt-card" data-category="devops">
+            <div class="project-banner">
+              <div class="project-viz-placeholder viz-sentinel-bg">
+                <span class="viz-icon">🔍 🛡️ 📊</span>
+                <span class="viz-tech-label">Python · PostgreSQL · GitHub Action</span>
               </div>
               <div class="project-badge">DevOps & Database Security</div>
             </div>
@@ -351,12 +433,12 @@
             </div>
           </div>
 
-          <!-- Project 1: Ledger Expense Tracker -->
-          <div class="project-card glass-panel tilt-card">
+          <!-- Repo 4: Ledger Expense Tracker -->
+          <div class="project-card glass-panel tilt-card" data-category="fullstack">
             <div class="project-banner">
-              <div class="project-viz-placeholder" style="background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(168,85,247,0.2)); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;">
-                <span style="font-size: 2.2rem;">💸 🤖 📊</span>
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #818cf8; font-weight: 700;">MERN · PWA · Android · AI Assistant</span>
+              <div class="project-viz-placeholder viz-ledger-bg">
+                <span class="viz-icon">💸 🤖 📊</span>
+                <span class="viz-tech-label">MERN · PWA · Android · AI Assistant</span>
               </div>
               <div class="project-badge">Full-Stack Enterprise App</div>
             </div>
@@ -367,11 +449,11 @@
                 <span class="tag">React 18</span>
                 <span class="tag">Node.js</span>
                 <span class="tag">MongoDB</span>
-                <span class="tag">Capacitor</span>
+                <span class="tag">Capacitor 6</span>
                 <span class="tag">PWA</span>
               </div>
               <div class="project-footer">
-                <a href="https://github.com/Pradeep-B28/ledger-expense-tracker" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
+                <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
                   <span>View Repository</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
                 </a>
@@ -379,52 +461,23 @@
             </div>
           </div>
 
-          <!-- Project 1: GIT---viz -->
-          <div class="project-card glass-panel tilt-card">
+          <!-- Repo 5: Rel_Notes -->
+          <div class="project-card glass-panel tilt-card" data-category="devops">
             <div class="project-banner">
-              <div class="project-viz-placeholder" style="background: linear-gradient(135deg, rgba(88,166,255,0.2), rgba(124,58,237,0.2)); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;">
-                <span style="font-size: 2.2rem;">🎨 🏙️ 🌌</span>
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #58a6ff; font-weight: 700;">Three.js · Shaders · Web Audio</span>
+              <div class="project-viz-placeholder viz-relnotes-bg">
+                <span class="viz-icon">📝 🤖 ⚡</span>
+                <span class="viz-tech-label">TypeScript · Groq AI · Git CLI</span>
               </div>
-              <div class="project-badge">Flagship 3D Web App</div>
-            </div>
-            <div class="project-content">
-              <h3>🎨 GIT---viz: 3D Profile & Galaxy Visualizer</h3>
-              <p>Transforms any GitHub profile into a 3D city skyline, orbital repo galaxy, tech archipelago, or developer duel with WASD drone flight, bloom shaders, and Web Audio melodic synth.</p>
-              <div class="project-tags">
-                <span class="tag">Three.js</span>
-                <span class="tag">WebGL</span>
-                <span class="tag">Shaders</span>
-                <span class="tag">Web Audio</span>
-              </div>
-              <div class="project-footer" style="gap: 8px;">
-                <a href="https://pradeep-b28.github.io/GIT---viz/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
-                  <span>Launch 3D App</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-                <a href="https://github.com/Pradeep-B28/GIT---viz" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>Source Code</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2: Rel_Notes -->
-          <div class="project-card glass-panel tilt-card">
-            <div class="project-banner">
-              <div class="project-viz-placeholder" style="background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(14,165,233,0.2)); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;">
-                <span style="font-size: 2.2rem;">📝 🤖 ⚡</span>
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #10b981; font-weight: 700;">TypeScript · Groq AI</span>
-              </div>
-              <div class="project-badge">AI Tool</div>
+              <div class="project-badge">AI Tool & CLI</div>
             </div>
             <div class="project-content">
               <h3>📝 Rel_Notes: AI Release Notes Generator</h3>
-              <p>Automated AI-powered release notes generator built with TypeScript and Groq API. Reads raw Git commit histories and structures clean, polished release notes in seconds.</p>
+              <p>Automated AI-powered release notes generator built with TypeScript and Groq API. Reads raw Git commit histories and structures clean, polished markdown release notes in seconds.</p>
               <div class="project-tags">
                 <span class="tag">TypeScript</span>
                 <span class="tag">Groq AI</span>
                 <span class="tag">Git CLI</span>
+                <span class="tag">Node.js</span>
               </div>
               <div class="project-footer">
                 <a href="https://github.com/Pradeep-B28/Rel_Notes" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
@@ -435,22 +488,23 @@
             </div>
           </div>
 
-          <!-- Project 3: Devstarter -->
-          <div class="project-card glass-panel tilt-card">
+          <!-- Repo 6: Devstarter -->
+          <div class="project-card glass-panel tilt-card" data-category="devops">
             <div class="project-banner">
-              <div class="project-viz-placeholder" style="background: linear-gradient(135deg, rgba(234,179,8,0.2), rgba(239,68,68,0.2)); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;">
-                <span style="font-size: 2.2rem;">🐳 📦 ⚡</span>
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #eab308; font-weight: 700;">Dockerfile · Devcontainers</span>
+              <div class="project-viz-placeholder viz-devstarter-bg">
+                <span class="viz-icon">🐳 📦 ⚡</span>
+                <span class="viz-tech-label">Dockerfile · Devcontainers · Docker</span>
               </div>
               <div class="project-badge">Dev Environment</div>
             </div>
             <div class="project-content">
               <h3>🐳 Devstarter: Zero-Config Devcontainers</h3>
-              <p>Production-ready devcontainer configurations for Python, Node, Go, Rust, C++, and Java. Allows developers to launch fully configured containers in VS Code instantly.</p>
+              <p>Production-ready devcontainer configurations for Python, Node, Go, Rust, C++, and Java. Allows developers to launch fully configured, isolated dev containers in VS Code instantly.</p>
               <div class="project-tags">
                 <span class="tag">Docker</span>
                 <span class="tag">Devcontainers</span>
                 <span class="tag">VS Code</span>
+                <span class="tag">Multi-Language</span>
               </div>
               <div class="project-footer">
                 <a href="https://github.com/Pradeep-B28/Devstarter" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
@@ -461,18 +515,25 @@
             </div>
           </div>
 
-          <!-- Project 4: JAVA-DSA-Roadmap -->
-          <div class="project-card glass-panel tilt-card">
+          <!-- Repo 7: JAVA-DSA-Roadmap -->
+          <div class="project-card glass-panel tilt-card" data-category="java">
             <div class="project-banner">
-              <img src="assets/images/banner.jpg" alt="Java + DSA Roadmap Banner" class="project-img" />
-              <div class="project-badge">Popular Repository</div>
+              <div class="project-viz-placeholder viz-dsa-bg">
+                <div class="dsa-nodes">
+                  <div class="node">J</div>
+                  <div class="node">DS</div>
+                  <div class="node">A</div>
+                </div>
+              </div>
+              <div class="project-badge">Master Roadmap</div>
             </div>
             <div class="project-content">
               <h3>🗺️ Java + DSA Master Roadmap</h3>
-              <p>A structured step-by-step master path guiding students from basic syntax to interview-ready data structures and complex graph algorithms.</p>
+              <p>A structured step-by-step master path guiding 6,000+ students from core syntax and JVM memory layout to interview-ready data structures and complex graph algorithms.</p>
               <div class="project-tags">
                 <span class="tag">Java</span>
                 <span class="tag">DSA</span>
+                <span class="tag">Algorithms</span>
                 <span class="tag">Interview Prep</span>
               </div>
               <div class="project-footer">
@@ -484,10 +545,10 @@
             </div>
           </div>
 
-          <!-- Project 5: JAVA-Searching-Sorting-Visualizer -->
-          <div class="project-card glass-panel tilt-card">
+          <!-- Repo 8: JAVA-Searching-Sorting-Visualizer -->
+          <div class="project-card glass-panel tilt-card" data-category="java">
             <div class="project-banner">
-              <div class="project-viz-placeholder">
+              <div class="project-viz-placeholder viz-sorting-bg">
                 <div class="viz-animated-bars">
                   <div class="bar bar-1"></div>
                   <div class="bar bar-2"></div>
@@ -500,11 +561,12 @@
             </div>
             <div class="project-content">
               <h3>🎞️ Searching & Sorting Visualizer</h3>
-              <p>An interactive Java GUI application rendering sorting steps (Bubble, Merge, Quick, Heap) and binary search comparisons frame-by-frame.</p>
+              <p>An interactive Java Swing GUI application rendering sorting steps (Bubble, Selection, Insertion, Quick, Merge, Heap) and binary search comparisons frame-by-frame.</p>
               <div class="project-tags">
                 <span class="tag">Java Swing</span>
                 <span class="tag">Algorithms</span>
                 <span class="tag">GUI</span>
+                <span class="tag">Animation</span>
               </div>
               <div class="project-footer">
                 <a href="https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
@@ -514,6 +576,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -582,6 +645,8 @@
         <a href="#hero">Back to top ↑</a>
       </div>
     </div>
+  </footer>
+
   <!-- TOURIST PASSPORT MODAL -->
   <div class="modal-overlay hidden" id="passport-modal">
     <div class="modal-card glass-panel">
@@ -590,9 +655,16 @@
         <button class="modal-close-btn" id="passport-modal-close">&times;</button>
       </div>
       <div class="modal-body">
-        <p class="modal-intro">Explore all 5 landmark zones of Pradeep's 3D Archipelago to collect all 5 official Tourist Passport Stamps and unlock your Master Explorer Certificate!</p>
+        <p class="modal-intro">Explore all 8 landmark zones of Pradeep's 3D Archipelago to collect all 8 official Tourist Passport Stamps and unlock your Master Explorer Certificate!</p>
 
         <div class="passport-stamps-grid">
+          <div class="stamp-card locked" id="stamp-hub">
+            <div class="stamp-icon">⚡</div>
+            <h4>3D Portfolio Hub</h4>
+            <p>Visited the central Quest Citadel & 3D Interactive WebGL Hub.</p>
+            <span class="stamp-status">LOCKED</span>
+          </div>
+
           <div class="stamp-card locked" id="stamp-sentinel">
             <div class="stamp-icon">🛡️</div>
             <h4>Sentinel Gatekeeper</h4>
@@ -621,17 +693,38 @@
             <span class="stamp-status">LOCKED</span>
           </div>
 
+          <div class="stamp-card locked" id="stamp-devstarter">
+            <div class="stamp-icon">🐳</div>
+            <h4>Container Master</h4>
+            <p>Launched zero-config devcontainers at the Devstarter Dock.</p>
+            <span class="stamp-status">LOCKED</span>
+          </div>
+
           <div class="stamp-card locked" id="stamp-mentor">
             <div class="stamp-icon">🎓</div>
             <h4>Grand Mentor Badge</h4>
             <p>Visited the 6,000+ Students Mentored Stage & DSA Forest.</p>
             <span class="stamp-status">LOCKED</span>
           </div>
+
+          <div class="stamp-card locked" id="stamp-sorting">
+            <div class="stamp-icon">🎞️</div>
+            <h4>Algorithm Specialist</h4>
+            <p>Analyzed sorting comparisons at the Algorithm Visualizer Arena.</p>
+            <span class="stamp-status">LOCKED</span>
+          </div>
         </div>
 
         <div class="passport-certificate glass-panel">
           <h3>📜 Pradeep's Engineering Explorer Certificate</h3>
-          <p>Explorer Status: <strong id="explorer-rank">Novice Tourist (0/5 Stamps)</strong></p>
+          <p>Explorer Status: <strong id="explorer-rank">Novice Tourist (0/8 Stamps)</strong></p>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="passport-progress" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>ong></p>
           <div class="progress-bar-container">
             <div class="progress-bar-fill" id="passport-progress" style="width: 0%;"></div>
           </div>

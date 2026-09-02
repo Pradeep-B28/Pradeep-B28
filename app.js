@@ -31,7 +31,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. 3D CARD TILT EFFECT ON HOVER
+  // 2. REPOSITORY CATEGORY FILTERING
+  const filterBtns = document.querySelectorAll('.project-filter-bar .filter-btn');
+  const projectCards = document.querySelectorAll('.projects-grid .project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+          card.style.animation = 'fadeInUp 0.4s ease forwards';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // 3. 3D CARD TILT EFFECT ON HOVER
   const tiltCards = document.querySelectorAll('.tilt-card');
 
   tiltCards.forEach(card => {
@@ -54,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. COPY EMAIL TO CLIPBOARD
+  // 4. COPY EMAIL TO CLIPBOARD
   const copyBtn = document.getElementById('copy-email-btn');
   const copyText = document.getElementById('email-btn-text');
 
@@ -76,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. ANIMATED COUNTER ON SCROLL
+  // 5. ANIMATED COUNTER ON SCROLL
   const statNumbers = document.querySelectorAll('.stat-number[data-target]');
   
   if ('IntersectionObserver' in window && statNumbers.length > 0) {
