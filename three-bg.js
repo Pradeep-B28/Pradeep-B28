@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PRADEEP 3D PORTFOLIO - THREE.JS BACKGROUND SCENE (SMOOTH & MEDIUM SLOW)
+   PRADEEP 3D PORTFOLIO - THREE.JS BACKGROUND SCENE (SUBTLE & MEDIUM SLOW)
    ========================================================================== */
 
 (function () {
@@ -25,8 +25,8 @@
   const windowHalfY = window.innerHeight / 2;
 
   document.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX - windowHalfX) * 0.0004;
-    mouseY = (e.clientY - windowHalfY) * 0.0004;
+    mouseX = (e.clientX - windowHalfX) * 0.0003;
+    mouseY = (e.clientY - windowHalfY) * 0.0003;
   });
 
   // 1. PARTICLES DUST
@@ -91,7 +91,7 @@
 
   scene.add(nodeGroup);
 
-  // 3. FLOATING 3D GLASS CUBES (Medium Slow Rotation)
+  // 3. FLOATING 3D GLASS CUBES
   const cubeGroup = new THREE.Group();
   const cubeCount = 10;
   const cubeGeom = new THREE.BoxGeometry(2, 2, 2);
@@ -112,8 +112,8 @@
     );
     cube.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
     cube.userData = {
-      rotX: (Math.random() - 0.5) * 0.003,
-      rotY: (Math.random() - 0.5) * 0.003
+      rotX: (Math.random() - 0.5) * 0.002,
+      rotY: (Math.random() - 0.5) * 0.002
     };
 
     cubeGroup.add(cube);
@@ -121,28 +121,29 @@
 
   scene.add(cubeGroup);
 
-  // ANIMATION LOOP (MEDIUM SLOW & BUTTERY SMOOTH)
+  // ANIMATION LOOP (MEDIUM SLOW & PARALLAX BALANCED)
   function animate() {
     requestAnimationFrame(animate);
 
-    targetX += (mouseX - targetX) * 0.02;
-    targetY += (mouseY - targetY) * 0.02;
+    targetX += (mouseX - targetX) * 0.03;
+    targetY += (mouseY - targetY) * 0.03;
 
-    // Elegant medium-slow background ambient rotations
+    // Elegant constant medium-slow ambient drift
     particleSystem.rotation.y += 0.0002;
     nodeGroup.rotation.y += 0.0003;
-    nodeGroup.rotation.x = targetY * 0.2;
-    nodeGroup.rotation.y += targetX * 0.03;
+
+    // Subtle non-accumulating tilt on vertical mouse shift
+    nodeGroup.rotation.x = targetY * 0.15;
+
+    // Smooth subtle camera parallax shift when mouse moves left/right
+    camera.position.x += (targetX * 1.5 - camera.position.x) * 0.03;
+    camera.position.y += (-targetY * 1.5 - camera.position.y) * 0.03;
+    camera.lookAt(scene.position);
 
     cubeGroup.children.forEach(cube => {
       cube.rotation.x += cube.userData.rotX;
       cube.rotation.y += cube.userData.rotY;
     });
-
-    // Smooth subtle camera drift
-    camera.position.x += (targetX * 2.5 - camera.position.x) * 0.02;
-    camera.position.y += (-targetY * 2.5 - camera.position.y) * 0.02;
-    camera.lookAt(scene.position);
 
     renderer.render(scene, camera);
   }
