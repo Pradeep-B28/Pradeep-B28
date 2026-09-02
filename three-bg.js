@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PRADEEP 3D PORTFOLIO - THREE.JS BACKGROUND SCENE
+   PRADEEP 3D PORTFOLIO - THREE.JS BACKGROUND SCENE (SMOOTH & MEDIUM SLOW)
    ========================================================================== */
 
 (function () {
@@ -25,21 +25,19 @@
   const windowHalfY = window.innerHeight / 2;
 
   document.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX - windowHalfX) * 0.001;
-    mouseY = (e.clientY - windowHalfY) * 0.001;
+    mouseX = (e.clientX - windowHalfX) * 0.0004;
+    mouseY = (e.clientY - windowHalfY) * 0.0004;
   });
 
   // 1. PARTICLES DUST
   const particleCount = 400;
   const particleGeo = new THREE.BufferGeometry();
   const particlePositions = new Float32Array(particleCount * 3);
-  const particleScales = new Float32Array(particleCount);
 
   for (let i = 0; i < particleCount * 3; i += 3) {
     particlePositions[i] = (Math.random() - 0.5) * 80;
     particlePositions[i + 1] = (Math.random() - 0.5) * 80;
     particlePositions[i + 2] = (Math.random() - 0.5) * 80;
-    particleScales[i / 3] = Math.random() * 2;
   }
 
   particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
@@ -55,7 +53,7 @@
   const particleSystem = new THREE.Points(particleGeo, particleMat);
   scene.add(particleSystem);
 
-  // 2. 3D GRAPH NODES & EDGES (Representing Data Structures)
+  // 2. 3D GRAPH NODES & EDGES (Data Structures Network)
   const nodeGroup = new THREE.Group();
   const nodeCount = 28;
   const nodePositions = [];
@@ -73,7 +71,7 @@
     nodePositions.push(new THREE.Vector3(x, y, z));
   }
 
-  // Draw connecting edges between close nodes
+  // Connecting edges between close nodes
   const lineMat = new THREE.LineBasicMaterial({
     color: 0xa855f7,
     transparent: true,
@@ -93,7 +91,7 @@
 
   scene.add(nodeGroup);
 
-  // 3. FLOATING 3D GLASS CUBES (Algorithms Memory Blocks)
+  // 3. FLOATING 3D GLASS CUBES (Medium Slow Rotation)
   const cubeGroup = new THREE.Group();
   const cubeCount = 10;
   const cubeGeom = new THREE.BoxGeometry(2, 2, 2);
@@ -114,8 +112,8 @@
     );
     cube.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
     cube.userData = {
-      rotX: (Math.random() - 0.5) * 0.01,
-      rotY: (Math.random() - 0.5) * 0.01
+      rotX: (Math.random() - 0.5) * 0.003,
+      rotY: (Math.random() - 0.5) * 0.003
     };
 
     cubeGroup.add(cube);
@@ -123,26 +121,27 @@
 
   scene.add(cubeGroup);
 
-  // ANIMATION LOOP
+  // ANIMATION LOOP (MEDIUM SLOW & BUTTERY SMOOTH)
   function animate() {
     requestAnimationFrame(animate);
 
-    targetX += (mouseX - targetX) * 0.05;
-    targetY += (mouseY - targetY) * 0.05;
+    targetX += (mouseX - targetX) * 0.02;
+    targetY += (mouseY - targetY) * 0.02;
 
-    // Slow rotations
-    particleSystem.rotation.y += 0.0008;
-    nodeGroup.rotation.y += 0.001;
-    nodeGroup.rotation.x = targetY * 0.5;
-    nodeGroup.rotation.y += targetX * 0.5;
+    // Elegant medium-slow background ambient rotations
+    particleSystem.rotation.y += 0.0002;
+    nodeGroup.rotation.y += 0.0003;
+    nodeGroup.rotation.x = targetY * 0.2;
+    nodeGroup.rotation.y += targetX * 0.03;
 
     cubeGroup.children.forEach(cube => {
       cube.rotation.x += cube.userData.rotX;
       cube.rotation.y += cube.userData.rotY;
     });
 
-    camera.position.x += (targetX * 5 - camera.position.x) * 0.05;
-    camera.position.y += (-targetY * 5 - camera.position.y) * 0.05;
+    // Smooth subtle camera drift
+    camera.position.x += (targetX * 2.5 - camera.position.x) * 0.02;
+    camera.position.y += (-targetY * 2.5 - camera.position.y) * 0.02;
     camera.lookAt(scene.position);
 
     renderer.render(scene, camera);

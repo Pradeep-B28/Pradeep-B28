@@ -41,7 +41,6 @@
         <a href="#about" class="nav-link">About</a>
         <a href="#journey" class="nav-link">Journey</a>
         <a href="#skills" class="nav-link">Skills</a>
-        <a href="#3d-visualizer" class="nav-link">3D Sandbox</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#impact" class="nav-link">Impact</a>
         <a href="https://www.linkedin.com/in/pradeepb-2k" target="_blank" rel="noopener" class="btn btn-sm btn-primary">LinkedIn</a>
@@ -163,85 +162,6 @@
             <div class="card-icon">⚡</div>
             <h3>Visual & Interactive Tools</h3>
             <p>Creating custom 3D and 2D visualizers for search algorithms, sorting passes, and tree traversals so abstract pointer shifts become crystal clear.</p>
-          </div>
-        </div>
-    <!-- 3D TOURIST WORLD & DEVELOPER QUEST GAME -->
-    <section class="section visualizer-section" id="3d-tourist-world">
-      <div class="section-container">
-        <div class="section-header center">
-          <span class="section-tag">🎮 3D GAME & TOURIST MAP</span>
-          <h2 class="section-title">The Archipelago of Pradeep: <span class="gradient-text">Developer Quest World</span></h2>
-          <p class="section-subtitle">Step into an interactive 3D Tourist Island mapping all 8 of my engineering repositories, flagship projects, and 6,000+ mentored students. Explore 8 landmark zones, solve SQL & Algorithm puzzles, and collect your Tourist Passport stamps!</p>
-        </div>
-
-        <div class="visualizer-wrapper glass-panel">
-          <div class="visualizer-controls">
-            <div class="control-group mode-btns">
-              <button class="viz-btn active" id="btn-mode-world">🏝️ Island Map</button>
-              <button class="viz-btn" id="btn-mode-hub">⚡ Portfolio Hub</button>
-              <button class="viz-btn" id="btn-mode-sentinel">🛡️ Sentinel Citadel</button>
-              <button class="viz-btn" id="btn-mode-ledger">💸 Ledger Vault</button>
-              <button class="viz-btn" id="btn-mode-skyline">🏙️ GIT-viz Skyline</button>
-              <button class="viz-btn" id="btn-mode-relnotes">📝 Rel_Notes</button>
-              <button class="viz-btn" id="btn-mode-devstarter">🐳 Devstarter</button>
-              <button class="viz-btn" id="btn-mode-dsa">🌲 DSA Forest</button>
-              <button class="viz-btn" id="btn-mode-sorting">🎞️ Sorting Arena</button>
-            </div>
-            <div class="control-group action-btns">
-              <button class="btn btn-sm btn-primary" id="btn-guided-tour">🚁 Guided Flyover Tour</button>
-              <button class="btn btn-sm btn-accent" id="btn-passport-toggle">🏆 Tourist Passport (<span id="passport-count">0/8</span>)</button>
-            </div>
-          </div>
-
-          <div class="canvas-3d-box" id="viz-3d-container">
-            <!-- Floating Status Badge -->
-            <div class="viz-overlay-info" id="viz-info">
-              <span class="viz-status-dot"></span>
-              <span id="viz-status-text">Welcome to the Archipelago! Click any landmark, hover over 3D structures, or run Guided Flyover Tour to explore.</span>
-            </div>
-
-            <!-- Guided Tour Subtitle Bar -->
-            <div class="tour-caption-box hidden" id="tour-caption-box">
-              <div class="tour-caption-title" id="tour-caption-title">🏰 Schema Sentinel Citadel</div>
-              <div class="tour-caption-text" id="tour-caption-text">Production-aware PostgreSQL risk analysis engine & GitHub Action PR gatekeeper.</div>
-            </div>
-
-            <!-- SQL Risk Analyzer Mini-Game Overlay -->
-            <div class="sql-game-panel hidden" id="sql-game-panel">
-              <div class="sql-panel-header">
-                <span>🔍 Schema Sentinel SQL Risk Analyzer Station</span>
-                <span class="badge badge-risk-low" id="sql-risk-badge">🟢 LOW RISK</span>
-              </div>
-              <div class="sql-input-row">
-                <select id="sql-preset-select" class="sql-select">
-                  <option value="safe_add_column">SELECT preset query...</option>
-                  <option value="high_drop_table">🔴 HIGH: DROP TABLE users CASCADE;</option>
-                  <option value="high_add_not_null">🔴 HIGH: ALTER TABLE orders ADD COLUMN status INT NOT NULL;</option>
-                  <option value="high_alter_type">🔴 HIGH: ALTER TABLE transactions ALTER COLUMN amount TYPE DECIMAL(15,2);</option>
-                  <option value="med_create_index">🟡 MEDIUM: CREATE INDEX idx_user_email ON users(email);</option>
-                  <option value="low_add_default">🟢 LOW: ALTER TABLE users ADD COLUMN is_active BOOL DEFAULT true;</option>
-                </select>
-                <button class="btn btn-sm btn-primary" id="btn-analyze-sql">Scan 3D Risk</button>
-              </div>
-              <div class="sql-metrics-row" id="sql-metrics-row">
-                <div class="metric-item">Lock Risk: <span id="m-lock">1/10</span></div>
-                <div class="metric-item">Integrity: <span id="m-integrity">1/10</span></div>
-                <div class="metric-item">Compatibility: <span id="m-compat">1/10</span></div>
-                <div class="metric-item">Performance: <span id="m-perf">1/10</span></div>
-              </div>
-              <div class="sql-recommendation" id="sql-recommendation">💡 Status: Select or scan a query above to test database schema risk in 3D.</div>
-            </div>
-          </div>
-
-          <div class="viz-legend">
-            <div class="legend-item"><span class="color-box cyan"></span> Central 3D Hub</div>
-            <div class="legend-item"><span class="color-box blue"></span> Sentinel Citadel</div>
-            <div class="legend-item"><span class="color-box gold"></span> Ledger Vault</div>
-            <div class="legend-item"><span class="color-box purple"></span> GIT-viz Skyline</div>
-            <div class="legend-item"><span class="color-box emerald"></span> Rel_Notes Monolith</div>
-            <div class="legend-item"><span class="color-box yellow"></span> Devstarter Dock</div>
-            <div class="legend-item"><span class="color-box green"></span> DSA Mentorship Forest</div>
-            <div class="legend-item"><span class="color-box pink"></span> Sorting Arena</div>
           </div>
         </div>
       </div>
@@ -647,95 +567,8 @@
     </div>
   </footer>
 
-  <!-- TOURIST PASSPORT MODAL -->
-  <div class="modal-overlay hidden" id="passport-modal">
-    <div class="modal-card glass-panel">
-      <div class="modal-header">
-        <h2>🏆 Developer Tourist Passport & Achievements</h2>
-        <button class="modal-close-btn" id="passport-modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p class="modal-intro">Explore all 8 landmark zones of Pradeep's 3D Archipelago to collect all 8 official Tourist Passport Stamps and unlock your Master Explorer Certificate!</p>
-
-        <div class="passport-stamps-grid">
-          <div class="stamp-card locked" id="stamp-hub">
-            <div class="stamp-icon">⚡</div>
-            <h4>3D Portfolio Hub</h4>
-            <p>Visited the central Quest Citadel & 3D Interactive WebGL Hub.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-sentinel">
-            <div class="stamp-icon">🛡️</div>
-            <h4>Sentinel Gatekeeper</h4>
-            <p>Analyzed SQL migration risks at the Schema Sentinel Citadel.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-ledger">
-            <div class="stamp-icon">💸</div>
-            <h4>Ledger Architect</h4>
-            <p>Explored 0ms Optimistic UI financial graph at the Ledger Vault.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-skyline">
-            <div class="stamp-icon">🏙️</div>
-            <h4>Skyline Navigator</h4>
-            <p>Piloted 3D contribution galaxy at the GIT-viz Observatory.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-relnotes">
-            <div class="stamp-icon">📝</div>
-            <h4>AI Release Scribe</h4>
-            <p>Inspected Groq AI Git commit generator at the Scribe Monolith.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-devstarter">
-            <div class="stamp-icon">🐳</div>
-            <h4>Container Master</h4>
-            <p>Launched zero-config devcontainers at the Devstarter Dock.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-mentor">
-            <div class="stamp-icon">🎓</div>
-            <h4>Grand Mentor Badge</h4>
-            <p>Visited the 6,000+ Students Mentored Stage & DSA Forest.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-sorting">
-            <div class="stamp-icon">🎞️</div>
-            <h4>Algorithm Specialist</h4>
-            <p>Analyzed sorting comparisons at the Algorithm Visualizer Arena.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-        </div>
-
-        <div class="passport-certificate glass-panel">
-          <h3>📜 Pradeep's Engineering Explorer Certificate</h3>
-          <p>Explorer Status: <strong id="explorer-rank">Novice Tourist (0/8 Stamps)</strong></p>
-          <div class="progress-bar-container">
-            <div class="progress-bar-fill" id="passport-progress" style="width: 0%;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>ong></p>
-          <div class="progress-bar-container">
-            <div class="progress-bar-fill" id="passport-progress" style="width: 0%;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Scripts -->
   <script src="three-bg.js"></script>
-  <script src="visualizer-3d.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
