@@ -115,8 +115,9 @@
   let tourTimer = null;
   let animationTime = 0;
 
-  // Passport Stamps State for 8 Repositories
+  // Passport Stamps State for 9 Repositories
   const passportState = {
+    theme: false,
     hub: false,
     sentinel: false,
     ledger: false,
@@ -137,6 +138,7 @@
 
   function getStampName(key) {
     const names = {
+      theme: '3D Theme Architect (Portfolio)',
       hub: '3D Portfolio Hub (Pradeep-B28)',
       sentinel: 'Sentinel Gatekeeper (Schema-Sentinel)',
       ledger: 'Ledger Architect (Ledger_Expense_Tracker)',
@@ -164,14 +166,14 @@
       }
     });
 
-    if (passportCountEl) passportCountEl.innerText = `${count}/8`;
-    if (passportProgressEl) passportProgressEl.style.width = `${(count / 8) * 100}%`;
+    if (passportCountEl) passportCountEl.innerText = `${count}/9`;
+    if (passportProgressEl) passportProgressEl.style.width = `${(count / 9) * 100}%`;
 
     if (explorerRankEl) {
-      if (count === 0) explorerRankEl.innerText = 'Novice Tourist (0/8 Stamps)';
-      else if (count < 4) explorerRankEl.innerText = 'Apprentice Adventurer (' + count + '/8 Stamps)';
-      else if (count < 8) explorerRankEl.innerText = 'Senior Code Explorer (' + count + '/8 Stamps)';
-      else explorerRankEl.innerText = '👑 Master Architect Explorer (8/8 Complete!)';
+      if (count === 0) explorerRankEl.innerText = 'Novice Tourist (0/9 Stamps)';
+      else if (count < 4) explorerRankEl.innerText = 'Apprentice Adventurer (' + count + '/9 Stamps)';
+      else if (count < 9) explorerRankEl.innerText = 'Senior Code Explorer (' + count + '/9 Stamps)';
+      else explorerRankEl.innerText = '👑 Master Architect Explorer (9/9 Complete!)';
     }
   }
 
