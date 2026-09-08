@@ -8,28 +8,24 @@
     <a href="https://pradeep-b28.github.io/Pradeep-B28/"><img src="https://img.shields.io/badge/🌐_3D_Portfolio-Launch_Site-0891B2?style=for-the-badge&logoColor=white" alt="3D Web Portfolio" /></a>
     <a href="https://github.com/Pradeep-B28/Portfolio"><img src="https://img.shields.io/badge/🎭_3D_Theme_Suite-React_Three.js-8B5CF6?style=for-the-badge&logoColor=white" alt="3D Portfolio Theme Suite" /></a>
     <a href="https://github.com/Pradeep-B28/Schema-Sentinel"><img src="https://img.shields.io/badge/🔍_Schema_Sentinel-PostgreSQL_Analyzer-2563EB?style=for-the-badge&logoColor=white" alt="Schema Sentinel" /></a>
-    <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker"><img src="https://img.shields.io/badge/💸_Ledger_Expense_App-MERN_|_PWA_|_Android-6366F1?style=for-the-badge&logoColor=white" alt="Ledger Expense App" /></a>
-    <a href="https://pradeep-b28.github.io/GIT---viz/"><img src="https://img.shields.io/badge/🏙️_GIT--viz_3D_App-3D_Skyline-7C3AED?style=for-the-badge&logoColor=white" alt="GIT-viz 3D Skyline" /></a>
     <a href="https://www.linkedin.com/in/pradeepb-2k"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-    <a href="mailto:pradeepbashaa@gmail.com"><img src="https://img.shields.io/badge/Email-Get_in_touch-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-    <a href="https://github.com/Pradeep-B28"><img src="https://komarev.com/ghpvc/?username=Pradeep-B28&style=for-the-badge&color=0891B2&label=PROFILE+VIEWS" alt="Profile Views" /></a>
   </p>
 </div>
 
 ---
 
-### 🌐 [Launch My 3D Interactive Portfolio](https://pradeep-b28.github.io/Pradeep-B28/)
-> *Explore all 9 open-source repositories, interactive Java & DSA curriculum, full-stack architecture showcases, and 6,000+ student mentorship highlights in a custom WebGL 3D experience.*
+### 🌐 [Click to Experience My 3D Interactive WebGL Portfolio & Sandbox](https://pradeep-b28.github.io/Pradeep-B28/)
+> *Featuring live 3D sorting simulations, binary search tree renders, glassmorphism UI, and interactive curriculum modules.*
 
 ---
 
-## ⚡ Building Confident Problem Solvers & Software Engineers
+## ⚡ Building Confident Problem Solvers & Engineers
 
-I am a **Java and Data Structures & Algorithms Trainer** and **Full-Stack Architect** dedicated to bridging the gap between basic syntax and high-level interview problem-solving. My training methodology turns abstract algorithms into repeatable visual patterns students can naturally apply in interviews and real-world software architecture.
+I am a **Java and Data Structures & Algorithms Trainer** dedicated to bridging the gap between basic syntax and high-level interview problem-solving. My training methodology turns abstract algorithms into repeatable visual patterns students can naturally apply in interviews and real-world software architecture.
 
-- 🎓 **Mentored 6,000+ Students & Engineers** through structured Java, Data Structures, Algorithms, and Full-Stack bootcamps.
-- 💡 **Core Expertise**: Core Java, JVM Memory & GC Tuning, Collections Internals, Multithreading & Concurrency, Dynamic Programming, and MERN Architecture.
-- 🚀 **9 Open-Source & Enterprise Repositories**: Creator of **Portfolio** (6-Theme 3D WebGL Suite), **Schema Sentinel** (PostgreSQL Risk Analyzer), **Ledger** (Enterprise AI Expense Suite), **GIT---viz** (3D Profile Skyline), **Rel_Notes** (AI Release Generator), **Devstarter** (Devcontainers), **JAVA-DSA-Roadmap**, **JAVA-Searching-Sorting-Visualizer**, and **Pradeep-B28 3D Quest Hub**.
+- 🎓 **Mentored 6,000+ Students** through structured Java, Data Structures, and Algorithm bootcamps.
+- 💡 **Specialization**: Core Java, JVM Internals, Collections Framework, Multithreading, DSA, Dynamic Programming, and System Thinking.
+- 🚀 **Open Source & Pedagogical Tools**: Creator of step-by-step roadmaps and interactive visualizers for sorting and graph traversals.
 
 ---
 
@@ -44,75 +40,66 @@ I am a **Java and Data Structures & Algorithms Trainer** and **Full-Stack Archit
 ## 🛠️ Tech Stack & Tooling
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=java,git,github,react,ts,nodejs,express,mongodb,js,html,css,threejs,docker,python,linux,vscode,idea&theme=dark" alt="Java, Git, GitHub, React, TypeScript, Node.js, Express, MongoDB, JS, HTML, CSS, Three.js, Docker, Python, Linux, VS Code, IntelliJ IDEA" />
+  <img src="https://skillicons.dev/icons?i=java,git,github,maven,idea,vscode,linux,docker&theme=dark" alt="Java, Git, GitHub, Maven, IntelliJ IDEA, VS Code, Linux, Docker" />
 </div>
 
 <br />
 
-| Java Foundations | Data Structures & Algorithms | Enterprise Full-Stack & Mobile |
+| Java Foundations | Data Structures & Algorithms | Engineering Workflow |
 | :--- | :--- | :--- |
-| **Core Java** · OOP Principles · Collections | **Arrays & Strings** · Two Pointers · Sliding Window | **MERN Stack** · React 18, Node.js, Express, MongoDB |
-| **JVM Internals** · Memory Layout & GC Tuning | **Trees & Graphs** · BFS, DFS, Dijkstra, Tarjan | **Mobile & PWA** · Capacitor 6, Android Studio, PWA |
-| **Multithreading** · Concurrency & Atomic Locks | **Dynamic Programming** · 1D & 2D Memoization | **AI & WebGL** · Three.js, Groq AI, Shaders & Devcontainers |
+| **Core Java** · OOP Principles · Collections Framework | **Arrays & Strings** · Two Pointers · Sliding Window | **Git & GitHub** · Version Control & CI/CD |
+| **JVM Internals** · Memory Management & GC | **Trees & Graphs** · BFS, DFS, Dijkstra, Tarjan | **Maven & JUnit** · Unit Testing & Build Tools |
+| **Multithreading** · Concurrency & Locks | **Dynamic Programming** · 1D & 2D Memoization | **IntelliJ IDEA & VS Code** · Debugging & Tooling |
 
 ---
 
-## 📌 Featured Flagship Repositories (All 9 Public Repos)
+## 📌 Featured Repositories & Open Source Projects (9 Repositories)
 
 <table>
   <tr>
     <td width="50%" valign="top">
       <h3>🎭 <a href="https://github.com/Pradeep-B28/Portfolio">Portfolio — 3D WebGL Theme Suite</a></h3>
-      <p>Interactive 3D WebGL developer portfolio suite featuring 6 distinct visual themes (Film Studio, Galaxy Solar System, Archaeological Dig, Constellation Star Map, Retro Arcade Cabinet, High-Tech Bank Vault) built with React, Three.js, WebGL shaders, Tailwind CSS, and centralized data architecture.</p>
-      <p><a href="https://github.com/Pradeep-B28/Portfolio"><b>📦 View Repository & Source Code</b></a></p>
+      <p>Interactive 3D WebGL developer portfolio suite featuring 6 distinct visual themes built with React, Three.js, WebGL shaders, Tailwind CSS, and TypeScript.</p>
     </td>
     <td width="50%" valign="top">
-      <h3>⚡ <a href="https://github.com/Pradeep-B28/Pradeep-B28">Pradeep-B28 — 3D Developer Portfolio</a></h3>
-      <p>Official 3D Interactive Portfolio & Quest Archipelago built with HTML5, CSS Glassmorphism, Three.js WebGL, particle physics engine, interactive SQL Risk Analyzer, and 6,000+ student mentorship showcase.</p>
-      <p><a href="https://pradeep-b28.github.io/Pradeep-B28/"><b>🚀 Launch Live 3D Site</b></a> · <a href="https://github.com/Pradeep-B28/Pradeep-B28"><b>📦 Source Code</b></a></p>
+      <h3>🌐 <a href="https://pradeep-b28.github.io/Pradeep-B28/">3D Web Portfolio Site</a></h3>
+      <p>Interactive WebGL 3D web application with real-time 3D algorithm simulations, glassmorphism UI, and curriculum showcase.</p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🎨 <a href="https://github.com/Pradeep-B28/GIT---viz">GIT---viz — 3D Profile & Galaxy Visualizer</a></h3>
-      <p>Turn any GitHub profile into a 3D city skyline, orbital repo galaxy, tech archipelago, or developer duel with WASD drone flight, bloom shaders, and Web Audio melodic synth.</p>
-      <p><a href="https://pradeep-b28.github.io/GIT---viz/"><b>🚀 Launch Live 3D App</b></a> · <a href="https://github.com/Pradeep-B28/GIT---viz"><b>📦 Source Code</b></a></p>
+      <h3>🔍 <a href="https://github.com/Pradeep-B28/Schema-Sentinel">Schema Sentinel</a></h3>
+      <p>Pre-migration risk analysis for PostgreSQL. Detect dangerous ALTER TABLE, DROP, and schema changes before production.</p>
     </td>
     <td width="50%" valign="top">
-      <h3>🔍 <a href="https://github.com/Pradeep-B28/Schema-Sentinel">Schema Sentinel — PostgreSQL Risk Analyzer</a></h3>
-      <p>Production-aware pre-migration risk analysis engine for PostgreSQL. AST SQL parser, safe read-only database profiler, 4-axis risk scoring matrix (0-10), and automated GitHub Action PR gatekeeper.</p>
-      <p><a href="https://github.com/Pradeep-B28/Schema-Sentinel"><b>📦 View Repository & Source Code</b></a></p>
+      <h3>💸 <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker">Ledger Expense Tracker</a></h3>
+      <p>MERN + PWA + Capacitor 6 Android app with 0ms Optimistic UI engine, AI Chatbot Assistant, and multi-currency cloud sync.</p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>💸 <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker">Ledger — Enterprise AI Expense Tracker</a></h3>
-      <p>Market-ready MERN + PWA + Capacitor Android expense tracker with 0ms Optimistic UI engine, adjacent 3-column live dashboard, AI Chatbot Assistant, multi-currency formatting, 5 themes, and bank cloud sync.</p>
-      <p><a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker"><b>📦 View Repository & Source Code</b></a></p>
+      <h3>🏙️ <a href="https://github.com/Pradeep-B28/GIT---viz">GIT---viz 3D Skyline</a></h3>
+      <p>Turn your GitHub profile into an interactive 3D city skyline, repo galaxy, and tech archipelago with WASD drone flight.</p>
     </td>
     <td width="50%" valign="top">
-      <h3>📝 <a href="https://github.com/Pradeep-B28/Rel_Notes">Rel_Notes — AI Release Notes Generator</a></h3>
-      <p>AI-powered release notes generator built with TypeScript and Groq API. Automatically transforms raw Git commit history into clean, formatted markdown release notes in seconds.</p>
-      <p><a href="https://github.com/Pradeep-B28/Rel_Notes"><b>📦 View Repository & Source Code</b></a></p>
+      <h3>📝 <a href="https://github.com/Pradeep-B28/Rel_Notes">Rel_Notes AI Generator</a></h3>
+      <p>AI-powered release notes generator built with TypeScript and Groq API. Automatically transform Git commits into release notes.</p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🐳 <a href="https://github.com/Pradeep-B28/Devstarter">Devstarter — Zero-Config Devcontainers</a></h3>
-      <p>Zero-configuration devcontainer templates for Python, Node, Go, Rust, C++, and Java. Open any repository in VS Code with a single click—no setup required.</p>
-      <p><a href="https://github.com/Pradeep-B28/Devstarter"><b>📦 Explore Templates & Source Code</b></a></p>
+      <h3>🐳 <a href="https://github.com/Pradeep-B28/Devstarter">Devstarter Containers</a></h3>
+      <p>Zero-configuration devcontainer templates for Python, Node, Go, Rust, C++, and Java in VS Code.</p>
     </td>
     <td width="50%" valign="top">
       <h3>🗺️ <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap">Java + DSA Master Roadmap</a></h3>
-      <p>A comprehensive, beginner-to-advanced curriculum mapping out Core Java, Object-Oriented Design, JVM internals, and interview-ready Data Structures & Algorithms.</p>
-      <p><a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap"><b>📖 View Roadmap & Curriculum</b></a></p>
+      <p>A comprehensive, beginner-to-advanced curriculum mapping out Core Java, Object-Oriented Design, and interview-ready DSA.</p>
     </td>
   </tr>
   <tr>
     <td width="100%" colspan="2" valign="top">
       <h3>🎞️ <a href="https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer">Searching & Sorting Visualizer</a></h3>
-      <p>An interactive Java Swing GUI application rendering step-by-step sorting executions (Bubble, Selection, Insertion, Quick, Merge, Heap) and binary search comparisons frame-by-frame.</p>
-      <p><a href="https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer"><b>📦 View Repository & Source Code</b></a></p>
+      <p>An interactive Java Swing GUI application rendering step-by-step sorting executions frame-by-frame.</p>
     </td>
   </tr>
 </table>
