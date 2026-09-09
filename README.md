@@ -6,6 +6,7 @@
 
   <p align="center">
     <a href="https://pradeep-b28.github.io/Pradeep-B28/"><img src="https://img.shields.io/badge/🌐_3D_Portfolio-Launch_Site-0891B2?style=for-the-badge&logoColor=white" alt="3D Web Portfolio" /></a>
+    <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap"><img src="https://img.shields.io/badge/🗺️_JAVA_DSA_Roadmap-Complete_Curriculum-ED8B00?style=for-the-badge&logoColor=white" alt="Java DSA Roadmap" /></a>
     <a href="https://github.com/Pradeep-B28/Portfolio"><img src="https://img.shields.io/badge/🎭_3D_Theme_Suite-React_Three.js-8B5CF6?style=for-the-badge&logoColor=white" alt="3D Portfolio Theme Suite" /></a>
     <a href="https://github.com/Pradeep-B28/Schema-Sentinel"><img src="https://img.shields.io/badge/🔍_Schema_Sentinel-PostgreSQL_Analyzer-2563EB?style=for-the-badge&logoColor=white" alt="Schema Sentinel" /></a>
     <a href="https://www.linkedin.com/in/pradeepb-2k"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
@@ -25,7 +26,7 @@ I am a **Java and Data Structures & Algorithms Trainer** dedicated to bridging t
 
 - 🎓 **Mentored 6,000+ Students** through structured Java, Data Structures, and Algorithm bootcamps.
 - 💡 **Specialization**: Core Java, JVM Internals, Collections Framework, Multithreading, DSA, Dynamic Programming, and System Thinking.
-- 🚀 **Open Source & Pedagogical Tools**: Creator of step-by-step roadmaps and interactive visualizers for sorting and graph traversals.
+- 🚀 **Open Source & Pedagogical Tools**: Creator of step-by-step roadmaps, runnable Java code suites, and interactive visualizers.
 
 ---
 
@@ -58,42 +59,42 @@ I am a **Java and Data Structures & Algorithms Trainer** dedicated to bridging t
 <table>
   <tr>
     <td width="50%" valign="top">
+      <h3>🗺️ <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap">Java + DSA Master Roadmap</a></h3>
+      <p>Structured 4-Phase Curriculum with runnable Java code modules, 15 core problem-solving patterns, and a 100+ LeetCode interview practice checklist.</p>
+    </td>
+    <td width="50%" valign="top">
       <h3>🎭 <a href="https://github.com/Pradeep-B28/Portfolio">Portfolio — 3D WebGL Theme Suite</a></h3>
       <p>Interactive 3D WebGL developer portfolio suite featuring 6 distinct visual themes built with React, Three.js, WebGL shaders, Tailwind CSS, and TypeScript.</p>
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <h3>🌐 <a href="https://pradeep-b28.github.io/Pradeep-B28/">3D Web Portfolio Site</a></h3>
       <p>Interactive WebGL 3D web application with real-time 3D algorithm simulations, glassmorphism UI, and curriculum showcase.</p>
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <h3>🔍 <a href="https://github.com/Pradeep-B28/Schema-Sentinel">Schema Sentinel</a></h3>
       <p>Pre-migration risk analysis for PostgreSQL. Detect dangerous ALTER TABLE, DROP, and schema changes before production.</p>
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <h3>💸 <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker">Ledger Expense Tracker</a></h3>
       <p>MERN + PWA + Capacitor 6 Android app with 0ms Optimistic UI engine, AI Chatbot Assistant, and multi-currency cloud sync.</p>
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <h3>🏙️ <a href="https://github.com/Pradeep-B28/GIT---viz">GIT---viz 3D Skyline</a></h3>
       <p>Turn your GitHub profile into an interactive 3D city skyline, repo galaxy, and tech archipelago with WASD drone flight.</p>
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <h3>📝 <a href="https://github.com/Pradeep-B28/Rel_Notes">Rel_Notes AI Generator</a></h3>
       <p>AI-powered release notes generator built with TypeScript and Groq API. Automatically transform Git commits into release notes.</p>
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <h3>🐳 <a href="https://github.com/Pradeep-B28/Devstarter">Devstarter Containers</a></h3>
       <p>Zero-configuration devcontainer templates for Python, Node, Go, Rust, C++, and Java in VS Code.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🗺️ <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap">Java + DSA Master Roadmap</a></h3>
-      <p>A comprehensive, beginner-to-advanced curriculum mapping out Core Java, Object-Oriented Design, and interview-ready DSA.</p>
     </td>
   </tr>
   <tr>
