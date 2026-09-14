@@ -1,17 +1,26 @@
 <div align="center">
   <!-- Dynamic Header Banner -->
-  <a href="https://reachsoftech.onrender.com/home">
-    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=800&size=28&pause=1000&color=178F7F&center=true&vCenter=true&width=900&lines=Hi%2C+I'm+Pradeep+B+%F0%9F%91%8B;Founder+of+Softech+(Jobs+%26+Courses+Portal);L%26D+Lead+%7C+Java+%26+DSA+Master+Trainer;7%2C500%2B+Students+Mentored;Creator+of+3D+Portfolio+Suite+%26+Schema-Sentinel" alt="Pradeep B - Founder of Softech Header" />
+  <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/">
+    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=800&size=28&pause=1000&color=178F7F&center=true&vCenter=true&width=900&lines=Hi%2C+I'm+Pradeep+B+%F0%9F%91%8B;Founder+of+Softech+(Jobs+%26+Courses+Portal);Creator+of+Interactive+3D+WebGL+Portfolio;7%2C500%2B+Students+Mentored;L%26D+Lead+%7C+Java+%26+DSA+Master+Trainer" alt="Pradeep B - Founder of Softech & 3D Portfolio Creator" />
   </a>
 
   <p align="center">
+    <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/"><img src="https://img.shields.io/badge/🎨_3D_Portfolio-Launch_Interactive_Skyline-00F0FF?style=for-the-badge&logo=three.js&logoColor=white" alt="Launch 3D WebGL Portfolio" /></a>
     <a href="https://reachsoftech.onrender.com/home"><img src="https://img.shields.io/badge/🚀_Softech_Portal-Jobs_%26_Courses-178F7F?style=for-the-badge&logo=render&logoColor=white" alt="Softech Live Website" /></a>
-    <a href="https://github.com/Pradeep-B28/GIT_3D_Portfolio"><img src="https://img.shields.io/badge/🌐_3D_Portfolio-Launch_Site-0891B2?style=for-the-badge&logoColor=white" alt="3D Web Portfolio" /></a>
     <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap"><img src="https://img.shields.io/badge/🗺️_JAVA_DSA_Roadmap-Complete_Curriculum-ED8B00?style=for-the-badge&logoColor=white" alt="Java DSA Roadmap" /></a>
     <a href="https://github.com/Pradeep-B28/Portfolio"><img src="https://img.shields.io/badge/🎭_3D_Theme_Suite-React_Three.js-8B5CF6?style=for-the-badge&logoColor=white" alt="3D Portfolio Theme Suite" /></a>
     <a href="https://www.linkedin.com/in/pradeepb-2k"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   </p>
 </div>
+
+---
+
+### 🎨 [CLICK HERE TO LAUNCH MY INTERACTIVE 3D WEBGL PORTFOLIO & SKYLINE](https://pradeep-b28.github.io/GIT_3D_Portfolio/)
+
+> **🌐 Live 3D Experience & Platform Links:**
+> - 🏙️ **[Launch 3D GitHub Profile Skyline & Galaxy Visualizer](https://pradeep-b28.github.io/GIT_3D_Portfolio/)** *(Real-time Three.js WebGL, commit skyscrapers, repo galaxy, WASD drone flight)*
+> - 🎭 **[Launch Master 3D WebGL Portfolio Suite (6 Themes)](https://pradeep-b28.github.io/Portfolio/)** *(Director's Cut, Cyberpunk Arcade, Security Vault, Relic Archaeologist)*
+> - 🚀 **[Visit Softech Official Website](https://reachsoftech.onrender.com/home)** *(Platform founded by Pradeep B to find jobs and courses)*
 
 ---
 
@@ -61,8 +70,8 @@
       <p><b>Official Website: <a href="https://reachsoftech.onrender.com/home">reachsoftech.onrender.com/home</a></b><br>Enterprise corporate placement-training & job discovery portal founded by Pradeep B. Enables students and candidates to find job opportunities, campus recruitment drives, and technical courses (Java, DSA, Full Stack, MERN, AWS). Built with Python Flask 3.0, Bootstrap 5.3, SQLAlchemy & Admin Suite. <i>(Codebase strictly private & proprietary; downloading prohibited)</i>.</p>
     </td>
     <td width="50%" valign="top">
-      <h3>🎨 <a href="https://github.com/Pradeep-B28/GIT_3D_Portfolio">GIT_3D_Portfolio — 3D Skyline</a></h3>
-      <p>Interactive 3D WebGL GitHub profile visualizer converting commit heatmaps into glowing 3D skylines, repo galaxies, and developer duels with WASD drone navigation. Features Softech platform integration and Founder showcase.</p>
+      <h3>🎨 <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/">GIT_3D_Portfolio — Live 3D Visualizer</a></h3>
+      <p><b>Live 3D App: <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/">pradeep-b28.github.io/GIT_3D_Portfolio</a></b><br>Interactive 3D WebGL GitHub profile visualizer converting commit heatmaps into glowing 3D skylines, repo galaxies, and developer duels with WASD drone navigation. Features Softech platform integration and Founder showcase.</p>
     </td>
   </tr>
   <tr>
@@ -71,8 +80,8 @@
       <p>Structured 4-Phase Placement Curriculum with runnable Java code modules, 15 core problem-solving patterns, and a 100+ LeetCode interview practice checklist adopted across 20+ institution batches.</p>
     </td>
     <td width="50%" valign="top">
-      <h3>🎭 <a href="https://github.com/Pradeep-B28/Portfolio">Portfolio — 3D WebGL Suite</a></h3>
-      <p>Multi-theme 3D WebGL developer portfolio suite featuring 6 distinct visual themes (Vault, Director's Cut, Relic Archaeologist, Cyberpunk Arcade, Celestial StarMap) built with React 18, Three.js, and Tailwind CSS.</p>
+      <h3>🎭 <a href="https://pradeep-b28.github.io/Portfolio/">Portfolio — 3D WebGL Suite (6 Themes)</a></h3>
+      <p><b>Live 3D Suite: <a href="https://pradeep-b28.github.io/Portfolio/">pradeep-b28.github.io/Portfolio</a></b><br>Multi-theme 3D WebGL developer portfolio suite featuring 6 distinct visual themes (Vault, Director's Cut, Relic Archaeologist, Cyberpunk Arcade, Celestial StarMap) built with React 18, Three.js, and Tailwind CSS.</p>
     </td>
   </tr>
   <tr>
@@ -136,5 +145,5 @@
 ---
 
 <div align="center">
-  <i>"Connecting learners and job seekers with industry success through Softech and scalable software engineering."</i>
+  <i>"Connecting learners and job seekers with industry success through Softech and scalable 3D software engineering."</i>
 </div>
