@@ -1,38 +1,69 @@
 <div align="center">
-  <!-- Dynamic Executive Header Banner -->
+
+  <!-- Dynamic Header Banner -->
   <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/">
-    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=800&size=28&pause=1000&color=178F7F&center=true&vCenter=true&width=900&lines=Hi%2C+I'm+Pradeep+B+%F0%9F%91%8B;Founder+of+Softech+(Jobs+%26+Courses+Portal);L%26D+Lead+Architect+%7C+Java+%26+DSA+Master+Trainer;7%2C500%2B+Engineers+Mentored;Creator+of+Interactive+3D+WebGL+Portfolio" alt="Pradeep B - Founder of Softech & 3D WebGL Architect Header" />
+    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=800&size=28&pause=1000&color=178F7F&center=true&vCenter=true&width=950&lines=Hi%2C+I'm+Pradeep+B+%F0%9F%91%8B;I+have+created+a+website+for+Softech+%F0%9F%9A%80;If+u+want+like+this+ping+me!+%F0%9F%93%A9;L%26D+Lead+Architect+%7C+Java+%26+DSA+Master+Trainer;7%2C500%2B+Engineers+Mentored+%7C+3D+WebGL+Creator" alt="Pradeep B - Web Developer for Softech & 3D WebGL Architect Header" />
   </a>
 
   <p align="center">
-    <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/"><img src="https://img.shields.io/badge/🎨_3D_Portfolio-Launch_Interactive_Skyline-00F0FF?style=for-the-badge&logo=three.js&logoColor=white" alt="Launch 3D WebGL Portfolio" /></a>
-    <a href="https://reachsoftech.onrender.com/home"><img src="https://img.shields.io/badge/🚀_Softech_Portal-Jobs_%26_Courses-178F7F?style=for-the-badge&logo=render&logoColor=white" alt="Softech Live Website" /></a>
-    <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap"><img src="https://img.shields.io/badge/🗺️_JAVA_DSA_Roadmap-Complete_Curriculum-ED8B00?style=for-the-badge&logoColor=white" alt="Java DSA Roadmap" /></a>
-    <a href="https://github.com/Pradeep-B28/Portfolio"><img src="https://img.shields.io/badge/🎭_3D_Theme_Suite-React_Three.js-8B5CF6?style=for-the-badge&logoColor=white" alt="3D Portfolio Theme Suite" /></a>
-    <a href="https://www.linkedin.com/in/pradeepb-2k"><img src="https://img.shields.io/badge/LinkedIn-Executive_Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile" /></a>
+    <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/"><img src="https://img.shields.io/badge/🎨_3D_Portfolio-Launch_Skyline-00F0FF?style=for-the-badge&logo=three.js&logoColor=white" alt="Launch 3D WebGL Portfolio" /></a>
+    <a href="https://reachsoftech.onrender.com/home"><img src="https://img.shields.io/badge/🚀_Softech_Portal-Live_Website-178F7F?style=for-the-badge&logo=render&logoColor=white" alt="Softech Live Website" /></a>
+    <a href="mailto:pradeepbashaa@gmail.com"><img src="https://img.shields.io/badge/📩_Ping_Me-Custom_Websites-5FE0C4?style=for-the-badge&logo=gmail&logoColor=black" alt="Ping Me for Custom Websites" /></a>
+    <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap"><img src="https://img.shields.io/badge/🗺️_JAVA_DSA-Complete_Curriculum-ED8B00?style=for-the-badge&logoColor=white" alt="Java DSA Roadmap" /></a>
+    <a href="https://www.linkedin.com/in/pradeepb-2k"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile" /></a>
   </p>
+
 </div>
 
 ---
 
-### 🎨 [CLICK HERE TO LAUNCH MY INTERACTIVE 3D WEBGL PORTFOLIO & SKYLINE](https://pradeep-b28.github.io/GIT_3D_Portfolio/)
-
-> **🌐 Live WebGL Applications & Enterprise Links:**
-> - 🏙️ **[Launch 3D GitHub Profile Skyline & Galaxy Visualizer](https://pradeep-b28.github.io/GIT_3D_Portfolio/)** *(Real-time Three.js WebGL, commit skyscrapers, repo galaxy, WASD drone flight)*
-> - 🎭 **[Launch Master 3D WebGL Portfolio Suite (6 Themes)](https://pradeep-b28.github.io/Portfolio/)** *(Director's Cut, Cyberpunk Arcade, Security Vault, Relic Archaeologist)*
-> - 🚀 **[Visit Softech Official Website](https://reachsoftech.onrender.com/home)** *(Platform founded by Pradeep B to find jobs and courses)*
-> - 🌐 **[Launch Interactive Profile Web App](https://pradeep-b28.github.io/Pradeep-B28/)** *(Full executive profile web app)*
+> [!IMPORTANT]
+> ### 🌐 Custom Web Development & Softech Showcase
+> **I have created a website for Softech** (**[https://reachsoftech.onrender.com/home](https://reachsoftech.onrender.com/home)**).
+> 
+> 💡 **If u want a website like this, ping me!** I design and develop high-performance corporate platforms, interactive 3D WebGL portfolios, and full-stack web applications tailored to your business needs.
 
 ---
 
-### 🏛️ Executive Profile: Pradeep B
+### 🌐 Live WebGL Applications & Enterprise Links
 
-> **Founder of [Softech](https://reachsoftech.onrender.com/home) | Learning & Development Lead Architect | Principal Software Engineer**
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h4>🏙️ <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/">3D GitHub Profile & Skyline Visualizer</a></h4>
+      <p>Real-time Three.js WebGL visualizer transforming commit histories into glowing 3D city skyscrapers, orbital repo galaxies, and WASD drone flight navigation.</p>
+      <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/"><img src="https://img.shields.io/badge/Launch_App-3D_Skyline-00F0FF?style=flat-the-badge" alt="Launch 3D App" /></a>
+    </td>
+    <td width="50%" valign="top">
+      <h4>🚀 <a href="https://reachsoftech.onrender.com/home">Softech Jobs & Courses Portal</a></h4>
+      <p>Official corporate placement web portal created by Pradeep B. Connecting candidate talent with MNC hiring drives and technical courses.</p>
+      <a href="https://reachsoftech.onrender.com/home"><img src="https://img.shields.io/badge/Visit_Site-Softech_Live-178F7F?style=flat-the-badge" alt="Visit Softech" /></a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h4>🎭 <a href="https://pradeep-b28.github.io/Portfolio/">Master 3D Portfolio Suite (6 Themes)</a></h4>
+      <p>Multi-theme 3D WebGL portfolio featuring Cyberpunk Arcade, Security Vault, Relic Archaeologist, and Director's Cut built with React & Three.js.</p>
+      <a href="https://pradeep-b28.github.io/Portfolio/"><img src="https://img.shields.io/badge/Launch_Suite-6_Themes-8B5CF6?style=flat-the-badge" alt="Launch Portfolio Suite" /></a>
+    </td>
+    <td width="50%" valign="top">
+      <h4>🌐 <a href="https://pradeep-b28.github.io/Pradeep-B28/">Interactive Executive Profile Hub</a></h4>
+      <p>Official GitHub Profile web application detailing software architecture, technical mentorship, and open-source project ecosystem.</p>
+      <a href="https://pradeep-b28.github.io/Pradeep-B28/"><img src="https://img.shields.io/badge/Launch_Hub-Profile_App-10B981?style=flat-the-badge" alt="Launch Hub" /></a>
+    </td>
+  </tr>
+</table>
+
+---
+
+### 🏛️ Executive Profile & Technical Leadership
+
+> **Created Website for [Softech](https://reachsoftech.onrender.com/home) (If u want like this ping me!) | Learning & Development Lead Architect | Principal Software Engineer**
 > 
 > I build enterprise software platforms, direct high-performing trainer teams, and engineer interactive 3D WebGL developer tools. At **Softech** (**[https://reachsoftech.onrender.com/home](https://reachsoftech.onrender.com/home)**), job seekers and students find placement recruitment drives, campus bootcamps, and technical courses covering Java & Data Structures, Full Stack, MERN Stack, AWS Cloud, and System Design.
 
 #### 🌟 Key Leadership & Impact Highlights:
-- 🏢 **Founder & Business Ownership**: Engineered the **Softech** corporate platform connecting candidates with corporate hiring drives and technical courses.
+- 🏢 **Softech Website Creation**: Created the official web platform for **Softech** connecting candidates with corporate hiring drives and technical courses. *(If u want like this ping me!)*
 - 🎓 **7,500+ Mentored Candidates**: Led campus-to-corporate placement bootcamps across India's premier engineering campuses (VIT University, SIT Madurai, KSR Institutions), elevating campus placement rates from 70% to 90%.
 - 👥 **Trainer Squad Leadership**: Directed a 25-member team of master trainers across multi-campus technical programs.
 - 💡 **Open-Source Innovation**: Creator of 10 flagship open-source repositories spanning 3D WebGL visualizers, database risk engines, AI release generators, and devcontainers.
@@ -47,7 +78,7 @@
 
 ---
 
-## 🏛️ Executive Capabilities & Technical Stack
+## 🛠️ Tech Stack & Architecture Competencies
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=java,python,js,ts,react,html,css,postgres,mongodb,docker,git,github,vscode,maven,linux&theme=dark" alt="Java, Python, JS, TS, React, Postgres, Docker, Git" />
@@ -55,25 +86,25 @@
 
 <br />
 
-| Founder & Web Engineering | Java & Algorithmic Architecture | DevOps & System Guardrails |
+| 💻 Web Engineering & Custom Sites | ☕ Java & Algorithmic Architecture | 🛡️ DevOps & System Guardrails |
 | :--- | :--- | :--- |
-| **Softech Platform Architect** · Flask · REST APIs | **Core Java (SE/EE)** · JVM Internals · Collections | **Git & GitHub Actions** · CI/CD Automation |
+| **Softech Web Creator** · Flask · REST APIs | **Core Java (SE/EE)** · JVM Internals · Collections | **Git & GitHub Actions** · CI/CD Automation |
 | **Full Stack & MERN** · React.js · Node.js · Express | **Data Structures** · Trees, Graphs, DP, 15 Patterns | **PostgreSQL & SQLite** · Schema Safety & AST |
 | **Interactive 3D WebGL** · Three.js · GLSL Shaders | **System Design & LLD** · Object-Oriented Design | **Docker & Devcontainers** · Polyglot Environments |
 
 ---
 
-## 📌 10 Flagship Repositories Explained (Short & Clear)
+## 📌 10 Flagship Repositories
 
 <table>
   <tr>
     <td width="50%" valign="top">
       <h3>🚀 <a href="https://reachsoftech.onrender.com/home">1. Softech — Jobs & Courses Portal</a></h3>
-      <p><b>Live Platform: <a href="https://reachsoftech.onrender.com/home">reachsoftech.onrender.com/home</a></b><br><b>What it is:</b> The official web portal for Softech, founded by Pradeep B. Enables students and candidates to find job opportunities, campus recruitment drives, and technical courses (Java, DSA, Full Stack, MERN, AWS). Built with Python Flask 3.0, Bootstrap 5.3, SQLAlchemy & Admin Suite. <i>(Codebase strictly private & proprietary; downloading prohibited)</i>.</p>
+      <p><b>Live Platform: <a href="https://reachsoftech.onrender.com/home">reachsoftech.onrender.com/home</a></b><br><b>What it is:</b> The official web portal for Softech. I have created a website for Softech. If u want like this ping me! Enables students and candidates to find job opportunities, campus recruitment drives, and technical courses (Java, DSA, Full Stack, MERN, AWS). Built with Python Flask 3.0, Bootstrap 5.3, SQLAlchemy & Admin Suite. <i>(Codebase strictly private & proprietary; downloading prohibited)</i>.</p>
     </td>
     <td width="50%" valign="top">
       <h3>🎨 <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/">2. GIT_3D_Portfolio — 3D Skyline Visualizer</a></h3>
-      <p><b>Live 3D App: <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/">pradeep-b28.github.io/GIT_3D_Portfolio</a></b><br><b>What it is:</b> Transforms any GitHub profile into an interactive 3D WebGL city skyline, repo galaxy, tech archipelago, or developer duel with WASD drone street view navigation, bloom shaders, Web Audio melodic synth, and Softech Founder showcase.</p>
+      <p><b>Live 3D App: <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/">pradeep-b28.github.io/GIT_3D_Portfolio</a></b><br><b>What it is:</b> Transforms any GitHub profile into an interactive 3D WebGL city skyline, repo galaxy, tech archipelago, or developer duel with WASD drone street view navigation, bloom shaders, Web Audio melodic synth, and Softech showcase.</p>
     </td>
   </tr>
   <tr>
@@ -140,5 +171,15 @@
 ---
 
 <div align="center">
-  <i>"Connecting learners and job seekers with industry success through Softech and scalable 3D software engineering."</i>
+
+### 📩 Want a custom website or 3D WebGL app like this? Ping me!
+
+[![Email](https://img.shields.io/badge/Email-pradeepbashaa%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pradeepbashaa@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Pradeep_B-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pradeepb-2k)
+[![GitHub](https://img.shields.io/badge/GitHub-Pradeep--B28-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Pradeep-B28)
+
+<br />
+
+<i>"Connecting learners and job seekers with industry success through Softech, custom web platforms, and scalable 3D software engineering."</i>
+
 </div>
