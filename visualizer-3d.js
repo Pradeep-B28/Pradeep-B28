@@ -142,7 +142,7 @@
       hub: '3D Portfolio Hub (Pradeep-B28)',
       sentinel: 'Sentinel Gatekeeper (Schema-Sentinel)',
       ledger: 'Ledger Architect (Ledger_Expense_Tracker)',
-      skyline: 'Skyline Navigator (GIT---viz)',
+      skyline: 'Skyline Navigator (GIT_3D_Portfolio)',
       relnotes: 'AI Release Scribe (Rel_Notes)',
       devstarter: 'Container Master (Devstarter)',
       mentor: 'Grand Mentor (JAVA-DSA-Roadmap)',
@@ -332,7 +332,7 @@
   const domeMat = new THREE.MeshStandardMaterial({ color: 0x7c3aed, emissive: 0x6d28d9, emissiveIntensity: 0.5, wireframe: true });
   const dome = new THREE.Mesh(domeGeo, domeMat);
   dome.position.y = 2.5;
-  dome.userData = { mode: 'skyline', title: 'GIT-viz Skyline Observatory', repo: 'GIT---viz', desc: '3D Profile Skyline & Galaxy Visualizer' };
+  dome.userData = { mode: 'skyline', title: 'GIT-viz Skyline Observatory', repo: 'GIT_3D_Portfolio', desc: '3D Profile Skyline & Galaxy Visualizer' };
   skylineGroup.add(dome);
   raycastTargets.push(dome);
 

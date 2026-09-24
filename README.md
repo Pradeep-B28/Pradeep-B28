@@ -10,7 +10,7 @@
     <a href="https://github.com/Pradeep-B28/Portfolio"><img src="https://img.shields.io/badge/🎭_3D_Theme_Suite-React_Three.js-8B5CF6?style=for-the-badge&logoColor=white" alt="3D Portfolio Theme Suite" /></a>
     <a href="https://github.com/Pradeep-B28/Schema-Sentinel"><img src="https://img.shields.io/badge/🔍_Schema_Sentinel-PostgreSQL_Analyzer-2563EB?style=for-the-badge&logoColor=white" alt="Schema Sentinel" /></a>
     <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker"><img src="https://img.shields.io/badge/💸_Ledger_Expense_App-MERN_|_PWA_|_Android-6366F1?style=for-the-badge&logoColor=white" alt="Ledger Expense App" /></a>
-    <a href="https://pradeep-b28.github.io/GIT---viz/"><img src="https://img.shields.io/badge/🏙️_GIT--viz_3D_App-3D_Skyline-7C3AED?style=for-the-badge&logoColor=white" alt="GIT-viz 3D Skyline" /></a>
+    <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/"><img src="https://img.shields.io/badge/🏙️_GIT--viz_3D_App-3D_Skyline-7C3AED?style=for-the-badge&logoColor=white" alt="GIT-viz 3D Skyline" /></a>
     <a href="https://www.linkedin.com/in/pradeepb-2k"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
     <a href="mailto:pradeepbashaa@gmail.com"><img src="https://img.shields.io/badge/Email-Get_in_touch-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
     <a href="https://github.com/Pradeep-B28"><img src="https://komarev.com/ghpvc/?username=Pradeep-B28&style=for-the-badge&color=0891B2&label=PROFILE+VIEWS" alt="Profile Views" /></a>
@@ -77,9 +77,9 @@ I am a **Java and Data Structures & Algorithms Trainer** and **Full-Stack Archit
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🎨 <a href="https://github.com/Pradeep-B28/GIT---viz">GIT---viz — 3D Profile & Galaxy Visualizer</a></h3>
+      <h3>🎨 <a href="https://github.com/Pradeep-B28/GIT_3D_Portfolio">GIT---viz — 3D Profile & Galaxy Visualizer</a></h3>
       <p>Turn any GitHub profile into a 3D city skyline, orbital repo galaxy, tech archipelago, or developer duel with WASD drone flight, bloom shaders, and Web Audio melodic synth.</p>
-      <p><a href="https://pradeep-b28.github.io/GIT---viz/"><b>🚀 Launch Live 3D App</b></a> · <a href="https://github.com/Pradeep-B28/GIT---viz"><b>📦 Source Code</b></a></p>
+      <p><a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/"><b>🚀 Launch Live 3D App</b></a> · <a href="https://github.com/Pradeep-B28/GIT_3D_Portfolio"><b>📦 Source Code</b></a></p>
     </td>
     <td width="50%" valign="top">
       <h3>🔍 <a href="https://github.com/Pradeep-B28/Schema-Sentinel">Schema Sentinel — PostgreSQL Risk Analyzer</a></h3>
