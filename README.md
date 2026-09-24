@@ -1,7 +1,7 @@
 <div align="center">
   <!-- Dynamic Header Banner -->
   <a href="https://pradeep-b28.github.io/Pradeep-B28/">
-    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=800&size=30&pause=1000&color=22D3EE&center=true&vCenter=true&width=850&lines=Hi%2C+I'm+Pradeep+%F0%9F%91%8B;Java+%26+DSA+Trainer+%7C+Full-Stack+Architect;6%2C000%2B+Students+Mentored;Creator+of+Portfolio+(6+3D+Themes)%2C+Schema-Sentinel%2C+Ledger%2C+GIT-viz" alt="Pradeep - Java & DSA Trainer Header" />
+    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=800&size=30&pause=1000&color=22D3EE&center=true&vCenter=true&width=850&lines=Hi%2C+I'm+Pradeep+%F0%9F%91%8B;Java+%26+DSA+Trainer+%7C+Full-Stack+Architect;7%2C500%2B+Students+Mentored;" alt="Pradeep - Java & DSA Trainer Header" />
   </a>
 
   <p align="center">
