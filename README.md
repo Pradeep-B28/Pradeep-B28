@@ -20,7 +20,7 @@
 ---
 
 ### ⚡ Quick Navigation
-**[🌐 3D Interactive Portfolio](https://pradeep-b28.github.io/Pradeep-B28/)** · **[🚀 Softech Placement Portal](https://reachsoftech.onrender.com/home)** · **[👨‍🏫 Master Trainer Bio](#-executive-profile--master-trainer-bio)** · **[🛠️ Tech Matrix](#-core-specialization--technical-matrix)** · **[📌 Featured Repositories](#-featured-repositories-all-10-systems)** · **[📊 GitHub Analytics](#-github-velocity--activity-analytics)** · **[📫 Connect & Hire](#-connect--hire-pradeep)**
+**[🌐 3D Interactive Portfolio](https://pradeep-b28.github.io/Pradeep-B28/)** · **[🚀 Softech Placement Portal](https://reachsoftech.onrender.com/home)** · **[👨‍🏫 Master Trainer Bio](#-executive-profile--master-trainer-bio)** · **[🛠️ Tech Matrix](#-core-specialization--technical-matrix)** · **[📌 Featured Repositories](#-featured-repositories-all-9-public-repos--softech)** · **[📊 GitHub Analytics](#-github-velocity--activity-analytics)** · **[📫 Connect & Hire](#-connect--hire-pradeep)**
 
 ---
 
@@ -44,7 +44,7 @@ I am a **Java and Data Structures & Algorithms Master Trainer**, **Full-Stack Ar
 - 🎓 **Mentored 7,500+ Students & Engineers**: Conducted 100+ intensive bootcamps preparing candidates for Tier-1 technology companies.
 - 💡 **Pedagogy of Intuition**: Focusing on mental models and repeatable visual patterns—Sliding Window, Two Pointers, Monotonic Stacks, Graph Traversals, and Dynamic Programming state transitions.
 - ⚙️ **Deep JVM Internals**: Collections internals (HashMap collision resolution, TreeMap Red-Black trees), Multithreading, Concurrent Locks, Memory Layout, and ZGC/G1GC tuning.
-- 🚀 **10 Enterprise & Open-Source Production Systems**: Spanning 3D WebGL worlds, database migration gatekeepers, AI release tools, MERN apps, and zero-config devcontainers.
+- 🚀 **9 Open-Source Repositories & Softech Enterprise Portal**: Spanning 3D WebGL worlds, database migration gatekeepers, AI release tools, MERN apps, and zero-config devcontainers.
 
 ---
 
@@ -73,7 +73,7 @@ I am a **Java and Data Structures & Algorithms Master Trainer**, **Full-Stack Ar
 
 ---
 
-## 📌 Featured Repositories (All 10 Flagship Systems)
+## 📌 Featured Repositories (All 9 Public Repos & Softech)
 
 <table>
   <tr>
@@ -114,30 +114,23 @@ I am a **Java and Data Structures & Algorithms Master Trainer**, **Full-Stack Ar
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🤖 Mor — Multi-Platform Personal AI Agent</h3>
-      <p>Multi-modal personal AI agent platform featuring a FastAPI backend (Python 3.11, GPT-4o, LangChain, Docker Sandbox, ChromaDB, SQLite), a React Web Application, and a Native Android Application (Kotlin).</p>
-      <p><a href="https://github.com/Pradeep-B28"><b>📦 Explore on GitHub Profile</b></a></p>
-    </td>
-    <td width="50%" valign="top">
       <h3>📝 <a href="https://github.com/Pradeep-B28/Rel_Notes">Rel_Notes — AI Release Notes Generator</a></h3>
       <p>AI-powered release notes generator built with TypeScript and Groq API. Automatically transforms raw Git commit history into clean, formatted markdown release notes in seconds.</p>
       <p><a href="https://github.com/Pradeep-B28/Rel_Notes"><b>📦 View Repository &amp; Source Code</b></a></p>
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <h3>🐳 <a href="https://github.com/Pradeep-B28/Devstarter">Devstarter — Zero-Config Devcontainers</a></h3>
       <p>Zero-configuration devcontainer templates for Python, Node, Go, Rust, C++, and Java. Open any repository in VS Code with a single click—no setup required.</p>
       <p><a href="https://github.com/Pradeep-B28/Devstarter"><b>📦 Explore Templates &amp; Source Code</b></a></p>
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <h3>🗺️ <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap">Java + DSA Master Roadmap</a></h3>
       <p>A comprehensive, beginner-to-advanced curriculum mapping out Core Java, Object-Oriented Design, JVM internals, and interview-ready Data Structures &amp; Algorithms.</p>
       <p><a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap"><b>📖 View Roadmap &amp; Curriculum</b></a></p>
     </td>
-  </tr>
-  <tr>
-    <td width="100%" colspan="2" valign="top">
+    <td width="50%" valign="top">
       <h3>🎞️ <a href="https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer">Searching &amp; Sorting Visualizer</a></h3>
       <p>An interactive Java Swing GUI application rendering step-by-step sorting executions (Bubble, Selection, Insertion, Quick, Merge, Heap) and binary search comparisons frame-by-frame.</p>
       <p><a href="https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer"><b>📦 View Repository &amp; Source Code</b></a></p>
