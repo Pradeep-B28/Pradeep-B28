@@ -9,6 +9,7 @@
   // DOM Elements
   const btnWorld = document.getElementById('btn-mode-world');
   const btnHub = document.getElementById('btn-mode-hub');
+  const btnTheme = document.getElementById('btn-mode-theme');
   const btnSentinel = document.getElementById('btn-mode-sentinel');
   const btnLedger = document.getElementById('btn-mode-ledger');
   const btnSkyline = document.getElementById('btn-mode-skyline');
@@ -99,6 +100,7 @@
     { color: 0x10b981, pos: [-22, 8, 8] },    // Rel_Notes (Emerald)
     { color: 0xeab308, pos: [-12, 8, 22] },   // Devstarter (Yellow)
     { color: 0x059669, pos: [12, 8, 22] },    // DSA Forest (Green)
+    { color: 0x8b5cf6, pos: [0, 8, 16] },     // Theme Suite (Violet)
     { color: 0xec4899, pos: [22, 8, 8] }      // Sorting Arena (Pink)
   ];
 
@@ -253,6 +255,35 @@
   hubRing.position.y = 4.5;
   hubRing.rotation.x = Math.PI / 3;
   hubGroup.add(hubRing);
+
+  // --- LANDMARK 1B: PORTFOLIO 3D THEME SUITE (Zone 9: X=0, Z=16) ---
+  const themeGroup = new THREE.Group();
+  themeGroup.position.set(0, 0, 16);
+  worldGroup.add(themeGroup);
+
+  const baseTheme = new THREE.Mesh(new THREE.CylinderGeometry(5.5, 6, 1.2, 8), islandMat);
+  baseTheme.position.y = 0;
+  themeGroup.add(baseTheme);
+
+  const themePrismGeo = new THREE.IcosahedronGeometry(2.0, 0);
+  const themePrismMat = new THREE.MeshStandardMaterial({
+    color: 0x8b5cf6,
+    emissive: 0x6d28d9,
+    emissiveIntensity: 0.6,
+    wireframe: true
+  });
+  const themePrism = new THREE.Mesh(themePrismGeo, themePrismMat);
+  themePrism.position.y = 4.5;
+  themePrism.userData = { mode: 'theme', title: 'Portfolio: 3D Theme Suite', repo: 'Portfolio', desc: '6 Distinct Visual Themes (Film Studio, Galaxy, Retro Arcade, Bank Vault)' };
+  themeGroup.add(themePrism);
+  raycastTargets.push(themePrism);
+
+  const themeRingGeo = new THREE.TorusGeometry(3.0, 0.08, 16, 32);
+  const themeRingMat = new THREE.MeshBasicMaterial({ color: 0xec4899 });
+  const themeRing = new THREE.Mesh(themeRingGeo, themeRingMat);
+  themeRing.position.y = 4.5;
+  themeRing.rotation.x = Math.PI / 4;
+  themeGroup.add(themeRing);
 
   // --- 3. LANDMARK 2: SCHEMA SENTINEL CITADEL (Zone 2: X=-16, Z=-12) ---
   const sentinelGroup = new THREE.Group();
@@ -471,6 +502,7 @@
 
   // --- 10. CONNECTING BRIDGES / PATHWAYS ---
   const bridges = [
+    [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, 16)],
     [new THREE.Vector3(0, 0, 0), new THREE.Vector3(-16, 0, -12)],
     [new THREE.Vector3(0, 0, 0), new THREE.Vector3(16, 0, -12)],
     [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, -24)],
@@ -487,10 +519,11 @@
     worldGroup.add(bridgeLine);
   });
 
-  // --- CAMERA MOVEMENT & VIEW PRESETS FOR ALL 8 REPOS ---
+  // --- CAMERA MOVEMENT & VIEW PRESETS FOR ALL 9 REPOS ---
   const presetViews = {
-    world: { pos: new THREE.Vector3(0, 28, 42), target: new THREE.Vector3(0, 2, 0), title: '🏝️ The Archipelago of Pradeep', text: 'Overview of all 8 Flagship Repositories. Click any 3D landmark or run Guided Flyover Tour to explore.' },
+    world: { pos: new THREE.Vector3(0, 28, 42), target: new THREE.Vector3(0, 2, 0), title: '🏝️ The Archipelago of Pradeep', text: 'Overview of all 9 Flagship Repositories. Click any 3D landmark or run Guided Flyover Tour to explore.' },
     hub: { pos: new THREE.Vector3(0, 10, 14), target: new THREE.Vector3(0, 4, 0), title: '⚡ Central 3D Portfolio Hub', text: 'Official 3D Interactive Portfolio & Tourist Archipelago built with Three.js, WebGL & CSS Glassmorphism.' },
+    theme: { pos: new THREE.Vector3(0, 10, 26), target: new THREE.Vector3(0, 4, 16), title: '🎭 3D Theme Suite Gallery', text: 'Interactive 3D WebGL developer portfolio suite featuring 6 distinct visual themes (React 18, Three.js, WebGL shaders).' },
     sentinel: { pos: new THREE.Vector3(-16, 10, -4), target: new THREE.Vector3(-16, 5, -12), title: '🛡️ Schema Sentinel Citadel', text: 'Pre-migration risk analysis engine for PostgreSQL. AST SQL parser, 4-axis risk matrix & automated GitHub Action PR gatekeeper.' },
     ledger: { pos: new THREE.Vector3(16, 10, -4), target: new THREE.Vector3(16, 5, -12), title: '💸 Ledger Vault & Bank Tower', text: 'Market-ready MERN + PWA + Capacitor Android expense suite with 0ms Optimistic UI engine and bank cloud sync.' },
     skyline: { pos: new THREE.Vector3(0, 12, -14), target: new THREE.Vector3(0, 4, -24), title: '🏙️ GIT-viz Skyline Observatory', text: 'Transforms GitHub profiles into 3D city skylines & repo galaxies with WASD drone flight and Web Audio melodic synth.' },
@@ -508,13 +541,14 @@
     currentMode = modeKey;
 
     // Deactivate all mode buttons
-    [btnWorld, btnHub, btnSentinel, btnLedger, btnSkyline, btnRelNotes, btnDevstarter, btnDSA, btnSorting].forEach(b => {
+    [btnWorld, btnHub, btnTheme, btnSentinel, btnLedger, btnSkyline, btnRelNotes, btnDevstarter, btnDSA, btnSorting].forEach(b => {
       if (b) b.classList.remove('active');
     });
 
     const activeBtnMap = {
       world: btnWorld,
       hub: btnHub,
+      theme: btnTheme,
       sentinel: btnSentinel,
       ledger: btnLedger,
       skyline: btnSkyline,
@@ -540,6 +574,7 @@
     }
 
     if (modeKey === 'hub') unlockStamp('hub');
+    if (modeKey === 'theme') unlockStamp('theme');
     if (modeKey === 'ledger') unlockStamp('ledger');
     if (modeKey === 'skyline') unlockStamp('skyline');
     if (modeKey === 'relnotes') unlockStamp('relnotes');
@@ -548,8 +583,8 @@
     if (modeKey === 'sorting') unlockStamp('sorting');
   }
 
-  // --- GUIDED TOUR CONTROLLER ACROSS ALL 8 REPOS ---
-  const tourSequence = ['hub', 'sentinel', 'ledger', 'skyline', 'relnotes', 'devstarter', 'dsa', 'sorting'];
+  // --- GUIDED TOUR CONTROLLER ACROSS ALL 9 REPOS ---
+  const tourSequence = ['hub', 'theme', 'sentinel', 'ledger', 'skyline', 'relnotes', 'devstarter', 'dsa', 'sorting'];
 
   function startGuidedTour() {
     isTourActive = true;
@@ -668,6 +703,7 @@
   // --- EVENT LISTENERS FOR MODE BUTTONS ---
   if (btnWorld) btnWorld.addEventListener('click', () => switchMode('world'));
   if (btnHub) btnHub.addEventListener('click', () => switchMode('hub'));
+  if (btnTheme) btnTheme.addEventListener('click', () => switchMode('theme'));
   if (btnSentinel) btnSentinel.addEventListener('click', () => switchMode('sentinel'));
   if (btnLedger) btnLedger.addEventListener('click', () => switchMode('ledger'));
   if (btnSkyline) btnSkyline.addEventListener('click', () => switchMode('skyline'));
@@ -720,6 +756,10 @@
     // 3D Object Animations
     diamondCore.rotation.y += 0.015;
     hubRing.rotation.z += 0.02;
+
+    themePrism.rotation.y += 0.012;
+    themePrism.rotation.x += 0.008;
+    themeRing.rotation.z += 0.018;
 
     dbCore.rotation.y += 0.01;
     shieldRing1.rotation.z += 0.015;
