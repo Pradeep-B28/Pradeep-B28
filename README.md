@@ -199,7 +199,7 @@ Whether you are looking for:
 ## 📄 License & Copyright
 
 ```
-Copyright (c) 2026 Pradeep Basha (Pradeep-B28). All Rights Reserved.
+Copyright (c) 2026 Pradeep (Pradeep-B28). All Rights Reserved.
 
 Licensed under the MIT License. You may freely use, modify, and distribute
 this project under the terms of the MIT license. See the LICENSE file for details.
