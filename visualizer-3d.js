@@ -1,5 +1,7 @@
 /* ==========================================================================
-   PRADEEP 3D PORTFOLIO - THE ARCHIPELAGO OF PRADEEP (3D TOURIST WORLD & GAME)
+   PRADEEP 3D PORTFOLIO - PHOTOREALISTIC ARCHIPELAGO SHOWCASE
+   Features: PBR Materials, ACES Tone Mapping, Soft Shadows, Dynamic Beacons,
+   Reflective Dark Oceanic Floor, and Interactive Project Navigation
    ========================================================================== */
 
 (function () {
@@ -48,19 +50,25 @@
   const height = container.clientHeight;
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x07090e, 0.015);
+  scene.fog = new THREE.FogExp2(0x06090f, 0.016);
 
-  const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
-  const initialCamPos = new THREE.Vector3(0, 28, 42);
+  const camera = new THREE.PerspectiveCamera(48, width / height, 0.1, 1000);
+  const initialCamPos = new THREE.Vector3(0, 26, 40);
   const initialTarget = new THREE.Vector3(0, 2, 0);
   camera.position.copy(initialCamPos);
   camera.lookAt(initialTarget);
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
   renderer.setSize(width, height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  // Photorealistic Tone Mapping
+  if (THREE.ACESFilmicToneMapping) {
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.22;
+  }
   container.appendChild(renderer.domElement);
 
   // Floating HTML Tooltip for 3D Raycasting
@@ -77,35 +85,44 @@
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
-    controls.maxPolarAngle = Math.PI / 2 - 0.05;
-    controls.minDistance = 5;
-    controls.maxDistance = 75;
+    controls.maxPolarAngle = Math.PI / 2.05;
+    controls.minDistance = 6;
+    controls.maxDistance = 80;
   }
 
-  // Lighting System
-  const ambientLight = new THREE.AmbientLight(0x38bdf8, 0.8);
+  // --- Photorealistic Lighting System ---
+  const ambientLight = new THREE.AmbientLight(0x0c1527, 1.4);
   scene.add(ambientLight);
 
-  const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
-  dirLight.position.set(25, 45, 25);
+  const dirLight = new THREE.DirectionalLight(0xffffff, 2.0);
+  dirLight.position.set(30, 50, 30);
   dirLight.castShadow = true;
+  dirLight.shadow.mapSize.width = 2048;
+  dirLight.shadow.mapSize.height = 2048;
+  dirLight.shadow.camera.near = 10;
+  dirLight.shadow.camera.far = 120;
+  dirLight.shadow.camera.left = -35;
+  dirLight.shadow.camera.right = 35;
+  dirLight.shadow.camera.top = 35;
+  dirLight.shadow.camera.bottom = -35;
+  dirLight.shadow.bias = -0.0005;
   scene.add(dirLight);
 
   // Colored Point Lights around Archipelago
   const lights = [
-    { color: 0x22d3ee, pos: [0, 10, 0] },     // Hub (Cyan)
-    { color: 0x3b82f6, pos: [-16, 8, -12] },  // Sentinel (Blue)
-    { color: 0xf59e0b, pos: [16, 8, -12] },   // Ledger (Amber)
-    { color: 0xa855f7, pos: [0, 12, -24] },   // GIT-viz (Purple)
-    { color: 0x10b981, pos: [-22, 8, 8] },    // Rel_Notes (Emerald)
-    { color: 0xeab308, pos: [-12, 8, 22] },   // Devstarter (Yellow)
-    { color: 0x059669, pos: [12, 8, 22] },    // DSA Forest (Green)
-    { color: 0x8b5cf6, pos: [0, 8, 16] },     // Theme Suite (Violet)
-    { color: 0xec4899, pos: [22, 8, 8] }      // Sorting Arena (Pink)
+    { color: 0x22d3ee, pos: [0, 10, 0], intensity: 2.5 },     // Hub (Cyan)
+    { color: 0x3b82f6, pos: [-16, 9, -12], intensity: 2.2 },  // Sentinel (Blue)
+    { color: 0xf59e0b, pos: [16, 9, -12], intensity: 2.2 },   // Ledger (Amber)
+    { color: 0xa855f7, pos: [0, 12, -24], intensity: 2.4 },   // GIT-viz (Purple)
+    { color: 0x10b981, pos: [-22, 9, 8], intensity: 2.0 },    // Rel_Notes (Emerald)
+    { color: 0xeab308, pos: [-12, 9, 22], intensity: 2.0 },   // Devstarter (Yellow)
+    { color: 0x059669, pos: [12, 9, 22], intensity: 2.0 },    // DSA Forest (Green)
+    { color: 0x8b5cf6, pos: [0, 9, 16], intensity: 2.2 },     // Theme Suite (Violet)
+    { color: 0xec4899, pos: [22, 9, 8], intensity: 2.2 }      // Sorting Arena (Pink)
   ];
 
   lights.forEach(l => {
-    const ptLight = new THREE.PointLight(l.color, 2.2, 35);
+    const ptLight = new THREE.PointLight(l.color, l.intensity, 36);
     ptLight.position.set(...l.pos);
     scene.add(ptLight);
   });
@@ -134,14 +151,14 @@
     if (!passportState[key]) {
       passportState[key] = true;
       updatePassportUI();
-      showToastNotification(`🏆 Passport Stamp Unlocked: ${getStampName(key)}!`);
+      showToastNotification(`🏆 Architecture Badge Unlocked: ${getStampName(key)}!`);
     }
   }
 
   function getStampName(key) {
     const names = {
       theme: '3D Theme Architect (Portfolio)',
-      hub: '3D Portfolio Hub (Pradeep-B28)',
+      hub: 'Portfolio Hub (Pradeep-B28)',
       sentinel: 'Sentinel Gatekeeper (Schema-Sentinel)',
       ledger: 'Ledger Architect (Ledger_Expense_Tracker)',
       skyline: 'Skyline Navigator (GIT_3D_Portfolio)',
@@ -150,7 +167,7 @@
       mentor: 'Grand Mentor (JAVA-DSA-Roadmap)',
       sorting: 'Algorithm Specialist (JAVA-Sorting-Visualizer)'
     };
-    return names[key] || 'Explorer Badge';
+    return names[key] || 'Architecture Badge';
   }
 
   function updatePassportUI() {
@@ -163,7 +180,7 @@
           card.classList.remove('locked');
           card.classList.add('unlocked');
           const statusEl = card.querySelector('.stamp-status');
-          if (statusEl) statusEl.innerText = 'UNLOCKED ✓';
+          if (statusEl) statusEl.innerText = 'UNLOCKED ✨';
         }
       }
     });
@@ -172,83 +189,119 @@
     if (passportProgressEl) passportProgressEl.style.width = `${(count / 9) * 100}%`;
 
     if (explorerRankEl) {
-      if (count === 0) explorerRankEl.innerText = 'Novice Tourist (0/9 Stamps)';
-      else if (count < 4) explorerRankEl.innerText = 'Apprentice Adventurer (' + count + '/9 Stamps)';
-      else if (count < 9) explorerRankEl.innerText = 'Senior Code Explorer (' + count + '/9 Stamps)';
+      if (count === 0) explorerRankEl.innerText = 'Apprentice Explorer (0/9 Badges)';
+      else if (count < 4) explorerRankEl.innerText = `Senior Adventurer (${count}/9 Badges)`;
+      else if (count < 9) explorerRankEl.innerText = `Lead Code Explorer (${count}/9 Badges)`;
       else explorerRankEl.innerText = '👑 Master Architect Explorer (9/9 Complete!)';
     }
   }
 
-  function showToastNotification(text) {
-    const toast = document.createElement('div');
-    toast.className = 'toast-notification glass-panel';
-    toast.innerText = text;
-    container.appendChild(toast);
-    setTimeout(() => toast.classList.add('show'), 50);
-    setTimeout(() => {
-      toast.classList.remove('show');
-      setTimeout(() => toast.remove(), 400);
-    }, 3500);
+  function showToastNotification(msg) {
+    let toast = document.getElementById('viz-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'viz-toast';
+      toast.className = 'viz-toast';
+      container.appendChild(toast);
+    }
+    toast.innerText = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3200);
   }
 
-  // --- 1. OCEAN WATER & ISLAND TERRAIN BASE ---
+  // --- 1. PROCEDURAL ARCHIPELAGO WORLD CONTAINER ---
   const worldGroup = new THREE.Group();
   scene.add(worldGroup);
 
-  // Ocean Water Mesh
-  const waterGeo = new THREE.PlaneGeometry(160, 160, 32, 32);
-  waterGeo.rotateX(-Math.PI / 2);
+  // Photorealistic Reflective Dark Oceanic Grid Floor
+  const waterGeo = new THREE.CylinderGeometry(46, 46, 0.4, 64);
   const waterMat = new THREE.MeshStandardMaterial({
-    color: 0x071527,
-    roughness: 0.1,
-    metalness: 0.8,
+    color: 0x050a14,
+    roughness: 0.15,
+    metalness: 0.85,
     transparent: true,
-    opacity: 0.85
+    opacity: 0.94
   });
   const waterMesh = new THREE.Mesh(waterGeo, waterMat);
-  waterMesh.position.y = -0.5;
+  waterMesh.position.y = -0.4;
+  waterMesh.receiveShadow = true;
   worldGroup.add(waterMesh);
 
-  // Common Island Base Material
+  // Concentric Neon Grid Rings on Floor
+  [12, 22, 32, 42].forEach(radius => {
+    const ringGeo = new THREE.RingGeometry(radius - 0.05, radius + 0.05, 64);
+    const ringMat = new THREE.MeshBasicMaterial({ color: 0x1e293b, side: THREE.DoubleSide, transparent: true, opacity: 0.5 });
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.rotation.x = -Math.PI / 2;
+    ring.position.y = -0.18;
+    worldGroup.add(ring);
+  });
+
+  // Floating Atmospheric Stardust Motes
+  const moteGeo = new THREE.BufferGeometry();
+  const moteCount = 180;
+  const motePos = new Float32Array(moteCount * 3);
+  for (let i = 0; i < moteCount * 3; i += 3) {
+    motePos[i] = (Math.random() - 0.5) * 60;
+    motePos[i + 1] = Math.random() * 18 + 0.5;
+    motePos[i + 2] = (Math.random() - 0.5) * 60;
+  }
+  moteGeo.setAttribute('position', new THREE.BufferAttribute(motePos, 3));
+  const moteMat = new THREE.PointsMaterial({ color: 0x38bdf8, size: 0.22, transparent: true, opacity: 0.65, blending: THREE.AdditiveBlending });
+  const motes = new THREE.Points(moteGeo, moteMat);
+  worldGroup.add(motes);
+
+  // Common Island Base Material (Dark Slate PBR)
   const islandMat = new THREE.MeshStandardMaterial({
-    color: 0x0f172a,
-    roughness: 0.7,
-    metalness: 0.2
+    color: 0x0d1525,
+    roughness: 0.35,
+    metalness: 0.6
   });
 
   const pathMat = new THREE.MeshBasicMaterial({
-    color: 0x22d3ee,
-    wireframe: true,
+    color: 0x00f0ff,
     transparent: true,
-    opacity: 0.35
+    opacity: 0.3
   });
 
   const raycastTargets = [];
+
+  // Helper: Beacon Spire
+  function createBeaconSpire(colorHex, height = 18) {
+    const beamGeo = new THREE.CylinderGeometry(0.04, 0.04, height, 8);
+    beamGeo.translate(0, height / 2, 0);
+    const beamMat = new THREE.MeshBasicMaterial({ color: colorHex, transparent: true, opacity: 0.45 });
+    return new THREE.Mesh(beamGeo, beamMat);
+  }
 
   // --- 2. LANDMARK 1: CENTRAL PORTFOLIO HUB (Zone 1: X=0, Z=0) ---
   const hubGroup = new THREE.Group();
   hubGroup.position.set(0, 0, 0);
   worldGroup.add(hubGroup);
 
-  const hubBase = new THREE.Mesh(new THREE.CylinderGeometry(5.5, 6, 1.2, 32), islandMat);
+  const hubBase = new THREE.Mesh(new THREE.CylinderGeometry(5.5, 6.2, 1.2, 32), islandMat);
   hubBase.position.y = 0;
+  hubBase.castShadow = true;
+  hubBase.receiveShadow = true;
   hubGroup.add(hubBase);
+  hubGroup.add(createBeaconSpire(0x22d3ee, 22));
 
   // Central Hologram Diamond Core
   const diamondGeo = new THREE.OctahedronGeometry(1.8, 0);
   const diamondMat = new THREE.MeshStandardMaterial({
     color: 0x22d3ee,
     emissive: 0x0891b2,
-    emissiveIntensity: 0.8,
-    wireframe: true
+    emissiveIntensity: 0.9,
+    metalness: 0.8,
+    roughness: 0.1
   });
   const diamondCore = new THREE.Mesh(diamondGeo, diamondMat);
   diamondCore.position.y = 4.5;
-  diamondCore.userData = { mode: 'hub', title: 'Pradeep-B28 Portfolio Hub', repo: 'Pradeep-B28', desc: '3D Developer Portfolio & Quest World' };
+  diamondCore.castShadow = true;
+  diamondCore.userData = { mode: 'hub', title: 'Pradeep-B28 Portfolio Hub', repo: 'Pradeep-B28', desc: 'Official 3D Developer Portfolio & Web Showcase' };
   hubGroup.add(diamondCore);
   raycastTargets.push(diamondCore);
 
-  // Rotating Ring around Diamond
   const hubRingGeo = new THREE.TorusGeometry(3.2, 0.08, 16, 32);
   const hubRingMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
   const hubRing = new THREE.Mesh(hubRingGeo, hubRingMat);
@@ -261,19 +314,24 @@
   themeGroup.position.set(0, 0, 16);
   worldGroup.add(themeGroup);
 
-  const baseTheme = new THREE.Mesh(new THREE.CylinderGeometry(5.5, 6, 1.2, 8), islandMat);
+  const baseTheme = new THREE.Mesh(new THREE.CylinderGeometry(5.2, 5.8, 1.2, 8), islandMat);
   baseTheme.position.y = 0;
+  baseTheme.castShadow = true;
+  baseTheme.receiveShadow = true;
   themeGroup.add(baseTheme);
+  themeGroup.add(createBeaconSpire(0x8b5cf6, 18));
 
-  const themePrismGeo = new THREE.IcosahedronGeometry(2.0, 0);
+  const themePrismGeo = new THREE.IcosahedronGeometry(1.9, 0);
   const themePrismMat = new THREE.MeshStandardMaterial({
     color: 0x8b5cf6,
     emissive: 0x6d28d9,
-    emissiveIntensity: 0.6,
-    wireframe: true
+    emissiveIntensity: 0.8,
+    metalness: 0.7,
+    roughness: 0.2
   });
   const themePrism = new THREE.Mesh(themePrismGeo, themePrismMat);
   themePrism.position.y = 4.5;
+  themePrism.castShadow = true;
   themePrism.userData = { mode: 'theme', title: 'Portfolio: 3D Theme Suite', repo: 'Portfolio', desc: '6 Distinct Visual Themes (Film Studio, Galaxy, Retro Arcade, Bank Vault)' };
   themeGroup.add(themePrism);
   raycastTargets.push(themePrism);
@@ -290,20 +348,25 @@
   sentinelGroup.position.set(-16, 0, -12);
   worldGroup.add(sentinelGroup);
 
-  const baseSentinel = new THREE.Mesh(new THREE.CylinderGeometry(5.5, 6, 1.2, 6), islandMat);
+  const baseSentinel = new THREE.Mesh(new THREE.CylinderGeometry(5.5, 6, 1.2, 8), islandMat);
   baseSentinel.position.y = 0;
+  baseSentinel.castShadow = true;
+  baseSentinel.receiveShadow = true;
   sentinelGroup.add(baseSentinel);
+  sentinelGroup.add(createBeaconSpire(0x3b82f6, 18));
 
-  const fortressGeo = new THREE.CylinderGeometry(2.5, 3.2, 4.5, 6);
-  const fortressMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.2, metalness: 0.8 });
+  const fortressGeo = new THREE.BoxGeometry(4.2, 2.5, 4.2);
+  const fortressMat = new THREE.MeshStandardMaterial({ color: 0x1e3a8a, metalness: 0.85, roughness: 0.2 });
   const fortress = new THREE.Mesh(fortressGeo, fortressMat);
-  fortress.position.y = 2.8;
+  fortress.position.y = 2.0;
+  fortress.castShadow = true;
   sentinelGroup.add(fortress);
 
   const dbCoreGeo = new THREE.CylinderGeometry(1.4, 1.4, 3, 16);
-  const dbCoreMat = new THREE.MeshStandardMaterial({ color: 0x2563eb, emissive: 0x1d4ed8, emissiveIntensity: 0.6, wireframe: true });
+  const dbCoreMat = new THREE.MeshStandardMaterial({ color: 0x2563eb, emissive: 0x1d4ed8, emissiveIntensity: 0.7, metalness: 0.8, roughness: 0.2 });
   const dbCore = new THREE.Mesh(dbCoreGeo, dbCoreMat);
-  dbCore.position.y = 6.5;
+  dbCore.position.y = 6.2;
+  dbCore.castShadow = true;
   dbCore.userData = { mode: 'sentinel', title: 'Schema Sentinel Citadel', repo: 'Schema-Sentinel', desc: 'PostgreSQL Pre-Migration AST SQL Risk Engine' };
   sentinelGroup.add(dbCore);
   raycastTargets.push(dbCore);
@@ -311,33 +374,32 @@
   const shieldRingGeo = new THREE.TorusGeometry(3.2, 0.08, 16, 32);
   const shieldRingMat = new THREE.MeshBasicMaterial({ color: 0x60a5fa });
   const shieldRing1 = new THREE.Mesh(shieldRingGeo, shieldRingMat);
-  shieldRing1.position.y = 5;
+  shieldRing1.position.y = 5.5;
   shieldRing1.rotation.x = Math.PI / 3;
   sentinelGroup.add(shieldRing1);
 
   const shieldRing2 = new THREE.Mesh(shieldRingGeo, shieldRingMat);
-  shieldRing2.position.y = 6.5;
+  shieldRing2.position.y = 6.8;
   shieldRing2.rotation.x = -Math.PI / 3;
   sentinelGroup.add(shieldRing2);
-
-  const laserMat = new THREE.MeshBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.8 });
-  const laserBeam = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 10, 8), laserMat);
-  laserBeam.position.set(0, 10, 0);
-  sentinelGroup.add(laserBeam);
 
   // --- 4. LANDMARK 3: LEDGER VAULT (Zone 3: X=16, Z=-12) ---
   const ledgerGroup = new THREE.Group();
   ledgerGroup.position.set(16, 0, -12);
   worldGroup.add(ledgerGroup);
 
-  const baseLedger = new THREE.Mesh(new THREE.CylinderGeometry(5.5, 6, 1.2, 6), islandMat);
+  const baseLedger = new THREE.Mesh(new THREE.CylinderGeometry(5.2, 5.8, 1.2, 6), islandMat);
   baseLedger.position.y = 0;
+  baseLedger.castShadow = true;
+  baseLedger.receiveShadow = true;
   ledgerGroup.add(baseLedger);
+  ledgerGroup.add(createBeaconSpire(0xf59e0b, 18));
 
   const ledgerTowerGeo = new THREE.BoxGeometry(3.2, 8.5, 3.2);
-  const glassMat = new THREE.MeshStandardMaterial({ color: 0xf59e0b, metalness: 0.9, roughness: 0.1, transparent: true, opacity: 0.7 });
+  const glassMat = new THREE.MeshPhysicalMaterial({ color: 0xf59e0b, metalness: 0.7, roughness: 0.15, transmission: 0.5, transparent: true, opacity: 0.85 });
   const ledgerTower = new THREE.Mesh(ledgerTowerGeo, glassMat);
   ledgerTower.position.y = 4.8;
+  ledgerTower.castShadow = true;
   ledgerTower.userData = { mode: 'ledger', title: 'Ledger Vault & Tower', repo: 'Ledger_Expense_Tracker', desc: 'MERN + PWA + Capacitor Enterprise AI Expense Suite' };
   ledgerGroup.add(ledgerTower);
   raycastTargets.push(ledgerTower);
@@ -345,7 +407,7 @@
   const coinGroup = new THREE.Group();
   coinGroup.position.y = 10.5;
   const coinGeo = new THREE.IcosahedronGeometry(1.2, 1);
-  const coinMat = new THREE.MeshStandardMaterial({ color: 0xf59e0b, emissive: 0xd97706, emissiveIntensity: 0.7, wireframe: true });
+  const coinMat = new THREE.MeshStandardMaterial({ color: 0xf59e0b, emissive: 0xd97706, emissiveIntensity: 0.8, metalness: 0.9, roughness: 0.1 });
   const mainCoin = new THREE.Mesh(coinGeo, coinMat);
   coinGroup.add(mainCoin);
   ledgerGroup.add(coinGroup);
@@ -355,15 +417,19 @@
   skylineGroup.position.set(0, 0, -24);
   worldGroup.add(skylineGroup);
 
-  const baseSkyline = new THREE.Mesh(new THREE.CylinderGeometry(6.5, 7, 1.2, 8), islandMat);
+  const baseSkyline = new THREE.Mesh(new THREE.CylinderGeometry(6.2, 6.8, 1.2, 8), islandMat);
   baseSkyline.position.y = 0;
+  baseSkyline.castShadow = true;
+  baseSkyline.receiveShadow = true;
   skylineGroup.add(baseSkyline);
+  skylineGroup.add(createBeaconSpire(0xa855f7, 20));
 
   const domeGeo = new THREE.SphereGeometry(2.8, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2);
-  const domeMat = new THREE.MeshStandardMaterial({ color: 0x7c3aed, emissive: 0x6d28d9, emissiveIntensity: 0.5, wireframe: true });
+  const domeMat = new THREE.MeshStandardMaterial({ color: 0x7c3aed, emissive: 0x6d28d9, emissiveIntensity: 0.6, metalness: 0.8, roughness: 0.2 });
   const dome = new THREE.Mesh(domeGeo, domeMat);
   dome.position.y = 2.5;
-  dome.userData = { mode: 'skyline', title: 'GIT-viz Skyline Observatory', repo: 'GIT_3D_Portfolio', desc: '3D Profile Skyline & Galaxy Visualizer' };
+  dome.castShadow = true;
+  dome.userData = { mode: 'skyline', title: 'GIT-viz Skyline Observatory', repo: 'GIT_3D_Portfolio', desc: 'Real-Time 3D GitHub Profile & Repository Analytics Visualizer' };
   skylineGroup.add(dome);
   raycastTargets.push(dome);
 
@@ -377,8 +443,9 @@
         const h = lvl === 0 ? 0.4 : lvl * 1.4 + 1;
         const bGeo = new THREE.BoxGeometry(0.7, h, 0.7);
         bGeo.translate(0, h / 2, 0);
-        const bMesh = new THREE.Mesh(bGeo, new THREE.MeshStandardMaterial({ color: buildingColors[lvl] }));
+        const bMesh = new THREE.Mesh(bGeo, new THREE.MeshStandardMaterial({ color: buildingColors[lvl], metalness: 0.6, roughness: 0.3 }));
         bMesh.position.set(c * 1.1, 0, r * 1.1);
+        bMesh.castShadow = true;
         buildingGroup.add(bMesh);
       }
     }
@@ -390,117 +457,118 @@
   notesGroup.position.set(-22, 0, 8);
   worldGroup.add(notesGroup);
 
-  const baseNotes = new THREE.Mesh(new THREE.CylinderGeometry(5, 5.5, 1.2, 6), islandMat);
+  const baseNotes = new THREE.Mesh(new THREE.CylinderGeometry(5.2, 5.8, 1.2, 6), islandMat);
   baseNotes.position.y = 0;
+  baseNotes.castShadow = true;
+  baseNotes.receiveShadow = true;
   notesGroup.add(baseNotes);
+  notesGroup.add(createBeaconSpire(0x10b981, 18));
 
-  const monolithGeo = new THREE.BoxGeometry(1.8, 7.5, 1);
-  const monolithMat = new THREE.MeshStandardMaterial({ color: 0x10b981, emissive: 0x059669, emissiveIntensity: 0.4, metalness: 0.8 });
+  const monolithGeo = new THREE.BoxGeometry(2.4, 7.5, 1.2);
+  const monolithMat = new THREE.MeshStandardMaterial({ color: 0x10b981, emissive: 0x059669, emissiveIntensity: 0.7, metalness: 0.85, roughness: 0.2 });
   const monolith = new THREE.Mesh(monolithGeo, monolithMat);
-  monolith.position.y = 4.3;
-  monolith.userData = { mode: 'relnotes', title: 'Rel_Notes AI Monolith', repo: 'Rel_Notes', desc: 'AI Release Notes Generator from Git Commits' };
+  monolith.position.y = 4.2;
+  monolith.castShadow = true;
+  monolith.userData = { mode: 'relnotes', title: 'Rel_Notes AI Monolith', repo: 'Rel_Notes', desc: 'AI-Powered Semantic Release Notes & Changelog Generator' };
   notesGroup.add(monolith);
   raycastTargets.push(monolith);
 
-  const crystalGeo = new THREE.OctahedronGeometry(1.2, 0);
-  const crystalMat = new THREE.MeshBasicMaterial({ color: 0x34d399, wireframe: true });
+  // Floating crystal above monolith
+  const crystalGeo = new THREE.OctahedronGeometry(0.9, 0);
+  const crystalMat = new THREE.MeshBasicMaterial({ color: 0x6ee7b7 });
   const crystal = new THREE.Mesh(crystalGeo, crystalMat);
   crystal.position.y = 9.5;
   notesGroup.add(crystal);
 
   // --- 7. LANDMARK 6: DEVSTARTER CONTAINER DOCK (Zone 6: X=-12, Z=22) ---
-  const devstarterGroup = new THREE.Group();
-  devstarterGroup.position.set(-12, 0, 22);
-  worldGroup.add(devstarterGroup);
+  const dockGroup = new THREE.Group();
+  dockGroup.position.set(-12, 0, 22);
+  worldGroup.add(dockGroup);
 
-  const baseDevstarter = new THREE.Mesh(new THREE.CylinderGeometry(5.5, 6, 1.2, 6), islandMat);
-  baseDevstarter.position.y = 0;
-  devstarterGroup.add(baseDevstarter);
+  const baseDock = new THREE.Mesh(new THREE.CylinderGeometry(5.2, 5.8, 1.2, 8), islandMat);
+  baseDock.position.y = 0;
+  baseDock.castShadow = true;
+  baseDock.receiveShadow = true;
+  dockGroup.add(baseDock);
+  dockGroup.add(createBeaconSpire(0xeab308, 18));
 
-  const crateGroup = new THREE.Group();
-  crateGroup.position.y = 1.2;
-  const crateColors = [0xeab308, 0x0284c7, 0xef4444, 0x10b981];
+  const containerColors = [0x3b82f6, 0xef4444, 0x10b981, 0xf59e0b];
+  const dockCrates = new THREE.Group();
+  dockCrates.position.y = 1.0;
   for (let i = 0; i < 4; i++) {
-    const crateGeo = new THREE.BoxGeometry(1.8, 1.2, 1.8);
-    const crateMat = new THREE.MeshStandardMaterial({ color: crateColors[i], metalness: 0.6, roughness: 0.3 });
+    const crateGeo = new THREE.BoxGeometry(1.6, 1.4, 3.0);
+    const crateMat = new THREE.MeshStandardMaterial({ color: containerColors[i % 4], metalness: 0.7, roughness: 0.3 });
     const crate = new THREE.Mesh(crateGeo, crateMat);
-    crate.position.set((i % 2 - 0.5) * 2.2, Math.floor(i / 2) * 1.3 + 0.6, (Math.floor(i / 2) - 0.5) * 1.5);
-    crateGroup.add(crate);
+    crate.position.set((i % 2 - 0.5) * 2.0, Math.floor(i / 2) * 1.5 + 0.8, (i % 2) * 0.5);
+    crate.castShadow = true;
+    dockCrates.add(crate);
   }
-  devstarterGroup.add(crateGroup);
+  dockCrates.userData = { mode: 'devstarter', title: 'Devstarter Container Dock', repo: 'Devstarter', desc: 'Zero-Config Multi-Language Docker Devcontainers' };
+  dockGroup.add(dockCrates);
+  raycastTargets.push(dockCrates);
 
-  const craneArm = new THREE.Mesh(new THREE.BoxGeometry(0.4, 6, 0.4), new THREE.MeshStandardMaterial({ color: 0xf59e0b }));
-  craneArm.position.set(0, 3.5, 0);
-  craneArm.userData = { mode: 'devstarter', title: 'Devstarter Container Dock', repo: 'Devstarter', desc: 'Zero-Config Devcontainer Templates' };
-  devstarterGroup.add(craneArm);
-  raycastTargets.push(craneArm);
-
-  // --- 8. LANDMARK 7: DSA FOREST & MENTORSHIP AMPHITHEATER (Zone 7: X=12, Z=22) ---
+  // --- 8. LANDMARK 7: DSA MENTORSHIP FOREST (Zone 7: X=12, Z=22) ---
   const dsaGroup = new THREE.Group();
   dsaGroup.position.set(12, 0, 22);
   worldGroup.add(dsaGroup);
 
-  const baseDSA = new THREE.Mesh(new THREE.CylinderGeometry(6.5, 7, 1.2, 8), islandMat);
+  const baseDSA = new THREE.Mesh(new THREE.CylinderGeometry(5.5, 6.2, 1.2, 8), islandMat);
   baseDSA.position.y = 0;
+  baseDSA.castShadow = true;
+  baseDSA.receiveShadow = true;
   dsaGroup.add(baseDSA);
+  dsaGroup.add(createBeaconSpire(0x059669, 18));
 
-  const stageGeo = new THREE.CylinderGeometry(3.8, 4.2, 1.4, 16);
-  const stageMat = new THREE.MeshStandardMaterial({ color: 0x1e293b });
-  const stage = new THREE.Mesh(stageGeo, stageMat);
-  stage.position.y = 1.2;
-  stage.userData = { mode: 'dsa', title: 'Mentorship Forest & DSA Stage', repo: 'JAVA-DSA-Roadmap', desc: '6,000+ Students Mentored in Core Java & Algorithms' };
-  dsaGroup.add(stage);
-  raycastTargets.push(stage);
-
-  const treeNodes = [
-    { x: 0, y: 6.5, z: 0 },
-    { x: -2.2, y: 4.2, z: 0 },
-    { x: 2.2, y: 4.2, z: 0 },
-    { x: -3.5, y: 2.2, z: 0 },
-    { x: -0.8, y: 2.2, z: 0 },
-    { x: 0.8, y: 2.2, z: 0 },
-    { x: 3.5, y: 2.2, z: 0 }
-  ];
-
-  const nodeGeo = new THREE.SphereGeometry(0.55, 16, 16);
   const treeMeshGroup = new THREE.Group();
-  treeMeshGroup.position.y = 2;
-
-  treeNodes.forEach(n => {
-    const nMat = new THREE.MeshStandardMaterial({ color: 0x10b981, emissive: 0x059669, emissiveIntensity: 0.3 });
-    const nMesh = new THREE.Mesh(nodeGeo, nMat);
-    nMesh.position.set(n.x, n.y, n.z);
-    treeMeshGroup.add(nMesh);
-  });
+  treeMeshGroup.position.y = 0.8;
+  for (let i = 0; i < 7; i++) {
+    const angle = (i / 7) * Math.PI * 2;
+    const rad = 2.4;
+    const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.22, 1.6, 8), new THREE.MeshStandardMaterial({ color: 0x475569 }));
+    trunk.position.set(Math.cos(angle) * rad, 0.8, Math.sin(angle) * rad);
+    trunk.castShadow = true;
+    const crown = new THREE.Mesh(new THREE.ConeGeometry(0.9, 2.2, 8), new THREE.MeshStandardMaterial({ color: 0x059669, emissive: 0x047857, emissiveIntensity: 0.4 }));
+    crown.position.set(Math.cos(angle) * rad, 2.4, Math.sin(angle) * rad);
+    crown.castShadow = true;
+    treeMeshGroup.add(trunk);
+    treeMeshGroup.add(crown);
+  }
+  const mainStage = new THREE.Mesh(new THREE.CylinderGeometry(1.6, 1.8, 1.0, 16), new THREE.MeshStandardMaterial({ color: 0x10b981, metalness: 0.8, roughness: 0.2 }));
+  mainStage.position.y = 1.0;
+  mainStage.castShadow = true;
+  mainStage.userData = { mode: 'dsa', title: 'DSA & Mentorship Forest', repo: 'JAVA-DSA-Roadmap', desc: '7,500+ Engineers Mentored in Core Java & Algorithms' };
+  dsaGroup.add(mainStage);
   dsaGroup.add(treeMeshGroup);
+  raycastTargets.push(mainStage);
 
-  // --- 9. LANDMARK 8: SORTING VISUALIZER ARENA (Zone 8: X=22, Z=8) ---
-  const sortingGroup = new THREE.Group();
-  sortingGroup.position.set(22, 0, 8);
-  worldGroup.add(sortingGroup);
+  // --- 9. LANDMARK 8: SORTING ARENA (Zone 8: X=22, Z=8) ---
+  const sortGroup = new THREE.Group();
+  sortGroup.position.set(22, 0, 8);
+  worldGroup.add(sortGroup);
 
-  const baseSorting = new THREE.Mesh(new THREE.CylinderGeometry(5.5, 6, 1.2, 6), islandMat);
-  baseSorting.position.y = 0;
-  sortingGroup.add(baseSorting);
+  const baseSort = new THREE.Mesh(new THREE.CylinderGeometry(5.2, 5.8, 1.2, 8), islandMat);
+  baseSort.position.y = 0;
+  baseSort.castShadow = true;
+  baseSort.receiveShadow = true;
+  sortGroup.add(baseSort);
+  sortGroup.add(createBeaconSpire(0xec4899, 18));
 
   const barPillars = [];
-  const barHeights = [1.5, 3.5, 5.0, 2.5, 4.2];
-  const barColors = [0xec4899, 0xf43f5e, 0x8b5cf6, 0x3b82f6, 0x10b981];
-
-  for (let i = 0; i < 5; i++) {
-    const h = barHeights[i];
-    const bGeo = new THREE.BoxGeometry(0.7, h, 0.7);
-    bGeo.translate(0, h / 2, 0);
-    const bMat = new THREE.MeshStandardMaterial({ color: barColors[i], emissive: barColors[i], emissiveIntensity: 0.3 });
-    const bMesh = new THREE.Mesh(bGeo, bMat);
-    bMesh.position.set((i - 2) * 1.0, 0.6, 0);
-    bMesh.userData = { mode: 'sorting', title: 'Searching & Sorting Arena', repo: 'JAVA-Searching-Sorting-Visualizer', desc: 'Interactive Algorithm Step Execution Visualizer' };
-    sortingGroup.add(bMesh);
-    barPillars.push(bMesh);
-    if (i === 2) raycastTargets.push(bMesh);
+  const barGroup = new THREE.Group();
+  barGroup.position.y = 0.8;
+  for (let i = 0; i < 9; i++) {
+    const h = 1.2 + i * 0.55;
+    const bar = new THREE.Mesh(new THREE.BoxGeometry(0.45, h, 0.45), new THREE.MeshStandardMaterial({ color: 0xec4899, emissive: 0xbe185d, emissiveIntensity: 0.5, metalness: 0.7, roughness: 0.2 }));
+    bar.position.set((i - 4) * 0.7, h / 2, 0);
+    bar.castShadow = true;
+    barGroup.add(bar);
+    barPillars.push(bar);
   }
+  barGroup.userData = { mode: 'sorting', title: 'Searching & Sorting Arena', repo: 'JAVA-Searching-Sorting-Visualizer', desc: 'Interactive Algorithm Visualizer & Sorting Simulator' };
+  sortGroup.add(barGroup);
+  raycastTargets.push(barGroup);
 
-  // --- 10. CONNECTING BRIDGES / PATHWAYS ---
+  // --- 10. CONNECTING ENERGY BRIDGES ---
   const bridges = [
     [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, 16)],
     [new THREE.Vector3(0, 0, 0), new THREE.Vector3(-16, 0, -12)],
@@ -521,16 +589,16 @@
 
   // --- CAMERA MOVEMENT & VIEW PRESETS FOR ALL 9 REPOS ---
   const presetViews = {
-    world: { pos: new THREE.Vector3(0, 28, 42), target: new THREE.Vector3(0, 2, 0), title: '🏝️ The Archipelago of Pradeep', text: 'Overview of all 9 Flagship Repositories. Click any 3D landmark or run Guided Flyover Tour to explore.' },
-    hub: { pos: new THREE.Vector3(0, 10, 14), target: new THREE.Vector3(0, 4, 0), title: '⚡ Central 3D Portfolio Hub', text: 'Official 3D Interactive Portfolio & Tourist Archipelago built with Three.js, WebGL & CSS Glassmorphism.' },
-    theme: { pos: new THREE.Vector3(0, 10, 26), target: new THREE.Vector3(0, 4, 16), title: '🎭 3D Theme Suite Gallery', text: 'Interactive 3D WebGL developer portfolio suite featuring 6 distinct visual themes (React 18, Three.js, WebGL shaders).' },
-    sentinel: { pos: new THREE.Vector3(-16, 10, -4), target: new THREE.Vector3(-16, 5, -12), title: '🛡️ Schema Sentinel Citadel', text: 'Pre-migration risk analysis engine for PostgreSQL. AST SQL parser, 4-axis risk matrix & automated GitHub Action PR gatekeeper.' },
-    ledger: { pos: new THREE.Vector3(16, 10, -4), target: new THREE.Vector3(16, 5, -12), title: '💸 Ledger Vault & Bank Tower', text: 'Market-ready MERN + PWA + Capacitor Android expense suite with 0ms Optimistic UI engine and bank cloud sync.' },
-    skyline: { pos: new THREE.Vector3(0, 12, -14), target: new THREE.Vector3(0, 4, -24), title: '🏙️ GIT-viz Skyline Observatory', text: 'Transforms GitHub profiles into 3D city skylines & repo galaxies with WASD drone flight and Web Audio melodic synth.' },
-    relnotes: { pos: new THREE.Vector3(-22, 10, 16), target: new THREE.Vector3(-22, 4, 8), title: '📝 Rel_Notes AI Monolith', text: 'AI-powered release notes generator built with TypeScript and Groq API. Structures Git commits into polished releases.' },
-    devstarter: { pos: new THREE.Vector3(-12, 10, 30), target: new THREE.Vector3(-12, 4, 22), title: '🐳 Devstarter Container Dock', text: 'Zero-configuration devcontainer templates for Python, Node, Go, Rust, C++, and Java. Instant VS Code launch.' },
-    dsa: { pos: new THREE.Vector3(12, 10, 30), target: new THREE.Vector3(12, 4, 22), title: '🌲 Mentorship Forest & DSA Stage', text: '6,000+ Students Mentored across Core Java, JVM internals, multithreading, arrays, graphs & dynamic programming.' },
-    sorting: { pos: new THREE.Vector3(22, 10, 16), target: new THREE.Vector3(22, 4, 8), title: '🎞️ Searching & Sorting Arena', text: 'Interactive Java Swing GUI application rendering sorting steps and binary search comparisons frame-by-frame.' }
+    world: { pos: new THREE.Vector3(0, 26, 40), target: new THREE.Vector3(0, 2, 0), title: 'Archipelago Overview', text: 'Panoramic overview of all 9 engineering systems. Click any 3D landmark or run Guided Flyover Tour to inspect.' },
+    hub: { pos: new THREE.Vector3(0, 10, 14), target: new THREE.Vector3(0, 4, 0), title: 'Central 3D Portfolio Hub', text: 'Official 3D interactive portfolio & developer showcase built with Three.js WebGL & glassmorphism.' },
+    theme: { pos: new THREE.Vector3(0, 10, 26), target: new THREE.Vector3(0, 4, 16), title: '3D Theme Suite Gallery', text: 'Interactive 3D WebGL developer portfolio suite featuring 6 distinct visual themes (React 18, Three.js, WebGL shaders).' },
+    sentinel: { pos: new THREE.Vector3(-16, 10, -4), target: new THREE.Vector3(-16, 5, -12), title: 'Schema Sentinel Citadel', text: 'Pre-migration risk analysis engine for PostgreSQL. AST SQL parser, 4-axis risk matrix & automated GitHub Action PR gatekeeper.' },
+    ledger: { pos: new THREE.Vector3(16, 10, -4), target: new THREE.Vector3(16, 5, -12), title: 'Ledger Vault & Bank Tower', text: 'Market-ready MERN + PWA + Capacitor Android expense suite with 0ms Optimistic UI engine and bank cloud sync.' },
+    skyline: { pos: new THREE.Vector3(0, 12, -14), target: new THREE.Vector3(0, 4, -24), title: 'GIT-viz Skyline Observatory', text: 'Transforms GitHub profiles into 3D city skylines & repo galaxies with WASD drone flight and Web Audio melodic synth.' },
+    relnotes: { pos: new THREE.Vector3(-22, 10, 16), target: new THREE.Vector3(-22, 4, 8), title: 'Rel_Notes AI Monolith', text: 'AI-powered release notes generator built with TypeScript and Groq API. Structures Git commits into polished releases.' },
+    devstarter: { pos: new THREE.Vector3(-12, 10, 30), target: new THREE.Vector3(-12, 4, 22), title: 'Devstarter Container Dock', text: 'Zero-configuration devcontainer templates for Python, Node, Go, Rust, C++, and Java. Instant VS Code launch.' },
+    dsa: { pos: new THREE.Vector3(12, 10, 30), target: new THREE.Vector3(12, 4, 22), title: 'Mentorship Forest & DSA Stage', text: '7,500+ Engineers Mentored across Core Java, JVM internals, multithreading, arrays, graphs & dynamic programming.' },
+    sorting: { pos: new THREE.Vector3(22, 10, 16), target: new THREE.Vector3(22, 4, 8), title: 'Searching & Sorting Arena', text: 'Interactive algorithm visualization application rendering sorting steps and binary search comparisons frame-by-frame.' }
   };
 
   let targetCamPos = camera.position.clone();
@@ -540,7 +608,6 @@
     if (isTourActive && modeKey !== 'tour') stopGuidedTour();
     currentMode = modeKey;
 
-    // Deactivate all mode buttons
     [btnWorld, btnHub, btnTheme, btnSentinel, btnLedger, btnSkyline, btnRelNotes, btnDevstarter, btnDSA, btnSorting].forEach(b => {
       if (b) b.classList.remove('active');
     });
@@ -563,7 +630,7 @@
     targetCamPos.copy(view.pos);
     targetLookAt.copy(view.target);
 
-    if (statusText) statusText.innerText = `Mode: ${view.title} · Navigated`;
+    if (statusText) statusText.innerText = `Navigation: ${view.title} • Active`;
 
     // Show/Hide SQL Game Panel
     if (modeKey === 'sentinel') {
@@ -583,99 +650,128 @@
     if (modeKey === 'sorting') unlockStamp('sorting');
   }
 
-  // --- GUIDED TOUR CONTROLLER ACROSS ALL 9 REPOS ---
-  const tourSequence = ['hub', 'theme', 'sentinel', 'ledger', 'skyline', 'relnotes', 'devstarter', 'dsa', 'sorting'];
+  // --- GUIDED FLYOVER TOUR ---
+  const tourOrder = ['world', 'hub', 'sentinel', 'ledger', 'skyline', 'relnotes', 'devstarter', 'dsa', 'sorting', 'theme'];
 
   function startGuidedTour() {
     isTourActive = true;
     tourIndex = 0;
-    if (btnGuidedTour) btnGuidedTour.innerText = '⏹️ Stop Tour';
+    if (btnGuidedTour) {
+      btnGuidedTour.classList.add('active');
+      btnGuidedTour.innerText = '⏹ Exit Flyover Tour';
+    }
     if (tourCaptionBox) tourCaptionBox.classList.remove('hidden');
-    runTourStep();
+    nextTourStep();
   }
 
   function stopGuidedTour() {
     isTourActive = false;
-    if (tourTimer) clearTimeout(tourTimer);
-    if (btnGuidedTour) btnGuidedTour.innerText = '🚁 Guided Flyover Tour';
+    clearTimeout(tourTimer);
+    if (btnGuidedTour) {
+      btnGuidedTour.classList.remove('active');
+      btnGuidedTour.innerText = '▶ Start Flyover Tour';
+    }
     if (tourCaptionBox) tourCaptionBox.classList.add('hidden');
   }
 
-  function runTourStep() {
+  function nextTourStep() {
     if (!isTourActive) return;
-    const modeKey = tourSequence[tourIndex];
+    const modeKey = tourOrder[tourIndex];
+    switchMode(modeKey);
+
     const view = presetViews[modeKey];
+    if (tourCaptionTitle && tourCaptionText && view) {
+      tourCaptionTitle.innerText = view.title;
+      tourCaptionText.innerText = view.text;
+    }
 
-    targetCamPos.copy(view.pos);
-    targetLookAt.copy(view.target);
-
-    if (tourCaptionTitle) tourCaptionTitle.innerText = view.title;
-    if (tourCaptionText) tourCaptionText.innerText = view.text;
-
-    unlockStamp(modeKey === 'dsa' ? 'mentor' : modeKey);
-
-    tourIndex = (tourIndex + 1) % tourSequence.length;
-    tourTimer = setTimeout(runTourStep, 5000);
+    tourIndex = (tourIndex + 1) % tourOrder.length;
+    tourTimer = setTimeout(nextTourStep, 5000);
   }
 
-  // --- SQL RISK SIMULATOR LOGIC ---
-  const sampleSQLs = {
-    safe_add_column: { query: 'SELECT * FROM users;', risk: 'LOW', lock: 1, integrity: 1, compat: 1, perf: 1, color: 0x10b981, rec: '✅ Safe standard query — no schema lock or risk.' },
-    high_drop_table: { query: 'DROP TABLE users CASCADE;', risk: 'HIGH', lock: 6, integrity: 10, compat: 10, perf: 4, color: 0xef4444, rec: '❌ DROP TABLE is irreversible! Rename & backup first before dropping.' },
-    high_add_not_null: { query: 'ALTER TABLE orders ADD COLUMN status INT NOT NULL;', risk: 'HIGH', lock: 8, integrity: 9, compat: 7, perf: 5, color: 0xef4444, rec: '❌ Adding NOT NULL column without DEFAULT will abort on existing rows.' },
-    high_alter_type: { query: 'ALTER TABLE transactions ALTER COLUMN amount TYPE DECIMAL(15,2);', risk: 'HIGH', lock: 9, integrity: 8, compat: 8, perf: 6, color: 0xef4444, rec: '❌ Data type conversion triggers a full table rewrite lock on large tables.' },
-    med_create_index: { query: 'CREATE INDEX idx_user_email ON users(email);', risk: 'MEDIUM', lock: 6, integrity: 1, compat: 1, perf: 5, color: 0xf59e0b, rec: '🟡 Lock risk on write traffic. Use CREATE INDEX CONCURRENTLY for zero-downtime.' },
-    low_add_default: { query: 'ALTER TABLE users ADD COLUMN is_active BOOL DEFAULT true;', risk: 'LOW', lock: 2, integrity: 1, compat: 1, perf: 2, color: 0x10b981, rec: '✅ Adding column with DEFAULT is fast & safe in modern PostgreSQL.' }
+  // --- SQL GAME PANEL LOGIC (SCHEMA SENTINEL SIMULATOR) ---
+  const sqlPresets = {
+    drop_column: {
+      sql: 'ALTER TABLE users DROP COLUMN email;',
+      lock: 'ACCESS EXCLUSIVE (High)',
+      integrity: 'Critical (Data Loss)',
+      compat: 'Breaking Change',
+      perf: 'Table Rewrite Blocked',
+      risk: 'CRITICAL',
+      badgeClass: 'risk-critical',
+      rec: 'Zero downtime deployment requires deprecating column in code first, then dropping in subsequent release.'
+    },
+    add_not_null: {
+      sql: 'ALTER TABLE orders ADD COLUMN amount numeric NOT NULL;',
+      lock: 'ACCESS EXCLUSIVE (High)',
+      integrity: 'High (Constraint Violation)',
+      compat: 'Breaking Change',
+      perf: 'Full Table Scan & Rewrite',
+      risk: 'HIGH',
+      badgeClass: 'risk-high',
+      rec: 'Add column as NULLABLE, backfill rows in batches, then add NOT NULL with VALIDATE CONSTRAINT.'
+    },
+    create_index: {
+      sql: 'CREATE INDEX idx_orders_customer ON orders (customer_id);',
+      lock: 'SHARE LOCK (Medium)',
+      integrity: 'Safe',
+      compat: 'Backwards Compatible',
+      perf: 'Writes Blocked on Large Table',
+      risk: 'MEDIUM',
+      badgeClass: 'risk-medium',
+      rec: 'Always use CREATE INDEX CONCURRENTLY in production to avoid blocking writes.'
+    },
+    concurrent_index: {
+      sql: 'CREATE INDEX CONCURRENTLY idx_users_active ON users (status);',
+      lock: 'SHARE UPDATE EXCLUSIVE (Minimal)',
+      integrity: 'Safe',
+      compat: 'Non-breaking',
+      perf: 'Zero Write Blocking',
+      risk: 'LOW (PRODUCTION SAFE)',
+      badgeClass: 'risk-low',
+      rec: 'Safe for production. Reads and writes continue uninterrupted during background build.'
+    }
   };
 
   function runSQLAnalysis() {
-    const key = sqlPresetSelect ? sqlPresetSelect.value : 'safe_add_column';
-    const data = sampleSQLs[key] || sampleSQLs.safe_add_column;
-
-    if (mLock) mLock.innerText = `${data.lock}/10`;
-    if (mIntegrity) mIntegrity.innerText = `${data.integrity}/10`;
-    if (mCompat) mCompat.innerText = `${data.compat}/10`;
-    if (mPerf) mPerf.innerText = `${data.perf}/10`;
-    if (sqlRec) sqlRec.innerText = `💡 Recommendation: ${data.rec}`;
+    const val = sqlPresetSelect ? sqlPresetSelect.value : 'drop_column';
+    const data = sqlPresets[val] || sqlPresets.drop_column;
 
     if (sqlRiskBadge) {
-      sqlRiskBadge.className = 'badge ';
-      if (data.risk === 'HIGH') {
-        sqlRiskBadge.classList.add('badge-risk-high');
-        sqlRiskBadge.innerText = '🔴 HIGH RISK';
-      } else if (data.risk === 'MEDIUM') {
-        sqlRiskBadge.classList.add('badge-risk-med');
-        sqlRiskBadge.innerText = '🟡 MEDIUM RISK';
-      } else {
-        sqlRiskBadge.classList.add('badge-risk-low');
-        sqlRiskBadge.innerText = '🟢 LOW RISK';
-      }
+      sqlRiskBadge.innerText = data.risk;
+      sqlRiskBadge.className = `risk-badge ${data.badgeClass}`;
     }
+    if (mLock) mLock.innerText = data.lock;
+    if (mIntegrity) mIntegrity.innerText = data.integrity;
+    if (mCompat) mCompat.innerText = data.compat;
+    if (mPerf) mPerf.innerText = data.perf;
+    if (sqlRec) sqlRec.innerText = data.rec;
 
-    laserMat.color.setHex(data.color);
     unlockStamp('sentinel');
-    showToastNotification(`🔍 Schema Sentinel Scan: ${data.risk} RISK Detected!`);
   }
 
-  // --- 3D RAYCASTING & INTERACTIVE HOVER TOOLTIP ---
+  // --- RAYCASTING & INTERACTION ---
   const raycaster = new THREE.Raycaster();
   const mouse = new THREE.Vector2();
 
-  function onPointerMove(e) {
+  function onPointerMove(event) {
     const rect = renderer.domElement.getBoundingClientRect();
-    mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 
     raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObjects(raycastTargets);
+    const intersects = raycaster.intersectObjects(raycastTargets, true);
 
     if (intersects.length > 0) {
-      const targetObj = intersects[0].object;
-      const data = targetObj.userData;
-      if (data && data.title) {
-        tooltipEl.innerHTML = `<strong>${data.title}</strong><br/><span style="color:#94a3b8; font-size:0.75rem;">Repo: ${data.repo}</span><br/><span style="color:#38bdf8; font-size:0.75rem;">${data.desc}</span>`;
-        tooltipEl.style.left = `${e.clientX - rect.left + 15}px`;
-        tooltipEl.style.top = `${e.clientY - rect.top + 15}px`;
+      let targetObj = intersects[0].object;
+      while (targetObj && !targetObj.userData.title && targetObj.parent) {
+        targetObj = targetObj.parent;
+      }
+
+      if (targetObj && targetObj.userData && targetObj.userData.title) {
+        tooltipEl.innerHTML = `<strong>${targetObj.userData.title}</strong><br/><span>${targetObj.userData.desc}</span>`;
+        tooltipEl.style.left = `${event.clientX - rect.left + 15}px`;
+        tooltipEl.style.top = `${event.clientY - rect.top + 15}px`;
         tooltipEl.classList.remove('hidden');
         renderer.domElement.style.cursor = 'pointer';
         return;
@@ -686,18 +782,26 @@
     renderer.domElement.style.cursor = 'default';
   }
 
-  function onPointerClick() {
+  function onPointerClick(event) {
+    const rect = renderer.domElement.getBoundingClientRect();
+    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
     raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObjects(raycastTargets);
+    const intersects = raycaster.intersectObjects(raycastTargets, true);
+
     if (intersects.length > 0) {
-      const data = intersects[0].object.userData;
-      if (data && data.mode) {
-        switchMode(data.mode);
+      let targetObj = intersects[0].object;
+      while (targetObj && !targetObj.userData.mode && targetObj.parent) {
+        targetObj = targetObj.parent;
+      }
+      if (targetObj && targetObj.userData && targetObj.userData.mode) {
+        switchMode(targetObj.userData.mode);
       }
     }
   }
 
-  renderer.domElement.addEventListener('mousemove', onPointerMove);
+  renderer.domElement.addEventListener('pointermove', onPointerMove);
   renderer.domElement.addEventListener('click', onPointerClick);
 
   // --- EVENT LISTENERS FOR MODE BUTTONS ---
@@ -753,7 +857,7 @@
       camera.lookAt(targetLookAt);
     }
 
-    // 3D Object Animations
+    // 3D Object Harmonic Rotations & Levitation
     diamondCore.rotation.y += 0.015;
     hubRing.rotation.z += 0.02;
 
@@ -783,6 +887,9 @@
       bar.scale.set(1, Math.max(0.3, scaleY), 1);
     });
 
+    // Motes subtle vertical drift
+    motes.rotation.y += 0.0005;
+
     renderer.render(scene, camera);
   }
 
@@ -797,6 +904,6 @@
     renderer.setSize(newW, newH);
   });
 
-  // Initial Passport Sync
+  // Initial Badge Sync
   updatePassportUI();
 })();

@@ -100,44 +100,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 2. NAVBAR SCROLL EFFECT & MOBILE MENU TOGGLE
+  // 2. MOBILE NAVIGATION DRAWER
   // --------------------------------------------------------------------------
-  const navbar = document.querySelector('.navbar');
   const mobileToggle = document.getElementById('mobile-toggle');
   const navLinks = document.getElementById('nav-links');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-
   if (mobileToggle && navLinks) {
     mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
       mobileToggle.classList.toggle('active');
+      navLinks.classList.toggle('open');
       playSfx('click');
     });
 
-    navLinks.querySelectorAll('a').forEach(link => {
+    document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
         mobileToggle.classList.remove('active');
-        playSfx('click');
+        navLinks.classList.remove('open');
       });
     });
   }
 
   // --------------------------------------------------------------------------
-  // 3. HERO CODE TERMINAL INTERACTIVE RUNNER & TABS
+  // 3. INTERACTIVE CODE TERMINAL WINDOW
   // --------------------------------------------------------------------------
   const termTabs = document.querySelectorAll('.term-tab');
   const termCodeBodies = {
-    'java': document.getElementById('code-body-java'),
-    'json': document.getElementById('code-body-json'),
-    'yaml': document.getElementById('code-body-yaml')
+    java: document.getElementById('code-body-java'),
+    json: document.getElementById('code-body-json'),
+    yaml: document.getElementById('code-body-yaml')
   };
   const btnRunCode = document.getElementById('btn-run-code');
   const btnCopyCode = document.getElementById('btn-copy-code');
@@ -145,9 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   termTabs.forEach(tab => {
     tab.addEventListener('click', () => {
+      const targetLang = tab.getAttribute('data-tab');
       termTabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-      const targetLang = tab.getAttribute('data-tab');
 
       Object.keys(termCodeBodies).forEach(lang => {
         if (termCodeBodies[lang]) {
@@ -162,17 +152,17 @@ document.addEventListener('DOMContentLoaded', () => {
     btnRunCode.addEventListener('click', () => {
       playSfx('run');
       btnRunCode.disabled = true;
-      btnRunCode.innerHTML = '⚡ Compiling & Executing...';
+      btnRunCode.innerHTML = '⚡ Compiling &amp; Executing...';
 
       consoleOutput.innerHTML = '<span class="console-prompt">&gt;</span> <span class="code-comment">Compiling PradeepTrainer.java with OpenJDK 21...</span>';
 
       setTimeout(() => {
         playSfx('success');
         consoleOutput.innerHTML = `
-          <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#10b981;">[OK] Build Successful (12ms) · JVM Heap Target: 1024MB · GC: ZGC Active</span></div>
-          <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#22d3ee;">[TRAINER] Pradeep B. active · 7,500+ Engineers Mentored in Core Java &amp; DSA</span></div>
-          <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#5fe0c4;">[ENTERPRISE] Softech Portal active: https://reachsoftech.onrender.com/home</span></div>
-          <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#a855f7;">[FLAGSHIP] 9 3D WebGL Worlds &amp; Systems Deployed · 100% Placement Intuition</span></div>
+          <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#10b981;">[OK] Build Successful (12ms) • JVM Heap Target: 1024MB • GC: ZGC Active</span></div>
+          <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#22d3ee;">[TRAINER] Pradeep B. active • 7,500+ Engineers Mentored in Core Java &amp; DSA</span></div>
+          <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#5fe0c4;">[WEB PLATFORM] Softech Portal active: https://reachsoftech.onrender.com/home</span></div>
+          <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#a855f7;">[FLAGSHIP] 9 3D WebGL Systems &amp; Repositories Live • 100% Placement Ready</span></div>
         `;
         btnRunCode.disabled = false;
         btnRunCode.innerHTML = '▶ Run Code';
@@ -188,86 +178,97 @@ document.addEventListener('DOMContentLoaded', () => {
       const textToCopy = activeBody ? activeBody.innerText : '';
 
       navigator.clipboard.writeText(textToCopy).then(() => {
-        playSfx('click');
+        playSfx('success');
         const origText = btnCopyCode.innerText;
         btnCopyCode.innerText = 'Copied ✓';
         btnCopyCode.style.color = '#10b981';
+
         setTimeout(() => {
           btnCopyCode.innerText = origText;
           btnCopyCode.style.color = '';
         }, 2000);
+      }).catch(err => {
+        console.error('Copy failed', err);
       });
     });
   }
 
   // --------------------------------------------------------------------------
-  // 4. LIVE INTERACTIVE ALGORITHM VISUALIZER
+  // 4. LIVE ALGORITHM VISUALIZER PLAYGROUND
   // --------------------------------------------------------------------------
   const algoTabBtns = document.querySelectorAll('.algo-tab-btn');
-  const algoContainer = document.getElementById('algo-bars-container');
-  const btnStepAlgo = document.getElementById('btn-step-algo');
-  const btnPlayAlgo = document.getElementById('btn-play-algo');
-  const btnResetAlgo = document.getElementById('btn-reset-algo');
-  const btnRandomAlgo = document.getElementById('btn-random-algo');
-  const algoTargetInput = document.getElementById('algo-target-input');
-  const algoStatusMsg = document.getElementById('algo-status-message');
-  const algoComplexityEl = document.getElementById('algo-complexity');
-  const algoCompCountEl = document.getElementById('algo-comp-count');
+  const algoDisplay = document.getElementById('algo-display-area');
+  const algoStatusMsg = document.getElementById('algo-status-msg');
   const algoCodeContent = document.getElementById('algo-code-content');
+  const algoComplexityEl = document.getElementById('algo-complexity-badge');
+  const algoCompCountEl = document.getElementById('algo-comp-count');
+  const algoTargetInput = document.getElementById('algo-target-input');
+
+  const btnStepAlgo = document.getElementById('btn-algo-step');
+  const btnPlayAlgo = document.getElementById('btn-algo-play');
+  const btnResetAlgo = document.getElementById('btn-algo-reset');
+  const btnRandomAlgo = document.getElementById('btn-algo-random');
 
   let currentAlgo = 'binarySearch';
-  let algoArray = [12, 19, 25, 34, 42, 55, 68, 77, 85, 93];
-  let targetVal = 55;
-  let algoTimer = null;
   let isAlgoPlaying = false;
+  let algoTimer = null;
   let algoComparisons = 0;
 
   // Binary Search State
-  let bsLow = 0, bsHigh = algoArray.length - 1, bsMid = -1, bsFound = false;
+  let algoArray = [12, 19, 25, 34, 42, 55, 68, 77, 85, 93];
+  let targetVal = 55;
+  let bsLow = 0;
+  let bsHigh = algoArray.length - 1;
+  let bsMid = -1;
+  let bsFound = false;
 
   // Two Pointers State
-  let tpLeft = 0, tpRight = algoArray.length - 1, tpFound = false;
+  let tpLeft = 0;
+  let tpRight = algoArray.length - 1;
+  let tpFound = false;
 
   // Bubble Sort State
   let bubbleArray = [48, 14, 82, 29, 65, 19, 91, 37];
-  let bI = 0, bJ = 0, bSwapped = false, bSorted = false;
+  let bI = 0;
+  let bJ = 0;
+  let bSwapped = false;
+  let bSorted = false;
 
   function renderAlgoDisplay() {
+    const algoContainer = document.getElementById('algo-display-area');
     if (!algoContainer) return;
     algoContainer.innerHTML = '';
 
     if (currentAlgo === 'binarySearch') {
-      const maxVal = Math.max(...algoArray);
       algoArray.forEach((val, idx) => {
         const node = document.createElement('div');
-        node.className = 'algo-elem-node';
-        const heightPercent = Math.max(25, (val / maxVal) * 100);
-        node.style.height = `${heightPercent}%`;
+        node.className = 'algo-array-node';
         node.innerText = val;
 
         if (idx === bsMid) {
-          if (bsFound) node.classList.add('found');
-          else node.classList.add('comparing');
+          node.classList.add(bsFound ? 'found' : 'comparing');
         } else if (idx < bsLow || idx > bsHigh) {
-          node.classList.add('eliminated');
+          node.classList.add('inactive');
+        } else {
+          node.classList.add('in-range');
         }
 
-        // Pointer tags
-        if (idx === bsLow && !bsFound) {
+        // Pointer indicators
+        if (idx === bsLow) {
           const p = document.createElement('span');
-          p.className = 'pointer-tag pointer-low';
+          p.className = 'algo-pointer-lbl ptr-low';
           p.innerText = 'L';
           node.appendChild(p);
         }
         if (idx === bsMid) {
           const p = document.createElement('span');
-          p.className = 'pointer-tag pointer-mid';
+          p.className = 'algo-pointer-lbl ptr-mid';
           p.innerText = bsFound ? '✓ FOUND' : 'MID';
           node.appendChild(p);
         }
-        if (idx === bsHigh && !bsFound) {
+        if (idx === bsHigh) {
           const p = document.createElement('span');
-          p.className = 'pointer-tag pointer-high';
+          p.className = 'algo-pointer-lbl ptr-high';
           p.innerText = 'H';
           node.appendChild(p);
         }
@@ -275,30 +276,28 @@ document.addEventListener('DOMContentLoaded', () => {
         algoContainer.appendChild(node);
       });
     } else if (currentAlgo === 'twoPointers') {
-      const maxVal = Math.max(...algoArray);
       algoArray.forEach((val, idx) => {
         const node = document.createElement('div');
-        node.className = 'algo-elem-node';
-        const heightPercent = Math.max(25, (val / maxVal) * 100);
-        node.style.height = `${heightPercent}%`;
+        node.className = 'algo-array-node';
         node.innerText = val;
 
         if (idx === tpLeft || idx === tpRight) {
-          if (tpFound) node.classList.add('found');
-          else node.classList.add('comparing');
-        } else if (idx < tpLeft || idx > tpRight) {
-          node.classList.add('eliminated');
+          node.classList.add(tpFound ? 'found' : 'comparing');
+        } else if (idx > tpLeft && idx < tpRight) {
+          node.classList.add('in-range');
+        } else {
+          node.classList.add('inactive');
         }
 
         if (idx === tpLeft) {
           const p = document.createElement('span');
-          p.className = 'pointer-tag pointer-left';
+          p.className = 'algo-pointer-lbl ptr-low';
           p.innerText = 'L';
           node.appendChild(p);
         }
         if (idx === tpRight) {
           const p = document.createElement('span');
-          p.className = 'pointer-tag pointer-right';
+          p.className = 'algo-pointer-lbl ptr-high';
           p.innerText = 'R';
           node.appendChild(p);
         }
@@ -306,18 +305,17 @@ document.addEventListener('DOMContentLoaded', () => {
         algoContainer.appendChild(node);
       });
     } else if (currentAlgo === 'bubbleSort') {
-      const maxVal = Math.max(...bubbleArray);
       bubbleArray.forEach((val, idx) => {
         const node = document.createElement('div');
-        node.className = 'algo-elem-node';
-        const heightPercent = Math.max(25, (val / maxVal) * 100);
-        node.style.height = `${heightPercent}%`;
+        node.className = 'algo-array-node';
         node.innerText = val;
 
-        if (bSorted || idx >= bubbleArray.length - bI) {
-          node.classList.add('sorted');
+        if (bSorted) {
+          node.classList.add('found');
         } else if (idx === bJ || idx === bJ + 1) {
           node.classList.add('comparing');
+        } else if (idx >= bubbleArray.length - bI) {
+          node.classList.add('sorted-node');
         }
 
         algoContainer.appendChild(node);
@@ -327,71 +325,81 @@ document.addEventListener('DOMContentLoaded', () => {
     if (algoCompCountEl) algoCompCountEl.innerText = `${algoComparisons} Operations`;
   }
 
-  function highlightAlgoCode(lineNum) {
+  function highlightAlgoCode(lineIdx) {
     if (!algoCodeContent) return;
     const lines = algoCodeContent.querySelectorAll('.algo-code-line');
-    lines.forEach((l, idx) => {
-      if (idx === lineNum) l.classList.add('active-line');
-      else l.classList.remove('active-line');
+    lines.forEach((l, i) => {
+      l.classList.toggle('active-line', i === lineIdx);
     });
   }
 
   function stepAlgo() {
     playSfx('step');
+    algoComparisons++;
+
     if (currentAlgo === 'binarySearch') {
       if (bsFound || bsLow > bsHigh) {
-        if (!bsFound) {
-          if (algoStatusMsg) algoStatusMsg.innerHTML = `❌ Target <strong>${targetVal}</strong> not found in array. Search exhausted.`;
+        if (!bsFound && algoStatusMsg) {
+          algoStatusMsg.innerHTML = `❌ Target <strong>${targetVal}</strong> not found in array. Search exhausted.`;
         }
         pauseAlgo();
         return;
       }
 
-      algoComparisons++;
-      bsMid = Math.floor((bsLow + bsHigh) / 2);
+      bsMid = Math.floor(bsLow + (bsHigh - bsLow) / 2);
       const midVal = algoArray[bsMid];
-
-      highlightAlgoCode(1);
 
       if (midVal === targetVal) {
         bsFound = true;
-        playSfx('success');
         highlightAlgoCode(2);
-        if (algoStatusMsg) algoStatusMsg.innerHTML = `🎯 <strong>SUCCESS!</strong> Found target <strong>${targetVal}</strong> at index <strong>${bsMid}</strong> in ${algoComparisons} comparisons!`;
+        playSfx('success');
+        if (algoStatusMsg) {
+          algoStatusMsg.innerHTML = `🎯 <strong>SUCCESS!</strong> Found target <strong>${targetVal}</strong> at index <strong>${bsMid}</strong> in ${algoComparisons} operations.`;
+        }
         pauseAlgo();
       } else if (midVal < targetVal) {
         highlightAlgoCode(3);
-        if (algoStatusMsg) algoStatusMsg.innerHTML = `🔍 Compared mid arr[${bsMid}] = <strong>${midVal}</strong> with target <strong>${targetVal}</strong>. Since ${midVal} &lt; ${targetVal}, searching RIGHT half (low = ${bsMid + 1}).`;
+        if (algoStatusMsg) {
+          algoStatusMsg.innerHTML = `🔍 Compared mid arr[${bsMid}] = <strong>${midVal}</strong> &lt; <strong>${targetVal}</strong>. Moving Low pointer right: low = ${bsMid + 1}.`;
+        }
         bsLow = bsMid + 1;
       } else {
         highlightAlgoCode(4);
-        if (algoStatusMsg) algoStatusMsg.innerHTML = `🔍 Compared mid arr[${bsMid}] = <strong>${midVal}</strong> with target <strong>${targetVal}</strong>. Since ${midVal} &gt; ${targetVal}, searching LEFT half (high = ${bsMid - 1}).`;
+        if (algoStatusMsg) {
+          algoStatusMsg.innerHTML = `🔍 Compared mid arr[${bsMid}] = <strong>${midVal}</strong> &gt; <strong>${targetVal}</strong>. Moving High pointer left: high = ${bsMid - 1}.`;
+        }
         bsHigh = bsMid - 1;
       }
     } else if (currentAlgo === 'twoPointers') {
       if (tpFound || tpLeft >= tpRight) {
-        if (!tpFound && algoStatusMsg) algoStatusMsg.innerHTML = `❌ No pair found with sum <strong>${targetVal}</strong>.`;
+        if (!tpFound && algoStatusMsg) {
+          algoStatusMsg.innerHTML = `❌ No pair found with sum <strong>${targetVal}</strong>.`;
+        }
         pauseAlgo();
         return;
       }
 
-      algoComparisons++;
       const currentSum = algoArray[tpLeft] + algoArray[tpRight];
-      highlightAlgoCode(1);
 
       if (currentSum === targetVal) {
         tpFound = true;
-        playSfx('success');
         highlightAlgoCode(2);
-        if (algoStatusMsg) algoStatusMsg.innerHTML = `🎯 <strong>PAIR FOUND!</strong> arr[${tpLeft}] (${algoArray[tpLeft]}) + arr[${tpRight}] (${algoArray[tpRight]}) = <strong>${targetVal}</strong>!`;
+        playSfx('success');
+        if (algoStatusMsg) {
+          algoStatusMsg.innerHTML = `🎯 <strong>PAIR FOUND!</strong> arr[${tpLeft}] (${algoArray[tpLeft]}) + arr[${tpRight}] (${algoArray[tpRight]}) = <strong>${targetVal}</strong>.`;
+        }
         pauseAlgo();
       } else if (currentSum < targetVal) {
         highlightAlgoCode(3);
-        if (algoStatusMsg) algoStatusMsg.innerHTML = `⚡ Sum (${algoArray[tpLeft]} + ${algoArray[tpRight]} = ${currentSum}) &lt; ${targetVal}. Moving LEFT pointer forward to increase sum.`;
+        if (algoStatusMsg) {
+          algoStatusMsg.innerHTML = `⚡ Sum (${algoArray[tpLeft]} + ${algoArray[tpRight]} = ${currentSum}) &lt; ${targetVal}. Incrementing left pointer to increase sum.`;
+        }
         tpLeft++;
       } else {
         highlightAlgoCode(4);
-        if (algoStatusMsg) algoStatusMsg.innerHTML = `⚡ Sum (${algoArray[tpLeft]} + ${algoArray[tpRight]} = ${currentSum}) &gt; ${targetVal}. Moving RIGHT pointer backward to decrease sum.`;
+        if (algoStatusMsg) {
+          algoStatusMsg.innerHTML = `⚡ Sum (${algoArray[tpLeft]} + ${algoArray[tpRight]} = ${currentSum}) &gt; ${targetVal}. Decrementing right pointer to decrease sum.`;
+        }
         tpRight--;
       }
     } else if (currentAlgo === 'bubbleSort') {
@@ -401,18 +409,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (bI < bubbleArray.length - 1) {
-        if (bJ < bubbleArray.length - 1 - bI) {
-          algoComparisons++;
+        if (bJ < bubbleArray.length - bI - 1) {
           highlightAlgoCode(2);
           if (bubbleArray[bJ] > bubbleArray[bJ + 1]) {
-            highlightAlgoCode(3);
             const temp = bubbleArray[bJ];
             bubbleArray[bJ] = bubbleArray[bJ + 1];
             bubbleArray[bJ + 1] = temp;
             bSwapped = true;
-            if (algoStatusMsg) algoStatusMsg.innerHTML = `🔄 Swapped arr[${bJ}] (${bubbleArray[bJ + 1]}) &gt; arr[${bJ + 1}] (${bubbleArray[bJ]}).`;
+            highlightAlgoCode(3);
+            if (algoStatusMsg) {
+              algoStatusMsg.innerHTML = `🔄 Swapped arr[${bJ}] (${bubbleArray[bJ + 1]}) &gt; arr[${bJ + 1}] (${bubbleArray[bJ]}).`;
+            }
           } else {
-            if (algoStatusMsg) algoStatusMsg.innerHTML = `✓ In order: arr[${bJ}] (${bubbleArray[bJ]}) &le; arr[${bJ + 1}] (${bubbleArray[bJ + 1]}).`;
+            if (algoStatusMsg) {
+              algoStatusMsg.innerHTML = `✓ In order: arr[${bJ}] (${bubbleArray[bJ]}) &le; arr[${bJ + 1}] (${bubbleArray[bJ + 1]}).`;
+            }
           }
           bJ++;
         } else {
@@ -421,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (!bSwapped) {
             bSorted = true;
             playSfx('success');
-            if (algoStatusMsg) algoStatusMsg.innerHTML = `🎉 Array sorted early! Zero swaps in entire pass.`;
+            if (algoStatusMsg) algoStatusMsg.innerHTML = `✨ Array sorted early! Zero swaps in entire pass.`;
             pauseAlgo();
           }
           bSwapped = false;
@@ -429,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         bSorted = true;
         playSfx('success');
-        if (algoStatusMsg) algoStatusMsg.innerHTML = `🎉 <strong>SORT COMPLETE!</strong> Entire array ordered in ${algoComparisons} comparisons.`;
+        if (algoStatusMsg) algoStatusMsg.innerHTML = `✨ <strong>SORT COMPLETE!</strong> Entire array ordered in ${algoComparisons} comparisons.`;
         pauseAlgo();
       }
     }
@@ -492,7 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (currentAlgo === 'binarySearch') {
-      if (algoComplexityEl) algoComplexityEl.innerText = 'Time: O(log N) · Space: O(1)';
+      if (algoComplexityEl) algoComplexityEl.innerText = 'Time: O(log N) • Space: O(1)';
       if (algoTargetInput) { algoTargetInput.value = '55'; algoTargetInput.style.display = 'inline-block'; }
       if (algoCodeContent) {
         algoCodeContent.innerHTML = `
@@ -504,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
     } else if (currentAlgo === 'twoPointers') {
-      if (algoComplexityEl) algoComplexityEl.innerText = 'Time: O(N) · Space: O(1)';
+      if (algoComplexityEl) algoComplexityEl.innerText = 'Time: O(N) • Space: O(1)';
       if (algoTargetInput) { algoTargetInput.value = '26'; algoTargetInput.style.display = 'inline-block'; }
       if (algoCodeContent) {
         algoCodeContent.innerHTML = `
@@ -516,12 +527,12 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
     } else if (currentAlgo === 'bubbleSort') {
-      if (algoComplexityEl) algoComplexityEl.innerText = 'Time: O(N²) · Space: O(1)';
+      if (algoComplexityEl) algoComplexityEl.innerText = 'Time: O(N²) • Space: O(1)';
       if (algoTargetInput) algoTargetInput.style.display = 'none';
       if (algoCodeContent) {
         algoCodeContent.innerHTML = `
           <div class="algo-code-line active-line">for (int i = 0; i &lt; n - 1; i++) {</div>
-          <div class="algo-code-line">&nbsp;&nbsp;for (int j = 0; j &lt; n - 1 - i; j++) {</div>
+          <div class="algo-code-line">&nbsp;&nbsp;for (int j = 0; j &lt; n - i - 1; j++) {</div>
           <div class="algo-code-line">&nbsp;&nbsp;&nbsp;&nbsp;if (arr[j] &gt; arr[j + 1]) {</div>
           <div class="algo-code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swap(arr[j], arr[j + 1]);</div>
           <div class="algo-code-line">&nbsp;&nbsp;&nbsp;&nbsp;}</div>
@@ -658,7 +669,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const copyBtn = document.getElementById('copy-email-btn');
   const copyText = document.getElementById('email-btn-text');
 
-  let selectedTopic = 'Corporate Java & DSA Training';
+  let selectedTopic = 'Custom Website / App Development';
 
   topicChips.forEach(chip => {
     chip.addEventListener('click', () => {
@@ -673,7 +684,6 @@ document.addEventListener('DOMContentLoaded', () => {
     copyBtn.addEventListener('click', () => {
       playSfx('success');
       const email = copyBtn.getAttribute('data-email') || 'pradeepbashaa@gmail.com';
-      const template = `To: ${email}\nSubject: Inquiry: ${selectedTopic}\n\nHi Pradeep,\n\nI came across your profile and would love to connect regarding ${selectedTopic}.\n\nBest regards,\n`;
 
       navigator.clipboard.writeText(email).then(() => {
         const originalText = copyText.innerText;
