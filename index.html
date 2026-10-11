@@ -41,7 +41,6 @@
         <a href="#about" class="nav-link">About</a>
         <a href="#journey" class="nav-link">Journey</a>
         <a href="#softech" class="nav-link">Softech Portal</a>
-        <a href="#archipelago" class="nav-link">3D Architecture</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#impact" class="nav-link">Impact</a>
@@ -81,9 +80,6 @@
           </a>
           <a href="#contact" class="btn btn-lg btn-secondary">
             <span>✉️ Ping Me for Custom Websites</span>
-          </a>
-          <a href="#archipelago" class="btn btn-lg btn-secondary">
-            <span>🏛️ 3D Architecture</span>
           </a>
         </div>
 
@@ -288,91 +284,6 @@
             <a href="mailto:pradeepbashaa@gmail.com?subject=Custom%20Website%20Inquiry%20via%20Portfolio&amp;body=Hi%20Pradeep,%20I%20saw%20your%20portfolio%20and%20the%20Softech%20website.%20I%20would%20like%20to%20discuss%20building%20a%20website%20like%20that." class="btn btn-sm btn-primary">
               <span>✉️ Ping Me to Build Your Website</span>
             </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3D ARCHIPELAGO & INTERACTIVE WEBGL SHOWCASE SECTION -->
-    <section class="section archipelago-section" id="archipelago">
-      <div class="section-container">
-        <div class="section-header center">
-          <span class="section-tag">3D WEBGL INTERACTIVE SHOWCASE</span>
-          <h2 class="section-title">The 3D Architecture of <span class="gradient-text">Pradeep</span></h2>
-          <p class="section-subtitle">Orbit, pan, and inspect 9 interactive 3D repository monoliths rendered with physically based materials, beacon lasers, and cinematic lighting in real-time WebGL.</p>
-        </div>
-
-        <div class="viz-3d-wrapper glass-panel">
-          <!-- Top Control Bar -->
-          <div class="viz-control-deck">
-            <div class="viz-status-group">
-              <span class="viz-live-pulse"></span>
-              <span class="viz-status-text" id="viz-status-text">Navigation: Archipelago Overview • Active</span>
-            </div>
-
-            <div class="viz-actions-group">
-              <button class="btn btn-sm btn-outline" id="btn-guided-tour">▶ Start Flyover Tour</button>
-            </div>
-          </div>
-
-          <!-- 3D Navigation Mode Chips -->
-          <div class="viz-modes-bar">
-            <button class="mode-chip active" id="btn-mode-world">🌐 Overview</button>
-            <button class="mode-chip" id="btn-mode-hub">🏛️ Hub</button>
-            <button class="mode-chip" id="btn-mode-theme">🎨 Theme Suite</button>
-            <button class="mode-chip" id="btn-mode-sentinel">🛡️ Schema Sentinel</button>
-            <button class="mode-chip" id="btn-mode-ledger">💰 Ledger</button>
-            <button class="mode-chip" id="btn-mode-skyline">🏙️ GIT-viz</button>
-            <button class="mode-chip" id="btn-mode-relnotes">📜 Rel_Notes</button>
-            <button class="mode-chip" id="btn-mode-devstarter">🐳 Devstarter</button>
-            <button class="mode-chip" id="btn-mode-dsa">🌲 Java &amp; DSA</button>
-            <button class="mode-chip" id="btn-mode-sorting">📊 Sorting Arena</button>
-          </div>
-
-          <!-- 3D Canvas Container -->
-          <div id="viz-3d-container" class="viz-3d-canvas-box">
-            <!-- Guided Tour Captions Overlay -->
-            <div class="tour-caption-box hidden" id="tour-caption-box">
-              <h4 id="tour-caption-title">3D Landmark Tour</h4>
-              <p id="tour-caption-text">Navigating through the 3D systems...</p>
-            </div>
-
-            <!-- SQL Risk Game Simulator Overlay for Schema Sentinel -->
-            <div class="sql-game-panel hidden" id="sql-game-panel">
-              <div class="sql-panel-header">
-                <h5>🛡️ Schema Sentinel: Live SQL AST Analyzer</h5>
-                <span class="risk-badge" id="sql-risk-badge">CRITICAL</span>
-              </div>
-              <p class="sql-panel-sub">Simulate zero-downtime database migration risk analysis:</p>
-              <div class="sql-input-group">
-                <select id="sql-preset-select" class="sql-select">
-                  <option value="drop_column">ALTER TABLE users DROP COLUMN email (Data Loss)</option>
-                  <option value="add_not_null">ALTER TABLE orders ADD COLUMN amount NOT NULL (Table Lock)</option>
-                  <option value="create_index">CREATE INDEX idx_orders_customer ON orders (Write Lock)</option>
-                  <option value="concurrent_index">CREATE INDEX CONCURRENTLY idx_users_active (Safe)</option>
-                </select>
-                <button class="btn btn-sm btn-primary" id="btn-analyze-sql">Analyze</button>
-              </div>
-              <div class="sql-metrics-row" id="sql-metrics-row">
-                <div class="metric-item">Lock Risk: <span id="m-lock">1/10</span></div>
-                <div class="metric-item">Integrity: <span id="m-integrity">1/10</span></div>
-                <div class="metric-item">Compatibility: <span id="m-compat">1/10</span></div>
-                <div class="metric-item">Performance: <span id="m-perf">1/10</span></div>
-              </div>
-              <div class="sql-recommendation" id="sql-recommendation">💡 Status: Select or scan a query above to test database schema risk in 3D.</div>
-            </div>
-          </div>
-
-          <div class="viz-legend">
-            <div class="legend-item"><span class="color-box cyan"></span> Central Hub</div>
-            <div class="legend-item"><span class="color-box purple"></span> Theme Suite</div>
-            <div class="legend-item"><span class="color-box blue"></span> Sentinel Citadel</div>
-            <div class="legend-item"><span class="color-box gold"></span> Ledger Vault</div>
-            <div class="legend-item"><span class="color-box purple"></span> GIT-viz Skyline</div>
-            <div class="legend-item"><span class="color-box emerald"></span> Rel_Notes Monolith</div>
-            <div class="legend-item"><span class="color-box yellow"></span> Devstarter Dock</div>
-            <div class="legend-item"><span class="color-box green"></span> DSA Forest</div>
-            <div class="legend-item"><span class="color-box pink"></span> Sorting Arena</div>
           </div>
         </div>
       </div>
@@ -1042,7 +953,6 @@
 
   <!-- Scripts -->
   <script src="three-bg.js"></script>
-  <script src="visualizer-3d.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
