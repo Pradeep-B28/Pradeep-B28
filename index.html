@@ -42,7 +42,6 @@
         <a href="#journey" class="nav-link">Journey</a>
         <a href="#softech" class="nav-link">Softech Portal</a>
         <a href="#archipelago" class="nav-link">3D Architecture</a>
-        <a href="#algo-visualizer" class="nav-link">Visualizer</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#impact" class="nav-link">Impact</a>
@@ -85,9 +84,6 @@
           </a>
           <a href="#archipelago" class="btn btn-lg btn-secondary">
             <span>🏛️ 3D Architecture</span>
-          </a>
-          <a href="#algo-visualizer" class="btn btn-lg btn-secondary">
-            <span>⚡ Try Algorithm Visualizer</span>
           </a>
         </div>
 
@@ -316,7 +312,6 @@
 
             <div class="viz-actions-group">
               <button class="btn btn-sm btn-outline" id="btn-guided-tour">▶ Start Flyover Tour</button>
-              <button class="btn btn-sm btn-accent" id="btn-passport-toggle">🏆 Architecture Badges (<span id="passport-count">0/9</span>)</button>
             </div>
           </div>
 
@@ -378,60 +373,6 @@
             <div class="legend-item"><span class="color-box yellow"></span> Devstarter Dock</div>
             <div class="legend-item"><span class="color-box green"></span> DSA Forest</div>
             <div class="legend-item"><span class="color-box pink"></span> Sorting Arena</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LIVE INTERACTIVE ALGORITHM VISUALIZER PLAYGROUND -->
-    <section class="section algo-section" id="algo-visualizer">
-      <div class="section-container">
-        <div class="section-header center">
-          <span class="section-tag">INTERACTIVE DSA PLAYGROUND</span>
-          <h2 class="section-title">Visualizing Algorithm <span class="gradient-text">Intuition</span></h2>
-          <p class="section-subtitle">Explore interactive step-by-step visualizations of core algorithmic patterns. See how pointers shift, comparisons execute, and data structures reorder frame-by-frame.</p>
-        </div>
-
-        <div class="algo-visualizer-card glass-panel">
-          <div class="algo-nav-tabs">
-            <button class="algo-tab-btn active" data-algo="binarySearch">🔍 Binary Search (O(log N))</button>
-            <button class="algo-tab-btn" data-algo="twoPointers">⚡ Two Pointers: Pair Sum (O(N))</button>
-            <button class="algo-tab-btn" data-algo="bubbleSort">📊 Sorting Steps: Bubble Sort (O(N²))</button>
-          </div>
-
-          <div class="algo-control-toolbar">
-            <div class="algo-inputs">
-              <label for="algo-target-input">Target:</label>
-              <input type="number" id="algo-target-input" value="55" min="1" max="100" class="algo-input-num" />
-            </div>
-
-            <div class="algo-actions">
-              <button class="btn btn-sm btn-primary" id="btn-algo-step">Step Forward ⏭</button>
-              <button class="btn btn-sm btn-secondary" id="btn-algo-play">▶ Auto Play</button>
-              <button class="btn btn-sm btn-secondary" id="btn-algo-reset">↺ Reset</button>
-              <button class="btn btn-sm btn-secondary" id="btn-algo-random">🎲 Randomize</button>
-            </div>
-
-            <div class="algo-metrics-badge">
-              <span class="algo-badge" id="algo-complexity-badge">Time: O(log N) • Space: O(1)</span>
-              <span class="algo-badge-secondary" id="algo-comp-count">0 Operations</span>
-            </div>
-          </div>
-
-          <div class="algo-main-viewport">
-            <div class="algo-display-area" id="algo-display-area"></div>
-            <div class="algo-status-msg" id="algo-status-msg">Ready. Target = <strong>55</strong>. Click 'Step Forward' or 'Auto Play'.</div>
-          </div>
-
-          <div class="algo-code-sync-panel">
-            <div class="algo-code-header"><span>Java Implementation Sync</span></div>
-            <div class="algo-code-content" id="algo-code-content">
-              <div class="algo-code-line active-line">int low = 0, high = arr.length - 1;</div>
-              <div class="algo-code-line">int mid = low + (high - low) / 2;</div>
-              <div class="algo-code-line">if (arr[mid] == target) return mid;</div>
-              <div class="algo-code-line">else if (arr[mid] &lt; target) low = mid + 1;</div>
-              <div class="algo-code-line">else high = mid - 1;</div>
-            </div>
           </div>
         </div>
       </div>
@@ -1088,92 +1029,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- ARCHITECTURE BADGES MODAL -->
-  <div class="modal-overlay hidden" id="passport-modal">
-    <div class="modal-card glass-panel">
-      <div class="modal-header">
-        <h2>🏆 Developer Architecture Badges &amp; Achievements</h2>
-        <button class="modal-close-btn" id="passport-modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p class="modal-intro">Explore all 9 landmark zones of Pradeep's 3D Archipelago to unlock all 9 system architecture badges and view your Master Architect Explorer Certificate!</p>
-
-        <div class="passport-stamps-grid">
-          <div class="stamp-card locked" id="stamp-hub">
-            <div class="stamp-icon">🏛️</div>
-            <h4>3D Portfolio Hub</h4>
-            <p>Inspected the central WebGL developer showcase and hub.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-theme">
-            <div class="stamp-icon">🎨</div>
-            <h4>3D Theme Architect</h4>
-            <p>Explored 6-theme WebGL showcase suite with custom shaders.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-sentinel">
-            <div class="stamp-icon">🛡️</div>
-            <h4>Sentinel Gatekeeper</h4>
-            <p>Analyzed SQL migration risks at the Schema Sentinel Citadel.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-ledger">
-            <div class="stamp-icon">💰</div>
-            <h4>Ledger Architect</h4>
-            <p>Explored 0ms Optimistic UI financial graph at the Ledger Vault.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-skyline">
-            <div class="stamp-icon">🏙️</div>
-            <h4>Skyline Navigator</h4>
-            <p>Piloted 3D contribution galaxy at the GIT-viz Observatory.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-relnotes">
-            <div class="stamp-icon">📜</div>
-            <h4>AI Release Scribe</h4>
-            <p>Inspected Groq AI Git commit generator at the Scribe Monolith.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-devstarter">
-            <div class="stamp-icon">🐳</div>
-            <h4>Container Master</h4>
-            <p>Launched zero-config devcontainers at the Devstarter Dock.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-mentor">
-            <div class="stamp-icon">🌲</div>
-            <h4>Grand Mentor Badge</h4>
-            <p>Visited the 7,500+ Students Mentored Stage &amp; DSA Forest.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-
-          <div class="stamp-card locked" id="stamp-sorting">
-            <div class="stamp-icon">📊</div>
-            <h4>Algorithm Specialist</h4>
-            <p>Analyzed sorting comparisons at the Algorithm Visualizer Arena.</p>
-            <span class="stamp-status">LOCKED</span>
-          </div>
-        </div>
-
-        <div class="passport-certificate glass-panel">
-          <h3>🎖️ Pradeep's Engineering Explorer Certificate</h3>
-          <p>Explorer Status: <strong id="explorer-rank">Apprentice Explorer (0/9 Badges)</strong></p>
-          <div class="progress-bar-container">
-            <div class="progress-bar-fill" id="passport-progress" style="width: 0%;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- FLOATING ACTION WIDGETS -->
   <div class="floating-widgets-bar">

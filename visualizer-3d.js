@@ -148,11 +148,7 @@
   };
 
   function unlockStamp(key) {
-    if (!passportState[key]) {
-      passportState[key] = true;
-      updatePassportUI();
-      showToastNotification(`🏆 Architecture Badge Unlocked: ${getStampName(key)}!`);
-    }
+    // Badges dialog removed
   }
 
   function getStampName(key) {
@@ -825,24 +821,6 @@
 
   if (btnAnalyzeSQL) btnAnalyzeSQL.addEventListener('click', runSQLAnalysis);
   if (sqlPresetSelect) sqlPresetSelect.addEventListener('change', runSQLAnalysis);
-
-  if (btnPassportToggle) {
-    btnPassportToggle.addEventListener('click', () => {
-      if (passportModal) passportModal.classList.remove('hidden');
-    });
-  }
-
-  if (passportCloseBtn) {
-    passportCloseBtn.addEventListener('click', () => {
-      if (passportModal) passportModal.classList.add('hidden');
-    });
-  }
-
-  if (passportModal) {
-    passportModal.addEventListener('click', (e) => {
-      if (e.target === passportModal) passportModal.classList.add('hidden');
-    });
-  }
 
   // --- RENDER & ANIMATION LOOP ---
   function animate() {
