@@ -7,7 +7,7 @@
     <a href="https://nammaroute-sigma.vercel.app/"><img src="https://img.shields.io/badge/🗺️_Namma_Route-Live_App-10B981?style=for-the-badge&logoColor=white" alt="Namma Route Transit Graph" /></a>
     <a href="https://diwalisky.vercel.app"><img src="https://img.shields.io/badge/🎆_Diwali_Sky-Live_App-F59E0B?style=for-the-badge&logoColor=white" alt="Diwali Sky Fireworks" /></a>
     <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/"><img src="https://img.shields.io/badge/🏙️_GIT--viz_3D-Live_App-7C3AED?style=for-the-badge&logoColor=white" alt="GIT-viz 3D Skyline" /></a>
-    <a href="https://github.com/Pradeep-B28/AI_Agent"><img src="https://img.shields.io/badge/🤖_MOR_AI-J.A.R.V.I.S.-EC4899?style=for-the-badge&logoColor=white" alt="MOR AI Agent" /></a>
+    <a href="https://github.com/Pradeep-B28/MOR"><img src="https://img.shields.io/badge/🤖_MOR_AI-J.A.R.V.I.S.-EC4899?style=for-the-badge&logoColor=white" alt="MOR AI Agent" /></a>
     <a href="https://github.com/Pradeep-B28/Portfolio"><img src="https://img.shields.io/badge/🎨_3D_Theme_Suite-React_Three.js-8B5CF6?style=for-the-badge&logoColor=white" alt="3D Portfolio Theme Suite" /></a>
     <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker"><img src="https://img.shields.io/badge/💰_Ledger_Expense-MERN_|_Android-6366F1?style=for-the-badge&logoColor=white" alt="Ledger Expense App" /></a>
     <a href="https://github.com/Pradeep-B28/Schema_Sentinel"><img src="https://img.shields.io/badge/🛡️_Schema_Sentinel-PostgreSQL_Analyzer-2563EB?style=for-the-badge&logoColor=white" alt="Schema Sentinel" /></a>
@@ -83,9 +83,9 @@ I am a **Java and Data Structures & Algorithms Master Trainer**, **Full-Stack Ar
       <p><a href="https://reachsoftech.onrender.com/home"><b>🚀 Launch Live Web Portal</b></a></p>
     </td>
     <td width="50%" valign="top">
-      <h3>🤖 <a href="https://github.com/Pradeep-B28/AI_Agent">MOR — Holographic Personal AI &amp; J.A.R.V.I.S.</a></h3>
+      <h3>🤖 <a href="https://github.com/Pradeep-B28/MOR">MOR — Holographic Personal AI &amp; J.A.R.V.I.S.</a></h3>
       <p>Voice-first personal AI assistant featuring a fullscreen interactive holographic face, always-listening wake word ("Hey Mor" / "Hey Jarvis"), ElevenLabs neural speech, and smart room IoT hardware orchestration.</p>
-      <p><a href="https://github.com/Pradeep-B28/AI_Agent"><b>💻 View Repository &amp; Source Code</b></a></p>
+      <p><a href="https://github.com/Pradeep-B28/MOR"><b>💻 View Repository &amp; Source Code</b></a></p>
     </td>
   </tr>
   <tr>
