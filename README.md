@@ -4,7 +4,10 @@
   <p align="center">
     <a href="https://pradeep-b28.github.io/Pradeep-B28/"><img src="https://img.shields.io/badge/🌐_3D_Portfolio-Live_Website-06B6D4?style=for-the-badge&logoColor=white" alt="3D Portfolio Website" /></a>
     <a href="https://reachsoftech.onrender.com/home"><img src="https://img.shields.io/badge/🚀_Softech_Portal-Website_Live-178F7F?style=for-the-badge&logo=render&logoColor=white" alt="Softech Website" /></a>
+    <a href="https://nammaroute-sigma.vercel.app/"><img src="https://img.shields.io/badge/🗺️_Namma_Route-Live_App-10B981?style=for-the-badge&logoColor=white" alt="Namma Route Transit Graph" /></a>
+    <a href="https://diwalisky.vercel.app"><img src="https://img.shields.io/badge/🎆_Diwali_Sky-Live_App-F59E0B?style=for-the-badge&logoColor=white" alt="Diwali Sky Fireworks" /></a>
     <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/"><img src="https://img.shields.io/badge/🏙️_GIT--viz_3D-Live_App-7C3AED?style=for-the-badge&logoColor=white" alt="GIT-viz 3D Skyline" /></a>
+    <a href="https://github.com/Pradeep-B28/AI_Agent"><img src="https://img.shields.io/badge/🤖_MOR_AI-J.A.R.V.I.S.-EC4899?style=for-the-badge&logoColor=white" alt="MOR AI Agent" /></a>
     <a href="https://github.com/Pradeep-B28/Portfolio"><img src="https://img.shields.io/badge/🎨_3D_Theme_Suite-React_Three.js-8B5CF6?style=for-the-badge&logoColor=white" alt="3D Portfolio Theme Suite" /></a>
     <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker"><img src="https://img.shields.io/badge/💰_Ledger_Expense-MERN_|_Android-6366F1?style=for-the-badge&logoColor=white" alt="Ledger Expense App" /></a>
     <a href="https://github.com/Pradeep-B28/Schema_Sentinel"><img src="https://img.shields.io/badge/🛡️_Schema_Sentinel-PostgreSQL_Analyzer-2563EB?style=for-the-badge&logoColor=white" alt="Schema Sentinel" /></a>
@@ -17,7 +20,7 @@
 ---
 
 ### ⚡ Quick Navigation
-**[🌐 3D Interactive Portfolio](https://pradeep-b28.github.io/Pradeep-B28/)** • **[🚀 Softech Placement Portal](https://reachsoftech.onrender.com/home)** • **[👨‍🏫 Master Trainer Bio](#-executive-profile--master-trainer-bio)** • **[🛡️ Tech Matrix](#-core-specialization--technical-matrix)** • **[📦 Featured Repositories](#-featured-repositories-all-9-public-repos--softech)** • **[📊 GitHub Analytics](#-github-velocity--activity-analytics)** • **[✉️ Connect & Hire](#-connect--hire-pradeep)**
+**[🌐 3D Interactive Portfolio](https://pradeep-b28.github.io/Pradeep-B28/)** • **[🚀 Softech Placement Portal](https://reachsoftech.onrender.com/home)** • **[🗺️ Namma Route](https://nammaroute-sigma.vercel.app/)** • **[🎆 Diwali Sky](https://diwalisky.vercel.app)** • **[👨‍🏫 Master Trainer Bio](#-executive-profile--master-trainer-bio)** • **[🛡️ Tech Matrix](#-core-specialization--technical-matrix)** • **[📦 Featured Repositories](#-featured-repositories-13-systems--softech-web-platform)** • **[📊 GitHub Analytics](#-github-velocity--activity-analytics)** • **[✉️ Connect & Hire](#-connect--hire-pradeep)**
 
 ---
 
@@ -41,7 +44,7 @@ I am a **Java and Data Structures & Algorithms Master Trainer**, **Full-Stack Ar
 - 🏆 **Mentored 7,500+ Students & Engineers**: Conducted 100+ intensive bootcamps preparing candidates for Tier-1 technology companies.
 - 💡 **Pedagogy of Intuition**: Focusing on mental models and repeatable visual patterns — Sliding Window, Two Pointers, Monotonic Stacks, Graph Traversals, and Dynamic Programming state transitions.
 - ⚙️ **Deep JVM Internals**: Collections internals (HashMap collision resolution, TreeMap Red-Black trees), Multithreading, Concurrent Locks, Memory Layout, and ZGC/G1GC tuning.
-- 🚀 **9 Open-Source Repositories & Softech Web Platform**: Spanning 3D WebGL architectures, database migration gatekeepers, AI release tools, MERN apps, and zero-config devcontainers.
+- 🚀 **13 Production Systems, Repositories & Softech Platform**: Spanning local voice-first AI assistants, multi-modal transit graph solvers, 3D WebGL architectures, database migration gatekeepers, AI release tools, MERN apps, and zero-config devcontainers.
 
 ---
 
@@ -65,12 +68,12 @@ I am a **Java and Data Structures & Algorithms Master Trainer**, **Full-Stack Ar
 | :--- | :--- | :--- | :--- |
 | **Core Java & OOP** • Abstract classes, Interfaces, Polymorphism | **Arrays & Strings** • Two Pointers, Sliding Window, Kadane's | **MERN Stack** • React 18, Node.js, Express, MongoDB | **Docker & Containers** • Devcontainers, Multi-stage builds |
 | **Collections Internals** • HashMap, ConcurrentHashMap, Red-Black Trees | **Trees & BST** • BFS/DFS, LCA, Morris Traversal, AVL Trees | **Mobile & PWA** • Capacitor 6, Android Studio, Service Workers | **PostgreSQL Engine** • AST Parser, Pre-Migration Risk Profiling |
-| **Multithreading & Concurrency** • ExecutorService, Locks, Atomic types | **Graphs** • Dijkstra, Bellman-Ford, Tarjan SCC, Disjoint Sets | **3D WebGL** • Three.js, Shaders, Raycasting, Particle Physics | **CI/CD Pipelines** • GitHub Actions PR Gatekeeper |
-| **JVM Memory & Tuning** • Heap layout, Stack frames, G1GC & ZGC | **Dynamic Programming** • 1D/2D State Memoization, Knapsack, Digit DP | **Backend Services** • Python 3.11, Flask 3, REST APIs, JWT Auth | **AI Integration** • Groq API, LangChain, Git Commit Transformers |
+| **Multithreading & Concurrency** • ExecutorService, Locks, Atomic types | **Graphs & Pathfinding** • Dijkstra, A* (Admissible Heuristic), BFS, Tarjan | **3D WebGL** • Three.js, Shaders, Raycasting, Particle Physics | **CI/CD Pipelines** • GitHub Actions PR Gatekeeper |
+| **JVM Memory & Tuning** • Heap layout, Stack frames, G1GC & ZGC | **Dynamic Programming** • 1D/2D State Memoization, Knapsack, Digit DP | **Backend Services** • Python 3.11, Flask 3, REST APIs, JWT Auth | **AI & Voice Systems** • ElevenLabs AI, Web Speech, Groq, Commit Transformers |
 
 ---
 
-## 📦 Featured Repositories (All 9 Public Repos & Softech)
+## 📦 Featured Repositories (13 Systems & Softech Web Platform)
 
 <table>
   <tr>
@@ -80,7 +83,31 @@ I am a **Java and Data Structures & Algorithms Master Trainer**, **Full-Stack Ar
       <p><a href="https://reachsoftech.onrender.com/home"><b>🚀 Launch Live Web Portal</b></a></p>
     </td>
     <td width="50%" valign="top">
-      <h3>⚡ <a href="https://pradeep-b28.github.io/Pradeep-B28/">Pradeep-B28 — 3D Developer Portfolio</a></h3>
+      <h3>🤖 <a href="https://github.com/Pradeep-B28/AI_Agent">MOR — Holographic Personal AI &amp; J.A.R.V.I.S.</a></h3>
+      <p>Voice-first personal AI assistant featuring a fullscreen interactive holographic face, always-listening wake word ("Hey Mor" / "Hey Jarvis"), ElevenLabs neural speech, and smart room IoT hardware orchestration.</p>
+      <p><a href="https://github.com/Pradeep-B28/AI_Agent"><b>💻 View Repository &amp; Source Code</b></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🗺️ <a href="https://nammaroute-sigma.vercel.app/">Namma Route: Tamil Nadu — Transit Graph Visualizer</a></h3>
+      <p>Interactive multi-modal transit graph pathfinding across 55 Tamil Nadu cities (104 nodes, 390 edges). Real-time visual comparison of Dijkstra vs A* (admissible heuristic k=1.006) vs BFS with 8,292 verified queries.</p>
+      <p><a href="https://nammaroute-sigma.vercel.app/"><b>🚀 Launch Live App</b></a> • <a href="https://github.com/Pradeep-B28/Namma_Route"><b>💻 Source Code</b></a></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🎆 <a href="https://diwalisky.vercel.app">Diwali Sky — Interactive Fireworks Simulator</a></h3>
+      <p>Festive web application generating high-energy particle firework explosions writing customizable names across a starry night sky with procedural Web Audio sound synthesis and WhatsApp sharing.</p>
+      <p><a href="https://diwalisky.vercel.app"><b>🚀 Launch Live App</b></a> • <a href="https://github.com/Pradeep-B28/Diwali_Sky"><b>💻 Source Code</b></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🏙️ <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/">GIT-viz — 3D Profile &amp; Galaxy Visualizer</a></h3>
+      <p>Transform any GitHub profile into a 3D city skyline, orbital repo galaxy, tech archipelago, or developer duel with WASD drone flight, bloom shaders, and Web Audio melodic synth.</p>
+      <p><a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/"><b>🚀 Launch Live 3D App</b></a> • <a href="https://github.com/Pradeep-B28/GIT_3D_Portfolio"><b>💻 Source Code</b></a></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>⚡ <a href="https://pradeep-b28.github.io/Pradeep-B28/">Pradeep-B28 — 3D Developer Portfolio Hub</a></h3>
       <p>Official 3D Interactive Portfolio built with Three.js WebGL, particle physics engine, interactive SQL Risk Analyzer, and 7,500+ student mentorship showcase.</p>
       <p><a href="https://pradeep-b28.github.io/Pradeep-B28/"><b>🚀 Launch 3D Site</b></a> • <a href="https://github.com/Pradeep-B28/Pradeep-B28"><b>💻 Source Code</b></a></p>
     </td>
@@ -92,45 +119,45 @@ I am a **Java and Data Structures & Algorithms Master Trainer**, **Full-Stack Ar
       <p><a href="https://github.com/Pradeep-B28/Portfolio"><b>💻 View Repository &amp; Source Code</b></a></p>
     </td>
     <td width="50%" valign="top">
-      <h3>🏙️ <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/">GIT-viz — 3D Profile &amp; Galaxy Visualizer</a></h3>
-      <p>Transform any GitHub profile into a 3D city skyline, orbital repo galaxy, tech archipelago, or developer duel with WASD drone flight, bloom shaders, and Web Audio melodic synth.</p>
-      <p><a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/"><b>🚀 Launch Live 3D App</b></a> • <a href="https://github.com/Pradeep-B28/GIT_3D_Portfolio"><b>💻 Source Code</b></a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
       <h3>💰 <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker">Ledger — Enterprise AI Expense Tracker</a></h3>
       <p>Market-ready multi-platform financial tracking system built with MERN stack, Progressive Web App (PWA) architecture, and Capacitor Android runtime. Features a 0ms Optimistic UI engine and bank sync.</p>
       <p><a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker"><b>💻 View Repository &amp; Source Code</b></a></p>
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <h3>🛡️ <a href="https://github.com/Pradeep-B28/Schema_Sentinel">Schema Sentinel — PostgreSQL Risk Analyzer</a></h3>
       <p>Production-aware pre-migration risk engine for PostgreSQL. AST SQL parser, safe read-only database profiler, 4-axis risk scoring matrix (0–10), and automated GitHub Action PR gatekeeper.</p>
       <p><a href="https://github.com/Pradeep-B28/Schema_Sentinel"><b>💻 View Repository &amp; Source Code</b></a></p>
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <h3>📜 <a href="https://github.com/Pradeep-B28/Rel_Notes">Rel_Notes — AI Release Notes Generator</a></h3>
       <p>Automated AI-powered release notes generator built with TypeScript and Groq API. Reads raw Git commit histories and structures clean, polished markdown release notes in seconds.</p>
       <p><a href="https://github.com/Pradeep-B28/Rel_Notes"><b>💻 View Repository &amp; Source Code</b></a></p>
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <h3>🐳 <a href="https://github.com/Pradeep-B28/Devstarter">Devstarter — Zero-Config Devcontainers</a></h3>
       <p>Zero-configuration devcontainer templates for Python, Node, Go, Rust, C++, and Java. Open any repository in VS Code with a single click — no setup required.</p>
       <p><a href="https://github.com/Pradeep-B28/Devstarter"><b>💻 Explore Templates &amp; Source Code</b></a></p>
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <h3>☕ <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap">Java + DSA Master Roadmap</a></h3>
       <p>A comprehensive, beginner-to-advanced curriculum mapping out Core Java, Object-Oriented Design, JVM internals, and interview-ready Data Structures &amp; Algorithms.</p>
       <p><a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap"><b>📖 View Roadmap &amp; Curriculum</b></a></p>
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <h3>📊 <a href="https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer">Searching &amp; Sorting Visualizer</a></h3>
       <p>An interactive Java Swing GUI application rendering step-by-step sorting executions (Bubble, Selection, Insertion, Quick, Merge, Heap) and binary search comparisons frame-by-frame.</p>
       <p><a href="https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer"><b>💻 View Repository &amp; Source Code</b></a></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>💡 <a href="mailto:pradeepbashaa@gmail.com">Custom Enterprise Websites &amp; 3D Apps</a></h3>
+      <p>Need a modern corporate portal like Softech, custom 3D WebGL experience, or intelligent automation engine for your enterprise? Reach out to collaborate and build high-performance systems.</p>
+      <p><a href="mailto:pradeepbashaa@gmail.com"><b>✉️ Ping Me to Build Your Website</b></a></p>
     </td>
   </tr>
 </table>

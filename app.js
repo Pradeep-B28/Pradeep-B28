@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#10b981;">[OK] Build Successful (12ms) • JVM Heap Target: 1024MB • GC: ZGC Active</span></div>
           <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#22d3ee;">[TRAINER] Pradeep B. active • 7,500+ Engineers Mentored in Core Java &amp; DSA</span></div>
           <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#5fe0c4;">[WEB PLATFORM] Softech Portal active: https://reachsoftech.onrender.com/home</span></div>
-          <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#a855f7;">[FLAGSHIP] 9 3D WebGL Systems &amp; Repositories Live • 100% Placement Ready</span></div>
+          <div class="console-log-line"><span class="console-prompt">&gt;</span> <span style="color:#a855f7;">[FLAGSHIP] 13 Production &amp; Open-Source Systems Live • 100% Placement Ready</span></div>
         `;
         btnRunCode.disabled = false;
         btnRunCode.innerHTML = '▶ Run Code';
@@ -237,8 +237,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const filter = btn.getAttribute('data-filter');
 
       projectCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
+        const category = card.getAttribute('data-category') || '';
+        const cats = category.split(/\s+/);
+        if (filter === 'all' || cats.includes(filter)) {
           card.style.display = 'flex';
           card.style.animation = 'fadeInUp 0.4s ease forwards';
         } else {

@@ -742,6 +742,9 @@ h1, h2, h3, h4 {
 .viz-devstarter-bg { background: linear-gradient(135deg, rgba(234,179,8,0.25), rgba(239,68,68,0.25)); }
 .viz-dsa-bg { background: linear-gradient(135deg, rgba(5,150,105,0.25), rgba(34,211,238,0.25)); }
 .viz-sorting-bg { background: linear-gradient(135deg, rgba(236,72,153,0.25), rgba(59,130,246,0.25)); }
+.viz-aiagent-bg { background: linear-gradient(135deg, rgba(236,72,153,0.28), rgba(99,102,241,0.28)); }
+.viz-nammaroute-bg { background: linear-gradient(135deg, rgba(16,185,129,0.28), rgba(245,158,11,0.28)); }
+.viz-diwalisky-bg { background: linear-gradient(135deg, rgba(245,158,11,0.28), rgba(239,68,68,0.28)); }
 
 .viz-animated-bars {
   display: flex;
