@@ -1,0 +1,46 @@
+name: Refresh Real-Data Profile Graphics & 3D Contributions
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate Vector Graphics (Stats, Streak, Languages, Tech Matrix)
+        run: node scripts/generate-stats.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_STATS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Generate 3D Contribution Graphs
+        uses: yoshi389111/github-profile-3d-contrib@0.9.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: Deploy Generated Graphics to Output Branch
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git branch -D output 2>/dev/null || true
+          git checkout --orphan output
+          git rm -rf .
+          git checkout HEAD -- assets/generated profile-3d-contrib
+          git add assets/generated profile-3d-contrib
+          git commit -m "chore(stats): update automated profile metrics [skip ci]" || exit 0
+          git push -f origin output

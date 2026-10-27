@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106 38" width="106" height="38">
+  <defs>
+    <style>
+      .btn-text {
+        font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        fill: #E6EDF3;
+      }
+    </style>
+  </defs>
+  <rect width="104" height="36" x="1" y="1" rx="8" fill="#151B23" stroke="#2A313C" stroke-width="1.2"/>
+  <g transform="translate(14, 11)" stroke="#8B949E" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/>
+  </g>
+  <text x="38" y="23" class="btn-text">Reddit</text>
+</svg>

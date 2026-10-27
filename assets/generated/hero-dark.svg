@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360">
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'Instrument Serif';
+        font-style: normal;
+        font-weight: 400;
+        src: url(data:font/woff2;base64,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) format('woff2');
+      }
+      .display-name {
+        font-family: 'Instrument Serif', Georgia, serif;
+        font-size: 54px;
+        fill: #E6EDF3;
+        letter-spacing: -0.01em;
+      }
+      .subhead {
+        font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        fill: #8B949E;
+      }
+      .details {
+        font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-size: 14px;
+        fill: #8B949E;
+      }
+      .pill-text {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        fill: #10B981;
+      }
+      .cta-text {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        fill: #E3A03A;
+      }
+      .lattice-edge {
+        stroke: #2A8C82;
+        stroke-width: 1.2;
+        stroke-opacity: 0.45;
+      }
+      .lattice-node {
+        fill: #151B23;
+        stroke: #2A8C82;
+        stroke-width: 1.8;
+      }
+      .accent-node {
+        fill: #E3A03A;
+        stroke: #FFF;
+        stroke-width: 1.5;
+      }
+      @keyframes pulseDot {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.85); }
+      }
+      .pulse {
+        animation: pulseDot 2.4s ease-in-out infinite;
+        transform-origin: 75px 64px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .animated-mesh {
+          animation: none !important;
+        }
+        .pulse {
+          animation: none !important;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect width="1198" height="358" x="1" y="1" rx="16" fill="#0D1117" stroke="#2A313C" stroke-width="1.2"/>
+
+  <!-- Left Content Column -->
+  <g transform="translate(64, 48)">
+    <!-- Status Pill -->
+    <rect x="0" y="0" width="310" height="28" rx="14" fill="#151B23" stroke="#2A313C" stroke-width="1"/>
+    <circle cx="15" cy="14" r="4.5" fill="#10B981" class="pulse"/>
+    <text x="30" y="18" class="pill-text">OPEN TO SDE ROLES · RELOCATING</text>
+
+    <!-- Name in Instrument Serif -->
+    <text x="0" y="90" class="display-name">B Pradeep</text>
+
+    <!-- Headline -->
+    <text x="0" y="134" class="subhead">Software Engineer · Full-Stack &amp; 3D Web</text>
+
+    <!-- Subline -->
+    <text x="0" y="166" class="details">4 years · 7,500+ engineers mentored · Open to remote or on-site roles worldwide</text>
+
+    <!-- Interactive CTA Link to 3D Portfolio -->
+    <g transform="translate(0, 206)">
+      <rect x="0" y="0" width="270" height="38" rx="8" fill="#2A1D0B" stroke="#5C3E14" stroke-width="1"/>
+      <text x="16" y="24" class="cta-text">Explore 3D Interactive Portfolio →</text>
+    </g>
+  </g>
+
+  <!-- Right Visual Motif: The Algorithmic Lattice (Isometric 3D Polyhedral Graph) -->
+  <g transform="translate(930, 180)">
+    <g class="animated-mesh">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="0 0 0" 
+        to="360 0 0" 
+        dur="10s" 
+        repeatCount="indefinite" 
+      />
+      
+      <!-- Outer Hexagonal Frame -->
+      <line x1="-120" y1="0" x2="-60" y2="-90" class="lattice-edge"/>
+      <line x1="-60" y1="-90" x2="60" y2="-90" class="lattice-edge"/>
+      <line x1="60" y1="-90" x2="120" y2="0" class="lattice-edge"/>
+      <line x1="120" y1="0" x2="60" y2="90" class="lattice-edge"/>
+      <line x1="60" y1="90" x2="-60" y2="90" class="lattice-edge"/>
+      <line x1="-60" y1="90" x2="-120" y2="0" class="lattice-edge"/>
+
+      <!-- Inner Octahedral Star Connections -->
+      <line x1="-120" y1="0" x2="0" y2="-40" class="lattice-edge"/>
+      <line x1="120" y1="0" x2="0" y2="-40" class="lattice-edge"/>
+      <line x1="-60" y1="-90" x2="0" y2="40" class="lattice-edge"/>
+      <line x1="60" y1="-90" x2="0" y2="40" class="lattice-edge"/>
+      <line x1="-60" y1="90" x2="0" y2="-40" class="lattice-edge"/>
+      <line x1="60" y1="90" x2="0" y2="-40" class="lattice-edge"/>
+      <line x1="0" y1="-40" x2="0" y2="40" stroke="#E3A03A" stroke-width="1.8" stroke-dasharray="4,3"/>
+
+      <!-- Cross Bracing -->
+      <line x1="-60" y1="-90" x2="60" y2="90" class="lattice-edge" stroke-opacity="0.25"/>
+      <line x1="60" y1="-90" x2="-60" y2="90" class="lattice-edge" stroke-opacity="0.25"/>
+
+      <!-- Junction Nodes -->
+      <circle cx="-120" cy="0" r="5" class="lattice-node"/>
+      <circle cx="-60" cy="-90" r="5" class="lattice-node"/>
+      <circle cx="60" cy="-90" r="5" class="lattice-node"/>
+      <circle cx="120" cy="0" r="5" class="lattice-node"/>
+      <circle cx="60" cy="90" r="5" class="lattice-node"/>
+      <circle cx="-60" cy="90" r="5" class="lattice-node"/>
+      
+      <!-- Central Algorithmic Junction -->
+      <circle cx="0" cy="-40" r="6" class="lattice-node" fill="#151B23"/>
+      <circle cx="0" cy="40" r="6" class="accent-node"/>
+    </g>
+  </g>
+</svg>

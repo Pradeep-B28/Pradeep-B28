@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="100%" height="460">
+  <defs>
+    <style>
+      .col-header {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        fill: #9A5F0E;
+      }
+      .skill-title {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        fill: #1B1F24;
+      }
+      .skill-desc {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 12px;
+        fill: #59636E;
+      }
+    </style>
+  </defs>
+
+  <rect width="1198" height="458" x="1" y="1" rx="14" fill="#FFFFFF" stroke="#E4E0D8" stroke-width="1.2"/>
+
+  <!-- 4 Columns -->
+  <!-- Col 1: Java & JVM -->
+  <g transform="translate(48, 36)">
+    <rect width="255" height="388" rx="10" fill="#FAF8F4" stroke="#E4E0D8" stroke-width="1"/>
+    <g transform="translate(20, 28)">
+      <text x="0" y="0" class="col-header">JAVA &amp; JVM INTERNALS</text>
+      
+      <g transform="translate(0, 34)">
+        <text x="0" y="0" class="skill-title">Core Java &amp; OOP</text>
+        <text x="0" y="18" class="skill-desc">Inheritance, Polymorphism, Design</text>
+      </g>
+
+      <g transform="translate(0, 96)">
+        <text x="0" y="0" class="skill-title">Collections Internals</text>
+        <text x="0" y="18" class="skill-desc">HashMap collisions, TreeMap R-B</text>
+      </g>
+
+      <g transform="translate(0, 158)">
+        <text x="0" y="0" class="skill-title">Concurrency &amp; Threads</text>
+        <text x="0" y="18" class="skill-desc">Locks, ThreadPools, Atomics</text>
+      </g>
+
+      <g transform="translate(0, 220)">
+        <text x="0" y="0" class="skill-title">JVM Architecture &amp; GC</text>
+        <text x="0" y="18" class="skill-desc">Stack frames, Heap layout, G1GC</text>
+      </g>
+
+      <g transform="translate(0, 282)">
+        <text x="0" y="0" class="skill-title">Java Swing GUI</text>
+        <text x="0" y="18" class="skill-desc">Interactive desktop visualizers</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Col 2: DSA Patterns -->
+  <g transform="translate(328, 36)">
+    <rect width="255" height="388" rx="10" fill="#FAF8F4" stroke="#E4E0D8" stroke-width="1"/>
+    <g transform="translate(20, 28)">
+      <text x="0" y="0" class="col-header">ALGORITHMIC PATTERNS</text>
+      
+      <g transform="translate(0, 34)">
+        <text x="0" y="0" class="skill-title">Two Pointers &amp; Sliding Window</text>
+        <text x="0" y="18" class="skill-desc">Optimal range queries, Kadane's</text>
+      </g>
+
+      <g transform="translate(0, 96)">
+        <text x="0" y="0" class="skill-title">Trees &amp; Binary Search Trees</text>
+        <text x="0" y="18" class="skill-desc">BFS/DFS, LCA, Morris traversal</text>
+      </g>
+
+      <g transform="translate(0, 158)">
+        <text x="0" y="0" class="skill-title">Graphs &amp; Shortest Paths</text>
+        <text x="0" y="18" class="skill-desc">Dijkstra, A*, BFS, Topological Sort</text>
+      </g>
+
+      <g transform="translate(0, 220)">
+        <text x="0" y="0" class="skill-title">Dynamic Programming</text>
+        <text x="0" y="18" class="skill-desc">State transitions, Memoization, 2D</text>
+      </g>
+
+      <g transform="translate(0, 282)">
+        <text x="0" y="0" class="skill-title">Interview Pedagogy</text>
+        <text x="0" y="18" class="skill-desc">Pattern identification &amp; dry runs</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Col 3: Full-Stack & 3D -->
+  <g transform="translate(608, 36)">
+    <rect width="255" height="388" rx="10" fill="#FAF8F4" stroke="#E4E0D8" stroke-width="1"/>
+    <g transform="translate(20, 28)">
+      <text x="0" y="0" class="col-header">FULL-STACK &amp; 3D WEB</text>
+      
+      <g transform="translate(0, 34)">
+        <text x="0" y="0" class="skill-title">Modern JavaScript &amp; TS</text>
+        <text x="0" y="18" class="skill-desc">ES6+, TypeScript, Strict typing</text>
+      </g>
+
+      <g transform="translate(0, 96)">
+        <text x="0" y="0" class="skill-title">React 18 &amp; State Models</text>
+        <text x="0" y="18" class="skill-desc">Hooks, Context, Client caching</text>
+      </g>
+
+      <g transform="translate(0, 158)">
+        <text x="0" y="0" class="skill-title">Three.js WebGL</text>
+        <text x="0" y="18" class="skill-desc">PBR materials, Shaders, Raycasting</text>
+      </g>
+
+      <g transform="translate(0, 220)">
+        <text x="0" y="0" class="skill-title">Node.js, Express &amp; Python</text>
+        <text x="0" y="18" class="skill-desc">Flask 3, REST APIs, JSON schema</text>
+      </g>
+
+      <g transform="translate(0, 282)">
+        <text x="0" y="0" class="skill-title">Mobile &amp; PWA</text>
+        <text x="0" y="18" class="skill-desc">Capacitor Android, Offline caching</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Col 4: DevOps & Tooling -->
+  <g transform="translate(888, 36)">
+    <rect width="255" height="388" rx="10" fill="#FAF8F4" stroke="#E4E0D8" stroke-width="1"/>
+    <g transform="translate(20, 28)">
+      <text x="0" y="0" class="col-header">DEVOPS &amp; TOOLING</text>
+      
+      <g transform="translate(0, 34)">
+        <text x="0" y="0" class="skill-title">PostgreSQL Profiling</text>
+        <text x="0" y="18" class="skill-desc">AST parsing, Lock analysis, Schema</text>
+      </g>
+
+      <g transform="translate(0, 96)">
+        <text x="0" y="0" class="skill-title">Docker &amp; Containers</text>
+        <text x="0" y="18" class="skill-desc">Devcontainers, Reproducible builds</text>
+      </g>
+
+      <g transform="translate(0, 158)">
+        <text x="0" y="0" class="skill-title">CI/CD Gatekeepers</text>
+        <text x="0" y="18" class="skill-desc">GitHub Actions, Automated tests</text>
+      </g>
+
+      <g transform="translate(0, 220)">
+        <text x="0" y="0" class="skill-title">Git &amp; Version Control</text>
+        <text x="0" y="18" class="skill-desc">Branching strategies, Rebase, Tags</text>
+      </g>
+
+      <g transform="translate(0, 282)">
+        <text x="0" y="0" class="skill-title">Linux &amp; Developer Tooling</text>
+        <text x="0" y="18" class="skill-desc">IntelliJ IDEA, VS Code, Bash, Vite</text>
+      </g>
+    </g>
+  </g>
+</svg>

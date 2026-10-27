@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="100%" height="180">
+  <defs>
+    <style>
+      .label {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        fill: #8B949E;
+      }
+      .value {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 32px;
+        font-weight: 700;
+        fill: #E6EDF3;
+      }
+      .accent-val {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 32px;
+        font-weight: 700;
+        fill: #E3A03A;
+      }
+      .unit {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 13px;
+        fill: #8B949E;
+      }
+    </style>
+  </defs>
+
+  <rect width="1198" height="178" x="1" y="1" rx="14" fill="#0D1117" stroke="#2A313C" stroke-width="1.2"/>
+
+  <g transform="translate(60, 42)">
+    <!-- Metric 1: Current Streak -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="18" class="label">CURRENT STREAK</text>
+      <text x="0" y="60" class="accent-val">3 Days</text>
+      <text x="0" y="84" class="unit">Continuous activity</text>
+    </g>
+
+    <line x1="340" y1="10" x2="340" y2="90" stroke="#2A313C" stroke-width="1"/>
+
+    <!-- Metric 2: Longest Streak -->
+    <g transform="translate(390, 0)">
+      <text x="0" y="18" class="label">LONGEST STREAK</text>
+      <text x="0" y="60" class="value">14 Days</text>
+      <text x="0" y="84" class="unit">Peak consistent cadence</text>
+    </g>
+
+    <line x1="720" y1="10" x2="720" y2="90" stroke="#2A313C" stroke-width="1"/>
+
+    <!-- Metric 3: Active Contribution Days -->
+    <g transform="translate(770, 0)">
+      <text x="0" y="18" class="label">TOTAL ACTIVE CONTRIBUTION DAYS</text>
+      <text x="0" y="60" class="value">24 Days</text>
+      <text x="0" y="84" class="unit">Within the past 365-day rolling window</text>
+    </g>
+  </g>
+</svg>
