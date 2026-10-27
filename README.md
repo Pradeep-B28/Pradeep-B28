@@ -91,7 +91,8 @@
   <tr>
     <td width="50%" valign="top">
       <a href="https://reachsoftech.onrender.com/home">
-        <img src="assets/images/projects/softech.webp" width="100%" alt="Softech Placement Portal Preview" />
+        <img src="![Uploading image.png…]()
+" width="100%" alt="Softech Placement Portal Preview" />
       </a>
       <h4>Softech — Technical Placement Portal</h4>
       <p>End-to-end corporate career portal and technical learning ecosystem designed for campus recruitment automation, coding arenas, and verified hiring pipelines.</p>
