@@ -1,55 +1,70 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pradeep | Java &amp; DSA Master Trainer | Full-Stack Architect | Web Platform Engineer</title>
-  <meta name="description" content="Official portfolio of Pradeep - Java &amp; DSA Master Trainer, Full-Stack Architect, and Web Developer. Creator of the Softech Placement Portal (reachsoftech.onrender.com). Explore 3D WebGL architectures, algorithm visualizers, and production web systems." />
+  <title>B Pradeep — Software Engineer · Full-Stack &amp; 3D Web</title>
+  <meta name="description" content="Portfolio of B Pradeep. Software Engineer with 4 years experience specializing in Java/JVM internals, algorithmic patterns, full-stack web platforms, and 3D WebGL." />
   
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pradeep-b28.github.io/Pradeep-B28/" />
+  <meta property="og:title" content="B Pradeep — Software Engineer · Full-Stack &amp; 3D Web" />
+  <meta property="og:description" content="4 years experience · 7,500+ mentored. Full-stack web architectures, PostgreSQL migration safety, and spatial 3D WebGL." />
+  <meta property="og:image" content="https://pradeep-b28.github.io/Pradeep-B28/assets/images/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0D1117" id="theme-color-meta" />
 
-  <!-- Google Fonts -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230D1117'/><text x='16' y='22' font-family='serif' font-size='20' font-weight='bold' fill='%23E3A03A' text-anchor='middle'>P</text></svg>" />
+
+  <!-- Fonts (OFL): Instrument Serif, IBM Plex Sans, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheet -->
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Three.js Library & OrbitControls via CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
 
-  <!-- Three.js Background Canvas -->
-  <canvas id="bg-canvas"></canvas>
-
-  <!-- Main Grid Background Overlay -->
-  <div class="grid-overlay"></div>
-
   <!-- Navigation Bar -->
-  <header class="navbar">
+  <header class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#" class="brand-logo">
-        <span class="logo-icon">&lt;/&gt;</span>
-        <span class="logo-text">PRADEEP<span class="accent-dot">.java</span></span>
+      <a href="#hero" class="brand-logo" aria-label="B Pradeep Home">
+        <span class="brand-name">B Pradeep</span>
+        <span class="brand-badge">SDE</span>
       </a>
 
       <nav class="nav-links" id="nav-links">
         <a href="#about" class="nav-link">About</a>
-        <a href="#journey" class="nav-link">Journey</a>
-        <a href="#softech" class="nav-link">Softech Portal</a>
-        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#featured" class="nav-link">Featured Work</a>
         <a href="#projects" class="nav-link">Projects</a>
-        <a href="#impact" class="nav-link">Impact</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#teaching" class="nav-link">Mentorship</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" class="btn btn-sm btn-secondary" style="color: #5fe0c4; border-color: rgba(23,143,127,0.5);">Softech Portal ↗</a>
-        <a href="https://www.linkedin.com/in/pradeepb-2k" target="_blank" rel="noopener" class="btn btn-sm btn-primary">LinkedIn</a>
+        <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-sm btn-accent">Hire Me</a>
+        
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
       </nav>
 
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Open mobile menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -59,1069 +74,563 @@
     <!-- HERO SECTION -->
     <section class="hero-section" id="hero">
       <div class="hero-container">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span class="badge-text">⚡ Java &amp; DSA Master Trainer • Full-Stack Architect • Web Platform Specialist</span>
-        </div>
-
-        <h1 class="hero-title">
-          Turning <span class="gradient-text text-glow">Complex DSA &amp; Code</span><br />
-          Into Clear <span class="gradient-text-alt">Architectural Mastery</span>
-        </h1>
-
-        <p class="hero-description">
-          Empowering <strong>7,500+ engineers</strong> to master the leap from Java syntax to high-level interview algorithms and resilient software architecture. Creating visual, intuition-first tools and enterprise platforms that make problem-solving second nature.
-        </p>
-
-        <div class="hero-actions">
-          <a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" class="btn btn-lg btn-primary btn-glow" style="background: linear-gradient(135deg, #178f7f 0%, #0d9488 100%);">
-            <span>🌐 Explore Softech Portal</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-          </a>
-          <a href="#contact" class="btn btn-lg btn-secondary">
-            <span>✉️ Ping Me for Custom Websites</span>
-          </a>
-        </div>
-
-        <!-- LIVE APPS QUICK ACCESS PILLS -->
-        <div class="hero-live-strip" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 18px; margin-bottom: 24px;">
-          <a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" class="btn btn-sm" style="background: rgba(23,143,127,0.2); border: 1px solid rgba(95,224,196,0.5); color: #5fe0c4; border-radius: 20px; font-weight: 600; padding: 6px 14px;">🌐 Softech Portal ↗</a>
-          <a href="https://nammaroute-sigma.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm" style="background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.5); color: #34d399; border-radius: 20px; font-weight: 600; padding: 6px 14px;">🗺️ Namma Route ↗</a>
-          <a href="https://diwalisky.vercel.app" target="_blank" rel="noopener" class="btn btn-sm" style="background: rgba(245,158,11,0.2); border: 1px solid rgba(245,158,11,0.5); color: #fbbf24; border-radius: 20px; font-weight: 600; padding: 6px 14px;">🎆 Diwali Sky ↗</a>
-          <a href="https://lifeindots.vercel.app" target="_blank" rel="noopener" class="btn btn-sm" style="background: rgba(6,182,212,0.2); border: 1px solid rgba(6,182,212,0.5); color: #22d3ee; border-radius: 20px; font-weight: 600; padding: 6px 14px;">⚪ Life in Dots ↗</a>
-          <a href="https://catchtheai.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm" style="background: rgba(236,72,153,0.2); border: 1px solid rgba(236,72,153,0.5); color: #f472b6; border-radius: 20px; font-weight: 600; padding: 6px 14px;">🤖 Catch the AI ↗</a>
-        </div>
-
-        <div class="hero-stats-strip">
-          <div class="stat-item">
-            <span class="stat-number" data-target="7500">7,500+</span>
-            <span class="stat-label">Students Mentored</span>
+        <!-- Left: Editorial Content -->
+        <div class="hero-content">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span class="status-text">OPEN TO SDE ROLES · RELOCATING</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number" data-target="100">100+</span>
-            <span class="stat-label">Live Bootcamps</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number" data-target="99">99%</span>
-            <span class="stat-label">Satisfaction Rate</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">15 Repos</span>
-            <span class="stat-label">Open Source Systems</span>
-          </div>
-        </div>
 
-        <!-- INTERACTIVE CODE TERMINAL WINDOW -->
-        <div class="hero-terminal-wrapper">
-          <div class="code-terminal-window glass-panel">
-            <div class="terminal-titlebar">
-              <div class="terminal-window-buttons">
-                <span class="terminal-win-btn btn-close"></span>
-                <span class="terminal-win-btn btn-min"></span>
-                <span class="terminal-win-btn btn-max"></span>
-              </div>
-              <div class="terminal-tabs">
-                <button class="term-tab active" data-tab="java">PradeepTrainer.java</button>
-                <button class="term-tab" data-tab="json">PlacementStats.json</button>
-                <button class="term-tab" data-tab="yaml">Architecture.yaml</button>
-              </div>
-              <div class="terminal-actions-bar">
-                <button class="term-action-btn btn-copy-code" id="btn-copy-code">📋 Copy</button>
-                <button class="term-action-btn btn-run-code" id="btn-run-code">▶ Run Code</button>
-              </div>
-            </div>
+          <h1 class="hero-name">B Pradeep</h1>
+          <p class="hero-headline">Software Engineer · Full-Stack &amp; 3D Web</p>
+          <p class="hero-subline">
+            4 years of engineering experience · 7,500+ engineers mentored. I build high-throughput full-stack platforms, pre-migration database safety tooling, and spatial 3D WebGL experiences.
+          </p>
 
-            <!-- Java Tab Content -->
-            <div class="terminal-body" id="code-body-java">
-<pre><code><span class="code-keyword">package</span> com.pradeep.architect;
-
-<span class="code-comment">/**
- * Official Trainer &amp; Full-Stack Architect Profile Engine
- * Mentored 7,500+ Engineers in Core Java, Collections, Concurrency &amp; DSA
- */</span>
-<span class="code-keyword">public class</span> <span class="code-class">PradeepTrainer</span> {
-    <span class="code-keyword">private static final int</span> STUDENTS_MENTORED = <span class="code-num">7500</span>;
-    <span class="code-keyword">private static final</span> String SOFTECH_PORTAL = <span class="code-string">"https://reachsoftech.onrender.com/home"</span>;
-
-    <span class="code-keyword">public static void</span> <span class="code-method">main</span>(String[] args) {
-        Trainer master = <span class="code-keyword">new</span> Trainer(<span class="code-string">"Pradeep B."</span>, <span class="code-string">"Java &amp; DSA Master Trainer"</span>);
-        master.addCoreExpertise(<span class="code-string">"JVM Internals, Memory Layout &amp; Garbage Collection"</span>);
-        master.addCoreExpertise(<span class="code-string">"Advanced Graphs, Trees, Dynamic Programming &amp; Two-Pointers"</span>);
-        master.addCoreExpertise(<span class="code-string">"Enterprise MERN Stack, Capacitor Android &amp; 3D WebGL"</span>);
-        
-        master.launchWebPlatform(<span class="code-string">"Softech Career Portal"</span>, SOFTECH_PORTAL);
-        master.mentorCandidates(STUDENTS_MENTORED); <span class="code-comment">// 100% placement readiness</span>
-    }
-}</code></pre>
-            </div>
-
-            <!-- JSON Tab Content -->
-            <div class="terminal-body" id="code-body-json" style="display: none;">
-<pre><code>{
-  <span class="code-keyword">"engineer"</span>: <span class="code-string">"Pradeep B."</span>,
-  <span class="code-keyword">"role"</span>: <span class="code-string">"Java &amp; DSA Master Trainer | Full-Stack Architect"</span>,
-  <span class="code-keyword">"metrics"</span>: {
-    <span class="code-keyword">"engineersMentored"</span>: <span class="code-num">7500</span>,
-    <span class="code-keyword">"liveBootcampsConducted"</span>: <span class="code-num">100</span>,
-    <span class="code-keyword">"placementSuccessRate"</span>: <span class="code-string">"99%"</span>,
-    <span class="code-keyword">"publicRepositories"</span>: <span class="code-num">13</span>
-  },
-  <span class="code-keyword">"featuredWebPlatform"</span>: {
-    <span class="code-keyword">"platform"</span>: <span class="code-string">"Softech Placement &amp; Career Portal"</span>,
-    <span class="code-keyword">"liveUrl"</span>: <span class="code-string">"https://reachsoftech.onrender.com/home"</span>,
-    <span class="code-keyword">"overview"</span>: <span class="code-string">"Comprehensive technical placement and training platform with automated drives, course modules, and hiring pipelines."</span>,
-    <span class="code-keyword">"customDevelopment"</span>: <span class="code-string">"Need a modern corporate website or 3D web application like Softech? Ping me to create any websites like that!"</span>
-  }
-}</code></pre>
-            </div>
-
-            <!-- YAML Tab Content -->
-            <div class="terminal-body" id="code-body-yaml" style="display: none;">
-<pre><code><span class="code-keyword">architecture</span>:
-  <span class="code-keyword">backend</span>:
-    - Core Java &amp; JVM Concurrency
-    - Python 3.11 &amp; Flask Microservices
-    - Node.js &amp; Express REST APIs
-  <span class="code-keyword">database</span>:
-    - PostgreSQL with Schema-Sentinel CI Gatekeeper
-    - MongoDB Atlas Cloud
-  <span class="code-keyword">frontend_3d</span>:
-    - React 18 &amp; TypeScript
-    - Three.js WebGL Particle Engines &amp; Shaders
-    - Capacitor 6 Native Android &amp; PWA
-  <span class="code-keyword">ai_automation</span>:
-    - MOR Holographic J.A.R.V.I.S. (ElevenLabs AI Voice)
-    - Groq API &amp; LLM Commit Release Generators
-    - Namma Route Transit Graph Solvers (Dijkstra vs A*)
-    - Interactive Particle Firework Physics &amp; Web Audio</code></pre>
-            </div>
-
-            <!-- Console Output Area -->
-            <div class="terminal-console-output" id="terminal-console-output">
-              <span class="console-prompt">&gt;</span> <span class="code-comment">Ready to run code. Click "▶ Run Code" above to simulate JVM execution.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOFTECH ENTERPRISE SPOTLIGHT SECTION -->
-    <section class="section softech-section" id="softech">
-      <div class="section-container">
-        <div class="softech-spotlight-card glass-panel">
-          <div class="softech-header">
-            <div class="softech-badge-flagship">
-              <span>🌐 FEATURED WEB PLATFORM SHOWCASE</span>
-            </div>
-            <a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="background: linear-gradient(135deg, #178f7f 0%, #0d9488 100%);">
-              <span>Launch Live Portal</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+          <div class="hero-cta-group">
+            <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span>Discuss SDE Opportunity</span>
+            </a>
+            <a href="#featured" class="btn btn-secondary">
+              <span>View Featured Work</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </a>
           </div>
 
-          <div class="softech-grid">
-            <div class="softech-info">
-              <h2 class="softech-title">Softech — Technical Placement, Career &amp; <span>Learning Portal</span></h2>
-              <p class="softech-desc">
-                <strong>Softech</strong> (<a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" style="color: #5fe0c4;">reachsoftech.onrender.com</a>) is an end-to-end technical placement and career learning platform engineered and architected by <strong>Pradeep B.</strong> It connects college graduates and software engineers with industry-aligned placement training, structured recruitment drives, live interactive courses, and verified hiring pipelines in Java, DSA, Full-Stack, and System Design.
-              </p>
-
-              <div class="softech-highlights">
-                <div class="highlight-item">
-                  <span class="highlight-icon">💼</span>
-                  <span><strong>Corporate Placement</strong> Drive Management</span>
-                </div>
-                <div class="highlight-item">
-                  <span class="highlight-icon">🎓</span>
-                  <span><strong>Specialized Technical</strong> Course Enrollment</span>
-                </div>
-                <div class="highlight-item">
-                  <span class="highlight-icon">🏛️</span>
-                  <span><strong>Campus-to-Recruiter</strong> Pipeline Automation</span>
-                </div>
-                <div class="highlight-item">
-                  <span class="highlight-icon">⚡</span>
-                  <span><strong>High-Performance</strong> Full-Stack Architecture</span>
-                </div>
-              </div>
-
-              <div class="project-tags">
-                <span class="tag" style="color: #5fe0c4; border-color: rgba(95,224,196,0.3);">Python 3.11</span>
-                <span class="tag" style="color: #5fe0c4; border-color: rgba(95,224,196,0.3);">Flask 3.0</span>
-                <span class="tag" style="color: #5fe0c4; border-color: rgba(95,224,196,0.3);">PostgreSQL</span>
-                <span class="tag" style="color: #5fe0c4; border-color: rgba(95,224,196,0.3);">Bootstrap 5.3</span>
-                <span class="tag" style="color: #5fe0c4; border-color: rgba(95,224,196,0.3);">Render Cloud</span>
-              </div>
-            </div>
-
-            <div class="softech-portal-preview">
-              <div class="portal-preview-header">
-                <span class="portal-dot red"></span>
-                <span class="portal-dot yellow"></span>
-                <span class="portal-dot green"></span>
-                <span class="portal-preview-url">reachsoftech.onrender.com</span>
-              </div>
-              <h3 style="color:#fff; font-size:1.15rem; margin-bottom:8px;">Softech Corporate Portal</h3>
-              <p style="color:var(--text-muted); font-size:0.85rem;">Official live career &amp; placement platform for hiring partners, colleges, and students.</p>
-
-              <div class="portal-preview-stats">
-                <div class="p-stat">
-                  <span class="p-stat-num">7,500+</span>
-                  <span class="p-stat-lbl">Trained</span>
-                </div>
-                <div class="p-stat">
-                  <span class="p-stat-num">100+</span>
-                  <span class="p-stat-lbl">Drives</span>
-                </div>
-                <div class="p-stat">
-                  <span class="p-stat-num">Tier-1</span>
-                  <span class="p-stat-lbl">Placements</span>
-                </div>
-              </div>
-
-              <a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="margin-top:20px; width:100%; background: linear-gradient(135deg, #178f7f 0%, #0d9488 100%);">
-                <span>Visit reachsoftech.onrender.com ↗</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="softech-cta-box">
-            <div class="softech-cta-text">
-              💡 <strong>Need a custom website, corporate platform, or 3D web application like Softech?</strong>
-              <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;">I engineer high-performance, responsive web platforms and immersive 3D experiences. Ping me to create any websites like that!</p>
-            </div>
-            <a href="mailto:pradeepbashaa@gmail.com?subject=Custom%20Website%20Inquiry%20via%20Portfolio&amp;body=Hi%20Pradeep,%20I%20saw%20your%20portfolio%20and%20the%20Softech%20website.%20I%20would%20like%20to%20discuss%20building%20a%20website%20like%20that." class="btn btn-sm btn-primary">
-              <span>✉️ Ping Me to Build Your Website</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- JOURNEY & EXPERIENCE SECTION -->
-    <section class="section journey-section" id="journey">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-tag">BACKGROUND &amp; IMPACT</span>
-          <h2 class="section-title">Professional Journey &amp; <span class="gradient-text">Mentorship</span></h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-card glass-panel tilt-card">
-            <div class="card-icon">👨‍🏫</div>
-            <h3>Lead Java &amp; DSA Master Trainer</h3>
-            <p>Directing technical training tracks for engineering candidates across premier campuses (VIT University, SIT Madurai, KSR Institutions). Mentored <strong>7,500+ students</strong> to build robust mental models in algorithmic problem-solving.</p>
-          </div>
-
-          <div class="about-card glass-panel tilt-card">
-            <div class="card-icon">🏗️</div>
-            <h3>Full-Stack &amp; Mobile Architecture</h3>
-            <p>Engineer behind high-end applications like <strong>Schema Sentinel</strong> (PostgreSQL Pre-Migration Risk Engine), <strong>Ledger</strong> (MERN + PWA + Capacitor Android Suite), <strong>GIT-viz</strong> (3D WebGL Profile Skyline), and <strong>Rel_Notes</strong> (Groq AI Release Generator).</p>
-          </div>
-
-          <div class="about-card glass-panel tilt-card">
-            <div class="card-icon">🌐</div>
-            <h3>Lead Web Architect &amp; Technical Platform Engineer</h3>
-            <p>Architect and lead developer of <strong>Softech</strong> (<a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" style="color:#5fe0c4;">reachsoftech.onrender.com</a>), engineering the complete full-stack web portal infrastructure for placement training, applicant tracking, and recruitment pipelines. Looking for a modern web platform? Ping me to create any websites like that.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section class="section about-section" id="about">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-tag">PEDAGOGICAL PHILOSOPHY</span>
-          <h2 class="section-title">Teaching Code as an <span class="gradient-text">Art of Clarity</span></h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-card glass-panel tilt-card">
-            <div class="card-icon">💡</div>
-            <h3>Intuition Over Rote Learning</h3>
-            <p>Instead of memorizing syntax or LeetCode solutions, I teach students to dissect patterns — recognizing when to apply Sliding Window, Two Pointers, or Dynamic Programming naturally.</p>
-          </div>
-
-          <div class="about-card glass-panel tilt-card">
-            <div class="card-icon">⚙️</div>
-            <h3>Structured Java Mastery</h3>
-            <p>From JVM memory layout, garbage collection, and OOP principles to concurrent collections and thread safety — building deep roots for resilient backend software engineering.</p>
-          </div>
-
-          <div class="about-card glass-panel tilt-card">
-            <div class="card-icon">🎯</div>
-            <h3>Visual &amp; Interactive Mental Models</h3>
-            <p>Creating custom 3D and 2D visualizers for search algorithms, sorting passes, and tree traversals so abstract pointer shifts become crystal clear.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS SECTION -->
-    <section class="section skills-section" id="skills">
-      <div class="section-container">
-        <div class="section-header center">
-          <span class="section-tag">CORE COMPETENCY MATRIX</span>
-          <h2 class="section-title">Skills &amp; Knowledge <span class="gradient-text">Matrix</span></h2>
-          <p class="section-subtitle">Real-time searchable overview of technical disciplines, from JVM concurrency internals to full-stack engineering and cloud deployment.</p>
-        </div>
-
-        <!-- Live Instant Search Bar -->
-        <div class="skills-search-wrapper">
-          <span class="skills-search-icon">🔍</span>
-          <input type="text" id="skills-search-input" class="skills-search-input" placeholder="Search skills (e.g. Java, Docker, React, Trees, SQL)..." />
-        </div>
-
-        <div class="skills-grid">
-          <!-- Card 1 -->
-          <div class="skill-category-card glass-panel tilt-card">
-            <div class="category-header">
-              <div class="category-icon java-bg">☕</div>
-              <h3>Java Foundations &amp; JVM</h3>
-            </div>
-            <ul class="skill-list">
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Core Java &amp; OOP Concepts</span> <span class="skill-level">Master • 98%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 98%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Collections Framework</span> <span class="skill-level">Master • 98%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 98%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Multithreading &amp; Concurrency</span> <span class="skill-level">Advanced • 94%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 94%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>JVM Memory &amp; GC Tuning</span> <span class="skill-level">Advanced • 92%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 92%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Streams &amp; Functional Lambdas</span> <span class="skill-level">Master • 96%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 96%;"></div></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="skill-category-card glass-panel tilt-card">
-            <div class="category-header">
-              <div class="category-icon dsa-bg">📊</div>
-              <h3>Data Structures &amp; Patterns</h3>
-            </div>
-            <ul class="skill-list">
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Arrays, Linked Lists, Stacks, Queues</span> <span class="skill-level">Master • 98%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 98%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Trees, BST, AVL &amp; Segment Trees</span> <span class="skill-level">Master • 95%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 95%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Graphs (BFS, DFS, Dijkstra, Tarjan)</span> <span class="skill-level">Master • 95%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 95%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Dynamic Programming (1D &amp; 2D)</span> <span class="skill-level">Master • 94%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 94%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Tries, Hashing &amp; Two Pointers</span> <span class="skill-level">Master • 97%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 97%;"></div></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="skill-category-card glass-panel tilt-card">
-            <div class="category-header">
-              <div class="category-icon web-bg">💻</div>
-              <h3>Full-Stack &amp; Mobile</h3>
-            </div>
-            <ul class="skill-list">
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>React 18 &amp; Modern TypeScript</span> <span class="skill-level">Advanced • 92%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 92%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Three.js &amp; WebGL Shaders</span> <span class="skill-level">Advanced • 90%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 90%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Node.js, Express &amp; Python Flask</span> <span class="skill-level">Master • 95%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 95%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>PostgreSQL &amp; MongoDB Atlas</span> <span class="skill-level">Advanced • 92%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 92%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Capacitor Android &amp; PWA Systems</span> <span class="skill-level">Advanced • 88%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 88%;"></div></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="skill-category-card glass-panel tilt-card">
-            <div class="category-header">
-              <div class="category-icon devops-bg">🚀</div>
-              <h3>DevOps &amp; AI Ecosystem</h3>
-            </div>
-            <ul class="skill-list">
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Docker &amp; Devcontainers</span> <span class="skill-level">Advanced • 90%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 90%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>GitHub Actions CI/CD Security</span> <span class="skill-level">Advanced • 92%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 92%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>LLM Integration &amp; Groq APIs</span> <span class="skill-level">Advanced • 88%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 88%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>System Architecture &amp; Scalability</span> <span class="skill-level">Master • 94%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 94%;"></div></div>
-                </div>
-              </li>
-              <li>
-                <div class="skill-item-row" style="width: 100%;">
-                  <div class="skill-info"><span>Pedagogical Visualizers &amp; Roadmaps</span> <span class="skill-level">Creator • 100%</span></div>
-                  <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 100%;"></div></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURED PROJECTS -->
-    <section class="section projects-section" id="projects">
-      <div class="section-container">
-        <div class="section-header center">
-          <span class="section-tag">OPEN SOURCE &amp; ENTERPRISE SYSTEMS</span>
-          <h2 class="section-title">All Flagship <span class="gradient-text">Repositories</span></h2>
-          <p class="section-subtitle">Comprehensive showcase of 15 production &amp; open-source systems spanning corporate placement portals, local holographic AI assistants, transit graph visualizers, interactive life metrics, AI code review games, 3D WebGL theme suites, DevOps security gatekeepers, and Java pedagogical tools.</p>
-          
-          <div class="repo-counter-badge">
-            <span class="badge-dot"></span>
-            <span>Showing All 15 Public &amp; Enterprise Systems</span>
-          </div>
-        </div>
-
-        <!-- Filter Category Tabs -->
-        <div class="project-filter-bar">
-          <button class="filter-btn active" data-filter="all">All Projects (15)</button>
-          <button class="filter-btn" data-filter="flagship">🌟 Live Web &amp; 3D (8)</button>
-          <button class="filter-btn" data-filter="ai">🤖 AI &amp; Voice (3)</button>
-          <button class="filter-btn" data-filter="devops">🛡️ DevOps &amp; AI (4)</button>
-          <button class="filter-btn" data-filter="java">☕ Java &amp; Algorithms (3)</button>
-          <button class="filter-btn" data-filter="fullstack">💻 Full-Stack &amp; Mobile (2)</button>
-        </div>
-
-        <div class="projects-grid" id="projects-grid">
-          <!-- Repo 0: Softech -->
-          <div class="project-card glass-panel tilt-card" data-category="flagship fullstack">
-            <div class="project-banner">
-              <div class="project-viz-placeholder" style="background: linear-gradient(135deg, rgba(23, 143, 127, 0.4) 0%, rgba(95, 224, 196, 0.2) 100%);">
-                <span class="viz-icon">🌐 💼 🎓</span>
-                <span class="viz-tech-label">Python 3.11 • Flask • PostgreSQL • Render</span>
-              </div>
-              <div class="project-badge" style="background: #178f7f; color: #fff;">Corporate Flagship</div>
-            </div>
-            <div class="project-content">
-              <h3>🌐 Softech: Placement Training &amp; Career Portal</h3>
-              <p>Live corporate career portal and technical education platform (<a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" style="color: #5fe0c4;">reachsoftech.onrender.com</a>) featuring job placement dashboards, student course registrations, and automated recruitment pipelines. Looking for a modern platform or website like this? Ping me to create one for your business!</p>
-              <div class="project-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Flask</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">Render</span>
-                <span class="tag">Bootstrap 5</span>
-              </div>
-              <div class="project-footer" style="gap: 8px;">
-                <a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="background: linear-gradient(135deg, #178f7f 0%, #0d9488 100%);">
-                  <span>Launch Live Portal</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo: MOR Holographic AI -->
-          <div class="project-card glass-panel tilt-card" data-category="ai devops">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-aiagent-bg">
-                <span class="viz-icon">🤖 🎙️ ⚡ 💡</span>
-                <span class="viz-tech-label">React • Node.js • ElevenLabs AI • IoT Smart Home</span>
-              </div>
-              <div class="project-badge" style="background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff;">🔒 Private &amp; Proprietary</div>
-            </div>
-            <div class="project-content">
-              <h3>🤖 MOR: Holographic AI Assistant &amp; J.A.R.V.I.S.</h3>
-              <p>Local, voice-first personal AI assistant featuring a fullscreen interactive holographic face UI, wake-word detection ("Hey Mor" / "Hey Jarvis"), ElevenLabs neural voice synthesis, and smart room IoT hardware automation for AC, projectors, smart plugs, and ambience lighting.</p>
-              <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">ElevenLabs AI</span>
-                <span class="tag">Web Speech API</span>
-                <span class="tag">IoT Automation</span>
-                <span class="tag">Electron</span>
-              </div>
-              <div class="project-footer" style="gap: 8px; align-items: center;">
-                <a href="mailto:pradeepbashaa@gmail.com?subject=Inquiry%20regarding%20MOR%20Voice%20AI%20Assistant" class="btn btn-sm btn-primary" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">
-                  <span>✉️ Inquire / Request Demo</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-                <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 0.75rem; color: #f87171; font-weight: 600; padding: 4px 8px; border-radius: 6px; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.25);">
-                  🔒 Proprietary IP
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo: Namma Route -->
-          <div class="project-card glass-panel tilt-card" data-category="flagship java">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-nammaroute-bg">
-                <span class="viz-icon">🗺️ 🚆 ⚡ 📍</span>
-                <span class="viz-tech-label">Vanilla JS • HTML5 Canvas • Graph Theory</span>
-              </div>
-              <div class="project-badge" style="background: linear-gradient(135deg, #10b981, #059669); color: #fff;">Live Graph Visualizer</div>
-            </div>
-            <div class="project-content">
-              <h3>🗺️ Namma Route: Tamil Nadu Transit Graph</h3>
-              <p>Interactive multi-modal transit graph pathfinding visualizer across 55 Tamil Nadu cities (104 nodes, 390 edges). Step-by-step visual comparison of Dijkstra vs A* (admissible heuristic k=1.006) vs BFS with 8,292 verified queries and zero external dependencies.</p>
-              <div class="project-tags">
-                <span class="tag">Vanilla JavaScript</span>
-                <span class="tag">Graph Theory</span>
-                <span class="tag">Dijkstra &amp; A*</span>
-                <span class="tag">Canvas &amp; SVG</span>
-                <span class="tag">Zero Dependencies</span>
-              </div>
-              <div class="project-footer" style="gap: 8px;">
-                <a href="https://nammaroute-sigma.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                  <span>Launch Live App</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-                <a href="https://github.com/Pradeep-B28/Namma_Route" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>Repository</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo: Diwali Sky -->
-          <div class="project-card glass-panel tilt-card" data-category="flagship">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-diwalisky-bg">
-                <span class="viz-icon">🎆 ✨ 🚀 🔊</span>
-                <span class="viz-tech-label">HTML5 Canvas • Particle Physics • Web Audio</span>
-              </div>
-              <div class="project-badge" style="background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff;">Interactive Live App</div>
-            </div>
-            <div class="project-content">
-              <h3>🎆 Diwali Sky: Interactive Fireworks Simulator</h3>
-              <p>High-energy festive web application that writes custom names in sparkling fireworks across an interactive night sky. Features particle physics dynamics, authentic rocket trails, procedural Web Audio sound synthesis, and instant WhatsApp link sharing.</p>
-              <div class="project-tags">
-                <span class="tag">HTML5 Canvas</span>
-                <span class="tag">Particle Physics</span>
-                <span class="tag">Web Audio API</span>
-                <span class="tag">Mobile Responsive</span>
-                <span class="tag">Viral Web App</span>
-              </div>
-              <div class="project-footer" style="gap: 8px;">
-                <a href="https://diwalisky.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);">
-                  <span>Launch Live App</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-                <a href="https://github.com/Pradeep-B28/Diwali_Sky" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>Repository</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo: Life in Dots -->
-          <div class="project-card glass-panel tilt-card" data-category="flagship">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-lifeindots-bg">
-                <span class="viz-icon">⚪ ⏳ 📅 🌙</span>
-                <span class="viz-tech-label">HTML5 Canvas • Life in Weeks • Synodic Lunar Math</span>
-              </div>
-              <div class="project-badge" style="background: linear-gradient(135deg, #06b6d4, #8b5cf6); color: #fff;">Live Visualizer</div>
-            </div>
-            <div class="project-content">
-              <h3>⚪ Your Life in Dots: Lifespan in Weeks</h3>
-              <p>A responsive visual canvas mapping an entire human lifespan into weeks (52 columns per year). Features 5 interactive layers (Overview, History, Chapters, Time Budget, Milestones), synodic lunar mathematics, smooth camera zoom, and 100% client-side privacy.</p>
-              <div class="project-tags">
-                <span class="tag">HTML5 Canvas</span>
-                <span class="tag">Life in Weeks</span>
-                <span class="tag">Synodic Lunar Math</span>
-                <span class="tag">High-DPI</span>
-                <span class="tag">Zero Dependencies</span>
-              </div>
-              <div class="project-footer" style="gap: 8px;">
-                <a href="https://lifeindots.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);">
-                  <span>Launch Live App</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-                <a href="https://github.com/Pradeep-B28/Life_In_Dots" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>Repository</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo: Catch the AI -->
-          <div class="project-card glass-panel tilt-card" data-category="flagship ai">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-catchtheai-bg">
-                <span class="viz-icon">🤖 ⚡ ⏱️ 🐞</span>
-                <span class="viz-tech-label">Vanilla JS • Decoupled Event Bus • High-Precision Timer</span>
-              </div>
-              <div class="project-badge" style="background: linear-gradient(135deg, #ec4899, #10b981); color: #fff;">Live Debug Game</div>
-            </div>
-            <div class="project-content">
-              <h3>🤖 Catch the AI: Code Review &amp; Debugging Game</h3>
-              <p>Fast-paced developer game where players inspect AI-generated code snippets and spot hidden bugs within a 30-second countdown. Features a decoupled event bus, sub-millisecond drift-free timer, canvas auto-fit font scaling, and 20 verified bugs.</p>
-              <div class="project-tags">
-                <span class="tag">Vanilla JavaScript</span>
-                <span class="tag">Event Bus</span>
-                <span class="tag">Drift-Free Timer</span>
-                <span class="tag">Code Review</span>
-                <span class="tag">20 Verified Bugs</span>
-              </div>
-              <div class="project-footer" style="gap: 8px;">
-                <a href="https://catchtheai.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="background: linear-gradient(135deg, #ec4899 0%, #10b981 100%);">
-                  <span>Launch Live Game</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-                <a href="https://github.com/Pradeep-B28/Catch_The_AI" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>Repository</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo 1: Portfolio (3D Theme Suite) -->
-          <div class="project-card glass-panel tilt-card" data-category="flagship">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-hub-bg" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.35) 0%, rgba(236, 72, 153, 0.35) 100%);">
-                <span class="viz-icon">🎨 🌌 🏛️ 🕹️</span>
-                <span class="viz-tech-label">React 18 • Three.js • WebGL Shaders • Tailwind</span>
-              </div>
-              <div class="project-badge">Flagship 3D Theme Suite</div>
-            </div>
-            <div class="project-content">
-              <h3>🎨 Portfolio: 3D WebGL Theme Suite (6 Themes)</h3>
-              <p>Interactive 3D WebGL developer portfolio suite featuring 6 distinct visual themes (Film Studio, Galaxy Solar System, Archaeological Dig, Constellation Star Map, Retro Arcade Cabinet, High-Tech Bank Vault).</p>
-              <div class="project-tags">
-                <span class="tag">React 18</span>
-                <span class="tag">Three.js</span>
-                <span class="tag">WebGL Shaders</span>
-                <span class="tag">Tailwind CSS</span>
-                <span class="tag">TypeScript</span>
-              </div>
-              <div class="project-footer">
-                <a href="https://github.com/Pradeep-B28/Portfolio" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
-                  <span>View Repository</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo 2: Pradeep-B28 (3D Portfolio) -->
-          <div class="project-card glass-panel tilt-card" data-category="flagship">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-hub-bg">
-                <span class="viz-icon">⚡ 🏛️ 🌌</span>
-                <span class="viz-tech-label">HTML5 • Three.js • CSS Glassmorphism</span>
-              </div>
-              <div class="project-badge">Flagship 3D Portfolio</div>
-            </div>
-            <div class="project-content">
-              <h3>⚡ Pradeep-B28: 3D Developer Portfolio</h3>
-              <p>Official 3D Interactive Portfolio built with HTML5, CSS Glassmorphism, Three.js WebGL, particle physics engine, interactive SQL Risk Analyzer, and 7,500+ student showcase.</p>
-              <div class="project-tags">
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS Glassmorphism</span>
-                <span class="tag">Three.js</span>
-                <span class="tag">WebGL</span>
-                <span class="tag">JavaScript</span>
-              </div>
-              <div class="project-footer" style="gap: 8px;">
-                <a href="https://pradeep-b28.github.io/Pradeep-B28/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
-                  <span>Launch 3D Site</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-                <a href="https://github.com/Pradeep-B28/Pradeep-B28" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>Source Code</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo 3: GIT-viz -->
-          <div class="project-card glass-panel tilt-card" data-category="flagship">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-skyline-bg">
-                <span class="viz-icon">🏙️ 🌌 ⚔️</span>
-                <span class="viz-tech-label">Three.js • Shaders • Web Audio</span>
-              </div>
-              <div class="project-badge">3D Visualization &amp; Shaders</div>
-            </div>
-            <div class="project-content">
-              <h3>🏙️ GIT-viz: 3D Profile &amp; Galaxy Visualizer</h3>
-              <p>Official 3D Interactive Portfolio &amp; Procedural GitHub Visualizer built with HTML5, Three.js WebGL, and custom shaders. Real-time GitHub analytics visualization with 4 interactive rendering paradigms.</p>
-              <div class="project-tags">
-                <span class="tag">Three.js</span>
-                <span class="tag">WebGL</span>
-                <span class="tag">Web Audio API</span>
-                <span class="tag">GitHub API</span>
-                <span class="tag">Data Viz</span>
-              </div>
-              <div class="project-footer" style="gap: 8px;">
-                <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
-                  <span>Launch 3D Visualizer</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-                <a href="https://github.com/Pradeep-B28/GIT_3D_Portfolio" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>Repository</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo 4: Ledger -->
-          <div class="project-card glass-panel tilt-card" data-category="fullstack">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-ledger-bg">
-                <span class="viz-icon">💰 📱 📊</span>
-                <span class="viz-tech-label">React 18 • Node.js • Capacitor • PWA</span>
-              </div>
-              <div class="project-badge">MERN + Mobile Suite</div>
-            </div>
-            <div class="project-content">
-              <h3>💰 Ledger: Enterprise AI Expense Tracker</h3>
-              <p>Market-ready multi-platform financial tracking system built with MERN stack, Progressive Web App (PWA) architecture, and Capacitor Android runtime. Features a 0ms Optimistic UI engine and bank sync.</p>
-              <div class="project-tags">
-                <span class="tag">React 18</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Capacitor 6</span>
-                <span class="tag">PWA</span>
-              </div>
-              <div class="project-footer" style="gap: 8px;">
-                <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>View Repository</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo 5: Schema Sentinel -->
-          <div class="project-card glass-panel tilt-card" data-category="devops">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-sentinel-bg">
-                <span class="viz-icon">🛡️ 🔍 ⚡</span>
-                <span class="viz-tech-label">Python • PostgreSQL • GitHub Action</span>
-              </div>
-              <div class="project-badge">DevOps &amp; Database Security</div>
-            </div>
-            <div class="project-content">
-              <h3>🛡️ Schema Sentinel: PostgreSQL Risk Analyzer</h3>
-              <p>Production-aware pre-migration risk engine for PostgreSQL. AST SQL parser, safe read-only database profiler, 4-axis risk scoring matrix (0–10), and automated GitHub Action PR gatekeeper.</p>
-              <div class="project-tags">
-                <span class="tag">Python 3.11</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">GitHub Actions</span>
-                <span class="tag">AST Parser</span>
-                <span class="tag">CI/CD Gatekeeper</span>
-              </div>
-              <div class="project-footer">
-                <a href="https://github.com/Pradeep-B28/Schema_Sentinel" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>View Repository</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo 6: Rel_Notes -->
-          <div class="project-card glass-panel tilt-card" data-category="ai devops">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-relnotes-bg">
-                <span class="viz-icon">📜 🤖 ⚡</span>
-                <span class="viz-tech-label">TypeScript • Groq AI • Git CLI</span>
-              </div>
-              <div class="project-badge">AI Tool &amp; CLI</div>
-            </div>
-            <div class="project-content">
-              <h3>📜 Rel_Notes: AI Release Notes Generator</h3>
-              <p>Automated AI-powered release notes generator built with TypeScript and Groq API. Reads raw Git commit histories and structures clean, polished markdown release notes in seconds.</p>
-              <div class="project-tags">
-                <span class="tag">TypeScript</span>
-                <span class="tag">Groq AI</span>
-                <span class="tag">Git CLI</span>
-                <span class="tag">Node.js</span>
-              </div>
-              <div class="project-footer">
-                <a href="https://github.com/Pradeep-B28/Rel_Notes" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>View Repository</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo 7: Devstarter -->
-          <div class="project-card glass-panel tilt-card" data-category="devops">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-devstarter-bg">
-                <span class="viz-icon">🐳 💻 ⚡</span>
-                <span class="viz-tech-label">Dockerfile • Devcontainers • Docker</span>
-              </div>
-              <div class="project-badge">Dev Environment</div>
-            </div>
-            <div class="project-content">
-              <h3>🐳 Devstarter: Zero-Config Devcontainers</h3>
-              <p>Production-ready devcontainer configurations for Python, Node, Go, Rust, C++, and Java. Allows developers to launch fully configured, isolated dev containers in VS Code instantly.</p>
-              <div class="project-tags">
-                <span class="tag">Docker</span>
-                <span class="tag">Devcontainers</span>
-                <span class="tag">VS Code</span>
-                <span class="tag">Multi-Language</span>
-              </div>
-              <div class="project-footer">
-                <a href="https://github.com/Pradeep-B28/Devstarter" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>View Repository</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo 8: JAVA-DSA-Roadmap -->
-          <div class="project-card glass-panel tilt-card" data-category="java">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-dsa-bg">
-                <div class="dsa-nodes">
-                  <div class="node">J</div>
-                  <div class="node">DS</div>
-                  <div class="node">A</div>
-                </div>
-              </div>
-              <div class="project-badge">Master Roadmap</div>
-            </div>
-            <div class="project-content">
-              <h3>☕ Java + DSA Master Roadmap</h3>
-              <p>A structured step-by-step master path guiding 7,500+ students from core syntax and JVM memory layout to interview-ready data structures and complex graph algorithms.</p>
-              <div class="project-tags">
-                <span class="tag">Java</span>
-                <span class="tag">DSA</span>
-                <span class="tag">Algorithms</span>
-                <span class="tag">Interview Prep</span>
-              </div>
-              <div class="project-footer">
-                <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>View Repository</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repo 9: JAVA-Searching-Sorting-Visualizer -->
-          <div class="project-card glass-panel tilt-card" data-category="java">
-            <div class="project-banner">
-              <div class="project-viz-placeholder viz-sorting-bg">
-                <div class="viz-animated-bars">
-                  <div class="bar bar-1"></div>
-                  <div class="bar bar-2"></div>
-                  <div class="bar bar-3"></div>
-                  <div class="bar bar-4"></div>
-                  <div class="bar bar-5"></div>
-                </div>
-              </div>
-              <div class="project-badge">Interactive Tool</div>
-            </div>
-            <div class="project-content">
-              <h3>📊 Searching &amp; Sorting Visualizer</h3>
-              <p>An interactive Java Swing GUI application rendering sorting steps (Bubble, Selection, Insertion, Quick, Merge, Heap) and binary search comparisons frame-by-frame.</p>
-              <div class="project-tags">
-                <span class="tag">Java Swing</span>
-                <span class="tag">Algorithms</span>
-                <span class="tag">GUI</span>
-                <span class="tag">Animation</span>
-              </div>
-              <div class="project-footer">
-                <a href="https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">
-                  <span>View Repository</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS & IMPACT -->
-    <section class="section impact-section" id="impact">
-      <div class="section-container">
-        <div class="section-header center">
-          <span class="section-tag">COMMUNITY &amp; RESULTS</span>
-          <h2 class="section-title">Empowering Learners &amp; <span class="gradient-text">Engineers</span></h2>
-          <p class="section-subtitle">Real feedback from students and engineering partners transformed by deep, visual-first algorithmic training.</p>
-        </div>
-
-        <div class="impact-grid">
-          <div class="impact-card glass-panel tilt-card">
-            <div class="quote-mark">“</div>
-            <p class="quote-text">Pradeep's visual explanation of Dynamic Programming and Monotonic Stacks completely changed how I approach LeetCode hard problems. His pattern-oriented methodology got me through top-tier technical interviews.</p>
-            <div class="author-info">
-              <span class="author-name">Senior Software Engineer</span>
-              <span class="author-role">Product Enterprise • ⭐⭐⭐⭐⭐</span>
-            </div>
-          </div>
-
-          <div class="impact-card glass-panel tilt-card">
-            <div class="quote-mark">“</div>
-            <p class="quote-text">The depth of JVM internals and Concurrent Collections taught in his masterclasses is second to none. He doesn't just teach code; he demystifies how memory, threads, and garbage collection work under the hood.</p>
-            <div class="author-info">
-              <span class="author-name">Java Bootcamp Graduate</span>
-              <span class="author-role">7,500+ Alumni Network • ⭐⭐⭐⭐⭐</span>
-            </div>
-          </div>
-
-          <div class="impact-card glass-panel tilt-card">
-            <div class="quote-mark">“</div>
-            <p class="quote-text">The corporate placement training provided through Softech transformed our campus recruitment results. Pradeep’s curriculum directly prepares students for real-world software engineering challenges.</p>
-            <div class="author-info">
-              <span class="author-name">Institutional Placement Officer</span>
-              <span class="author-role">College Placement Partner • ⭐⭐⭐⭐⭐</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT / FOOTER SECTION -->
-    <section class="section contact-section" id="contact">
-      <div class="section-container">
-        <div class="contact-box glass-panel text-center">
-          <h2 class="contact-title">Let's Build Stronger Web Systems &amp; Problem Solvers Together</h2>
-          <p class="contact-subtitle">Interested in custom web applications, 3D interactive portfolios, corporate Java &amp; DSA training, or technical mentorship? Select an inquiry below or ping me directly!</p>
-
-          <!-- Contact Topic Preset Chips -->
-          <div class="contact-topics-bar">
-            <button class="topic-chip active">Custom Website / App Development</button>
-            <button class="topic-chip">Corporate Java &amp; DSA Training</button>
-            <button class="topic-chip">College Placement Bootcamp</button>
-            <button class="topic-chip">1-on-1 Engineering Mentorship</button>
-          </div>
-
-          <div class="contact-buttons">
-            <a href="mailto:pradeepbashaa@gmail.com?subject=Custom%20Website%20Inquiry%20via%20Portfolio&amp;body=Hi%20Pradeep,%20I%20saw%20your%20portfolio%20and%20the%20Softech%20website.%20I%20would%20like%20to%20discuss%20building%20a%20website%20like%20that." class="btn btn-lg btn-primary btn-glow" style="text-decoration: none;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>✉️ Ping Me for Custom Websites</span>
-            </a>
-
-            <button class="btn btn-lg btn-secondary" id="copy-email-btn" data-email="pradeepbashaa@gmail.com">
-              <span id="email-btn-text">Copy Email Address</span>
-            </button>
-
-            <a href="https://www.linkedin.com/in/pradeepb-2k" target="_blank" rel="noopener" class="btn btn-lg btn-secondary">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <!-- Social Links -->
+          <div class="hero-social-links">
+            <a href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               <span>LinkedIn</span>
             </a>
-
-            <a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" class="btn btn-lg btn-secondary" style="color: #5fe0c4; border-color: rgba(23,143,127,0.5);">
-              <span>Visit Softech Portal ↗</span>
+            <a href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener" class="social-link" title="LeetCode">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>LeetCode</span>
             </a>
+            <a href="https://github.com/Pradeep-B28" target="_blank" rel="noopener" class="social-link" title="GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: 3D Interactive Lattice Canvas Container -->
+        <div class="hero-3d-wrapper">
+          <div class="canvas-card" id="lattice-card">
+            <!-- Three.js Canvas Container -->
+            <div id="lattice-3d-container" class="lattice-container" aria-label="Interactive 3D Algorithmic Lattice Scene">
+              <!-- Static SVG Fallback for No-WebGL or Prefers-Reduced-Motion -->
+              <div class="static-fallback" id="static-fallback">
+                <picture>
+                  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/hero-dark.svg">
+                  <source media="(prefers-color-scheme: light)" srcset="assets/generated/hero-light.svg">
+                  <img src="assets/generated/hero-dark.svg" alt="Algorithmic Lattice 3D Fallback" />
+                </picture>
+              </div>
+            </div>
+
+            <div class="canvas-controls-overlay">
+              <span class="control-tag">Interactive 3D WebGL</span>
+              <span class="control-hint">Drag to rotate · Scroll to zoom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AT A GLANCE SECTION -->
+    <section class="section at-a-glance-section" id="about">
+      <div class="section-container">
+        <div class="stats-grid">
+          <div class="stat-tile">
+            <span class="stat-number">4 yrs</span>
+            <span class="stat-label">Engineering Experience</span>
+            <span class="stat-desc">Full-stack systems &amp; training</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-number">7,500+</span>
+            <span class="stat-label">Engineers Mentored</span>
+            <span class="stat-desc">Java, DSA &amp; system design</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Online Bootcamps</span>
+            <span class="stat-desc">Placement preparation</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Public Repositories</span>
+            <span class="stat-desc">Verified open-source code</span>
+          </div>
+        </div>
+
+        <div class="current-role-banner">
+          <div class="role-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="role-text">
+            <strong>Currently:</strong> Technical Trainer – Academic Excellence, Sethu Institute of Technology, Madurai<br />
+            <strong>Previously worked with:</strong> VIT Chennai · VIT Vellore · VIT-AP · KSR (Erode)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK SECTION -->
+    <section class="section featured-section" id="featured">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">Flagship Systems</span>
+          <h2 class="section-title">Featured Engineering Work</h2>
+          <p class="section-subtitle">Production platforms, algorithmic visualizers, and database gatekeepers built with verified metrics.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- 1. Softech -->
+          <article class="project-card">
+            <div class="card-media">
+              <img src="assets/images/projects/softech.webp" alt="Softech Placement Portal Screenshot" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-header-row">
+                <h3 class="card-title">Softech — Technical Placement Portal</h3>
+                <span class="card-tag">Production</span>
+              </div>
+              <p class="card-problem">
+                High-throughput corporate placement portal streamlining campus recruitment drives, live technical training, and institutional candidate evaluation pipelines.
+              </p>
+              <div class="tech-stack-row">
+                <span class="tech-chip">Python</span>
+                <span class="tech-chip">Flask 3</span>
+                <span class="tech-chip">PostgreSQL</span>
+                <span class="tech-chip">Render</span>
+                <span class="tech-chip">CodeMirror</span>
+              </div>
+              <div class="card-highlight">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Full production web platform with automated code execution and administrative evaluation drives.</span>
+              </div>
+              <div class="client-note">
+                I build portals like this for clients — <a href="mailto:pradeepbashaa@gmail.com?subject=Website%20or%20Portal%20Project%20%E2%80%94%20B%20Pradeep">email me</a>.
+              </div>
+              <div class="card-actions">
+                <a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live Platform →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Namma Route -->
+          <article class="project-card">
+            <div class="card-media">
+              <img src="assets/images/projects/nammaroute.webp" alt="Namma Route Transit Graph Visualizer" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-header-row">
+                <h3 class="card-title">Namma Route — Transit Graph Visualizer</h3>
+                <span class="card-tag">Algorithm</span>
+              </div>
+              <p class="card-problem">
+                Interactive multi-modal transit graph visualizer rendering road and rail networks across 55 Tamil Nadu cities (104 nodes, 390 directed edges).
+              </p>
+              <div class="tech-stack-row">
+                <span class="tech-chip">JavaScript</span>
+                <span class="tech-chip">Canvas API</span>
+                <span class="tech-chip">A* Heuristic</span>
+                <span class="tech-chip">Dijkstra</span>
+                <span class="tech-chip">Vercel</span>
+              </div>
+              <div class="card-highlight">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Verified against an exhaustive 8,292 automated city-pair test suite with zero routing failures.</span>
+              </div>
+              <div class="card-actions">
+                <a href="https://nammaroute-sigma.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live App →</a>
+                <a href="https://github.com/Pradeep-B28/Namma_Route" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Schema Sentinel -->
+          <article class="project-card">
+            <div class="card-media">
+              <img src="assets/images/projects/schemasentinel.webp" alt="Schema Sentinel CLI Output" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-header-row">
+                <h3 class="card-title">Schema Sentinel — PostgreSQL Risk Analyzer</h3>
+                <span class="card-tag">DevOps / Tooling</span>
+              </div>
+              <p class="card-problem">
+                Pre-migration risk profiler and CI/CD gatekeeper detecting non-concurrent table locks, table rewrites, and breaking schema changes prior to deployment.
+              </p>
+              <div class="tech-stack-row">
+                <span class="tech-chip">Python 3.11</span>
+                <span class="tech-chip">sqlparse</span>
+                <span class="tech-chip">PostgreSQL</span>
+                <span class="tech-chip">GitHub Actions</span>
+              </div>
+              <div class="card-highlight">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>AST-based 4-axis risk analysis (Lock, Data Integrity, Compatibility, Performance) blocking unsafe PRs.</span>
+              </div>
+              <div class="card-actions">
+                <a href="https://github.com/Pradeep-B28/Schema_Sentinel" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Source &amp; Action →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Ledger -->
+          <article class="project-card">
+            <div class="card-media">
+              <img src="assets/images/projects/ledger.webp" alt="Ledger Mobile Financial Dashboard" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-header-row">
+                <h3 class="card-title">Ledger — Personal Finance &amp; Expense Tracker</h3>
+                <span class="card-tag">Full-Stack / Mobile</span>
+              </div>
+              <p class="card-problem">
+                Cross-platform personal finance manager with client-side optimistic UI updates and local caching for mobile and web.
+              </p>
+              <div class="tech-stack-row">
+                <span class="tech-chip">React 18</span>
+                <span class="tech-chip">Node.js</span>
+                <span class="tech-chip">Express</span>
+                <span class="tech-chip">MongoDB</span>
+                <span class="tech-chip">Capacitor Android</span>
+              </div>
+              <div class="card-highlight">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                <span>Offline-first LocalStorage transaction ledgering with native Android APK packaging via Capacitor.</span>
+              </div>
+              <div class="card-actions">
+                <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Source Code →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Catch the AI -->
+          <article class="project-card">
+            <div class="card-media">
+              <img src="assets/images/projects/catchtheai.webp" alt="Catch the AI Game Screenshot" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-header-row">
+                <h3 class="card-title">Catch the AI — Code Review &amp; Debugging Game</h3>
+                <span class="card-tag">Game / Web</span>
+              </div>
+              <p class="card-problem">
+                Developer debugging game where players spot subtle logic, concurrency, and syntax bugs in AI-generated code snippets within a 30-second countdown.
+              </p>
+              <div class="tech-stack-row">
+                <span class="tech-chip">JavaScript</span>
+                <span class="tech-chip">CSS Modules</span>
+                <span class="tech-chip">Event Bus</span>
+                <span class="tech-chip">Vercel</span>
+              </div>
+              <div class="card-highlight">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                <span>Drift-free high-precision timer engine backed by 20 verified algorithmic bug scenarios.</span>
+              </div>
+              <div class="card-actions">
+                <a href="https://catchtheai.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live Game →</a>
+                <a href="https://github.com/Pradeep-B28/Catch_The_AI" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Diwali Sky -->
+          <article class="project-card">
+            <div class="card-media">
+              <img src="assets/images/projects/diwalisky.webp" alt="Diwali Sky Particle Fireworks" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="card-header-row">
+                <h3 class="card-title">Diwali Sky — Interactive Fireworks Simulator</h3>
+                <span class="card-tag">3D / Physics</span>
+              </div>
+              <p class="card-problem">
+                Festive physics canvas simulating particle explosion dynamics that write customizable names across a night sky with procedural sound synthesis.
+              </p>
+              <div class="tech-stack-row">
+                <span class="tech-chip">JavaScript</span>
+                <span class="tech-chip">HTML5 Canvas</span>
+                <span class="tech-chip">Web Audio API</span>
+                <span class="tech-chip">Vercel</span>
+              </div>
+              <div class="card-highlight">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Client-side mathematical particle explosion physics with real-time audio oscillator generation.</span>
+              </div>
+              <div class="card-actions">
+                <a href="https://diwalisky.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live App →</a>
+                <a href="https://github.com/Pradeep-B28/Diwali_Sky" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MORE PROJECTS SECTION -->
+    <section class="section more-projects-section" id="projects">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">Extended Catalog</span>
+          <h2 class="section-title">Additional Systems &amp; Tooling</h2>
+        </div>
+
+        <div class="catalog-grid">
+          <div class="catalog-card">
+            <h4>Life in Dots</h4>
+            <p>Visual human lifespan calendar mapped in weekly units (52 columns per year) with synodic lunar calculations.</p>
+            <div class="catalog-links">
+              <a href="https://lifeindots.vercel.app" target="_blank" rel="noopener">Live App →</a>
+              <a href="https://github.com/Pradeep-B28/Life_In_Dots" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <h4>Rel_Notes</h4>
+            <p>CLI changelog generator leveraging Groq Llama 3.3 70B inference to parse raw git commit histories into markdown.</p>
+            <div class="catalog-links">
+              <a href="https://github.com/Pradeep-B28/Rel_Notes" target="_blank" rel="noopener">Source &amp; CLI →</a>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <h4>Devstarter</h4>
+            <p>Zero-configuration reproducible Docker devcontainers for Python, Go, Java, Rust, Node.js, and C++.</p>
+            <div class="catalog-links">
+              <a href="https://github.com/Pradeep-B28/Devstarter" target="_blank" rel="noopener">Templates →</a>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <h4>Java + DSA Master Roadmap</h4>
+            <p>Structured curriculum covering Core Java, Object-Oriented Design, JVM internals, and interview algorithms.</p>
+            <div class="catalog-links">
+              <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap" target="_blank" rel="noopener">Curriculum →</a>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <h4>Searching &amp; Sorting Visualizer</h4>
+            <p>Java Swing GUI desktop application illustrating comparisons and swaps frame-by-frame for Quick, Merge, and Heap sorts.</p>
+            <div class="catalog-links">
+              <a href="https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer" target="_blank" rel="noopener">Java GUI Source →</a>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <h4>Portfolio Theme Suite</h4>
+            <p>6 distinct 3D WebGL developer portfolio prototypes built in React 18, Three.js, shaders, and Tailwind CSS.</p>
+            <div class="catalog-links">
+              <a href="https://github.com/Pradeep-B28/Portfolio" target="_blank" rel="noopener">Theme Suite →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- MOR Special Card -->
+        <div class="mor-callout-card">
+          <div class="mor-badge">Private &amp; Proprietary System</div>
+          <div class="mor-content">
+            <h3>MOR — Voice-First Holographic AI Assistant</h3>
+            <p>
+              Local-first personal AI assistant featuring wake-word detection, neural speech synthesis, interactive visual holographic avatars, and smart room IoT orchestration.
+            </p>
+            <a href="mailto:pradeepbashaa@gmail.com?subject=Inquiry%20regarding%20MOR%20AI%20Assistant%20Demo%20%E2%80%94%20B%20Pradeep" class="btn btn-sm btn-outline">
+              Request Demo via Email →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section class="section skills-section" id="skills">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">Core Specialization</span>
+          <h2 class="section-title">Technical Expertise Matrix</h2>
+          <p class="section-subtitle">Categorized by architectural domains, runtime platforms, and verified repository usage.</p>
+        </div>
+
+        <div class="skills-matrix-grid">
+          <!-- Col 1 -->
+          <div class="matrix-card">
+            <h3 class="matrix-header">JAVA &amp; JVM INTERNALS</h3>
+            <ul class="matrix-list">
+              <li><strong>Core Java &amp; OOP:</strong> Polymorphism, Encapsulation, Design Patterns</li>
+              <li><strong>Collections Internals:</strong> HashMap collisions, TreeMap Red-Black trees</li>
+              <li><strong>Concurrency:</strong> ExecutorService, Locks, Atomic types, Race conditions</li>
+              <li><strong>JVM Memory &amp; GC:</strong> Stack frames, Heap layout, G1GC tuning</li>
+              <li><strong>Java Swing GUI:</strong> Frame-by-frame desktop algorithmic rendering</li>
+            </ul>
+          </div>
+
+          <!-- Col 2 -->
+          <div class="matrix-card">
+            <h3 class="matrix-header">ALGORITHMIC PATTERNS</h3>
+            <ul class="matrix-list">
+              <li><strong>Arrays &amp; Pointers:</strong> Sliding Window, Two Pointers, Kadane's</li>
+              <li><strong>Trees &amp; BST:</strong> BFS/DFS traversals, LCA, Morris traversal</li>
+              <li><strong>Graph Solvers:</strong> Dijkstra, A* (admissible heuristic), Topological sort</li>
+              <li><strong>Dynamic Programming:</strong> State DAGs, 1D/2D memoization &amp; tabulation</li>
+              <li><strong>Interview Pedagogy:</strong> Pattern recognition &amp; cognitive dry runs</li>
+            </ul>
+          </div>
+
+          <!-- Col 3 -->
+          <div class="matrix-card">
+            <h3 class="matrix-header">FULL-STACK &amp; 3D WEB</h3>
+            <ul class="matrix-list">
+              <li><strong>JavaScript &amp; TS:</strong> Modern ES6+, strict typing, modular architectures</li>
+              <li><strong>React 18 &amp; State:</strong> Hooks, Context, client caching, optimistic updates</li>
+              <li><strong>Three.js WebGL:</strong> PBR materials, shaders, raycasting, particles</li>
+              <li><strong>Node.js &amp; Python:</strong> Express, Flask 3, REST APIs, JSON schemas</li>
+              <li><strong>Mobile &amp; PWA:</strong> Capacitor Android, offline LocalStorage, Service Workers</li>
+            </ul>
+          </div>
+
+          <!-- Col 4 -->
+          <div class="matrix-card">
+            <h3 class="matrix-header">DEVOPS &amp; TOOLING</h3>
+            <ul class="matrix-list">
+              <li><strong>PostgreSQL Profiling:</strong> AST parsing, lock mode analysis, schema migrations</li>
+              <li><strong>Docker &amp; Containers:</strong> Devcontainers, reproducible environments</li>
+              <li><strong>CI/CD Gatekeepers:</strong> GitHub Actions automated test &amp; lint workflows</li>
+              <li><strong>Git &amp; Version Control:</strong> Branching, rebase workflows, semantic tags</li>
+              <li><strong>Developer Tooling:</strong> IntelliJ IDEA, VS Code, Linux bash, Vite</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHING & MENTORSHIP SECTION -->
+    <section class="section teaching-section" id="teaching">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">Pedagogy &amp; Leadership</span>
+          <h2 class="section-title">Technical Training &amp; Mentorship</h2>
+        </div>
+
+        <div class="teaching-content-card">
+          <p class="lead-text">
+            As Technical Trainer for Academic Excellence at Sethu Institute of Technology and through intensive technical programs across institutions including VIT Chennai, VIT Vellore, VIT-AP, and KSR (Erode), I have mentored <strong>7,500+ students and engineers</strong> across <strong>10+ intensive online bootcamps</strong>.
+          </p>
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <h4>Mechanical Sympathy</h4>
+              <p>Demystifying how JVM memory layout, cache lines, and garbage collection pauses directly dictate production throughput.</p>
+            </div>
+            <div class="pillar-card">
+              <h4>Algorithmic Invariants</h4>
+              <p>Replacing rote memorization with structural pattern recognition: sliding window bounds, monotonic stacks, and dynamic programming DAGs.</p>
+            </div>
+            <div class="pillar-card">
+              <h4>Engineering Discipline</h4>
+              <p>Emphasizing clean code architecture, defensive data structures, rigorous edge testing, and CI/CD automation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">Get in Touch</span>
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-subtitle">Open to full-time Software Engineer (SDE) roles worldwide — available for remote opportunities or on-site relocation.</p>
+        </div>
+
+        <div class="contact-cards-grid">
+          <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="contact-card highlight-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h3>SDE Opportunity</h3>
+            <p>Discuss full-time engineering roles in backend, full-stack, or 3D web platforms.</p>
+            <span class="contact-action">Send Email →</span>
+          </a>
+
+          <a href="mailto:pradeepbashaa@gmail.com?subject=Technical%20Training%20or%20Bootcamp%20Inquiry%20%E2%80%94%20B%20Pradeep" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3>Training or Bootcamp</h3>
+            <p>Corporate Java &amp; DSA training programs, campus drives, or institutional curricula.</p>
+            <span class="contact-action">Inquire via Email →</span>
+          </a>
+
+          <a href="mailto:pradeepbashaa@gmail.com?subject=Website%20or%203D%20Project%20Collaboration%20%E2%80%94%20B%20Pradeep" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Custom Web or 3D</h3>
+            <p>Build client web portals, corporate platforms (like Softech), or interactive 3D sites.</p>
+            <span class="contact-action">Collaborate →</span>
+          </a>
+
+          <a href="mailto:pradeepbashaa@gmail.com?subject=Inquiry%20regarding%20MOR%20AI%20Assistant%20Demo%20%E2%80%94%20B%20Pradeep" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/></svg>
+            </div>
+            <h3>MOR AI Demo</h3>
+            <p>Private demonstration of holographic voice-first assistant architecture.</p>
+            <span class="contact-action">Request Demo →</span>
+          </a>
+        </div>
+
+        <div class="direct-contact-bar">
+          <div class="direct-item">
+            <span class="direct-label">Direct Email</span>
+            <a href="mailto:pradeepbashaa@gmail.com" class="direct-value">pradeepbashaa@gmail.com</a>
+          </div>
+          <div class="direct-item">
+            <span class="direct-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener" class="direct-value">linkedin.com/in/pradeepb-2k</a>
+          </div>
+          <div class="direct-item">
+            <span class="direct-label">LeetCode</span>
+            <a href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener" class="direct-value">leetcode.com/u/PradeepKrishB</a>
+          </div>
+          <div class="direct-item">
+            <span class="direct-label">Socials</span>
+            <span class="direct-links">
+              <a href="https://x.com/Pradeep__krish" target="_blank" rel="noopener">X</a> ·
+              <a href="https://www.reddit.com/user/Pradeep_krish/" target="_blank" rel="noopener">Reddit</a> ·
+              <a href="https://www.instagram.com/_._p.r.a.d.e.e.p_._._/" target="_blank" rel="noopener">Instagram</a>
+            </span>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
-      <p>&copy; 2026 Pradeep B. Java &amp; DSA Master Trainer | Full-Stack Architect &amp; Web Platform Specialist. Built with HTML, CSS, Three.js &amp; WebGL.</p>
-      <p style="margin-top: 6px; font-size: 0.88rem; color: #94a3b8;">Need a custom website or interactive 3D web application? <a href="mailto:pradeepbashaa@gmail.com" style="color: #22d3ee; text-decoration: underline;">Ping me to create any websites like that &rarr;</a></p>
-      <div class="footer-links" style="margin-top: 10px;">
-        <a href="https://github.com/Pradeep-B28" target="_blank" rel="noopener">GitHub Profile</a>
-        <span>•</span>
-        <a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" style="color: #5fe0c4;">Softech Portal</a>
-        <span>•</span>
-        <a href="https://www.linkedin.com/in/pradeepb-2k" target="_blank" rel="noopener">LinkedIn</a>
-        <span>•</span>
-        <a href="#hero">Back to top ↑</a>
+      <div class="footer-left">
+        <span>© 2026 B Pradeep. Code released under the <a href="LICENSE">MIT License</a>.</span>
+      </div>
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top" aria-label="Back to top">
+          <span>Back to top</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+        </a>
       </div>
     </div>
   </footer>
 
-  <!-- FLOATING ACTION WIDGETS -->
-  <div class="floating-widgets-bar">
-    <button class="floating-btn" id="audio-toggle" title="Sound Effects">
-      <span id="audio-toggle-icon">🔊</span>
-    </button>
-    <button class="floating-btn" id="scroll-top-btn" title="Back to Top">
-      <span>↑</span>
-    </button>
-  </div>
-
-  <!-- Scripts -->
-  <script src="three-bg.js"></script>
-  <script src="app.js"></script>
+  <!-- Asynchronously loaded scripts for optimal first paint -->
+  <script src="app.js" defer></script>
+  <!-- Three.js + 3D lattice initialized lazily after paint -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="lattice-3d.js" defer></script>
 </body>
 </html>
