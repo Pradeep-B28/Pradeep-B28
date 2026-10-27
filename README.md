@@ -39,7 +39,7 @@
 
 ---
 
-## 👨‍🏫 Executive Profile & Master Trainer Bio
+## 👨‍🏫 Executive Profile & Master Trainer
 
 I am a **Java and Data Structures & Algorithms Master Trainer**, **Full-Stack Architect**, and **Web Platform Engineer** dedicated to transforming abstract code syntax into intuitive, interview-ready problem-solving patterns.
 
