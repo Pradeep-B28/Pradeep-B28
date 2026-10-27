@@ -6,7 +6,7 @@
     <a href="https://nammaroute-sigma.vercel.app/"><img src="https://img.shields.io/badge/🗺️_Namma_Route-Live_App-10B981?style=for-the-badge&logoColor=white" alt="Namma Route Transit Graph" /></a>
     <a href="https://diwalisky.vercel.app"><img src="https://img.shields.io/badge/🎆_Diwali_Sky-Live_App-F59E0B?style=for-the-badge&logoColor=white" alt="Diwali Sky Fireworks" /></a>
     <a href="https://lifeindots.vercel.app"><img src="https://img.shields.io/badge/⚪_Life_in_Dots-Live_App-06B6D4?style=for-the-badge&logoColor=white" alt="Life in Dots Visualizer" /></a>
-    <a href="https://catch-the-ai.vercel.app"><img src="https://img.shields.io/badge/🤖_Catch_the_AI-Live_App-EC4899?style=for-the-badge&logoColor=white" alt="Catch the AI Game" /></a>
+    <a href="https://catchtheai.vercel.app/"><img src="https://img.shields.io/badge/🤖_Catch_the_AI-Live_App-EC4899?style=for-the-badge&logoColor=white" alt="Catch the AI Game" /></a>
     <a href="https://pradeep-b28.github.io/GIT_3D_Portfolio/"><img src="https://img.shields.io/badge/🏙️_GIT--viz_3D-Live_App-7C3AED?style=for-the-badge&logoColor=white" alt="GIT-viz 3D Skyline" /></a>
     <a href="https://pradeep-b28.github.io/Pradeep-B28/"><img src="https://img.shields.io/badge/🌐_3D_Portfolio-Live_Website-06B6D4?style=for-the-badge&logoColor=white" alt="3D Portfolio Website" /></a>
     <a href="mailto:pradeepbashaa@gmail.com?subject=Inquiry%20regarding%20MOR%20Voice%20AI%20Assistant"><img src="https://img.shields.io/badge/🤖_MOR_AI-Private_%26_Proprietary-red?style=for-the-badge&logoColor=white" alt="MOR AI Agent - Private & Proprietary" /></a>
@@ -22,7 +22,7 @@
 ---
 
 ### ⚡ Quick Navigation
-**[🚀 Softech Placement Portal](https://reachsoftech.onrender.com/home)** • **[🗺️ Namma Route](https://nammaroute-sigma.vercel.app/)** • **[🎆 Diwali Sky](https://diwalisky.vercel.app)** • **[⚪ Life in Dots](https://lifeindots.vercel.app)** • **[🤖 Catch the AI](https://catch-the-ai.vercel.app)** • **[🏙️ GIT-viz 3D Skyline](https://pradeep-b28.github.io/GIT_3D_Portfolio/)** • **[🌐 3D Portfolio Hub](https://pradeep-b28.github.io/Pradeep-B28/)** • **[👨‍🏫 Master Trainer Bio](#-executive-profile--master-trainer-bio)** • **[🛡️ Tech Matrix](#-core-specialization--technical-matrix)** • **[📦 Featured Repositories](#-featured-repositories-15-systems--softech-web-platform)** • **[📊 GitHub Analytics](#-github-velocity--activity-analytics)** • **[✉️ Connect & Hire](#-connect--hire-pradeep)**
+**[🚀 Softech Placement Portal](https://reachsoftech.onrender.com/home)** • **[🗺️ Namma Route](https://nammaroute-sigma.vercel.app/)** • **[🎆 Diwali Sky](https://diwalisky.vercel.app)** • **[⚪ Life in Dots](https://lifeindots.vercel.app)** • **[🤖 Catch the AI](https://catchtheai.vercel.app/)** • **[🏙️ GIT-viz 3D Skyline](https://pradeep-b28.github.io/GIT_3D_Portfolio/)** • **[🌐 3D Portfolio Hub](https://pradeep-b28.github.io/Pradeep-B28/)** • **[👨‍🏫 Master Trainer Bio](#-executive-profile--master-trainer-bio)** • **[🛡️ Tech Matrix](#-core-specialization--technical-matrix)** • **[📦 Featured Repositories](#-featured-repositories-15-systems--softech-web-platform)** • **[📊 GitHub Analytics](#-github-velocity--activity-analytics)** • **[✉️ Connect & Hire](#-connect--hire-pradeep)**
 
 ---
 
@@ -109,9 +109,9 @@ I am a **Java and Data Structures & Algorithms Master Trainer**, **Full-Stack Ar
       <p><a href="https://lifeindots.vercel.app"><b>🚀 Launch Live App</b></a> • <a href="https://github.com/Pradeep-B28/Life_In_Dots"><b>💻 Source Code</b></a></p>
     </td>
     <td width="50%" valign="top">
-      <h3>🤖 <a href="https://catch-the-ai.vercel.app">Catch the AI — Code Review &amp; Debugging Game</a></h3>
+      <h3>🤖 <a href="https://catchtheai.vercel.app/">Catch the AI — Code Review &amp; Debugging Game</a></h3>
       <p>Fast-paced developer debugging game where players spot subtle bugs in realistic AI-generated code snippets against a 30-second countdown. Features a decoupled event bus, drift-free timer, and 20 verified bugs.</p>
-      <p><a href="https://catch-the-ai.vercel.app"><b>🚀 Launch Live Game</b></a> • <a href="https://github.com/Pradeep-B28/Catch_The_AI"><b>💻 Source Code</b></a></p>
+      <p><a href="https://catchtheai.vercel.app/"><b>🚀 Launch Live Game</b></a> • <a href="https://github.com/Pradeep-B28/Catch_The_AI"><b>💻 Source Code</b></a></p>
     </td>
   </tr>
   <tr>
