@@ -76,7 +76,7 @@
 
 ### At a Glance
 
-| 4 Years | 7,500+ | 10+ | 12 |
+| 4 Years | 7,500+ | 10+ | 13 |
 | :---: | :---: | :---: | :---: |
 | **Engineering Experience** | **Engineers Mentored** | **Online Bootcamps** | **Public Repositories** |
 
@@ -153,6 +153,28 @@
       <p><code>JavaScript</code> · <code>HTML5 Canvas</code> · <code>Web Audio API</code> · <code>Vercel</code></p>
       <p><b>Highlight:</b> Client-side mathematical particle explosion physics with real-time audio oscillator generation.</p>
       <p><a href="https://diwalisky.vercel.app"><b>Live App →</b></a> • <a href="https://github.com/Pradeep-B28/Diwali_Sky"><b>Source Code →</b></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://find-the-skills.vercel.app/">
+        <img src="assets/images/projects/findtheskills.webp" width="100%" alt="Find the Skills ATS Keyword Scanner Preview" />
+      </a>
+      <h4>Find the Skills — ATS Scanner &amp; Career Gap Engine</h4>
+      <p>Interactive client-side ATS lexical keyword scanner and career qualification engine mapping 332 skills across 1,901 aliases with strict word boundary rules.</p>
+      <p><code>JavaScript</code> · <code>Regex Engine</code> · <code>Web Audio API</code> · <code>Vercel</code></p>
+      <p><b>Highlight:</b> Longest-match lexical precedence with context disambiguation window and zero-server privacy.</p>
+      <p><a href="https://find-the-skills.vercel.app/"><b>Live App →</b></a> • <a href="https://github.com/Pradeep-B28/Find_the_Skills"><b>Source Code →</b></a></p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://lifeindots.vercel.app">
+        <img src="assets/images/projects/lifeindots.webp" width="100%" alt="Life in Dots Lifespan Visualizer Preview" />
+      </a>
+      <h4>Life in Dots — Lifespan in Weeks Visualizer</h4>
+      <p>Visual human lifespan calendar mapped in weekly units (52 columns per year) with synodic lunar calculations and 100% client-side privacy.</p>
+      <p><code>JavaScript</code> · <code>HTML5 Canvas</code> · <code>Integer UTC Math</code> · <code>Vercel</code></p>
+      <p><b>Highlight:</b> O(1) grid coordinate arithmetic with high-DPI multi-layer camera pan and zoom.</p>
+      <p><a href="https://lifeindots.vercel.app"><b>Live App →</b></a> • <a href="https://github.com/Pradeep-B28/Life_In_Dots"><b>Source Code →</b></a></p>
     </td>
   </tr>
 </table>
