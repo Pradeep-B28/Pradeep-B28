@@ -177,6 +177,27 @@
       <p><a href="https://lifeindots.vercel.app"><b>Live App →</b></a> • <a href="https://github.com/Pradeep-B28/Life_In_Dots"><b>Source Code →</b></a></p>
     </td>
   </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://broken-website.vercel.app/">
+        <img src="assets/images/projects/brokenwebsite.webp" width="100%" alt="The Broken Website Debugging Game Preview" />
+      </a>
+      <h4>The Broken Website — Web Debugging &amp; Sandbox</h4>
+      <p>Interactive web debugging game and cybersecurity escape room featuring 15 real-world client bug tickets, live line editor, and triple-sandboxed iframe code execution.</p>
+      <p><code>JavaScript</code> · <code>Sandboxed Iframe &amp; CSP</code> · <code>HTML5 Canvas</code> · <code>Web Audio API</code> · <code>Vercel</code></p>
+      <p><b>Highlight:</b> Double-sandboxed DOM runtime with strict CSP, 60 FPS repair sweep shader, and 10 passing in-browser test suites.</p>
+      <p><a href="https://broken-website.vercel.app/"><b>Live App →</b></a> • <a href="https://github.com/Pradeep-B28/Broken_Website"><b>Source Code →</b></a></p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="https://github.com/Pradeep-B28/Rel_Notes">
+        <h4>Rel_Notes — AI Git Changelog Generator</h4>
+      </a>
+      <p>CLI changelog generator leveraging Groq Llama 3.3 70B inference to parse raw git commit histories into domain-grouped markdown release notes.</p>
+      <p><code>Python 3.11</code> · <code>Groq Cloud LLM</code> · <code>Git CLI</code> · <code>Llama 3.3 70B</code> · <code>Click</code></p>
+      <p><b>Highlight:</b> Zero-config conventional commit classification with automated changelog categorization and PR body generation.</p>
+      <p><a href="https://github.com/Pradeep-B28/Rel_Notes"><b>Source &amp; CLI Tool →</b></a></p>
+    </td>
+  </tr>
 </table>
 
 ---
@@ -187,6 +208,7 @@
 <summary><b>View Additional Systems, Tooling &amp; Curricula</b></summary>
 <br />
 
+- **[The Broken Website](https://broken-website.vercel.app/)** — Interactive web debugging simulator and cybersecurity escape room with triple-sandboxed execution and 15 bug remediation challenges. • [Source](https://github.com/Pradeep-B28/Broken_Website)
 - **[Life in Dots](https://lifeindots.vercel.app)** — Visual human lifespan calendar mapped in weekly units (52 columns per year) with synodic lunar calculations and 100% client-side privacy. • [Source](https://github.com/Pradeep-B28/Life_In_Dots)
 - **[Rel_Notes](https://github.com/Pradeep-B28/Rel_Notes)** — AI-driven command-line changelog generator leveraging Groq Llama 3.3 70B inference to parse raw git commit histories into domain-grouped markdown release notes.
 - **[Devstarter](https://github.com/Pradeep-B28/Devstarter)** — Zero-configuration reproducible Docker devcontainers for Python, Go, Java, Rust, Node.js, and C++.
