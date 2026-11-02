@@ -180,7 +180,7 @@
   <tr>
     <td width="50%" valign="top">
       <a href="https://broken-website.vercel.app/">
-        <img src="assets/images/projects/brokenwebsite.webp" width="100%" alt="The Broken Website Debugging Game Preview" />
+        <img src="https://github.com/user-attachments/assets/40298421-095e-4a26-beb1-ffa176f40822" width="100%" alt="The Broken Website Debugging Game Preview" />
       </a>
       <h4>The Broken Website — Web Debugging &amp; Sandbox</h4>
       <p>Interactive web debugging game and cybersecurity escape room featuring 15 real-world client bug tickets, live line editor, and triple-sandboxed iframe code execution.</p>
