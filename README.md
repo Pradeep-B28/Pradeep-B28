@@ -76,7 +76,7 @@
 
 ### At a Glance
 
-| 4 Years | 7,500+ | 10+ | 13 |
+| 4 Years | 7,500+ | 10+ | 15 |
 | :---: | :---: | :---: | :---: |
 | **Engineering Experience** | **Engineers Mentored** | **Online Bootcamps** | **Public Repositories** |
 
@@ -189,6 +189,28 @@
       <p><a href="https://broken-website.vercel.app/"><b>Live App →</b></a> • <a href="https://github.com/Pradeep-B28/Broken_Website"><b>Source Code →</b></a></p>
     </td>
     <td width="50%" valign="top">
+      <a href="https://explorer-mu-nine.vercel.app/">
+        <img src="assets/images/projects/explorer.webp" width="100%" alt="Explorer Full-Stack Architecture Visualizer Preview" />
+      </a>
+      <h4>Explorer — Full-Stack Architecture Visualizer</h4>
+      <p>Interactive full-stack architecture visualizer splitting a production food delivery app into 5 synchronized horizontal layers (Screen, Styling, Logic, Server, Database) with traveling data packets and live code inspection.</p>
+      <p><code>JavaScript</code> · <code>FLIP Transitions</code> · <code>Canvas API</code> · <code>Web Audio API</code> · <code>Vercel</code></p>
+      <p><b>Highlight:</b> 100/100 Lighthouse Mobile Accessibility, zero external runtime dependencies, and 17 automated in-browser verification checks.</p>
+      <p><a href="https://explorer-mu-nine.vercel.app/"><b>Live App →</b></a> • <a href="https://github.com/Pradeep-B28/Explorer"><b>Source Code →</b></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://delivery-rush-pi.vercel.app/">
+        <img src="assets/images/projects/deliveryrush.webp" width="100%" alt="Delivery Rush Algorithmic Dispatch Simulator Preview" />
+      </a>
+      <h4>Delivery Rush — Algorithmic Dispatch Simulator</h4>
+      <p>Interactive food delivery dispatch game and algorithmic benchmark engine comparing player decisions against an autonomous algorithm (Min-Heap, BFS, Greedy choice, FIFO queue) side by side on twin SVG maps.</p>
+      <p><code>JavaScript</code> · <code>Canvas / SVG</code> · <code>Min-Heap</code> · <code>BFS Graph</code> · <code>Greedy Choice</code> · <code>Vercel</code></p>
+      <p><b>Highlight:</b> 100/100 Lighthouse Performance &amp; Accessibility, 3,592 passing headless unit checks, and 15 passing in-browser verification tests.</p>
+      <p><a href="https://delivery-rush-pi.vercel.app/"><b>Live App →</b></a> • <a href="https://github.com/Pradeep-B28/Delivery_Rush"><b>Source Code →</b></a></p>
+    </td>
+    <td width="50%" valign="top">
       <a href="https://github.com/Pradeep-B28/Rel_Notes">
         <h4>Rel_Notes — AI Git Changelog Generator</h4>
       </a>
@@ -208,6 +230,8 @@
 <summary><b>View Additional Systems, Tooling &amp; Curricula</b></summary>
 <br />
 
+- **[Delivery Rush](https://delivery-rush-pi.vercel.app/)** — Real-time food delivery dispatch game and algorithmic benchmark simulator comparing human play against autonomous Min-Heap, BFS, and Greedy algorithms on twin SVG maps. • [Source](https://github.com/Pradeep-B28/Delivery_Rush)
+- **[Explorer](https://explorer-mu-nine.vercel.app/)** — Interactive architecture visualizer splitting a production food delivery app into 5 side-by-side full stack layers with traveling data packets and live code. • [Source](https://github.com/Pradeep-B28/Explorer)
 - **[The Broken Website](https://broken-website.vercel.app/)** — Interactive web debugging simulator and cybersecurity escape room with triple-sandboxed execution and 15 bug remediation challenges. • [Source](https://github.com/Pradeep-B28/Broken_Website)
 - **[Life in Dots](https://lifeindots.vercel.app)** — Visual human lifespan calendar mapped in weekly units (52 columns per year) with synodic lunar calculations and 100% client-side privacy. • [Source](https://github.com/Pradeep-B28/Life_In_Dots)
 - **[Rel_Notes](https://github.com/Pradeep-B28/Rel_Notes)** — AI-driven command-line changelog generator leveraging Groq Llama 3.3 70B inference to parse raw git commit histories into domain-grouped markdown release notes.
