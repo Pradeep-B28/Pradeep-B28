@@ -52,7 +52,7 @@
     <!-- Metric 3: Active Contribution Days -->
     <g transform="translate(770, 0)">
       <text x="0" y="18" class="label">TOTAL ACTIVE CONTRIBUTION DAYS</text>
-      <text x="0" y="60" class="value">24 Days</text>
+      <text x="0" y="60" class="value">31 Days</text>
       <text x="0" y="84" class="unit">Within the past 365-day rolling window</text>
     </g>
   </g>
