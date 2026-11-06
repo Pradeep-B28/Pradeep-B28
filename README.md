@@ -222,7 +222,17 @@
     </td>
   </tr>
   <tr>
-    <td colspan="2" valign="top">
+    <td width="50%" valign="top">
+      <a href="https://listcleaner-mu.vercel.app/">
+        <img src="assets/images/projects/listcleaner.webp" width="100%" alt="List Cleaner Contact Deduplication Engine Preview" />
+      </a>
+      <h4>List Cleaner — Privacy-First Contact Deduplication Engine</h4>
+      <p>High-performance client-side contact normalization and deduplication engine with zero-network CSP lock, O(1) hash set duplicate detection, O(N log N) merge sort, and multi-format CSV/TXT export.</p>
+      <p><code>JavaScript</code> · <code>Hash Set DSA</code> · <code>Merge Sort</code> · <code>CSP connect-src 'none'</code> · <code>Client Blobs</code> · <code>Vercel</code></p>
+      <p><b>Highlight:</b> 100/100 Lighthouse score, strict zero-network privacy isolation, and 10 passing in-browser verification tests.</p>
+      <p><a href="https://listcleaner-mu.vercel.app/"><b>Live App →</b></a> • <a href="https://github.com/Pradeep-B28/List_Cleaner"><b>Source Code →</b></a></p>
+    </td>
+    <td width="50%" valign="top">
       <a href="https://github.com/Pradeep-B28/Rel_Notes">
         <h4>Rel_Notes — AI Git Changelog Generator</h4>
       </a>
@@ -242,6 +252,13 @@
 <summary><b>View Additional Systems, Tooling &amp; Curricula</b></summary>
 <br />
 
+- **[List Cleaner](https://listcleaner-mu.vercel.app/)** — Client-side contact deduplication and normalization engine with zero-network CSP lock, O(1) hash set detection, and multi-format CSV/TXT export. • [Source](https://github.com/Pradeep-B28/List_Cleaner)
+- **[Password Crack Meter](https://password-check-iota.vercel.app/)** — Cryptographic password strength analyzer and entropy engine with zero-network CSP lock, 37,080-entry O(1) dictionary hash set, and 5-part animated SVG visualizer. • [Source](https://github.com/Pradeep-B28/Password_Crack_Meter)
+- **[Delivery Rush](https://delivery-rush-pi.vercel.app/)** — Real-time food delivery dispatch game and algorithmic benchmark simulator comparing human play against autonomous Min-Heap, BFS, and Greedy algorithms on twin SVG maps. • [Source](https://github.com/Pradeep-B28/Delivery_Rush)
+- **[Explorer](https://explorer-mu-nine.vercel.app/)** — Interactive architecture visualizer splitting a production food delivery app into 5 side-by-side full stack layers with traveling data packets and live code. • [Source](https://github.com/Pradeep-B28/Explorer)
+- **[The Broken Website](https://broken-website.vercel.app/)** — Interactive web debugging simulator and cybersecurity escape room with triple-sandboxed execution and 15 bug remediation challenges. • [Source](https://github.com/Pradeep-B28/Broken_Website)
+- **[Life in Dots](https://lifeindots.vercel.app)** — Visual human lifespan calendar mapped in weekly units (52 columns per year) with synodic lunar calculations and 100% client-side privacy. • [Source](https://github.com/Pradeep-B28/Life_In_Dots)
+- **[Rel_Notes](https://github.com/Pradeep-B28/Rel_Notes)** — AI-driven command-line changelog generator leveraging Groq Llama 3.3 70B inference to parse raw git commit histories into domain-grouped markdown release notes.
 - **[Devstarter](https://github.com/Pradeep-B28/Devstarter)** — Zero-configuration reproducible Docker devcontainers for Python, Go, Java, Rust, Node.js, and C++.
 - **[Java + DSA Master Roadmap](https://github.com/Pradeep-B28/JAVA-DSA-Roadmap)** — Structured curriculum covering Core Java, Object-Oriented Design, JVM internals, and interview-ready algorithmic patterns.
 - **[Searching &amp; Sorting Visualizer](https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer)** — Java Swing GUI application rendering comparisons and swaps frame-by-frame for Quick, Merge, Heap, and Binary Search algorithms.
