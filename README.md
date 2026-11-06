@@ -76,7 +76,7 @@
 
 ### At a Glance
 
-| 4 Years | 7,500+ | 10+ | 15 |
+| 4 Years | 7,500+ | 10+ | 16 |
 | :---: | :---: | :---: | :---: |
 | **Engineering Experience** | **Engineers Mentored** | **Online Bootcamps** | **Public Repositories** |
 
@@ -211,6 +211,18 @@
       <p><a href="https://delivery-rush-pi.vercel.app/"><b>Live App →</b></a> • <a href="https://github.com/Pradeep-B28/Delivery_Rush"><b>Source Code →</b></a></p>
     </td>
     <td width="50%" valign="top">
+      <a href="https://password-check-iota.vercel.app/">
+        <img src="assets/images/projects/passwordcrack.webp" width="100%" alt="Password Crack Meter Cryptographic Engine Preview" />
+      </a>
+      <h4>Password Crack Meter — Cryptographic Strength Engine</h4>
+      <p>Interactive cryptographic password strength analyzer and pattern detection engine with zero-network CSP lock, 37,080-entry O(1) hash set, and Web Crypto password generator.</p>
+      <p><code>JavaScript</code> · <code>Web Crypto API</code> · <code>Hash Set DSA</code> · <code>CSP Strict Lock</code> · <code>SVG Animation</code> · <code>Vercel</code></p>
+      <p><b>Highlight:</b> Strict CSP connect-src 'none' zero-network privacy lock, 7,256 headless unit checks, and 14 passing in-browser verification tests.</p>
+      <p><a href="https://password-check-iota.vercel.app/"><b>Live App →</b></a> • <a href="https://github.com/Pradeep-B28/Password_Crack_Meter"><b>Source Code →</b></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
       <a href="https://github.com/Pradeep-B28/Rel_Notes">
         <h4>Rel_Notes — AI Git Changelog Generator</h4>
       </a>
@@ -218,6 +230,8 @@
       <p><code>Python 3.11</code> · <code>Groq Cloud LLM</code> · <code>Git CLI</code> · <code>Llama 3.3 70B</code> · <code>Click</code></p>
       <p><b>Highlight:</b> Zero-config conventional commit classification with automated changelog categorization and PR body generation.</p>
       <p><a href="https://github.com/Pradeep-B28/Rel_Notes"><b>Source &amp; CLI Tool →</b></a></p>
+    </td>
+    <td width="50%" valign="top">
     </td>
   </tr>
 </table>
@@ -230,6 +244,7 @@
 <summary><b>View Additional Systems, Tooling &amp; Curricula</b></summary>
 <br />
 
+- **[Password Crack Meter](https://password-check-iota.vercel.app/)** — Cryptographic password strength analyzer and entropy engine with zero-network CSP lock, 37,080-entry O(1) dictionary hash set, and 5-part animated SVG visualizer. • [Source](https://github.com/Pradeep-B28/Password_Crack_Meter)
 - **[Delivery Rush](https://delivery-rush-pi.vercel.app/)** — Real-time food delivery dispatch game and algorithmic benchmark simulator comparing human play against autonomous Min-Heap, BFS, and Greedy algorithms on twin SVG maps. • [Source](https://github.com/Pradeep-B28/Delivery_Rush)
 - **[Explorer](https://explorer-mu-nine.vercel.app/)** — Interactive architecture visualizer splitting a production food delivery app into 5 side-by-side full stack layers with traveling data packets and live code. • [Source](https://github.com/Pradeep-B28/Explorer)
 - **[The Broken Website](https://broken-website.vercel.app/)** — Interactive web debugging simulator and cybersecurity escape room with triple-sandboxed execution and 15 bug remediation challenges. • [Source](https://github.com/Pradeep-B28/Broken_Website)
