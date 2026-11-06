@@ -222,7 +222,7 @@
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
+    <td colspan="2" valign="top">
       <a href="https://github.com/Pradeep-B28/Rel_Notes">
         <h4>Rel_Notes — AI Git Changelog Generator</h4>
       </a>
@@ -230,8 +230,6 @@
       <p><code>Python 3.11</code> · <code>Groq Cloud LLM</code> · <code>Git CLI</code> · <code>Llama 3.3 70B</code> · <code>Click</code></p>
       <p><b>Highlight:</b> Zero-config conventional commit classification with automated changelog categorization and PR body generation.</p>
       <p><a href="https://github.com/Pradeep-B28/Rel_Notes"><b>Source &amp; CLI Tool →</b></a></p>
-    </td>
-    <td width="50%" valign="top">
     </td>
   </tr>
 </table>
