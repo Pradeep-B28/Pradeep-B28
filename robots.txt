@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pradeep-b28.github.io/Pradeep-B28/sitemap.xml
