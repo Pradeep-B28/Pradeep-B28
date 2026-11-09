@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="32" viewBox="0 0 112 32">
+  <style>
+    .bg { fill: #12151B; stroke: #1F242C; }
+    .txt { fill: #ECEDEE; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 600; }
+    .ico { stroke: #FFB224; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #FFFFFF; stroke: #D0CCC2; }
+      .txt { fill: #111316; }
+      .ico { stroke: #B86E00; }
+    }
+  </style>
+  <rect class="bg" x="0.5" y="0.5" width="111" height="31" rx="6" stroke-width="1"/>
+  <g class="ico" fill="none" stroke-width="1.8">
+    <rect x="10" y="10" width="13" height="11" rx="1.5"/>
+    <path d="m10 11.5 6.5 4.5 6.5-4.5"/>
+  </g>
+  <text class="txt" x="31" y="20">Email Me</text>
+</svg>

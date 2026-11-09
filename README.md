@@ -8,24 +8,40 @@
   </picture>
 </a>
 
-<p align="center">
-  <a href="https://pradeep-b28.github.io/Pradeep-B28/"><b>Portfolio</b></a> &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/pradeepb-2k/"><b>LinkedIn</b></a> &nbsp;·&nbsp;
-  <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep"><b>Email</b></a> &nbsp;·&nbsp;
-  <a href="https://leetcode.com/u/PradeepKrishB/"><b>LeetCode</b></a>
+<br /><br />
+
+<!-- Theme-Aware Custom Badge Buttons -->
+<a href="https://pradeep-b28.github.io/Pradeep-B28/"><img src="assets/readme/badges/badge-portfolio.svg" height="32" alt="Portfolio Site" /></a>
+&nbsp;
+<a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep"><img src="assets/readme/badges/badge-email.svg" height="32" alt="Email Me" /></a>
+&nbsp;
+<a href="https://pradeep-b28.github.io/Pradeep-B28/#contact"><img src="assets/readme/badges/badge-contact.svg" height="32" alt="Contact Form" /></a>
+&nbsp;
+<a href="https://www.linkedin.com/in/pradeepb-2k/"><img src="assets/readme/badges/badge-linkedin.svg" height="32" alt="LinkedIn" /></a>
+&nbsp;
+<a href="https://leetcode.com/u/PradeepKrishB/"><img src="assets/readme/badges/badge-leetcode.svg" height="32" alt="LeetCode" /></a>
+
+<br /><br />
+
+<p>
+  <code>pradeepbashaa@gmail.com</code> &nbsp;·&nbsp; <a href="https://pradeep-b28.github.io/Pradeep-B28/#contact"><b>Interactive Contact Form →</b></a>
 </p>
 
 </div>
 
----
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/readme/divider-light.svg">
+  <img src="assets/readme/divider-dark.svg" width="100%" height="8" alt="Divider">
+</picture>
 
-### Featured
+### Featured Work
 
 <table>
   <tr>
     <td width="50%" valign="top">
       <a href="https://reachsoftech.onrender.com/home">
-        <img src="assets/images/projects/softech.webp" width="100%" alt="Softech Placement Portal" />
+        <img src="assets/readme/previews/softech.webp" width="100%" alt="Softech Placement Portal Preview" />
       </a>
       <br />
       <b>Softech Placement Portal</b>
@@ -34,7 +50,7 @@
     </td>
     <td width="50%" valign="top">
       <a href="https://nammaroute-sigma.vercel.app/">
-        <img src="assets/images/projects/nammaroute.webp" width="100%" alt="Namma Route" />
+        <img src="assets/readme/previews/nammaroute.webp" width="100%" alt="Namma Route Preview" />
       </a>
       <br />
       <b>Namma Route</b>
@@ -64,29 +80,79 @@
   </tr>
 </table>
 
----
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/readme/divider-light.svg">
+  <img src="assets/readme/divider-dark.svg" width="100%" height="8" alt="Divider">
+</picture>
 
 ### More I've Built
+
+<details open>
+<summary><b>Algorithms (3 projects)</b></summary>
+<br />
 
 | Project | What it does | Stack | Links |
 | :--- | :--- | :--- | :--- |
 | **Delivery Rush** | Benchmark your delivery dispatch decisions against autonomous algorithms on live twin maps. | `JavaScript` · `Canvas API` · `Min-Heap` | [Live](https://delivery-rush-pi.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Delivery_Rush) |
 | **Split Smart** | Simplifies shared group debts into minimal bank transfers with zero server data tracking. | `JavaScript` · `Bitmask DP` · `Greedy DSA` | [Live](https://split-smart-brown.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Split_Smart) |
-| **Explorer** | Inspect how full-stack requests travel across 5 synchronized application layers in real time. | `JavaScript` · `Canvas API` · `Web Audio` | [Live](https://explorer-mu-nine.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Explorer) |
-| **The Broken Website** | Test your web debugging skills across 15 interactive client bug tickets in a sandboxed runtime. | `JavaScript` · `Sandboxed Iframe` · `CSP` | [Live](https://broken-website.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Broken_Website) |
-| **Password Crack Meter** | Calculates password crack resistance and patterns using Web Crypto without sending data to servers. | `JavaScript` · `Web Crypto` · `Hash Set DSA` | [Live](https://password-check-iota.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Password_Crack_Meter) |
-| **List Cleaner** | Cleans, normalizes, and deduplicates contact lists entirely in your browser with instant CSV export. | `JavaScript` · `Hash Set DSA` · `Merge Sort` | [Live](https://listcleaner-mu.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/List_Cleaner) |
+| **Java + DSA Roadmap** | A structured curriculum covering Core Java, JVM internals, and interview-ready algorithm patterns. | `Java` · `JVM Internals` · `Algorithms` | [Code](https://github.com/Pradeep-B28/JAVA-DSA-Roadmap) |
+
+</details>
+
+<details>
+<summary><b>Dev Tools (3 projects)</b></summary>
+<br />
+
+| Project | What it does | Stack | Links |
+| :--- | :--- | :--- | :--- |
 | **Find the Skills** | Scans resumes against 332 technical skills and 1,901 aliases to identify qualification gaps. | `JavaScript` · `Regex Engine` · `Web Audio` | [Live](https://find-the-skills.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Find_the_Skills) |
-| **Catch the AI** | Spot subtle algorithmic, concurrency, and syntax bugs in AI-generated code within 30 seconds. | `JavaScript` · `CSS Modules` · `Event Bus` | [Live](https://catchtheai.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Catch_The_AI) |
-| **Diwali Sky** | Simulates customizable firework particle explosions and procedural sound synthesis across a night sky. | `JavaScript` · `Canvas API` · `Web Audio` | [Live](https://diwalisky.vercel.app) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Diwali_Sky) |
-| **Life in Dots** | Visualizes human lifespan in weekly dot columns with lunar calculations and complete local privacy. | `JavaScript` · `Canvas API` · `UTC Math` | [Live](https://lifeindots.vercel.app) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Life_In_Dots) |
 | **Rel_Notes** | Transforms raw Git commit histories into structured markdown release notes using LLM inference. | `Python` · `Groq LLM` · `Click` | [Code](https://github.com/Pradeep-B28/Rel_Notes) |
 | **Devstarter** | Provides reproducible, one-click Docker devcontainer environments for Python, Go, Java, Rust, and Node. | `Docker` · `Devcontainers` · `Linux` | [Code](https://github.com/Pradeep-B28/Devstarter) |
-| **Java + DSA Roadmap** | A structured curriculum covering Core Java, JVM internals, and interview-ready algorithm patterns. | `Java` · `JVM Internals` · `Algorithms` | [Code](https://github.com/Pradeep-B28/JAVA-DSA-Roadmap) |
+
+</details>
+
+<details>
+<summary><b>Privacy &amp; Security (2 projects)</b></summary>
+<br />
+
+| Project | What it does | Stack | Links |
+| :--- | :--- | :--- | :--- |
+| **Password Crack Meter** | Calculates password crack resistance and patterns using Web Crypto without sending data to servers. | `JavaScript` · `Web Crypto` · `Hash Set DSA` | [Live](https://password-check-iota.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Password_Crack_Meter) |
+| **List Cleaner** | Cleans, normalizes, and deduplicates contact lists entirely in your browser with instant CSV export. | `JavaScript` · `Hash Set DSA` · `Merge Sort` | [Live](https://listcleaner-mu.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/List_Cleaner) |
+
+</details>
+
+<details>
+<summary><b>Games (2 projects)</b></summary>
+<br />
+
+| Project | What it does | Stack | Links |
+| :--- | :--- | :--- | :--- |
+| **The Broken Website** | Test your web debugging skills across 15 interactive client bug tickets in a sandboxed runtime. | `JavaScript` · `Sandboxed Iframe` · `CSP` | [Live](https://broken-website.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Broken_Website) |
+| **Catch the AI** | Spot subtle algorithmic, concurrency, and syntax bugs in AI-generated code within 30 seconds. | `JavaScript` · `CSS Modules` · `Event Bus` | [Live](https://catchtheai.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Catch_The_AI) |
+
+</details>
+
+<details>
+<summary><b>Visualizers (5 projects)</b></summary>
+<br />
+
+| Project | What it does | Stack | Links |
+| :--- | :--- | :--- | :--- |
+| **Explorer** | Inspect how full-stack requests travel across 5 synchronized application layers in real time. | `JavaScript` · `Canvas API` · `Web Audio` | [Live](https://explorer-mu-nine.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Explorer) |
+| **Diwali Sky** | Simulates customizable firework particle explosions and procedural sound synthesis across a night sky. | `JavaScript` · `Canvas API` · `Web Audio` | [Live](https://diwalisky.vercel.app) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Diwali_Sky) |
+| **Life in Dots** | Visualizes human lifespan in weekly dot columns with lunar calculations and complete local privacy. | `JavaScript` · `Canvas API` · `UTC Math` | [Live](https://lifeindots.vercel.app) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Life_In_Dots) |
 | **Searching &amp; Sorting Visualizer** | Animates sorting and searching algorithm comparisons frame-by-frame in a Java desktop interface. | `Java` · `Java Swing` · `Algorithms` | [Code](https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer) |
 | **Portfolio Theme Suite** | Six distinct 3D WebGL developer portfolio prototypes built with custom shaders and spatial layouts. | `React` · `Three.js` · `WebGL` | [Code](https://github.com/Pradeep-B28/Portfolio) |
 
----
+</details>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/readme/divider-light.svg">
+  <img src="assets/readme/divider-dark.svg" width="100%" height="8" alt="Divider">
+</picture>
 
 ### Toolbox
 
@@ -94,7 +160,11 @@
   <img src="https://skillicons.dev/icons?i=java,python,js,ts,react,nodejs,express,mongodb,postgres,flask,threejs,docker,git,linux&theme=dark" alt="Toolbox: Java, Python, JavaScript, TypeScript, React, Node.js, Express, MongoDB, PostgreSQL, Flask, Three.js, Docker, Git, Linux" />
 </p>
 
----
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/readme/divider-light.svg">
+  <img src="assets/readme/divider-dark.svg" width="100%" height="8" alt="Divider">
+</picture>
 
 ### Experience
 
@@ -102,7 +172,11 @@
 - **Technical Training Programs**: VIT Chennai · VIT Vellore · VIT-AP · KSR Erode <!-- TODO: Pradeep to fill dates -->
 - **10+ Intensive Online Bootcamps**: 7,500+ engineers mentored in Core Java, JVM internals, and algorithmic patterns <!-- TODO: Pradeep to fill dates -->
 
----
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/readme/divider-light.svg">
+  <img src="assets/readme/divider-dark.svg" width="100%" height="8" alt="Divider">
+</picture>
 
 ### Activity
 
@@ -114,8 +188,12 @@
   </picture>
 </div>
 
----
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/divider-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/readme/divider-light.svg">
+  <img src="assets/readme/divider-dark.svg" width="100%" height="8" alt="Divider">
+</picture>
 
 <p align="center">
-  <sub>Open to SDE roles — <a href="mailto:pradeepbashaa@gmail.com">pradeepbashaa@gmail.com</a></sub>
+  <sub>Open to SDE roles — <a href="mailto:pradeepbashaa@gmail.com">pradeepbashaa@gmail.com</a> · <a href="https://pradeep-b28.github.io/Pradeep-B28/#contact">Contact Form</a></sub>
 </p>

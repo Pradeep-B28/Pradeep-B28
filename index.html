@@ -26,6 +26,22 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A0B0D'/><circle cx='16' cy='16' r='6' fill='%23FFB224'/><circle cx='8' cy='22' r='3' fill='%239BA1A6'/><circle cx='24' cy='10' r='3' fill='%239BA1A6'/><line x1='8' y1='22' x2='16' y2='16' stroke='%23FFB224' stroke-width='1.5'/><line x1='16' y1='16' x2='24' y2='10' stroke='%23FFB224' stroke-width='1.5'/></svg>" />
 
+  <!-- Zero-FOUT Theme Initializer (Pre-CSS) -->
+  <script>
+    (function() {
+      try {
+        var urlParams = new URLSearchParams(window.location.search);
+        var urlTheme = urlParams.get('theme');
+        var saved = localStorage.getItem('theme');
+        var pref = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        var theme = urlTheme || saved || pref;
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
   <!-- Google Fonts Preconnect & Swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -61,6 +77,9 @@
 </head>
 <body>
 
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
+
   <!-- Accessible Skip Link -->
   <a href="#main" class="skip-link">Skip to main content</a>
 
@@ -81,12 +100,46 @@
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-primary btn-sm">Email me</a>
       </nav>
 
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <!-- Command Palette Trigger Button -->
+        <button class="palette-nav-btn" id="nav-palette-btn" aria-label="Open command palette (Ctrl+K or ⌘K)">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span>Search</span>
+          <kbd>⌘K</kbd>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark and light theme" aria-pressed="false">
+          <!-- Sun Icon for Light mode switch -->
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <!-- Moon Icon for Dark mode switch -->
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <!-- Popover-Enabled Nav Email Button -->
+        <button class="btn btn-primary btn-sm btn-email-popover" aria-haspopup="true" aria-expanded="false" data-subject="SDE Role Opportunity — B Pradeep">
+          Email me
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -111,14 +164,14 @@
           </p>
 
           <div class="hero-cta-group">
-            <a href="#work" class="btn btn-primary">
+            <a href="#work" class="btn btn-primary magnetic-btn">
               <span>View work</span>
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </a>
-            <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-secondary">
+            <button class="btn btn-secondary btn-email-popover" aria-haspopup="true" aria-expanded="false" data-subject="SDE Role Opportunity — B Pradeep">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               <span>Email me</span>
-            </a>
+            </button>
           </div>
 
           <div class="hero-social-links">
@@ -136,10 +189,26 @@
             </a>
           </div>
 
+          <!-- Hero Proof Stats (Animated count-up) -->
           <div class="hero-stats-row">
-            <span class="hero-stat-chip">4 yrs engineering</span>
-            <span class="hero-stat-chip">7,500+ engineers trained</span>
+            <span class="hero-stat-chip" id="stat-years">4 yrs engineering</span>
+            <span class="hero-stat-chip" id="stat-trained">7,500+ engineers trained</span>
             <span class="hero-stat-chip" id="stat-projects-count">19 projects shipped</span>
+          </div>
+
+          <!-- Hero Algorithm Switcher & Mono Readout -->
+          <div class="hero-algo-panel">
+            <div class="algo-switcher" role="radiogroup" aria-label="Pathfinding algorithm">
+              <span class="algo-label">Algorithm:</span>
+              <button class="algo-chip active" role="radio" aria-checked="true" data-algo="astar">A*</button>
+              <button class="algo-chip" role="radio" aria-checked="false" data-algo="dijkstra">Dijkstra</button>
+              <button class="algo-chip" role="radio" aria-checked="false" data-algo="bfs">BFS</button>
+            </div>
+            <div class="algo-readout" id="algo-readout" aria-live="polite">
+              <span>nodes visited: <strong id="algo-visited">0</strong></span>
+              <span class="readout-divider">·</span>
+              <span>path length: <strong id="algo-length">0.0</strong></span>
+            </div>
           </div>
         </div>
       </div>
@@ -152,7 +221,7 @@
           <span class="section-kicker">FLAGSHIP CASE STUDIES</span>
           <h2 class="section-title">Featured Work</h2>
           <p class="section-subtitle">
-            Deep-dive production platforms, graph pathfinders, and database gatekeepers built with verified proof metrics.
+            Deep-dive production platforms, graph pathfinders, and database gatekeepers built with verified proof metrics. Click any card to inspect full details.
           </p>
         </div>
 
@@ -162,30 +231,55 @@
       </div>
     </section>
 
-    <!-- 3. LAB (Filterable Grid) -->
+    <!-- 3. LAB (Search, Filters, Sort, Grid, Drawer) -->
     <section class="section" id="lab" aria-label="Engineering Lab & Interactive Open Source">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-kicker">EXPERIMENTS &amp; OPEN SOURCE</span>
           <h2 class="section-title">Engineering Lab</h2>
           <p class="section-subtitle">
-            Filterable systems, developer tooling, cryptographic utilities, algorithmic games, and 3D visualizers.
+            Filterable systems, developer tooling, cryptographic utilities, algorithmic games, and 3D visualizers. Click any card for interactive previews.
           </p>
         </div>
 
-        <!-- Filter Chips -->
-        <div class="filter-bar reveal" role="tablist" aria-label="Project Category Filters">
-          <button class="filter-chip active" role="tab" aria-selected="true" data-filter="All">All</button>
-          <button class="filter-chip" role="tab" aria-selected="false" data-filter="Algorithms">Algorithms</button>
-          <button class="filter-chip" role="tab" aria-selected="false" data-filter="Dev Tools">Dev Tools</button>
-          <button class="filter-chip" role="tab" aria-selected="false" data-filter="Privacy &amp; Security">Privacy &amp; Security</button>
-          <button class="filter-chip" role="tab" aria-selected="false" data-filter="Games">Games</button>
-          <button class="filter-chip" role="tab" aria-selected="false" data-filter="Visualizers">Visualizers</button>
+        <!-- Lab Controls: Search, Sort, Filters, Count -->
+        <div class="lab-controls-bar reveal">
+          <div class="lab-search-sort-row">
+            <div class="lab-search-wrapper">
+              <svg class="lab-search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="search" id="lab-search" class="lab-search-input" placeholder="Search projects by name, stack, or problem..." aria-label="Search lab projects" />
+            </div>
+
+            <select id="lab-sort" class="lab-sort-select" aria-label="Sort lab projects">
+              <option value="default">Sort: Featured</option>
+              <option value="newest">Sort: Recently Updated</option>
+              <option value="az">Sort: Alphabetical (A–Z)</option>
+            </select>
+
+            <span class="lab-count-badge" id="lab-count-badge">Showing 15 of 15 projects</span>
+          </div>
+
+          <!-- Category Filter Chips -->
+          <div class="filter-bar" role="tablist" aria-label="Project Category Filters">
+            <button class="filter-chip active" role="tab" aria-selected="true" data-filter="All">All</button>
+            <button class="filter-chip" role="tab" aria-selected="false" data-filter="Algorithms">Algorithms</button>
+            <button class="filter-chip" role="tab" aria-selected="false" data-filter="Dev Tools">Dev Tools</button>
+            <button class="filter-chip" role="tab" aria-selected="false" data-filter="Privacy &amp; Security">Privacy &amp; Security</button>
+            <button class="filter-chip" role="tab" aria-selected="false" data-filter="Games">Games</button>
+            <button class="filter-chip" role="tab" aria-selected="false" data-filter="Visualizers">Visualizers</button>
+          </div>
         </div>
 
         <!-- Filterable Grid -->
         <div class="lab-grid" id="lab-grid">
           <!-- Dynamically populated from data/projects.json -->
+        </div>
+
+        <!-- Empty State (Shown when search/filter has zero matches) -->
+        <div class="lab-empty-state hidden" id="lab-empty-state" role="status">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          <p>No projects match your search or filter criteria.</p>
+          <button class="btn btn-secondary btn-sm" id="btn-clear-lab">Reset search &amp; filters</button>
         </div>
 
         <!-- MOR AI Slim Strip -->
@@ -194,7 +288,7 @@
             <span class="mor-badge">In Private Development</span>
             <span class="mor-strip-text"><strong>MOR AI</strong> — Voice-first holographic personal AI assistant.</span>
           </div>
-          <a href="mailto:pradeepbashaa@gmail.com?subject=Inquiry%20regarding%20MOR%20AI%20Assistant%20Demo%20%E2%80%94%20B%20Pradeep" class="btn btn-secondary btn-sm">Request demo →</a>
+          <button class="btn btn-secondary btn-sm btn-email-popover" aria-haspopup="true" aria-expanded="false" data-subject="Inquiry regarding MOR AI Assistant Demo — B Pradeep">Request demo →</button>
         </div>
       </div>
     </section>
@@ -327,13 +421,13 @@
           <h2 class="contact-headline">Let's <em>build something</em>.</h2>
 
           <div class="contact-btn-group">
-            <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-primary">
+            <button class="btn btn-primary btn-email-popover" aria-haspopup="true" aria-expanded="false" data-subject="SDE Role Opportunity — B Pradeep">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               <span>Email me</span>
-            </a>
+            </button>
             <button class="btn btn-secondary" id="copy-email-btn" aria-label="Copy email address to clipboard">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              <span>Copy email</span>
+              <span>Copy address</span>
             </button>
           </div>
 
@@ -349,10 +443,113 @@
             <a href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener" class="contact-social-link">LeetCode</a>
             <a href="https://x.com/Pradeep__krish" target="_blank" rel="noopener" class="contact-social-link">X</a>
           </div>
+
+          <!-- Web3Forms Contact Form (Hidden when WEB3FORMS_KEY = "TODO") -->
+          <div class="contact-form-box" id="contact-form-box" style="display: none;">
+            <h3 class="contact-form-title">Send a message</h3>
+            <p class="contact-form-subtitle">Leave your details below and I'll get back to you within 24 hours.</p>
+
+            <form id="contact-form" novalidate>
+              <!-- Web3Forms Honeypot Spam Field -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off" />
+
+              <div class="contact-form-grid">
+                <div class="form-group">
+                  <label for="form-name" class="form-label">Your Name</label>
+                  <input type="text" id="form-name" name="name" class="form-input" required placeholder="Alex Mercer" />
+                </div>
+
+                <div class="form-group">
+                  <label for="form-email" class="form-label">Your Email</label>
+                  <input type="email" id="form-email" name="email" class="form-input" required placeholder="alex@example.com" />
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="form-topic" class="form-label">Inquiry Topic</label>
+                  <select id="form-topic" name="topic" class="form-select" required>
+                    <option value="SDE Role Opportunity">SDE Role (Full-Time / Contract)</option>
+                    <option value="Technical Training">Technical Training &amp; Bootcamps</option>
+                    <option value="Freelance Web Build">Freelance Web / 3D Build</option>
+                    <option value="General Inquiry">General Engineering Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="form-message" class="form-label">Message</label>
+                  <textarea id="form-message" name="message" class="form-textarea" required placeholder="Tell me about your team, project, or event..."></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="form-submit-btn">
+                <span>Send message</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+
+              <div class="form-status" id="form-status" aria-live="polite"></div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- ---------------------------------------------------------------------- -->
+  <!-- FLOATING EMAIL POPOVER MENU (Reused by all "Email me" buttons)          -->
+  <!-- ---------------------------------------------------------------------- -->
+  <div class="email-popover" id="email-popover" role="dialog" aria-label="Email options" aria-hidden="true">
+    <div class="email-popover-header">
+      <span class="email-popover-title">Email Options</span>
+      <span class="email-popover-close" id="email-popover-close" style="cursor: pointer; color: var(--muted);" aria-label="Close menu">✕</span>
+    </div>
+    <div class="email-popover-address">pradeepbashaa@gmail.com</div>
+    <div class="email-popover-options">
+      <a href="mailto:pradeepbashaa@gmail.com" class="email-popover-option" id="popover-mail-app">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <span>Open mail app</span>
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pradeepbashaa@gmail.com" target="_blank" rel="noopener noreferrer" class="email-popover-option" id="popover-gmail">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Compose in Gmail</span>
+      </a>
+      <button type="button" class="email-popover-option" id="popover-copy">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span>Copy address</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ---------------------------------------------------------------------- -->
+  <!-- COMMAND PALETTE (⌘K / Ctrl+K) MODAL                                     -->
+  <!-- ---------------------------------------------------------------------- -->
+  <div class="palette-overlay" id="palette-overlay" role="dialog" aria-modal="true" aria-label="Command Palette" aria-hidden="true">
+    <div class="palette-modal">
+      <div class="palette-header">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="palette-input" class="palette-input" placeholder="Search projects, sections, or commands..." autocomplete="off" spellcheck="false" />
+        <span class="palette-kbd-hint">ESC to close</span>
+      </div>
+      <div class="palette-results" id="palette-results">
+        <!-- Dynamically rendered items -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------------------------------------------------------------------- -->
+  <!-- PROJECT DETAIL DRAWER (Side Drawer / Mobile Bottom Sheet)                -->
+  <!-- ---------------------------------------------------------------------- -->
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="project-drawer" id="project-drawer" role="dialog" aria-modal="true" aria-label="Project Details" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-header-left">
+        <span class="drawer-category" id="drawer-category">// CATEGORY</span>
+        <h2 class="drawer-title" id="drawer-title">Project Title</h2>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close project drawer">✕</button>
+    </div>
+    <div class="drawer-body" id="drawer-body">
+      <!-- Populated dynamically via app.js -->
+    </div>
+  </aside>
 
   <!-- Toast Notification -->
   <div class="toast" id="copy-toast" role="status" aria-live="polite"></div>
@@ -361,7 +558,7 @@
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-left">
-        <span>© 2026 B Pradeep</span>
+        <span>© 2026 B Pradeep · Software Engineer</span>
       </div>
       <div class="footer-right">
         <button id="back-to-top" class="back-to-top-btn" aria-label="Scroll back to top of page">
