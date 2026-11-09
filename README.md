@@ -80,7 +80,6 @@
 | **Catch the AI** | Spot subtle algorithmic, concurrency, and syntax bugs in AI-generated code within 30 seconds. | `JavaScript` · `CSS Modules` · `Event Bus` | [Live](https://catchtheai.vercel.app/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Catch_The_AI) |
 | **Diwali Sky** | Simulates customizable firework particle explosions and procedural sound synthesis across a night sky. | `JavaScript` · `Canvas API` · `Web Audio` | [Live](https://diwalisky.vercel.app) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Diwali_Sky) |
 | **Life in Dots** | Visualizes human lifespan in weekly dot columns with lunar calculations and complete local privacy. | `JavaScript` · `Canvas API` · `UTC Math` | [Live](https://lifeindots.vercel.app) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/Life_In_Dots) |
-| **GIT-viz 3D** | Turns GitHub commit histories into 3D city skylines and orbital constellations using Three.js. | `JavaScript` · `Three.js` · `Web Audio` | [Live](https://pradeep-b28.github.io/GIT_3D_Portfolio/) &nbsp;·&nbsp; [Code](https://github.com/Pradeep-B28/GIT_3D_Portfolio) |
 | **Rel_Notes** | Transforms raw Git commit histories into structured markdown release notes using LLM inference. | `Python` · `Groq LLM` · `Click` | [Code](https://github.com/Pradeep-B28/Rel_Notes) |
 | **Devstarter** | Provides reproducible, one-click Docker devcontainer environments for Python, Go, Java, Rust, and Node. | `Docker` · `Devcontainers` · `Linux` | [Code](https://github.com/Pradeep-B28/Devstarter) |
 | **Java + DSA Roadmap** | A structured curriculum covering Core Java, JVM internals, and interview-ready algorithm patterns. | `Java` · `JVM Internals` · `Algorithms` | [Code](https://github.com/Pradeep-B28/JAVA-DSA-Roadmap) |
@@ -109,9 +108,9 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg">
-    <source media="(prefers-color-scheme: light)" srcset="profile-3d-contrib/profile-green-animate.svg">
-    <img src="profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D GitHub Contribution Graph">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Pradeep-B28/Pradeep-B28/raw/output/profile-3d-contrib/profile-night-rainbow.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/Pradeep-B28/Pradeep-B28/raw/output/profile-3d-contrib/profile-green-animate.svg">
+    <img src="https://github.com/Pradeep-B28/Pradeep-B28/raw/output/profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D GitHub Contribution Graph">
   </picture>
 </div>
 

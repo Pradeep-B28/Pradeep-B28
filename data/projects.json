@@ -180,18 +180,6 @@
     "featured": false
   },
   {
-    "id": "gitviz",
-    "title": "GIT-viz 3D",
-    "oneLiner": "Turns GitHub commit histories into 3D city skylines and orbital constellations using Three.js.",
-    "category": "Visualizers",
-    "tech": ["JavaScript", "Three.js", "Web Audio"],
-    "metric": "3D procedural city skyline generation from Git commits",
-    "liveUrl": "https://pradeep-b28.github.io/GIT_3D_Portfolio/",
-    "codeUrl": "https://github.com/Pradeep-B28/GIT_3D_Portfolio",
-    "image": "assets/images/projects/gitviz.webp",
-    "featured": false
-  },
-  {
     "id": "relnotes",
     "title": "Rel_Notes",
     "oneLiner": "Transforms raw Git commit histories into structured markdown release notes using LLM inference.",
