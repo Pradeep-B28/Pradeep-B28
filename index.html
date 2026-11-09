@@ -1,940 +1,387 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>B Pradeep — Software Engineer · Full-Stack &amp; 3D Web</title>
-  <meta name="description" content="Portfolio of B Pradeep. Software Engineer with 4 years experience specializing in Java/JVM internals, algorithmic patterns, full-stack web platforms, and 3D WebGL." />
-  
+  <title>B Pradeep — Software Engineer — Full-Stack &amp; Interactive Web</title>
+  <meta name="description" content="I build full-stack platforms, developer tools, and interactive algorithm visualizations. 4 years of engineering, 7,500+ engineers trained." />
+  <link rel="canonical" href="https://pradeep-b28.github.io/Pradeep-B28/" />
+  <meta name="theme-color" content="#0A0B0D" />
+
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pradeep-b28.github.io/Pradeep-B28/" />
-  <meta property="og:title" content="B Pradeep — Software Engineer · Full-Stack &amp; 3D Web" />
-  <meta property="og:description" content="4 years experience · 7,500+ mentored. Full-stack web architectures, PostgreSQL migration safety, and spatial 3D WebGL." />
+  <meta property="og:title" content="B Pradeep — Software Engineer — Full-Stack &amp; Interactive Web" />
+  <meta property="og:description" content="I build full-stack platforms, developer tools, and interactive algorithm visualizations. 4 years of engineering, 7,500+ engineers trained." />
   <meta property="og:image" content="https://pradeep-b28.github.io/Pradeep-B28/assets/images/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Meta -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#0D1117" id="theme-color-meta" />
+  <meta name="twitter:title" content="B Pradeep — Software Engineer — Full-Stack &amp; Interactive Web" />
+  <meta name="twitter:description" content="I build full-stack platforms, developer tools, and interactive algorithm visualizations. 4 years of engineering, 7,500+ engineers trained." />
+  <meta name="twitter:image" content="https://pradeep-b28.github.io/Pradeep-B28/assets/images/og-card.png" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230D1117'/><text x='16' y='22' font-family='serif' font-size='20' font-weight='bold' fill='%23E3A03A' text-anchor='middle'>P</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A0B0D'/><circle cx='16' cy='16' r='6' fill='%23FFB224'/><circle cx='8' cy='22' r='3' fill='%239BA1A6'/><circle cx='24' cy='10' r='3' fill='%239BA1A6'/><line x1='8' y1='22' x2='16' y2='16' stroke='%23FFB224' stroke-width='1.5'/><line x1='16' y1='16' x2='24' y2='10' stroke='%23FFB224' stroke-width='1.5'/></svg>" />
 
-  <!-- Fonts (OFL): Instrument Serif, IBM Plex Sans, JetBrains Mono -->
+  <!-- Google Fonts Preconnect & Swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Main Stylesheet -->
+  <!-- Main Stylesheet (Relative path for GitHub Pages subpath) -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- JSON-LD Person Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "B Pradeep",
+    "jobTitle": "Software Engineer — Full-Stack & Interactive Web",
+    "url": "https://pradeep-b28.github.io/Pradeep-B28/",
+    "sameAs": [
+      "https://www.linkedin.com/in/pradeepb-2k/",
+      "https://github.com/Pradeep-B28",
+      "https://leetcode.com/u/PradeepKrishB/",
+      "https://x.com/Pradeep__krish"
+    ],
+    "knowsAbout": [
+      "Full-Stack Web Development",
+      "Interactive 3D WebGL",
+      "Algorithm Visualizations",
+      "PostgreSQL",
+      "Java",
+      "Python"
+    ]
+  }
+  </script>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Accessible Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Floating Tooltip for Hero Graph -->
+  <div class="hero-tooltip" id="hero-tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <!-- STICKY MINIMAL NAVIGATION -->
   <header class="navbar" id="navbar">
-    <div class="nav-container">
+    <div class="container nav-container">
       <a href="#hero" class="brand-logo" aria-label="B Pradeep Home">
+        <span class="brand-dot"></span>
         <span class="brand-name">B Pradeep</span>
-        <span class="brand-badge">SDE</span>
       </a>
 
-      <nav class="nav-links" id="nav-links">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#featured" class="nav-link">Featured Work</a>
-        <a href="#projects" class="nav-link">Projects</a>
+      <nav class="nav-links" id="nav-links" aria-label="Main Navigation">
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#lab" class="nav-link">Lab</a>
+        <a href="#experience" class="nav-link">Experience</a>
         <a href="#skills" class="nav-link">Skills</a>
-        <a href="#teaching" class="nav-link">Mentorship</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-sm btn-accent">Hire Me</a>
-        
-        <!-- Theme Toggle Button -->
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle theme">
-          <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
+        <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-primary btn-sm">Email me</a>
       </nav>
 
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Open mobile menu">
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <main>
-    <!-- HERO SECTION -->
-    <section class="hero-section" id="hero">
-      <div class="hero-container">
-        <!-- Left: Editorial Content -->
+  <main id="main">
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section" id="hero" aria-label="Introduction and Interactive Algorithm Graph">
+      <!-- Three.js Algorithm Graph Canvas -->
+      <div class="hero-canvas-container" id="hero-canvas-container"></div>
+      <div class="hero-static-fallback" id="hero-fallback" aria-hidden="true"></div>
+
+      <div class="container">
         <div class="hero-content">
           <div class="status-pill">
             <span class="status-dot"></span>
-            <span class="status-text">OPEN TO SDE ROLES · RELOCATING</span>
+            <span>Open to SDE roles · Remote / Relocation</span>
           </div>
 
           <h1 class="hero-name">B Pradeep</h1>
-          <p class="hero-headline">Software Engineer · Full-Stack &amp; 3D Web</p>
-          <p class="hero-subline">
-            4 years of engineering experience · 7,500+ engineers mentored. I build high-throughput full-stack platforms, pre-migration database safety tooling, and spatial 3D WebGL experiences.
+          <p class="hero-title">Software Engineer — Full-Stack &amp; Interactive Web</p>
+          <p class="hero-oneliner">
+            I build full-stack platforms, developer tools, and interactive algorithm visualizations. 4 years of engineering, 7,500+ engineers trained.
           </p>
 
           <div class="hero-cta-group">
-            <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-primary">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              <span>Discuss SDE Opportunity</span>
+            <a href="#work" class="btn btn-primary">
+              <span>View work</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </a>
-            <a href="#featured" class="btn btn-secondary">
-              <span>View Featured Work</span>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span>Email me</span>
             </a>
           </div>
 
-          <!-- Social Links -->
           <div class="hero-social-links">
-            <a href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <a href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener" class="hero-social-link" title="LinkedIn Profile">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               <span>LinkedIn</span>
             </a>
-            <a href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener" class="social-link" title="LeetCode">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              <span>LeetCode</span>
-            </a>
-            <a href="https://github.com/Pradeep-B28" target="_blank" rel="noopener" class="social-link" title="GitHub">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <a href="https://github.com/Pradeep-B28" target="_blank" rel="noopener" class="hero-social-link" title="GitHub Profile">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               <span>GitHub</span>
             </a>
-          </div>
-        </div>
-
-        <!-- Right: 3D Interactive Lattice Canvas Container -->
-        <div class="hero-3d-wrapper">
-          <div class="canvas-card" id="lattice-card">
-            <!-- Three.js Canvas Container -->
-            <div id="lattice-3d-container" class="lattice-container" aria-label="Interactive 3D Algorithmic Lattice Scene">
-              <!-- Static SVG Fallback for No-WebGL or Prefers-Reduced-Motion -->
-              <div class="static-fallback" id="static-fallback">
-                <picture>
-                  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/hero-dark.svg">
-                  <source media="(prefers-color-scheme: light)" srcset="assets/generated/hero-light.svg">
-                  <img src="assets/generated/hero-dark.svg" alt="Algorithmic Lattice 3D Fallback" />
-                </picture>
-              </div>
-            </div>
-
-            <div class="canvas-controls-overlay">
-              <span class="control-tag">Interactive 3D WebGL</span>
-              <span class="control-hint">Drag to rotate · Scroll to zoom</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- AT A GLANCE SECTION -->
-    <section class="section at-a-glance-section" id="about">
-      <div class="section-container">
-        <div class="stats-grid">
-          <div class="stat-tile">
-            <span class="stat-number">4 yrs</span>
-            <span class="stat-label">Engineering Experience</span>
-            <span class="stat-desc">Full-stack systems &amp; training</span>
-          </div>
-          <div class="stat-tile">
-            <span class="stat-number">7,500+</span>
-            <span class="stat-label">Engineers Mentored</span>
-            <span class="stat-desc">Java, DSA &amp; system design</span>
-          </div>
-          <div class="stat-tile">
-            <span class="stat-number">10+</span>
-            <span class="stat-label">Online Bootcamps</span>
-            <span class="stat-desc">Placement preparation</span>
-          </div>
-          <div class="stat-tile">
-            <span class="stat-number">17</span>
-            <span class="stat-label">Public Repositories</span>
-            <span class="stat-desc">Verified open-source code</span>
-          </div>
-        </div>
-
-        <div class="current-role-banner">
-          <div class="role-icon">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
-          <div class="role-text">
-            <strong>Currently:</strong> Technical Trainer – Academic Excellence, Sethu Institute of Technology, Madurai<br />
-            <strong>Previously worked with:</strong> VIT Chennai · VIT Vellore · VIT-AP · KSR (Erode)
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURED WORK SECTION -->
-    <section class="section featured-section" id="featured">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-kicker">Flagship Systems</span>
-          <h2 class="section-title">Featured Engineering Work</h2>
-          <p class="section-subtitle">Production platforms, algorithmic visualizers, and database gatekeepers built with verified metrics.</p>
-        </div>
-
-        <div class="projects-grid">
-          <!-- 1. Softech -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/softech.webp" alt="Softech Placement Portal Screenshot" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">Softech — Technical Placement Portal</h3>
-                <span class="card-tag">Production</span>
-              </div>
-              <p class="card-problem">
-                High-throughput corporate placement portal streamlining campus recruitment drives, live technical training, and institutional candidate evaluation pipelines.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">Python</span>
-                <span class="tech-chip">Flask 3</span>
-                <span class="tech-chip">PostgreSQL</span>
-                <span class="tech-chip">Render</span>
-                <span class="tech-chip">CodeMirror</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>Full production web platform with automated code execution and administrative evaluation drives.</span>
-              </div>
-              <div class="client-note">
-                I build portals like this for clients — <a href="mailto:pradeepbashaa@gmail.com?subject=Website%20or%20Portal%20Project%20%E2%80%94%20B%20Pradeep">email me</a>.
-              </div>
-              <div class="card-actions">
-                <a href="https://reachsoftech.onrender.com/home" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live Platform →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. Namma Route -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/nammaroute.webp" alt="Namma Route Transit Graph Visualizer" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">Namma Route — Transit Graph Visualizer</h3>
-                <span class="card-tag">Algorithm</span>
-              </div>
-              <p class="card-problem">
-                Interactive multi-modal transit graph visualizer rendering road and rail networks across 55 Tamil Nadu cities (104 nodes, 390 directed edges).
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">JavaScript</span>
-                <span class="tech-chip">Canvas API</span>
-                <span class="tech-chip">A* Heuristic</span>
-                <span class="tech-chip">Dijkstra</span>
-                <span class="tech-chip">Vercel</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Verified against an exhaustive 8,292 automated city-pair test suite with zero routing failures.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://nammaroute-sigma.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live App →</a>
-                <a href="https://github.com/Pradeep-B28/Namma_Route" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 3. Schema Sentinel -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/schemasentinel.webp" alt="Schema Sentinel CLI Output" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">Schema Sentinel — PostgreSQL Risk Analyzer</h3>
-                <span class="card-tag">DevOps / Tooling</span>
-              </div>
-              <p class="card-problem">
-                Pre-migration risk profiler and CI/CD gatekeeper detecting non-concurrent table locks, table rewrites, and breaking schema changes prior to deployment.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">Python 3.11</span>
-                <span class="tech-chip">sqlparse</span>
-                <span class="tech-chip">PostgreSQL</span>
-                <span class="tech-chip">GitHub Actions</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <span>AST-based 4-axis risk analysis (Lock, Data Integrity, Compatibility, Performance) blocking unsafe PRs.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://github.com/Pradeep-B28/Schema_Sentinel" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Source &amp; Action →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 4. Ledger -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/ledger.webp" alt="Ledger Mobile Financial Dashboard" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">Ledger — Personal Finance &amp; Expense Tracker</h3>
-                <span class="card-tag">Full-Stack / Mobile</span>
-              </div>
-              <p class="card-problem">
-                Cross-platform personal finance manager with client-side optimistic UI updates and local caching for mobile and web.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">React 18</span>
-                <span class="tech-chip">Node.js</span>
-                <span class="tech-chip">Express</span>
-                <span class="tech-chip">MongoDB</span>
-                <span class="tech-chip">Capacitor Android</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-                <span>Offline-first LocalStorage transaction ledgering with native Android APK packaging via Capacitor.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Source Code →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 5. Catch the AI -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/catchtheai.webp" alt="Catch the AI Game Screenshot" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">Catch the AI — Code Review &amp; Debugging Game</h3>
-                <span class="card-tag">Game / Web</span>
-              </div>
-              <p class="card-problem">
-                Developer debugging game where players spot subtle logic, concurrency, and syntax bugs in AI-generated code snippets within a 30-second countdown.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">JavaScript</span>
-                <span class="tech-chip">CSS Modules</span>
-                <span class="tech-chip">Event Bus</span>
-                <span class="tech-chip">Vercel</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                <span>Drift-free high-precision timer engine backed by 20 verified algorithmic bug scenarios.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://catchtheai.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live Game →</a>
-                <a href="https://github.com/Pradeep-B28/Catch_The_AI" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 6. Diwali Sky -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/diwalisky.webp" alt="Diwali Sky Particle Fireworks" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">Diwali Sky — Interactive Fireworks Simulator</h3>
-                <span class="card-tag">3D / Physics</span>
-              </div>
-              <p class="card-problem">
-                Festive physics canvas simulating particle explosion dynamics that write customizable names across a night sky with procedural sound synthesis.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">JavaScript</span>
-                <span class="tech-chip">HTML5 Canvas</span>
-                <span class="tech-chip">Web Audio API</span>
-                <span class="tech-chip">Vercel</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <span>Client-side mathematical particle explosion physics with real-time audio oscillator generation.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://diwalisky.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live App →</a>
-                <a href="https://github.com/Pradeep-B28/Diwali_Sky" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 7. Find the Skills -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/findtheskills.webp" alt="Find the Skills ATS Keyword Scanner" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">Find the Skills — ATS Scanner &amp; Career Gap Engine</h3>
-                <span class="card-tag">ATS / NLP</span>
-              </div>
-              <p class="card-problem">
-                Client-side ATS lexical keyword scanner and qualification parser evaluating 332 skills across 1,901 aliases with strict word boundary rules and gap analysis.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">JavaScript</span>
-                <span class="tech-chip">Regex Engine</span>
-                <span class="tech-chip">Web Audio API</span>
-                <span class="tech-chip">Vercel</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <span>Longest-match lexical precedence with context disambiguation window and zero-server privacy.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://find-the-skills.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live App →</a>
-                <a href="https://github.com/Pradeep-B28/Find_the_Skills" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 8. Life in Dots -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/lifeindots.webp" alt="Life in Dots Lifespan Visualizer" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">Life in Dots — Lifespan in Weeks Visualizer</h3>
-                <span class="card-tag">Canvas / Math</span>
-              </div>
-              <p class="card-problem">
-                Visual human lifespan calendar mapped in weekly units (52 columns per year) with synodic lunar calculations and 100% client-side privacy.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">JavaScript</span>
-                <span class="tech-chip">HTML5 Canvas</span>
-                <span class="tech-chip">Integer UTC Math</span>
-                <span class="tech-chip">Vercel</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <span>O(1) grid coordinate arithmetic with high-DPI multi-layer camera pan and zoom.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://lifeindots.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live App →</a>
-                <a href="https://github.com/Pradeep-B28/Life_In_Dots" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 9. The Broken Website -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/brokenwebsite.webp" alt="The Broken Website Debugging Simulator" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">The Broken Website — Web Debugging &amp; Sandbox</h3>
-                <span class="card-tag">Web Security / Debugging</span>
-              </div>
-              <p class="card-problem">
-                Interactive web debugging simulator and cybersecurity escape room featuring 15 real-world client bug tickets, live line editor, and triple-sandboxed iframe code execution.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">JavaScript (ES6+)</span>
-                <span class="tech-chip">Sandboxed Iframe / CSP</span>
-                <span class="tech-chip">HTML5 Canvas</span>
-                <span class="tech-chip">Web Audio API</span>
-                <span class="tech-chip">Vercel</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                <span>Double-sandboxed DOM isolation with strict CSP, 60 FPS repair sweep animation, and 10 passing in-browser test suites.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://broken-website.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live App →</a>
-                <a href="https://github.com/Pradeep-B28/Broken_Website" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 10. Explorer -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/explorer.webp" alt="Explorer Full-Stack Architecture Visualizer" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">Explorer - Full-Stack Architecture Visualizer</h3>
-                <span class="card-tag">Architecture / Systems</span>
-              </div>
-              <p class="card-problem">
-                Interactive full-stack architecture visualizer splitting a production food delivery app into 5 synchronized horizontal layers (Screen, Styling, Logic, Server, Database) with traveling data packets and live code inspection.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">JavaScript (ES6+)</span>
-                <span class="tech-chip">FLIP Transitions</span>
-                <span class="tech-chip">HTML5 Canvas</span>
-                <span class="tech-chip">Web Audio API</span>
-                <span class="tech-chip">Vercel</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>100/100 Lighthouse Mobile Accessibility, zero external runtime dependencies, and 17 automated in-browser verification checks.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://explorer-mu-nine.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live App →</a>
-                <a href="https://github.com/Pradeep-B28/Explorer" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 11. Delivery Rush -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/deliveryrush.webp" alt="Delivery Rush Algorithmic Dispatch Simulator" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">Delivery Rush - Algorithmic Dispatch Engine</h3>
-                <span class="card-tag">Algorithms / Simulation</span>
-              </div>
-              <p class="card-problem">
-                Interactive real-time food delivery dispatch game and algorithmic benchmark simulator comparing player operational decisions against an autonomous multi-algorithm bot (Min-Heap, BFS, Greedy choice, FIFO queue) on twin SVG maps.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">JavaScript (ES6+)</span>
-                <span class="tech-chip">Canvas / SVG</span>
-                <span class="tech-chip">Min-Heap</span>
-                <span class="tech-chip">BFS Graph</span>
-                <span class="tech-chip">Greedy Choice</span>
-                <span class="tech-chip">Vercel</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>100/100 Lighthouse Performance and Accessibility, 3,592 passing headless unit checks, and 15 passing in-browser verification tests.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://delivery-rush-pi.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live App →</a>
-                <a href="https://github.com/Pradeep-B28/Delivery_Rush" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 12. Password Crack Meter -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/passwordcrack.webp" alt="Password Crack Meter Cryptographic Engine" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">Password Crack Meter - Cryptographic Strength Engine</h3>
-                <span class="card-tag">Cybersecurity / DSA</span>
-              </div>
-              <p class="card-problem">
-                Interactive cryptographic password strength analyzer and pattern detection engine with zero-network CSP lock, 37,080-entry O(1) hash set, and Web Crypto password generator.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">JavaScript (ES6+)</span>
-                <span class="tech-chip">Web Crypto API</span>
-                <span class="tech-chip">Hash Set DSA</span>
-                <span class="tech-chip">CSP Strict Lock</span>
-                <span class="tech-chip">SVG Animation</span>
-                <span class="tech-chip">Vercel</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Strict CSP connect-src 'none' zero-network privacy lock, 7,256 headless unit checks, and 14 passing in-browser verification tests.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://password-check-iota.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live App →</a>
-                <a href="https://github.com/Pradeep-B28/Password_Crack_Meter" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 13. List Cleaner -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/listcleaner.webp" alt="List Cleaner Contact Deduplication Engine" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">List Cleaner - Privacy-First Contact Deduplication Engine</h3>
-                <span class="card-tag">Full-Stack / DSA</span>
-              </div>
-              <p class="card-problem">
-                High-performance contact list cleaner and normalization engine featuring client-side O(1) Hash Set deduplication, 4 phone formats, Gmail dot/plus normalization, and strict zero-network CSP lock.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">JavaScript (ES6+)</span>
-                <span class="tech-chip">Hash Set DSA</span>
-                <span class="tech-chip">Merge Sort</span>
-                <span class="tech-chip">CSP connect-src none</span>
-                <span class="tech-chip">Client Blobs</span>
-                <span class="tech-chip">Vercel</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Strict CSP connect-src 'none' privacy guarantee, 21,929 automated engine checks, and 10 in-browser verification tests.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://listcleaner-mu.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live App →</a>
-                <a href="https://github.com/Pradeep-B28/List_Cleaner" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 14. Split Smart -->
-          <article class="project-card">
-            <div class="card-media">
-              <img src="assets/images/projects/splitsmart.webp" alt="Split Smart Group Expense & Debt Minimization Engine" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <div class="card-header-row">
-                <h3 class="card-title">Split Smart - Group Expense &amp; Debt Minimization Engine</h3>
-                <span class="card-tag">Full-Stack / DSA</span>
-              </div>
-              <p class="card-problem">
-                Algorithmic group expense splitter and balance untangling engine featuring zero-network CSP lock, exact integer paise arithmetic, O(2^K) zero-sum subset pairing, and greedy debt minimization.
-              </p>
-              <div class="tech-stack-row">
-                <span class="tech-chip">JavaScript (ES6+)</span>
-                <span class="tech-chip">Integer Paisa Math</span>
-                <span class="tech-chip">Bitmask DP</span>
-                <span class="tech-chip">Greedy Matching</span>
-                <span class="tech-chip">CSP connect-src none</span>
-                <span class="tech-chip">Vercel</span>
-              </div>
-              <div class="card-highlight">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Strict CSP connect-src 'none' privacy guarantee, 47,475 automated engine checks, and 13 in-browser verification tests.</span>
-              </div>
-              <div class="card-actions">
-                <a href="https://split-smart-brown.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live App →</a>
-                <a href="https://github.com/Pradeep-B28/Split_Smart" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Source Code</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- MORE PROJECTS SECTION -->
-    <section class="section more-projects-section" id="projects">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-kicker">Extended Catalog</span>
-          <h2 class="section-title">Additional Systems &amp; Tooling</h2>
-        </div>
-
-        <div class="catalog-grid">
-          <div class="catalog-card">
-            <h4>Split Smart</h4>
-            <p>Algorithmic group expense splitter and balance untangling engine with zero-network CSP lock, exact integer paise arithmetic, and minimal bank transfer settlement.</p>
-            <div class="catalog-links">
-              <a href="https://split-smart-brown.vercel.app/" target="_blank" rel="noopener">Live App →</a>
-              <a href="https://github.com/Pradeep-B28/Split_Smart" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-
-          <div class="catalog-card">
-            <h4>List Cleaner</h4>
-            <p>High-performance contact list cleaner and normalization engine with zero-network CSP lock, O(1) hash set duplicate detection, and multi-format CSV export.</p>
-            <div class="catalog-links">
-              <a href="https://listcleaner-mu.vercel.app/" target="_blank" rel="noopener">Live App →</a>
-              <a href="https://github.com/Pradeep-B28/List_Cleaner" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-
-          <div class="catalog-card">
-            <h4>Password Crack Meter</h4>
-            <p>Cryptographic password strength analyzer and entropy engine with zero-network CSP lock, 37,080-entry O(1) dictionary hash set, and 5-part animated SVG visualizer.</p>
-            <div class="catalog-links">
-              <a href="https://password-check-iota.vercel.app/" target="_blank" rel="noopener">Live App →</a>
-              <a href="https://github.com/Pradeep-B28/Password_Crack_Meter" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-
-          <div class="catalog-card">
-            <h4>Delivery Rush</h4>
-            <p>Real-time food delivery dispatch game and algorithmic benchmark simulator comparing player operational decisions against autonomous Min-Heap, BFS, and Greedy algorithms on twin SVG maps.</p>
-            <div class="catalog-links">
-              <a href="https://delivery-rush-pi.vercel.app/" target="_blank" rel="noopener">Live App →</a>
-              <a href="https://github.com/Pradeep-B28/Delivery_Rush" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-
-          <div class="catalog-card">
-            <h4>Explorer</h4>
-            <p>Interactive full-stack architecture visualizer splitting a production food delivery app into 5 synchronized horizontal layers with traveling data packets and live code inspection.</p>
-            <div class="catalog-links">
-              <a href="https://explorer-mu-nine.vercel.app/" target="_blank" rel="noopener">Live App →</a>
-              <a href="https://github.com/Pradeep-B28/Explorer" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-
-          <div class="catalog-card">
-            <h4>The Broken Website</h4>
-            <p>Interactive web debugging game and cybersecurity escape room with triple-sandboxed execution and 15 bug remediation challenges.</p>
-            <div class="catalog-links">
-              <a href="https://broken-website.vercel.app/" target="_blank" rel="noopener">Live App →</a>
-              <a href="https://github.com/Pradeep-B28/Broken_Website" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-
-          <div class="catalog-card">
-            <h4>Life in Dots</h4>
-            <p>Visual human lifespan calendar mapped in weekly units (52 columns per year) with synodic lunar calculations.</p>
-            <div class="catalog-links">
-              <a href="https://lifeindots.vercel.app" target="_blank" rel="noopener">Live App →</a>
-              <a href="https://github.com/Pradeep-B28/Life_In_Dots" target="_blank" rel="noopener">Source</a>
-            </div>
-          </div>
-
-          <div class="catalog-card">
-            <h4>Rel_Notes</h4>
-            <p>CLI changelog generator leveraging Groq Llama 3.3 70B inference to parse raw git commit histories into markdown.</p>
-            <div class="catalog-links">
-              <a href="https://github.com/Pradeep-B28/Rel_Notes" target="_blank" rel="noopener">Source &amp; CLI →</a>
-            </div>
-          </div>
-
-          <div class="catalog-card">
-            <h4>Devstarter</h4>
-            <p>Zero-configuration reproducible Docker devcontainers for Python, Go, Java, Rust, Node.js, and C++.</p>
-            <div class="catalog-links">
-              <a href="https://github.com/Pradeep-B28/Devstarter" target="_blank" rel="noopener">Templates →</a>
-            </div>
-          </div>
-
-          <div class="catalog-card">
-            <h4>Java + DSA Master Roadmap</h4>
-            <p>Structured curriculum covering Core Java, Object-Oriented Design, JVM internals, and interview algorithms.</p>
-            <div class="catalog-links">
-              <a href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap" target="_blank" rel="noopener">Curriculum →</a>
-            </div>
-          </div>
-
-          <div class="catalog-card">
-            <h4>Searching &amp; Sorting Visualizer</h4>
-            <p>Java Swing GUI desktop application illustrating comparisons and swaps frame-by-frame for Quick, Merge, and Heap sorts.</p>
-            <div class="catalog-links">
-              <a href="https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer" target="_blank" rel="noopener">Java GUI Source →</a>
-            </div>
-          </div>
-
-          <div class="catalog-card">
-            <h4>Portfolio Theme Suite</h4>
-            <p>6 distinct 3D WebGL developer portfolio prototypes built in React 18, Three.js, shaders, and Tailwind CSS.</p>
-            <div class="catalog-links">
-              <a href="https://github.com/Pradeep-B28/Portfolio" target="_blank" rel="noopener">Theme Suite →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- MOR Special Card -->
-        <div class="mor-callout-card">
-          <div class="mor-badge">Private &amp; Proprietary System</div>
-          <div class="mor-content">
-            <h3>MOR — Voice-First Holographic AI Assistant</h3>
-            <p>
-              Local-first personal AI assistant featuring wake-word detection, neural speech synthesis, interactive visual holographic avatars, and smart room IoT orchestration.
-            </p>
-            <a href="mailto:pradeepbashaa@gmail.com?subject=Inquiry%20regarding%20MOR%20AI%20Assistant%20Demo%20%E2%80%94%20B%20Pradeep" class="btn btn-sm btn-outline">
-              Request Demo via Email →
+            <a href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener" class="hero-social-link" title="LeetCode Profile">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>LeetCode</span>
             </a>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- TECHNICAL SKILLS MATRIX -->
-    <section class="section skills-section" id="skills">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-kicker">Core Specialization</span>
-          <h2 class="section-title">Technical Expertise Matrix</h2>
-          <p class="section-subtitle">Categorized by architectural domains, runtime platforms, and verified repository usage.</p>
-        </div>
-
-        <div class="skills-matrix-grid">
-          <!-- Col 1 -->
-          <div class="matrix-card">
-            <h3 class="matrix-header">JAVA &amp; JVM INTERNALS</h3>
-            <ul class="matrix-list">
-              <li><strong>Core Java &amp; OOP:</strong> Polymorphism, Encapsulation, Design Patterns</li>
-              <li><strong>Collections Internals:</strong> HashMap collisions, TreeMap Red-Black trees</li>
-              <li><strong>Concurrency:</strong> ExecutorService, Locks, Atomic types, Race conditions</li>
-              <li><strong>JVM Memory &amp; GC:</strong> Stack frames, Heap layout, G1GC tuning</li>
-              <li><strong>Java Swing GUI:</strong> Frame-by-frame desktop algorithmic rendering</li>
-            </ul>
-          </div>
-
-          <!-- Col 2 -->
-          <div class="matrix-card">
-            <h3 class="matrix-header">ALGORITHMIC PATTERNS</h3>
-            <ul class="matrix-list">
-              <li><strong>Arrays &amp; Pointers:</strong> Sliding Window, Two Pointers, Kadane's</li>
-              <li><strong>Trees &amp; BST:</strong> BFS/DFS traversals, LCA, Morris traversal</li>
-              <li><strong>Graph Solvers:</strong> Dijkstra, A* (admissible heuristic), Topological sort</li>
-              <li><strong>Dynamic Programming:</strong> State DAGs, 1D/2D memoization &amp; tabulation</li>
-              <li><strong>Interview Pedagogy:</strong> Pattern recognition &amp; cognitive dry runs</li>
-            </ul>
-          </div>
-
-          <!-- Col 3 -->
-          <div class="matrix-card">
-            <h3 class="matrix-header">FULL-STACK &amp; 3D WEB</h3>
-            <ul class="matrix-list">
-              <li><strong>JavaScript &amp; TS:</strong> Modern ES6+, strict typing, modular architectures</li>
-              <li><strong>React 18 &amp; State:</strong> Hooks, Context, client caching, optimistic updates</li>
-              <li><strong>Three.js WebGL:</strong> PBR materials, shaders, raycasting, particles</li>
-              <li><strong>Node.js &amp; Python:</strong> Express, Flask 3, REST APIs, JSON schemas</li>
-              <li><strong>Mobile &amp; PWA:</strong> Capacitor Android, offline LocalStorage, Service Workers</li>
-            </ul>
-          </div>
-
-          <!-- Col 4 -->
-          <div class="matrix-card">
-            <h3 class="matrix-header">DEVOPS &amp; TOOLING</h3>
-            <ul class="matrix-list">
-              <li><strong>PostgreSQL Profiling:</strong> AST parsing, lock mode analysis, schema migrations</li>
-              <li><strong>Docker &amp; Containers:</strong> Devcontainers, reproducible environments</li>
-              <li><strong>CI/CD Gatekeepers:</strong> GitHub Actions automated test &amp; lint workflows</li>
-              <li><strong>Git &amp; Version Control:</strong> Branching, rebase workflows, semantic tags</li>
-              <li><strong>Developer Tooling:</strong> IntelliJ IDEA, VS Code, Linux bash, Vite</li>
-            </ul>
+          <div class="hero-stats-row">
+            <span class="hero-stat-chip">4 yrs engineering</span>
+            <span class="hero-stat-chip">7,500+ engineers trained</span>
+            <span class="hero-stat-chip" id="stat-projects-count">20 projects shipped</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TEACHING & MENTORSHIP SECTION -->
-    <section class="section teaching-section" id="teaching">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-kicker">Pedagogy &amp; Leadership</span>
-          <h2 class="section-title">Technical Training &amp; Mentorship</h2>
-        </div>
-
-        <div class="teaching-content-card">
-          <p class="lead-text">
-            As Technical Trainer for Academic Excellence at Sethu Institute of Technology and through intensive technical programs across institutions including VIT Chennai, VIT Vellore, VIT-AP, and KSR (Erode), I have mentored <strong>7,500+ students and engineers</strong> across <strong>10+ intensive online bootcamps</strong>.
+    <!-- 2. FEATURED WORK (4 Case-Study Style Rows) -->
+    <section class="section" id="work" aria-label="Featured Engineering Case Studies">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">FLAGSHIP CASE STUDIES</span>
+          <h2 class="section-title">Featured Work</h2>
+          <p class="section-subtitle">
+            Deep-dive production platforms, graph pathfinders, and database gatekeepers built with verified proof metrics.
           </p>
-          <div class="pillars-grid">
-            <div class="pillar-card">
-              <h4>Mechanical Sympathy</h4>
-              <p>Demystifying how JVM memory layout, cache lines, and garbage collection pauses directly dictate production throughput.</p>
+        </div>
+
+        <div class="featured-list" id="featured-container">
+          <!-- Dynamically populated from data/projects.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. LAB (Filterable Grid) -->
+    <section class="section" id="lab" aria-label="Engineering Lab & Interactive Open Source">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">EXPERIMENTS &amp; OPEN SOURCE</span>
+          <h2 class="section-title">Engineering Lab</h2>
+          <p class="section-subtitle">
+            Filterable systems, developer tooling, cryptographic utilities, algorithmic games, and 3D visualizers.
+          </p>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="filter-bar reveal" role="tablist" aria-label="Project Category Filters">
+          <button class="filter-chip active" role="tab" aria-selected="true" data-filter="All">All</button>
+          <button class="filter-chip" role="tab" aria-selected="false" data-filter="Algorithms">Algorithms</button>
+          <button class="filter-chip" role="tab" aria-selected="false" data-filter="Dev Tools">Dev Tools</button>
+          <button class="filter-chip" role="tab" aria-selected="false" data-filter="Privacy &amp; Security">Privacy &amp; Security</button>
+          <button class="filter-chip" role="tab" aria-selected="false" data-filter="Games">Games</button>
+          <button class="filter-chip" role="tab" aria-selected="false" data-filter="Visualizers">Visualizers</button>
+        </div>
+
+        <!-- Filterable Grid -->
+        <div class="lab-grid" id="lab-grid">
+          <!-- Dynamically populated from data/projects.json -->
+        </div>
+
+        <!-- MOR AI Slim Strip -->
+        <div class="mor-private-strip reveal">
+          <div class="mor-strip-info">
+            <span class="mor-badge">In Private Development</span>
+            <span class="mor-strip-text"><strong>MOR AI</strong> — Voice-first holographic personal AI assistant.</span>
+          </div>
+          <a href="mailto:pradeepbashaa@gmail.com?subject=Inquiry%20regarding%20MOR%20AI%20Assistant%20Demo%20%E2%80%94%20B%20Pradeep" class="btn btn-secondary btn-sm">Request demo →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. EXPERIENCE (Vertical Timeline) -->
+    <section class="section" id="experience" aria-label="Experience & Technical Training Timeline">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">CAREER &amp; MENTORSHIP</span>
+          <h2 class="section-title">Experience</h2>
+          <p class="section-subtitle">
+            Technical instruction, institutional curriculum delivery, and engineering leadership.
+          </p>
+        </div>
+
+        <div class="experience-timeline reveal">
+          <div class="timeline-item">
+            <span class="timeline-marker active"></span>
+            <div class="timeline-header">
+              <h3 class="timeline-title">Technical Trainer — Academic Excellence</h3>
+              <!-- TODO: Pradeep to fill start date -->
+              <span class="timeline-date">Current</span>
             </div>
-            <div class="pillar-card">
-              <h4>Algorithmic Invariants</h4>
-              <p>Replacing rote memorization with structural pattern recognition: sliding window bounds, monotonic stacks, and dynamic programming DAGs.</p>
+            <p class="timeline-org">Sethu Institute of Technology, Madurai</p>
+            <p class="timeline-desc">
+              Direct technical curriculum in Core Java, JVM architecture, data structures, and algorithmic interview preparation for engineering undergraduates.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-header">
+              <h3 class="timeline-title">Technical Training Programs</h3>
+              <!-- TODO: Pradeep to fill dates -->
+              <span class="timeline-date">Programs</span>
             </div>
-            <div class="pillar-card">
-              <h4>Engineering Discipline</h4>
-              <p>Emphasizing clean code architecture, defensive data structures, rigorous edge testing, and CI/CD automation.</p>
+            <p class="timeline-org">VIT Chennai · VIT Vellore · VIT-AP · KSR Erode</p>
+            <p class="timeline-desc">
+              Conducted intensive technical training programs focused on high-throughput algorithmic patterns, graph solvers, and competitive programming frameworks.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-header">
+              <h3 class="timeline-title">10+ Intensive Online Bootcamps</h3>
+              <!-- TODO: Pradeep to fill dates -->
+              <span class="timeline-date">Bootcamps</span>
             </div>
+            <p class="timeline-org">Placement &amp; Competitive Engineering Preparation</p>
+            <p class="timeline-desc">
+              Mentored 7,500+ aspiring software engineers across live bootcamps covering memory layout, multithreading synchronization, and dynamic programming invariants.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="section contact-section" id="contact">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-kicker">Get in Touch</span>
-          <h2 class="section-title">Let's Connect</h2>
-          <p class="section-subtitle">Open to full-time Software Engineer (SDE) roles worldwide — available for remote opportunities or on-site relocation.</p>
+    <!-- 5. SKILLS (4 Compact Columns, Max 6 items each) -->
+    <section class="section" id="skills" aria-label="Technical Skills Matrix">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">CORE SPECIALIZATION</span>
+          <h2 class="section-title">Skills</h2>
+          <p class="section-subtitle">
+            Technologies and patterns applied across production systems, developer tooling, and algorithms.
+          </p>
         </div>
 
-        <div class="contact-cards-grid">
-          <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="contact-card highlight-card">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            </div>
-            <h3>SDE Opportunity</h3>
-            <p>Discuss full-time engineering roles in backend, full-stack, or 3D web platforms.</p>
-            <span class="contact-action">Send Email →</span>
-          </a>
+        <div class="skills-columns-grid reveal">
+          <!-- Col 1: Languages & Backend -->
+          <div class="skills-col">
+            <h3 class="skills-col-header">Languages &amp; Backend</h3>
+            <ul class="skills-list">
+              <li><span class="skill-bullet"></span><span>Core Java (OOP &amp; Collections)</span></li>
+              <li><span class="skill-bullet"></span><span>JVM Internals &amp; GC Tuning</span></li>
+              <li><span class="skill-bullet"></span><span>Python (Flask 3)</span></li>
+              <li><span class="skill-bullet"></span><span>Node.js &amp; Express</span></li>
+              <li><span class="skill-bullet"></span><span>TypeScript &amp; Modern JS</span></li>
+              <li><span class="skill-bullet"></span><span>REST API Architecture</span></li>
+            </ul>
+          </div>
 
-          <a href="mailto:pradeepbashaa@gmail.com?subject=Technical%20Training%20or%20Bootcamp%20Inquiry%20%E2%80%94%20B%20Pradeep" class="contact-card">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            </div>
-            <h3>Training or Bootcamp</h3>
-            <p>Corporate Java &amp; DSA training programs, campus drives, or institutional curricula.</p>
-            <span class="contact-action">Inquire via Email →</span>
-          </a>
+          <!-- Col 2: Frontend & 3D -->
+          <div class="skills-col">
+            <h3 class="skills-col-header">Frontend &amp; 3D</h3>
+            <ul class="skills-list">
+              <li><span class="skill-bullet"></span><span>JavaScript (ES6+ Vanilla)</span></li>
+              <li><span class="skill-bullet"></span><span>React 18 &amp; State Models</span></li>
+              <li><span class="skill-bullet"></span><span>Three.js WebGL &amp; Shaders</span></li>
+              <li><span class="skill-bullet"></span><span>HTML5 Canvas 2D API</span></li>
+              <li><span class="skill-bullet"></span><span>Web Audio API</span></li>
+              <li><span class="skill-bullet"></span><span>CSS Architecture &amp; Motion</span></li>
+            </ul>
+          </div>
 
-          <a href="mailto:pradeepbashaa@gmail.com?subject=Website%20or%203D%20Project%20Collaboration%20%E2%80%94%20B%20Pradeep" class="contact-card">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <h3>Custom Web or 3D</h3>
-            <p>Build client web portals, corporate platforms (like Softech), or interactive 3D sites.</p>
-            <span class="contact-action">Collaborate →</span>
-          </a>
+          <!-- Col 3: Data & DevOps -->
+          <div class="skills-col">
+            <h3 class="skills-col-header">Data &amp; DevOps</h3>
+            <ul class="skills-list">
+              <li><span class="skill-bullet"></span><span>PostgreSQL (AST Lock Analysis)</span></li>
+              <li><span class="skill-bullet"></span><span>Docker &amp; Devcontainers</span></li>
+              <li><span class="skill-bullet"></span><span>GitHub Actions CI/CD</span></li>
+              <li><span class="skill-bullet"></span><span>Git Rebase &amp; Branch Workflows</span></li>
+              <li><span class="skill-bullet"></span><span>Linux &amp; Shell Scripting</span></li>
+              <li><span class="skill-bullet"></span><span>MongoDB</span></li>
+            </ul>
+          </div>
 
-          <a href="mailto:pradeepbashaa@gmail.com?subject=Inquiry%20regarding%20MOR%20AI%20Assistant%20Demo%20%E2%80%94%20B%20Pradeep" class="contact-card">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/></svg>
-            </div>
-            <h3>MOR AI Demo</h3>
-            <p>Private demonstration of holographic voice-first assistant architecture.</p>
-            <span class="contact-action">Request Demo →</span>
-          </a>
+          <!-- Col 4: CS Fundamentals -->
+          <div class="skills-col">
+            <h3 class="skills-col-header">CS Fundamentals</h3>
+            <ul class="skills-list">
+              <li><span class="skill-bullet"></span><span>Graph Solvers (Dijkstra, A*, BFS)</span></li>
+              <li><span class="skill-bullet"></span><span>Dynamic Programming &amp; DAGs</span></li>
+              <li><span class="skill-bullet"></span><span>Two Pointers &amp; Sliding Window</span></li>
+              <li><span class="skill-bullet"></span><span>Trees &amp; Binary Search Trees</span></li>
+              <li><span class="skill-bullet"></span><span>Concurrency &amp; Thread Safety</span></li>
+              <li><span class="skill-bullet"></span><span>Complexity &amp; Space Profiling</span></li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="direct-contact-bar">
-          <div class="direct-item">
-            <span class="direct-label">Direct Email</span>
-            <a href="mailto:pradeepbashaa@gmail.com" class="direct-value">pradeepbashaa@gmail.com</a>
+    <!-- 6. CONTACT SECTION -->
+    <section class="section" id="contact" aria-label="Contact and Collaboration Opportunities">
+      <div class="container">
+        <div class="contact-card-box reveal">
+          <h2 class="contact-headline">Let's <em>build something</em>.</h2>
+
+          <div class="contact-btn-group">
+            <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span>Email me</span>
+            </a>
+            <button class="btn btn-secondary" id="copy-email-btn" aria-label="Copy email address to clipboard">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span>Copy email</span>
+            </button>
           </div>
-          <div class="direct-item">
-            <span class="direct-label">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener" class="direct-value">linkedin.com/in/pradeepb-2k</a>
+
+          <div class="contact-pills-row">
+            <span class="contact-pill">SDE roles (open to remote/relocation)</span>
+            <span class="contact-pill">Training &amp; bootcamps</span>
+            <span class="contact-pill">Freelance web builds</span>
           </div>
-          <div class="direct-item">
-            <span class="direct-label">LeetCode</span>
-            <a href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener" class="direct-value">leetcode.com/u/PradeepKrishB</a>
-          </div>
-          <div class="direct-item">
-            <span class="direct-label">Socials</span>
-            <span class="direct-links">
-              <a href="https://x.com/Pradeep__krish" target="_blank" rel="noopener">X</a> ·
-              <a href="https://www.reddit.com/user/Pradeep_krish/" target="_blank" rel="noopener">Reddit</a> ·
-              <a href="https://www.instagram.com/_._p.r.a.d.e.e.p_._._/" target="_blank" rel="noopener">Instagram</a>
-            </span>
+
+          <div class="contact-social-row">
+            <a href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener" class="contact-social-link">LinkedIn</a>
+            <a href="https://github.com/Pradeep-B28" target="_blank" rel="noopener" class="contact-social-link">GitHub</a>
+            <a href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener" class="contact-social-link">LeetCode</a>
+            <a href="https://x.com/Pradeep__krish" target="_blank" rel="noopener" class="contact-social-link">X</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Toast Notification -->
+  <div class="toast" id="copy-toast" role="status" aria-live="polite"></div>
+
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-container">
+    <div class="container footer-container">
       <div class="footer-left">
-        <span>© 2026 B Pradeep. Code released under the <a href="LICENSE">MIT License</a>.</span>
+        <span>© 2026 B Pradeep</span>
       </div>
       <div class="footer-right">
-        <a href="#hero" class="back-to-top" aria-label="Back to top">
+        <button id="back-to-top" class="back-to-top-btn" aria-label="Scroll back to top of page">
           <span>Back to top</span>
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
-        </a>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+        </button>
       </div>
     </div>
   </footer>
 
-  <!-- Asynchronously loaded scripts for optimal first paint -->
-  <script src="app.js" defer></script>
-  <!-- Three.js + 3D lattice initialized lazily after paint -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="lattice-3d.js" defer></script>
+  <!-- Three.js Pinned Version via Import Map -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.module.min.js"
+    }
+  }
+  </script>
+
+  <!-- Application Controller as ES Module -->
+  <script type="module" src="app.js"></script>
 </body>
 </html>
