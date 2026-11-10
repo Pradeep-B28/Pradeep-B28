@@ -5,6 +5,73 @@
    ========================================================================== */
 
 /* -------------------------------------------------------------------------- */
+/* WEB FONTS (Direct Font-Face with swap)                                     */
+/* -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/instrumentserif/v5/jizHRFtNs2ka5fXjeivQ4LroWlx-6zATiw.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-2zI.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZg.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPQ.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxjPQ.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8FqtjPQ.ttf') format('truetype');
+}
+
+/* -------------------------------------------------------------------------- */
 /* THEME TOKENS                                                               */
 /* -------------------------------------------------------------------------- */
 :root {
@@ -718,97 +785,6 @@ img {
 }
 
 .hero-tooltip strong {
-  color: var(--accent-text);
-}
-
-/* -------------------------------------------------------------------------- */
-/* EMAIL ME POPOVER MENU                                                      */
-/* -------------------------------------------------------------------------- */
-.email-popover {
-  position: absolute;
-  z-index: 1000;
-  background: var(--popover-bg);
-  border: 1px solid var(--popover-border);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-  border-radius: var(--radius);
-  padding: 16px;
-  width: 290px;
-  display: none;
-  flex-direction: column;
-  gap: 8px;
-  animation: popoverFadeIn 0.16s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.email-popover.open {
-  display: flex;
-}
-
-@keyframes popoverFadeIn {
-  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.email-popover-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2px;
-}
-
-.email-popover-title {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent-text);
-}
-
-.email-popover-address {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text);
-  word-break: break-all;
-  margin-bottom: 6px;
-  background: var(--bg);
-  padding: 4px 8px;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-}
-
-.email-popover-options {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.email-popover-option {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 12px;
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-size: 13.5px;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all var(--transition);
-}
-
-.email-popover-option:hover,
-.email-popover-option:focus-visible {
-  border-color: var(--accent);
-  background: var(--accent-muted);
-  color: var(--accent-text);
-}
-
-.email-popover-option svg {
-  flex-shrink: 0;
-  color: var(--muted);
-}
-.email-popover-option:hover svg {
   color: var(--accent-text);
 }
 
@@ -1759,85 +1735,21 @@ img {
   color: var(--accent-text);
 }
 
-/* Contact Form (Web3Forms) */
-.contact-form-box {
-  margin-top: 36px;
-  text-align: left;
-  border-top: 1px solid var(--border);
-  padding-top: 32px;
-}
-
-.contact-form-title {
-  font-family: var(--font-serif);
-  font-size: 24px;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-.contact-form-subtitle {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.contact-form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.form-group.full-width {
-  grid-column: 1 / -1;
-}
-
-.form-label {
-  font-size: 12.5px;
+.contact-email-plain {
+  margin-top: 14px;
   font-family: var(--font-mono);
-  color: var(--muted);
-}
-
-.form-input,
-.form-select,
-.form-textarea {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  color: var(--text);
-  border-radius: var(--radius-sm);
-  padding: 10px 14px;
-  font-size: 14px;
-  font-family: var(--font-sans);
-  transition: border-color var(--transition);
-}
-
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-}
-
-.form-textarea {
-  resize: vertical;
-  min-height: 110px;
-}
-
-.form-status {
-  margin-top: 12px;
   font-size: 13.5px;
-  font-family: var(--font-mono);
 }
-.form-status.success {
-  color: #2ECC71;
+
+.contact-email-link {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
 }
-.form-status.error {
-  color: #E74C3C;
+
+.contact-email-link:hover {
+  color: var(--accent-text);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -2016,9 +1928,6 @@ img {
   .contact-btn-group {
     flex-direction: column;
     align-items: stretch;
-  }
-  .contact-form-grid {
-    grid-template-columns: 1fr;
   }
   .footer-container {
     flex-direction: column;

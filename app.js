@@ -1,17 +1,11 @@
 /**
  * app.js - Main Application Controller
  * Vanilla JS ES Module Architecture
- * Handles Theme Switching (View Transitions API), Email Popover Menu,
- * Web3Forms Contact Form, Command Palette (⌘K), Project Detail Drawer,
- * Lab Filtering/Search/Sort with FLIP, GitHub API Badges, Animated Count-Up,
- * Scroll Progress, Magnetic Buttons, and Diwali Sky "HIRED?" Easter Egg.
+ * Handles Theme Switching (View Transitions API), Direct Mail Integration,
+ * Command Palette (⌘K), Project Detail Drawer, Lab Filtering/Search/Sort with FLIP,
+ * GitHub API Badges, Animated Count-Up, Scroll Progress, Magnetic Buttons,
+ * and Diwali Sky "HIRED?" Easter Egg.
  */
-
-import { initHeroGraph } from './hero-graph.js';
-
-// Configuration Constant for Web3Forms
-// Rule: Until this is set (not "TODO"), hide form and show only popover options
-const WEB3FORMS_KEY = "TODO";
 
 document.addEventListener('DOMContentLoaded', async () => {
   let allProjects = [];
@@ -44,22 +38,51 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 5. Initialize Command Palette (⌘K)
   setupCommandPalette(allProjects);
 
-  // 6. Initialize Email Popover Menu
-  setupEmailPopover();
+  // 6. Fetch GitHub Recently Updated Badges (Deferred until idle)
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(() => fetchGithubRepoUpdates(allProjects), { timeout: 8000 });
+  } else {
+    setTimeout(() => fetchGithubRepoUpdates(allProjects), 8000);
+  }
 
-  // 7. Initialize Web3Forms Contact Form
-  setupContactForm();
-
-  // 8. Fetch GitHub Recently Updated Badges (Cached in sessionStorage)
-  fetchGithubRepoUpdates(allProjects);
-
-  // 9. Lazy-init Three.js Hero Graph
+  // 9. Lazy-init Three.js Hero Graph via Dynamic Import
   const heroContainer = document.getElementById('hero-canvas-container');
   if (heroContainer) {
+    let graphLoaded = false;
+    const loadGraph = async () => {
+      if (graphLoaded) return;
+      graphLoaded = true;
+      cleanupListeners();
+      try {
+        const { initHeroGraph } = await import('./hero-graph.js');
+        initHeroGraph(heroContainer, allProjects);
+      } catch (err) {
+        console.warn('Three.js hero graph dynamic load fallback:', err);
+      }
+    };
+
+    const onUserInteraction = (e) => {
+      if (e && e.isTrusted) {
+        loadGraph();
+      }
+    };
+
+    const events = ['pointerdown', 'mousemove', 'keydown', 'scroll', 'touchstart'];
+    const cleanupListeners = () => {
+      events.forEach(evt => window.removeEventListener(evt, onUserInteraction));
+    };
+
+    events.forEach(evt => {
+      window.addEventListener(evt, onUserInteraction, { once: true, passive: true });
+    });
+
+    // Idle fallback after quiet load window
     if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(() => initHeroGraph(heroContainer, allProjects));
+      window.requestIdleCallback(() => {
+        setTimeout(loadGraph, 10000);
+      });
     } else {
-      setTimeout(() => initHeroGraph(heroContainer, allProjects), 150);
+      setTimeout(loadGraph, 12000);
     }
   }
 
@@ -168,166 +191,7 @@ function setupScrollProgress() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 3. EMAIL POPOVER MENU (Reused for all "Email me" buttons)                  */
-/* -------------------------------------------------------------------------- */
-function setupEmailPopover() {
-  const popover = document.getElementById('email-popover');
-  const popoverClose = document.getElementById('email-popover-close');
-  const popoverMailApp = document.getElementById('popover-mail-app');
-  const popoverGmail = document.getElementById('popover-gmail');
-  const popoverCopy = document.getElementById('popover-copy');
-
-  if (!popover) return;
-
-  let activeTrigger = null;
-
-  function openPopover(triggerBtn) {
-    activeTrigger = triggerBtn;
-    const subject = triggerBtn.getAttribute('data-subject') || 'SDE Role Opportunity — B Pradeep';
-    const encodedSubject = encodeURIComponent(subject);
-
-    if (popoverMailApp) {
-      popoverMailApp.href = `mailto:pradeepbashaa@gmail.com?subject=${encodedSubject}`;
-    }
-    if (popoverGmail) {
-      popoverGmail.href = `https://mail.google.com/mail/?view=cm&fs=1&to=pradeepbashaa@gmail.com&su=${encodedSubject}`;
-    }
-
-    // Position popover near trigger button with viewport bounds
-    const rect = triggerBtn.getBoundingClientRect();
-    const popoverWidth = 290;
-    let left = rect.left + window.scrollX;
-    let top = rect.bottom + window.scrollY + 8;
-
-    if (left + popoverWidth > window.innerWidth - 16) {
-      left = window.innerWidth - popoverWidth - 16;
-    }
-    if (left < 16) left = 16;
-
-    popover.style.left = `${left}px`;
-    popover.style.top = `${top}px`;
-    popover.classList.add('open');
-    popover.setAttribute('aria-hidden', 'false');
-    triggerBtn.setAttribute('aria-expanded', 'true');
-
-    // Focus first interactive option
-    if (popoverMailApp) popoverMailApp.focus();
-  }
-
-  function closePopover() {
-    if (!popover.classList.contains('open')) return;
-    popover.classList.remove('open');
-    popover.setAttribute('aria-hidden', 'true');
-    if (activeTrigger) {
-      activeTrigger.setAttribute('aria-expanded', 'false');
-      activeTrigger.focus();
-      activeTrigger = null;
-    }
-  }
-
-  // Attach to all buttons with .btn-email-popover
-  document.querySelectorAll('.btn-email-popover').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (popover.classList.contains('open') && activeTrigger === btn) {
-        closePopover();
-      } else {
-        openPopover(btn);
-      }
-    });
-  });
-
-  if (popoverClose) {
-    popoverClose.addEventListener('click', closePopover);
-  }
-
-  if (popoverCopy) {
-    popoverCopy.addEventListener('click', () => {
-      copyToClipboard('pradeepbashaa@gmail.com');
-      showToast('Email address copied: pradeepbashaa@gmail.com');
-      closePopover();
-    });
-  }
-
-  // Keyboard accessibility
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && popover.classList.contains('open')) {
-      closePopover();
-    }
-  });
-
-  // Close when clicking outside
-  document.addEventListener('click', (e) => {
-    if (popover.classList.contains('open') && !popover.contains(e.target) && !e.target.closest('.btn-email-popover')) {
-      closePopover();
-    }
-  });
-}
-
-/* -------------------------------------------------------------------------- */
-/* 4. WEB3FORMS CONTACT FORM                                                  */
-/* -------------------------------------------------------------------------- */
-function setupContactForm() {
-  const formBox = document.getElementById('contact-form-box');
-  const form = document.getElementById('contact-form');
-  const statusEl = document.getElementById('form-status');
-  const submitBtn = document.getElementById('form-submit-btn');
-
-  if (!formBox) return;
-
-  // Strict rule: Until key is set, hide form and show only popover options
-  if (WEB3FORMS_KEY === "TODO" || !WEB3FORMS_KEY.trim()) {
-    formBox.style.display = 'none';
-    return;
-  }
-
-  // Key is provided, reveal form
-  formBox.style.display = 'block';
-
-  if (!form) return;
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    const formData = new FormData(form);
-    formData.append('access_key', WEB3FORMS_KEY);
-
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span>Sending...</span>';
-    statusEl.className = 'form-status';
-    statusEl.textContent = '';
-
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
-      });
-      const data = await res.json();
-
-      if (data.success) {
-        statusEl.className = 'form-status success';
-        statusEl.textContent = 'Message sent successfully! I will get back to you within 24 hours.';
-        form.reset();
-      } else {
-        throw new Error(data.message || 'Submission failed');
-      }
-    } catch (err) {
-      statusEl.className = 'form-status error';
-      statusEl.textContent = 'Failed to deliver message. Please reach out directly to pradeepbashaa@gmail.com.';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<span>Send message</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
-    }
-  });
-}
-
-/* -------------------------------------------------------------------------- */
-/* 5. RENDER FEATURED WORK                                                    */
+/* 3. RENDER FEATURED WORK                                                    */
 /* -------------------------------------------------------------------------- */
 function renderFeaturedWork(featuredProjects) {
   const container = document.getElementById('featured-container');
@@ -801,9 +665,11 @@ function setupCommandPalette(allProjects) {
   if (!overlay || !input || !results) return;
 
   const actions = [
-    { title: 'Toggle Theme', badge: 'Action', handler: () => document.getElementById('theme-toggle-btn')?.click() },
-    { title: 'Copy Email Address', badge: 'Action', handler: () => { copyToClipboard('pradeepbashaa@gmail.com'); showToast('Email copied: pradeepbashaa@gmail.com'); } },
+    { title: 'Download Résumé', badge: 'Action', handler: () => window.open('assets/B_Pradeep_Resume.pdf', '_blank') },
+    { title: 'Send Email', badge: 'Action', handler: () => { window.location.href = 'mailto:pradeepbashaa@gmail.com?subject=' + encodeURIComponent('SDE Role Opportunity — B Pradeep'); } },
     { title: 'Compose in Gmail', badge: 'Action', handler: () => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=pradeepbashaa@gmail.com&su=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep', '_blank') },
+    { title: 'Copy Email Address', badge: 'Action', handler: () => { copyToClipboard('pradeepbashaa@gmail.com'); showToast('Email copied: pradeepbashaa@gmail.com'); } },
+    { title: 'Toggle Theme', badge: 'Action', handler: () => document.getElementById('theme-toggle-btn')?.click() },
     { title: 'Open GitHub Profile', badge: 'Link', handler: () => window.open('https://github.com/Pradeep-B28', '_blank') },
     { title: 'Open LinkedIn Profile', badge: 'Link', handler: () => window.open('https://www.linkedin.com/in/pradeepb-2k/', '_blank') },
     { title: 'Open LeetCode Profile', badge: 'Link', handler: () => window.open('https://leetcode.com/u/PradeepKrishB/', '_blank') }
@@ -1077,15 +943,26 @@ function setupStatsCountUp(projectCount) {
   const statsRow = document.querySelector('.hero-stats-row');
   if (!statsRow) return;
 
+  // On mobile or reduced-motion, preserve pre-rendered HTML values without layout thrashing
+  const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.innerWidth <= 768;
+  if (isReduced || isMobile) return;
+
   let hasAnimated = false;
+
+  const startAnimation = () => {
+    if (hasAnimated) return;
+    hasAnimated = true;
+    animateNumber(statYears, 0, 4, 800, ' yrs engineering');
+    animateNumber(statTrained, 0, 7500, 1000, '+ engineers trained');
+    animateNumber(statProjects, 0, projectCount, 800, ' projects shipped');
+  };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && !hasAnimated) {
-        hasAnimated = true;
-        animateNumber(statYears, 0, 4, 800, ' yrs engineering');
-        animateNumber(statTrained, 0, 7500, 1000, '+ engineers trained');
-        animateNumber(statProjects, 0, projectCount, 800, ' projects shipped');
+      if (entry.isIntersecting) {
+        startAnimation();
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.2 });
@@ -1095,21 +972,26 @@ function setupStatsCountUp(projectCount) {
 
 function animateNumber(element, start, end, duration, suffix = '') {
   if (!element) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    element.textContent = `${end.toLocaleString()}${suffix}`;
+    return;
+  }
   const startTime = performance.now();
+  let lastVal = start;
 
   function step(currentTime) {
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
-    // Ease out cubic
     const ease = 1 - Math.pow(1 - progress, 3);
     const current = Math.floor(start + (end - start) * ease);
 
-    element.textContent = `${current.toLocaleString()}${suffix}`;
+    if (current !== lastVal || progress >= 1) {
+      lastVal = current;
+      element.textContent = `${(progress >= 1 ? end : current).toLocaleString()}${suffix}`;
+    }
 
     if (progress < 1) {
       requestAnimationFrame(step);
-    } else {
-      element.textContent = `${end.toLocaleString()}${suffix}`;
     }
   }
 

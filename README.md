@@ -15,7 +15,7 @@
 &nbsp;
 <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep"><img src="assets/readme/badges/badge-email.svg" height="32" alt="Email Me" /></a>
 &nbsp;
-<a href="https://pradeep-b28.github.io/Pradeep-B28/#contact"><img src="assets/readme/badges/badge-contact.svg" height="32" alt="Contact Form" /></a>
+<a href="https://pradeep-b28.github.io/Pradeep-B28/assets/B_Pradeep_Resume.pdf"><img src="assets/readme/badges/badge-resume.svg" height="32" alt="Download Résumé" /></a>
 &nbsp;
 <a href="https://www.linkedin.com/in/pradeepb-2k/"><img src="assets/readme/badges/badge-linkedin.svg" height="32" alt="LinkedIn" /></a>
 &nbsp;
@@ -24,7 +24,7 @@
 <br /><br />
 
 <p>
-  <code>pradeepbashaa@gmail.com</code> &nbsp;·&nbsp; <a href="https://pradeep-b28.github.io/Pradeep-B28/#contact"><b>Interactive Contact Form →</b></a>
+  <code>pradeepbashaa@gmail.com</code> &nbsp;·&nbsp; Open to SDE roles (remote / relocation)
 </p>
 
 </div>
@@ -195,5 +195,5 @@
 </picture>
 
 <p align="center">
-  <sub>Open to SDE roles — <a href="mailto:pradeepbashaa@gmail.com">pradeepbashaa@gmail.com</a> · <a href="https://pradeep-b28.github.io/Pradeep-B28/#contact">Contact Form</a></sub>
+  <sub>Open to SDE roles (remote / relocation) — <a href="mailto:pradeepbashaa@gmail.com">pradeepbashaa@gmail.com</a></sub>
 </p>

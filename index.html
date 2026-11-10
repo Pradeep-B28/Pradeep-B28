@@ -30,22 +30,17 @@
   <script>
     (function() {
       try {
-        var urlParams = new URLSearchParams(window.location.search);
-        var urlTheme = urlParams.get('theme');
-        var saved = localStorage.getItem('theme');
-        var pref = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-        var theme = urlTheme || saved || pref;
-        document.documentElement.setAttribute('data-theme', theme);
+        var m = /[?&]theme=([^&#]*)/.exec(location.search);
+        var t = m ? decodeURIComponent(m[1]) : (localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+        document.documentElement.setAttribute('data-theme', t);
       } catch (e) {
         document.documentElement.setAttribute('data-theme', 'dark');
       }
     })();
   </script>
 
-  <!-- Google Fonts Preconnect & Swap -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- Font Origin Preconnect -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Main Stylesheet (Relative path for GitHub Pages subpath) -->
   <link rel="stylesheet" href="styles.css" />
@@ -100,6 +95,7 @@
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#contact" class="nav-link">Contact</a>
+        <a href="assets/B_Pradeep_Resume.pdf" class="nav-link nav-resume-link" download="B_Pradeep_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
       </nav>
 
       <div class="nav-actions">
@@ -130,10 +126,10 @@
           </svg>
         </button>
 
-        <!-- Popover-Enabled Nav Email Button -->
-        <button class="btn btn-primary btn-sm btn-email-popover" aria-haspopup="true" aria-expanded="false" data-subject="SDE Role Opportunity — B Pradeep">
+        <!-- Direct Nav Email Link -->
+        <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-primary btn-sm">
           Email me
-        </button>
+        </a>
 
         <!-- Mobile Menu Toggle -->
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
@@ -168,10 +164,14 @@
               <span>View work</span>
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </a>
-            <button class="btn btn-secondary btn-email-popover" aria-haspopup="true" aria-expanded="false" data-subject="SDE Role Opportunity — B Pradeep">
+            <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-secondary">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               <span>Email me</span>
-            </button>
+            </a>
+            <a href="assets/B_Pradeep_Resume.pdf" class="btn btn-secondary" download="B_Pradeep_Resume.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download résumé</span>
+            </a>
           </div>
 
           <div class="hero-social-links">
@@ -288,7 +288,7 @@
             <span class="mor-badge">In Private Development</span>
             <span class="mor-strip-text"><strong>MOR AI</strong> — Voice-first holographic personal AI assistant.</span>
           </div>
-          <button class="btn btn-secondary btn-sm btn-email-popover" aria-haspopup="true" aria-expanded="false" data-subject="Inquiry regarding MOR AI Assistant Demo — B Pradeep">Request demo →</button>
+          <a href="mailto:pradeepbashaa@gmail.com?subject=Inquiry%20regarding%20MOR%20AI%20Assistant%20Demo%20%E2%80%94%20B%20Pradeep" class="btn btn-secondary btn-sm">Request demo →</a>
         </div>
       </div>
     </section>
@@ -421,15 +421,23 @@
           <h2 class="contact-headline">Let's <em>build something</em>.</h2>
 
           <div class="contact-btn-group">
-            <button class="btn btn-primary btn-email-popover" aria-haspopup="true" aria-expanded="false" data-subject="SDE Role Opportunity — B Pradeep">
+            <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-primary">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               <span>Email me</span>
-            </button>
+            </a>
             <button class="btn btn-secondary" id="copy-email-btn" aria-label="Copy email address to clipboard">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               <span>Copy address</span>
             </button>
+            <a href="assets/B_Pradeep_Resume.pdf" class="btn btn-secondary" download="B_Pradeep_Resume.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download résumé</span>
+            </a>
           </div>
+
+          <p class="contact-email-plain">
+            <a href="mailto:pradeepbashaa@gmail.com" class="contact-email-link">pradeepbashaa@gmail.com</a>
+          </p>
 
           <div class="contact-pills-row">
             <span class="contact-pill">SDE roles (open to remote/relocation)</span>
@@ -443,80 +451,10 @@
             <a href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener" class="contact-social-link">LeetCode</a>
             <a href="https://x.com/Pradeep__krish" target="_blank" rel="noopener" class="contact-social-link">X</a>
           </div>
-
-          <!-- Web3Forms Contact Form (Hidden when WEB3FORMS_KEY = "TODO") -->
-          <div class="contact-form-box" id="contact-form-box" style="display: none;">
-            <h3 class="contact-form-title">Send a message</h3>
-            <p class="contact-form-subtitle">Leave your details below and I'll get back to you within 24 hours.</p>
-
-            <form id="contact-form" novalidate>
-              <!-- Web3Forms Honeypot Spam Field -->
-              <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off" />
-
-              <div class="contact-form-grid">
-                <div class="form-group">
-                  <label for="form-name" class="form-label">Your Name</label>
-                  <input type="text" id="form-name" name="name" class="form-input" required placeholder="Alex Mercer" />
-                </div>
-
-                <div class="form-group">
-                  <label for="form-email" class="form-label">Your Email</label>
-                  <input type="email" id="form-email" name="email" class="form-input" required placeholder="alex@example.com" />
-                </div>
-
-                <div class="form-group full-width">
-                  <label for="form-topic" class="form-label">Inquiry Topic</label>
-                  <select id="form-topic" name="topic" class="form-select" required>
-                    <option value="SDE Role Opportunity">SDE Role (Full-Time / Contract)</option>
-                    <option value="Technical Training">Technical Training &amp; Bootcamps</option>
-                    <option value="Freelance Web Build">Freelance Web / 3D Build</option>
-                    <option value="General Inquiry">General Engineering Inquiry</option>
-                  </select>
-                </div>
-
-                <div class="form-group full-width">
-                  <label for="form-message" class="form-label">Message</label>
-                  <textarea id="form-message" name="message" class="form-textarea" required placeholder="Tell me about your team, project, or event..."></textarea>
-                </div>
-              </div>
-
-              <button type="submit" class="btn btn-primary" id="form-submit-btn">
-                <span>Send message</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              </button>
-
-              <div class="form-status" id="form-status" aria-live="polite"></div>
-            </form>
-          </div>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- ---------------------------------------------------------------------- -->
-  <!-- FLOATING EMAIL POPOVER MENU (Reused by all "Email me" buttons)          -->
-  <!-- ---------------------------------------------------------------------- -->
-  <div class="email-popover" id="email-popover" role="dialog" aria-label="Email options" aria-hidden="true">
-    <div class="email-popover-header">
-      <span class="email-popover-title">Email Options</span>
-      <span class="email-popover-close" id="email-popover-close" style="cursor: pointer; color: var(--muted);" aria-label="Close menu">✕</span>
-    </div>
-    <div class="email-popover-address">pradeepbashaa@gmail.com</div>
-    <div class="email-popover-options">
-      <a href="mailto:pradeepbashaa@gmail.com" class="email-popover-option" id="popover-mail-app">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        <span>Open mail app</span>
-      </a>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pradeepbashaa@gmail.com" target="_blank" rel="noopener noreferrer" class="email-popover-option" id="popover-gmail">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span>Compose in Gmail</span>
-      </a>
-      <button type="button" class="email-popover-option" id="popover-copy">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        <span>Copy address</span>
-      </button>
-    </div>
-  </div>
 
   <!-- ---------------------------------------------------------------------- -->
   <!-- COMMAND PALETTE (⌘K / Ctrl+K) MODAL                                     -->
