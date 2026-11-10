@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Bricolage+Grotesque&weight=800&size=34&duration=2600&pause=900&color=1F9D7A&center=true&vCenter=true&width=760&height=60&lines=B+Pradeep;Software+engineer%2C+full-stack+and+3D+web;7%2C500%2B+engineers+mentored+in+Java+and+DSA;14+projects+you+can+open+and+try" alt="B Pradeep, software engineer">
+  <img src="https://readme-typing-svg.demolab.com?font=Bricolage+Grotesque&weight=800&size=34&duration=2600&pause=900&color=1F9D7A&center=true&vCenter=true&width=760&height=60&lines=B+Pradeep;Software+engineer%2C+full-stack+and+3D+web;7%2C500%2B+engineers+mentored+in+Java+and+DSA;15+projects+you+can+open+and+try" alt="B Pradeep, software engineer">
 </p>
 
 <p align="center">
@@ -84,11 +84,12 @@ Group expense splitter that settles debts in the fewest transfers, using exact i
 </table>
 
 <details>
-<summary><b>See all the other projects (15 more)</b></summary>
+<summary><b>See all the other projects (16 more)</b></summary>
 <br>
 
 | Project | What it does | Links |
 |:--|:--|:--|
+| **Bunk Meter** | Privacy-first college attendance threshold calculator and bunk planning engine | [Live](https://bunk-meter-one.vercel.app/) · [Source](https://github.com/Pradeep-B28/Bunk_Meter) |
 | **Explorer** | A food-delivery app split into five synced layers, with data packets you can follow from screen to database | [Live](https://explorer-mu-nine.vercel.app/) · [Source](https://github.com/Pradeep-B28/Explorer) |
 | **Catch the AI** | Spot the bug in AI-generated code before a 30-second timer runs out | [Live](https://catchtheai.vercel.app/) · [Source](https://github.com/Pradeep-B28/Catch_The_AI) |
 | **The Broken Website** | Debugging escape room with 15 bug tickets, a live editor and sandboxed execution | [Live](https://broken-website.vercel.app/) · [Source](https://github.com/Pradeep-B28/Broken_Website) |
