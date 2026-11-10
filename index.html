@@ -162,7 +162,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <div class="hero">
   <canvas id="lattice" aria-hidden="true"></canvas>
   <div class="wrap">
-    <p class="status after">Open to SDE roles, ready to relocate</p>
     <h1>B Pradeep</h1>
     <div class="after">
       <p class="role">Software engineer for full-stack platforms and the 3D web.</p>
@@ -400,7 +399,13 @@ const toast=$('#toast');let tt;
 $('#copy').addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText('pradeepbashaa@gmail.com');toast.textContent='Address copied'}
   catch(e){toast.textContent='Copy failed. Use the email link above.'}
-  toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),2000);
+  toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),2000);/* email links: Gmail compose on desktop, mail app on phones */
+$$('a[href^="mailto:"]').forEach(a=>a.addEventListener('click',e=>{
+  if(!HOV)return;
+  e.preventDefault();
+  const u=new URL(a.href),su=u.searchParams.get('subject')||'';
+  window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(u.pathname)+'&su='+encodeURIComponent(su),'_blank','noopener');
+}));
 });
 </script>
 </body>
