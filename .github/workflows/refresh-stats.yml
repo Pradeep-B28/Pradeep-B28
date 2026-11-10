@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Generate 3D Contribution Graphs
-        uses: yoshi389111/github-profile-3d-contrib@0.9.3
+        uses: yoshi389111/github-profile-3d-contrib@v0.9.3
         env:
           GITHUB_TOKEN: ${{ secrets.GH_STATS_TOKEN || secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
@@ -27,10 +27,12 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          cp -r profile-3d-contrib /tmp/profile-3d-contrib
           git branch -D output 2>/dev/null || true
           git checkout --orphan output
           git rm -rf .
-          git checkout HEAD -- profile-3d-contrib
+          mkdir -p profile-3d-contrib
+          cp -r /tmp/profile-3d-contrib/* profile-3d-contrib/
           git add profile-3d-contrib
           git commit -m "chore(stats): update automated 3d contribution graph [skip ci]" || exit 0
           git push -f origin output

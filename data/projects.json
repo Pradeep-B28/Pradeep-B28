@@ -1,242 +1,337 @@
 [
-  {
-    "id": "softech",
-    "title": "Softech Placement Portal",
-    "oneLiner": "A technical placement platform I designed and built with in-browser code execution and candidate tracking dashboards.",
-    "category": "Dev Tools",
-    "tech": ["Python", "Flask", "PostgreSQL"],
-    "metric": "Automated code execution pipeline for campus recruitment",
-    "problem": "Manual campus hiring drives lacked automated evaluation and real-time student progress tracking.",
-    "built": "A technical placement platform I designed and built with in-browser code execution and progress dashboards.",
-    "result": "Automated candidate evaluation and streamlined technical hiring pipelines.",
-    "liveUrl": "https://reachsoftech.onrender.com/home",
-    "codeUrl": null,
-    "image": "assets/images/projects/softech.webp",
-    "featured": true
-  },
-  {
-    "id": "nammaroute",
-    "title": "Namma Route",
-    "oneLiner": "Finds and visualizes optimal transit routes across 55 Tamil Nadu cities using graph pathfinding.",
-    "category": "Algorithms",
-    "tech": ["JavaScript", "Canvas API", "A* Algorithm"],
-    "metric": "8,292 automated city-pair tests with 0 routing failures",
-    "problem": "Visualizing complex multi-modal road and rail transit networks across Tamil Nadu was fragmented.",
-    "built": "Interactive 104-node, 390-edge graph visualizer with Dijkstra and A* pathfinding.",
-    "result": "Verified 0 routing failures across 8,292 automated city-pair test cases.",
-    "liveUrl": "https://nammaroute-sigma.vercel.app/",
-    "codeUrl": "https://github.com/Pradeep-B28/Namma_Route",
-    "image": "assets/images/projects/nammaroute.webp",
-    "featured": true
-  },
-  {
-    "id": "schemasentinel",
-    "title": "Schema Sentinel",
-    "oneLiner": "Prevents database outages by analyzing SQL migration files for destructive table locks before deployment.",
-    "category": "Dev Tools",
-    "tech": ["Python", "sqlparse", "GitHub Actions"],
-    "metric": "4-axis AST risk analysis blocking unsafe migrations in CI/CD",
-    "problem": "Unchecked schema migrations caused exclusive PostgreSQL table locks and downtime in production.",
-    "built": "AST-based CI/CD gatekeeper analyzing SQL migrations across 4 risk axes.",
-    "result": "Blocks dangerous migrations automatically before merge in GitHub Actions.",
-    "liveUrl": null,
-    "codeUrl": "https://github.com/Pradeep-B28/Schema_Sentinel",
-    "image": "assets/images/projects/schemasentinel.webp",
-    "featured": true
-  },
-  {
-    "id": "ledger",
-    "title": "Ledger",
-    "oneLiner": "Tracks personal expenses with instant local updates and offline-first mobile sync.",
-    "category": "Privacy & Security",
-    "tech": ["React", "Node.js", "Capacitor"],
-    "metric": "Offline-first local storage with zero-latency optimistic UI",
-    "problem": "Expense tracking apps often require continuous network access and introduce input latency.",
-    "built": "Cross-platform personal finance manager with optimistic updates and local caching.",
-    "result": "Instant offline transaction ledgering packaged as an Android APK.",
-    "liveUrl": null,
-    "codeUrl": "https://github.com/Pradeep-B28/Ledger_Expense_Tracker",
-    "image": "assets/images/projects/ledger.webp",
-    "featured": true
-  },
-  {
-    "id": "deliveryrush",
-    "title": "Delivery Rush",
-    "oneLiner": "Benchmark your delivery dispatch decisions against autonomous algorithms on live twin maps.",
-    "category": "Algorithms",
-    "tech": ["JavaScript", "Canvas API", "Min-Heap"],
-    "metric": "100/100 Lighthouse Performance & 3,592 test checks",
-    "liveUrl": "https://delivery-rush-pi.vercel.app/",
-    "codeUrl": "https://github.com/Pradeep-B28/Delivery_Rush",
-    "image": "assets/images/projects/deliveryrush.webp",
-    "featured": false
-  },
-  {
-    "id": "splitsmart",
-    "title": "Split Smart",
-    "oneLiner": "Simplifies shared group debts into minimal bank transfers with zero server data tracking.",
-    "category": "Algorithms",
-    "tech": ["JavaScript", "Bitmask DP", "Greedy DSA"],
-    "metric": "Runs 100% offline in your browser — no data leaves the device",
-    "liveUrl": "https://split-smart-brown.vercel.app/",
-    "codeUrl": "https://github.com/Pradeep-B28/Split_Smart",
-    "image": "assets/images/projects/splitsmart.webp",
-    "featured": false
-  },
-  {
-    "id": "explorer",
-    "title": "Explorer",
-    "oneLiner": "Inspect how full-stack requests travel across 5 synchronized application layers in real time.",
-    "category": "Visualizers",
-    "tech": ["JavaScript", "Canvas API", "Web Audio"],
-    "metric": "100/100 Lighthouse Mobile Accessibility",
-    "liveUrl": "https://explorer-mu-nine.vercel.app/",
-    "codeUrl": "https://github.com/Pradeep-B28/Explorer",
-    "image": "assets/images/projects/explorer.webp",
-    "featured": false
-  },
-  {
-    "id": "brokenwebsite",
-    "title": "The Broken Website",
-    "oneLiner": "Test your web debugging skills across 15 interactive client bug tickets in a sandboxed runtime.",
-    "category": "Games",
-    "tech": ["JavaScript", "Sandboxed Iframe", "CSP"],
-    "metric": "15 bug scenarios with triple-sandboxed execution",
-    "liveUrl": "https://broken-website.vercel.app/",
-    "codeUrl": "https://github.com/Pradeep-B28/Broken_Website",
-    "image": "assets/images/projects/brokenwebsite.webp",
-    "featured": false
-  },
-  {
-    "id": "passwordcrack",
-    "title": "Password Crack Meter",
-    "oneLiner": "Calculates password crack resistance and patterns using Web Crypto without sending data to servers.",
-    "category": "Privacy & Security",
-    "tech": ["JavaScript", "Web Crypto", "Hash Set DSA"],
-    "metric": "Runs 100% offline in your browser — no data leaves the device",
-    "liveUrl": "https://password-check-iota.vercel.app/",
-    "codeUrl": "https://github.com/Pradeep-B28/Password_Crack_Meter",
-    "image": "assets/images/projects/passwordcrack.webp",
-    "featured": false
-  },
-  {
-    "id": "listcleaner",
-    "title": "List Cleaner",
-    "oneLiner": "Cleans, normalizes, and deduplicates contact lists entirely in your browser with instant CSV export.",
-    "category": "Privacy & Security",
-    "tech": ["JavaScript", "Hash Set DSA", "Merge Sort"],
-    "metric": "Runs 100% offline in your browser — no data leaves the device",
-    "liveUrl": "https://listcleaner-mu.vercel.app/",
-    "codeUrl": "https://github.com/Pradeep-B28/List_Cleaner",
-    "image": "assets/images/projects/listcleaner.webp",
-    "featured": false
-  },
-  {
-    "id": "findtheskills",
-    "title": "Find the Skills",
-    "oneLiner": "Scans resumes against 332 technical skills and 1,901 aliases to identify qualification gaps.",
-    "category": "Dev Tools",
-    "tech": ["JavaScript", "Regex Engine", "Web Audio"],
-    "metric": "332 skills mapped across 1,901 aliases with client privacy",
-    "liveUrl": "https://find-the-skills.vercel.app/",
-    "codeUrl": "https://github.com/Pradeep-B28/Find_the_Skills",
-    "image": "assets/images/projects/findtheskills.webp",
-    "featured": false
-  },
-  {
-    "id": "catchtheai",
-    "title": "Catch the AI",
-    "oneLiner": "Spot subtle algorithmic, concurrency, and syntax bugs in AI-generated code within 30 seconds.",
-    "category": "Games",
-    "tech": ["JavaScript", "CSS Modules", "Event Bus"],
-    "metric": "20 verified algorithmic bug scenarios with drift-free timer",
-    "liveUrl": "https://catchtheai.vercel.app/",
-    "codeUrl": "https://github.com/Pradeep-B28/Catch_The_AI",
-    "image": "assets/images/projects/catchtheai.webp",
-    "featured": false
-  },
-  {
-    "id": "diwalisky",
-    "title": "Diwali Sky",
-    "oneLiner": "Simulates customizable firework particle explosions and procedural sound synthesis across a night sky.",
-    "category": "Visualizers",
-    "tech": ["JavaScript", "Canvas API", "Web Audio"],
-    "metric": "Real-time particle explosion physics with audio synthesis",
-    "liveUrl": "https://diwalisky.vercel.app",
-    "codeUrl": "https://github.com/Pradeep-B28/Diwali_Sky",
-    "image": "assets/images/projects/diwalisky.webp",
-    "featured": false
-  },
-  {
-    "id": "lifeindots",
-    "title": "Life in Dots",
-    "oneLiner": "Visualizes human lifespan in weekly dot columns with lunar calculations and complete local privacy.",
-    "category": "Visualizers",
-    "tech": ["JavaScript", "Canvas API", "UTC Math"],
-    "metric": "O(1) coordinate arithmetic with high-DPI pan & zoom",
-    "liveUrl": "https://lifeindots.vercel.app",
-    "codeUrl": "https://github.com/Pradeep-B28/Life_In_Dots",
-    "image": "assets/images/projects/lifeindots.webp",
-    "featured": false
-  },
-  {
-    "id": "relnotes",
-    "title": "Rel_Notes",
-    "oneLiner": "Transforms raw Git commit histories into structured markdown release notes using LLM inference.",
-    "category": "Dev Tools",
-    "tech": ["Python", "Groq LLM", "Click"],
-    "metric": "Zero-config conventional commit classification",
-    "liveUrl": null,
-    "codeUrl": "https://github.com/Pradeep-B28/Rel_Notes",
-    "image": "assets/images/projects/relnotes.webp",
-    "featured": false
-  },
-  {
-    "id": "devstarter",
-    "title": "Devstarter",
-    "oneLiner": "Provides reproducible, one-click Docker devcontainer environments for Python, Go, Java, Rust, and Node.",
-    "category": "Dev Tools",
-    "tech": ["Docker", "Devcontainers", "Linux"],
-    "metric": "Zero-configuration environments across 6 programming languages",
-    "liveUrl": null,
-    "codeUrl": "https://github.com/Pradeep-B28/Devstarter",
-    "image": "assets/images/projects/devstarter.webp",
-    "featured": false
-  },
-  {
-    "id": "javadsaroadmap",
-    "title": "Java + DSA Roadmap",
-    "oneLiner": "A structured curriculum covering Core Java, JVM internals, and interview-ready algorithm patterns.",
-    "category": "Algorithms",
-    "tech": ["Java", "JVM Internals", "Algorithms"],
-    "metric": "Curriculum utilized in training 7,500+ engineers",
-    "liveUrl": null,
-    "codeUrl": "https://github.com/Pradeep-B28/JAVA-DSA-Roadmap",
-    "image": "assets/images/projects/javadsaroadmap.webp",
-    "featured": false
-  },
-  {
-    "id": "sortvisualizer",
-    "title": "Searching & Sorting Visualizer",
-    "oneLiner": "Animates sorting and searching algorithm comparisons frame-by-frame in a Java desktop interface.",
-    "category": "Visualizers",
-    "tech": ["Java", "Java Swing", "Algorithms"],
-    "metric": "Frame-by-frame comparison and swap step tracing",
-    "liveUrl": null,
-    "codeUrl": "https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer",
-    "image": "assets/images/projects/sortvisualizer.webp",
-    "featured": false
-  },
-  {
-    "id": "portfoliosuite",
-    "title": "Portfolio Theme Suite",
-    "oneLiner": "Six distinct 3D WebGL developer portfolio prototypes built with custom shaders and spatial layouts.",
-    "category": "Visualizers",
-    "tech": ["React", "Three.js", "WebGL"],
-    "metric": "6 interactive 3D WebGL developer themes",
-    "liveUrl": null,
-    "codeUrl": "https://github.com/Pradeep-B28/Portfolio",
-    "image": "assets/images/projects/portfoliosuite.webp",
-    "featured": false
-  }
+    {
+        "id":  "softech",
+        "title":  "Softech Placement Portal",
+        "oneLiner":  "A technical placement platform I designed and built with in-browser code execution and candidate tracking dashboards.",
+        "category":  "Dev Tools",
+        "tech":  [
+                     "Python",
+                     "Flask",
+                     "PostgreSQL"
+                 ],
+        "metric":  "Automated code execution pipeline for campus recruitment",
+        "problem":  "Manual campus hiring drives lacked automated evaluation and real-time student progress tracking.",
+        "built":  "A technical placement platform I designed and built with in-browser code execution and progress dashboards.",
+        "result":  "Automated candidate evaluation and streamlined technical hiring pipelines.",
+        "liveUrl":  "https://reachsoftech.onrender.com/home",
+        "codeUrl":  null,
+        "image":  "assets/images/projects/softech.webp",
+        "featured":  true,
+        "allowsFraming":  false
+    },
+    {
+        "id":  "nammaroute",
+        "title":  "Namma Route",
+        "oneLiner":  "Finds and visualizes optimal transit routes across 55 Tamil Nadu cities using graph pathfinding.",
+        "category":  "Algorithms",
+        "tech":  [
+                     "JavaScript",
+                     "Canvas API",
+                     "A* Algorithm"
+                 ],
+        "metric":  "8,292 automated city-pair tests with 0 routing failures",
+        "problem":  "Visualizing complex multi-modal road and rail transit networks across Tamil Nadu was fragmented.",
+        "built":  "Interactive 104-node, 390-edge graph visualizer with Dijkstra and A* pathfinding.",
+        "result":  "Verified 0 routing failures across 8,292 automated city-pair test cases.",
+        "liveUrl":  "https://nammaroute-sigma.vercel.app/",
+        "codeUrl":  "https://github.com/Pradeep-B28/Namma_Route",
+        "image":  "assets/images/projects/nammaroute.webp",
+        "featured":  true,
+        "allowsFraming":  true
+    },
+    {
+        "id":  "schemasentinel",
+        "title":  "Schema Sentinel",
+        "oneLiner":  "Prevents database outages by analyzing SQL migration files for destructive table locks before deployment.",
+        "category":  "Dev Tools",
+        "tech":  [
+                     "Python",
+                     "sqlparse",
+                     "GitHub Actions"
+                 ],
+        "metric":  "4-axis AST risk analysis blocking unsafe migrations in CI/CD",
+        "problem":  "Unchecked schema migrations caused exclusive PostgreSQL table locks and downtime in production.",
+        "built":  "AST-based CI/CD gatekeeper analyzing SQL migrations across 4 risk axes.",
+        "result":  "Blocks dangerous migrations automatically before merge in GitHub Actions.",
+        "liveUrl":  null,
+        "codeUrl":  "https://github.com/Pradeep-B28/Schema_Sentinel",
+        "image":  "assets/images/projects/schemasentinel.webp",
+        "featured":  true,
+        "allowsFraming":  false
+    },
+    {
+        "id":  "ledger",
+        "title":  "Ledger",
+        "oneLiner":  "Tracks personal expenses with instant local updates and offline-first mobile sync.",
+        "category":  "Privacy \u0026 Security",
+        "tech":  [
+                     "React",
+                     "Node.js",
+                     "Capacitor"
+                 ],
+        "metric":  "Offline-first local storage with zero-latency optimistic UI",
+        "problem":  "Expense tracking apps often require continuous network access and introduce input latency.",
+        "built":  "Cross-platform personal finance manager with optimistic updates and local caching.",
+        "result":  "Instant offline transaction ledgering packaged as an Android APK.",
+        "liveUrl":  null,
+        "codeUrl":  "https://github.com/Pradeep-B28/Ledger_Expense_Tracker",
+        "image":  "assets/images/projects/ledger.webp",
+        "featured":  true,
+        "allowsFraming":  false
+    },
+    {
+        "id":  "deliveryrush",
+        "title":  "Delivery Rush",
+        "oneLiner":  "Benchmark your delivery dispatch decisions against autonomous algorithms on live twin maps.",
+        "category":  "Algorithms",
+        "tech":  [
+                     "JavaScript",
+                     "Canvas API",
+                     "Min-Heap"
+                 ],
+        "metric":  "100/100 Lighthouse Performance \u0026 3,592 test checks",
+        "liveUrl":  "https://delivery-rush-pi.vercel.app/",
+        "codeUrl":  "https://github.com/Pradeep-B28/Delivery_Rush",
+        "image":  "assets/images/projects/deliveryrush.webp",
+        "featured":  false,
+        "allowsFraming":  true
+    },
+    {
+        "id":  "splitsmart",
+        "title":  "Split Smart",
+        "oneLiner":  "Simplifies shared group debts into minimal bank transfers with zero server data tracking.",
+        "category":  "Algorithms",
+        "tech":  [
+                     "JavaScript",
+                     "Bitmask DP",
+                     "Greedy DSA"
+                 ],
+        "metric":  "Runs 100% offline in your browser â€” no data leaves the device",
+        "liveUrl":  "https://split-smart-brown.vercel.app/",
+        "codeUrl":  "https://github.com/Pradeep-B28/Split_Smart",
+        "image":  "assets/images/projects/splitsmart.webp",
+        "featured":  false,
+        "allowsFraming":  false
+    },
+    {
+        "id":  "explorer",
+        "title":  "Explorer",
+        "oneLiner":  "Inspect how full-stack requests travel across 5 synchronized application layers in real time.",
+        "category":  "Visualizers",
+        "tech":  [
+                     "JavaScript",
+                     "Canvas API",
+                     "Web Audio"
+                 ],
+        "metric":  "100/100 Lighthouse Mobile Accessibility",
+        "liveUrl":  "https://explorer-mu-nine.vercel.app/",
+        "codeUrl":  "https://github.com/Pradeep-B28/Explorer",
+        "image":  "assets/images/projects/explorer.webp",
+        "featured":  false,
+        "allowsFraming":  true
+    },
+    {
+        "id":  "brokenwebsite",
+        "title":  "The Broken Website",
+        "oneLiner":  "Test your web debugging skills across 15 interactive client bug tickets in a sandboxed runtime.",
+        "category":  "Games",
+        "tech":  [
+                     "JavaScript",
+                     "Sandboxed Iframe",
+                     "CSP"
+                 ],
+        "metric":  "15 bug scenarios with triple-sandboxed execution",
+        "liveUrl":  "https://broken-website.vercel.app/",
+        "codeUrl":  "https://github.com/Pradeep-B28/Broken_Website",
+        "image":  "assets/images/projects/brokenwebsite.webp",
+        "featured":  false,
+        "allowsFraming":  true
+    },
+    {
+        "id":  "passwordcrack",
+        "title":  "Password Crack Meter",
+        "oneLiner":  "Calculates password crack resistance and patterns using Web Crypto without sending data to servers.",
+        "category":  "Privacy \u0026 Security",
+        "tech":  [
+                     "JavaScript",
+                     "Web Crypto",
+                     "Hash Set DSA"
+                 ],
+        "metric":  "Runs 100% offline in your browser â€” no data leaves the device",
+        "liveUrl":  "https://password-check-iota.vercel.app/",
+        "codeUrl":  "https://github.com/Pradeep-B28/Password_Crack_Meter",
+        "image":  "assets/images/projects/passwordcrack.webp",
+        "featured":  false,
+        "allowsFraming":  false
+    },
+    {
+        "id":  "listcleaner",
+        "title":  "List Cleaner",
+        "oneLiner":  "Cleans, normalizes, and deduplicates contact lists entirely in your browser with instant CSV export.",
+        "category":  "Privacy \u0026 Security",
+        "tech":  [
+                     "JavaScript",
+                     "Hash Set DSA",
+                     "Merge Sort"
+                 ],
+        "metric":  "Runs 100% offline in your browser â€” no data leaves the device",
+        "liveUrl":  "https://listcleaner-mu.vercel.app/",
+        "codeUrl":  "https://github.com/Pradeep-B28/List_Cleaner",
+        "image":  "assets/images/projects/listcleaner.webp",
+        "featured":  false,
+        "allowsFraming":  false
+    },
+    {
+        "id":  "findtheskills",
+        "title":  "Find the Skills",
+        "oneLiner":  "Scans resumes against 332 technical skills and 1,901 aliases to identify qualification gaps.",
+        "category":  "Dev Tools",
+        "tech":  [
+                     "JavaScript",
+                     "Regex Engine",
+                     "Web Audio"
+                 ],
+        "metric":  "332 skills mapped across 1,901 aliases with client privacy",
+        "liveUrl":  "https://find-the-skills.vercel.app/",
+        "codeUrl":  "https://github.com/Pradeep-B28/Find_the_Skills",
+        "image":  "assets/images/projects/findtheskills.webp",
+        "featured":  false,
+        "allowsFraming":  true
+    },
+    {
+        "id":  "catchtheai",
+        "title":  "Catch the AI",
+        "oneLiner":  "Spot subtle algorithmic, concurrency, and syntax bugs in AI-generated code within 30 seconds.",
+        "category":  "Games",
+        "tech":  [
+                     "JavaScript",
+                     "CSS Modules",
+                     "Event Bus"
+                 ],
+        "metric":  "20 verified algorithmic bug scenarios with drift-free timer",
+        "liveUrl":  "https://catchtheai.vercel.app/",
+        "codeUrl":  "https://github.com/Pradeep-B28/Catch_The_AI",
+        "image":  "assets/images/projects/catchtheai.webp",
+        "featured":  false,
+        "allowsFraming":  true
+    },
+    {
+        "id":  "diwalisky",
+        "title":  "Diwali Sky",
+        "oneLiner":  "Simulates customizable firework particle explosions and procedural sound synthesis across a night sky.",
+        "category":  "Visualizers",
+        "tech":  [
+                     "JavaScript",
+                     "Canvas API",
+                     "Web Audio"
+                 ],
+        "metric":  "Real-time particle explosion physics with audio synthesis",
+        "liveUrl":  "https://diwalisky.vercel.app",
+        "codeUrl":  "https://github.com/Pradeep-B28/Diwali_Sky",
+        "image":  "assets/images/projects/diwalisky.webp",
+        "featured":  false,
+        "allowsFraming":  true
+    },
+    {
+        "id":  "lifeindots",
+        "title":  "Life in Dots",
+        "oneLiner":  "Visualizes human lifespan in weekly dot columns with lunar calculations and complete local privacy.",
+        "category":  "Visualizers",
+        "tech":  [
+                     "JavaScript",
+                     "Canvas API",
+                     "UTC Math"
+                 ],
+        "metric":  "O(1) coordinate arithmetic with high-DPI pan \u0026 zoom",
+        "liveUrl":  "https://lifeindots.vercel.app",
+        "codeUrl":  "https://github.com/Pradeep-B28/Life_In_Dots",
+        "image":  "assets/images/projects/lifeindots.webp",
+        "featured":  false,
+        "allowsFraming":  true
+    },
+    {
+        "id":  "relnotes",
+        "title":  "Rel_Notes",
+        "oneLiner":  "Transforms raw Git commit histories into structured markdown release notes using LLM inference.",
+        "category":  "Dev Tools",
+        "tech":  [
+                     "Python",
+                     "Groq LLM",
+                     "Click"
+                 ],
+        "metric":  "Zero-config conventional commit classification",
+        "liveUrl":  null,
+        "codeUrl":  "https://github.com/Pradeep-B28/Rel_Notes",
+        "image":  "assets/images/projects/relnotes.webp",
+        "featured":  false,
+        "allowsFraming":  false
+    },
+    {
+        "id":  "devstarter",
+        "title":  "Devstarter",
+        "oneLiner":  "Provides reproducible, one-click Docker devcontainer environments for Python, Go, Java, Rust, and Node.",
+        "category":  "Dev Tools",
+        "tech":  [
+                     "Docker",
+                     "Devcontainers",
+                     "Linux"
+                 ],
+        "metric":  "Zero-configuration environments across 6 programming languages",
+        "liveUrl":  null,
+        "codeUrl":  "https://github.com/Pradeep-B28/Devstarter",
+        "image":  "assets/images/projects/devstarter.webp",
+        "featured":  false,
+        "allowsFraming":  false
+    },
+    {
+        "id":  "javadsaroadmap",
+        "title":  "Java + DSA Roadmap",
+        "oneLiner":  "A structured curriculum covering Core Java, JVM internals, and interview-ready algorithm patterns.",
+        "category":  "Algorithms",
+        "tech":  [
+                     "Java",
+                     "JVM Internals",
+                     "Algorithms"
+                 ],
+        "metric":  "Curriculum utilized in training 7,500+ engineers",
+        "liveUrl":  null,
+        "codeUrl":  "https://github.com/Pradeep-B28/JAVA-DSA-Roadmap",
+        "image":  "assets/images/projects/javadsaroadmap.webp",
+        "featured":  false,
+        "allowsFraming":  false
+    },
+    {
+        "id":  "sortvisualizer",
+        "title":  "Searching \u0026 Sorting Visualizer",
+        "oneLiner":  "Animates sorting and searching algorithm comparisons frame-by-frame in a Java desktop interface.",
+        "category":  "Visualizers",
+        "tech":  [
+                     "Java",
+                     "Java Swing",
+                     "Algorithms"
+                 ],
+        "metric":  "Frame-by-frame comparison and swap step tracing",
+        "liveUrl":  null,
+        "codeUrl":  "https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer",
+        "image":  "assets/images/projects/sortvisualizer.webp",
+        "featured":  false,
+        "allowsFraming":  false
+    },
+    {
+        "id":  "portfoliosuite",
+        "title":  "Portfolio Theme Suite",
+        "oneLiner":  "Six distinct 3D WebGL developer portfolio prototypes built with custom shaders and spatial layouts.",
+        "category":  "Visualizers",
+        "tech":  [
+                     "React",
+                     "Three.js",
+                     "WebGL"
+                 ],
+        "metric":  "6 interactive 3D WebGL developer themes",
+        "liveUrl":  null,
+        "codeUrl":  "https://github.com/Pradeep-B28/Portfolio",
+        "image":  "assets/images/projects/portfoliosuite.webp",
+        "featured":  false,
+        "allowsFraming":  false
+    }
 ]
