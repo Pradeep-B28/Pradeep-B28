@@ -158,6 +158,10 @@ I teach patterns students can rebuild from scratch: window bounds, monotonic sta
 ### What I did recently
 
 <!--START_SECTION:activity-->
+1. 🎉 Merged PR [#2](https://github.com/Pradeep-B28/Pradeep-B28/pull/2) in [Pradeep-B28/Pradeep-B28](https://github.com/Pradeep-B28/Pradeep-B28)
+2. 💪 Opened PR [#2](https://github.com/Pradeep-B28/Pradeep-B28/pull/2) in [Pradeep-B28/Pradeep-B28](https://github.com/Pradeep-B28/Pradeep-B28)
+3. 🎉 Merged PR [#1](https://github.com/Pradeep-B28/Pradeep-B28/pull/1) in [Pradeep-B28/Pradeep-B28](https://github.com/Pradeep-B28/Pradeep-B28)
+4. 💪 Opened PR [#1](https://github.com/Pradeep-B28/Pradeep-B28/pull/1) in [Pradeep-B28/Pradeep-B28](https://github.com/Pradeep-B28/Pradeep-B28)
 <!--END_SECTION:activity-->
 
 ## Contact
