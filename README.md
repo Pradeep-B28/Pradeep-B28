@@ -1,165 +1,126 @@
-<div align="center">
-
-<a href="https://pradeep-b28.github.io/Pradeep-B28/">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/readme/header-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/readme/header-light.svg">
-    <img src="assets/readme/header-dark.svg" width="100%" alt="B Pradeep — Software Engineer — Full-Stack &amp; Interactive Web">
-  </picture>
-</a>
-
-<br /><br />
-
-<!-- Theme-Aware Custom Badge Buttons (<picture> tags follow GitHub theme setting) -->
-<a href="https://pradeep-b28.github.io/Pradeep-B28/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/badge-portfolio-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/badges/badge-portfolio-light.svg"><img src="assets/readme/badges/badge-portfolio-dark.svg" height="32" alt="Portfolio Site" /></picture></a>
-&nbsp;
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=pradeepbashaa@gmail.com&su=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/badge-email-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/badges/badge-email-light.svg"><img src="assets/readme/badges/badge-email-dark.svg" height="32" alt="Email Me" /></picture></a>
-&nbsp;
-<a href="https://pradeep-b28.github.io/Pradeep-B28/assets/B_Pradeep_Resume.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/badge-resume-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/badges/badge-resume-light.svg"><img src="assets/readme/badges/badge-resume-dark.svg" height="32" alt="Download Résumé" /></picture></a>
-&nbsp;
-<a href="https://www.linkedin.com/in/pradeepb-2k/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/badge-linkedin-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/badges/badge-linkedin-light.svg"><img src="assets/readme/badges/badge-linkedin-dark.svg" height="32" alt="LinkedIn" /></picture></a>
-&nbsp;
-<a href="https://leetcode.com/u/PradeepKrishB/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/badge-leetcode-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/badges/badge-leetcode-light.svg"><img src="assets/readme/badges/badge-leetcode-dark.svg" height="32" alt="LeetCode" /></picture></a>
-
-</div>
-
-<br />
-
-### Featured Work
+<h1 align="center">B Pradeep</h1>
 
 <p align="center">
-  <a href="https://reachsoftech.onrender.com/home">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/readme/cards/card-softech-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="assets/readme/cards/card-softech-light.svg">
-      <img src="assets/readme/cards/card-softech-dark.svg" width="49%" alt="Softech Placement Portal">
-    </picture>
-  </a>
-  &nbsp;
-  <a href="https://nammaroute-sigma.vercel.app/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/readme/cards/card-nammaroute-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="assets/readme/cards/card-nammaroute-light.svg">
-      <img src="assets/readme/cards/card-nammaroute-dark.svg" width="49%" alt="Namma Route">
-    </picture>
-  </a>
+  <b>Software engineer for full-stack platforms and the 3D web.</b><br>
+  4 years building systems. 7,500+ engineers and students mentored in Java and DSA.<br>
+  Open to SDE roles, remote or on-site.
 </p>
-<p align="center">
-  <a href="https://reachsoftech.onrender.com/home">Live Platform</a> · <a href="https://github.com/Pradeep-B28">Source Code</a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://nammaroute-sigma.vercel.app/">Live Platform</a> · <a href="https://github.com/Pradeep-B28/NammaRoute">Source Code</a>
-</p>
-
-<br />
 
 <p align="center">
-  <a href="https://github.com/Pradeep-B28/SchemaSentinel">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/readme/cards/card-schemasentinel-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="assets/readme/cards/card-schemasentinel-light.svg">
-      <img src="assets/readme/cards/card-schemasentinel-dark.svg" width="49%" alt="Schema Sentinel">
-    </picture>
-  </a>
-  &nbsp;
-  <a href="https://ledger-mu-nine.vercel.app/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/readme/cards/card-ledger-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="assets/readme/cards/card-ledger-light.svg">
-      <img src="assets/readme/cards/card-ledger-dark.svg" width="49%" alt="Ledger">
-    </picture>
-  </a>
+  <a href="https://pradeep-b28.github.io/Pradeep-B28/"><img src="https://img.shields.io/badge/Portfolio-Open_the_site-F2CF63?style=for-the-badge&labelColor=16302A" alt="Portfolio"></a>
+  <a href="mailto:pradeepbashaa@gmail.com"><img src="https://img.shields.io/badge/Email-pradeepbashaa@gmail.com-F2CF63?style=for-the-badge&labelColor=16302A" alt="Email"></a>
+  <a href="https://www.linkedin.com/in/pradeepb-2k/"><img src="https://img.shields.io/badge/LinkedIn-pradeepb--2k-F2CF63?style=for-the-badge&labelColor=16302A" alt="LinkedIn"></a>
+</p>
+
+---
+
+## Featured projects
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<a href="https://reachsoftech.onrender.com/home"><img src="assets/images/projects/softech.webp" alt="Softech screenshot"></a>
+<h3>Softech</h3>
+Placement portal for campus recruitment drives, live training and candidate evaluation. In production.<br>
+<sub>Python, Flask 3, PostgreSQL, Render</sub><br>
+<a href="https://reachsoftech.onrender.com/home"><b>Live app</b></a>
+</td>
+<td width="50%" valign="top">
+<a href="https://nammaroute-sigma.vercel.app/"><img src="assets/images/projects/nammaroute.webp" alt="Namma Route screenshot"></a>
+<h3>Namma Route</h3>
+Road and rail pathfinding across 55 Tamil Nadu cities, comparing Dijkstra, A* and BFS. 8,292 city-pair tests, zero failures.<br>
+<sub>JavaScript, Canvas, A*, Dijkstra</sub><br>
+<a href="https://nammaroute-sigma.vercel.app/"><b>Live app</b></a> | <a href="https://github.com/Pradeep-B28/Namma_Route">Source</a>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<a href="https://github.com/Pradeep-B28/Schema_Sentinel"><img src="assets/images/projects/schemasentinel.webp" alt="Schema Sentinel screenshot"></a>
+<h3>Schema Sentinel</h3>
+Catches table locks, rewrites and breaking schema changes in PostgreSQL migrations, and blocks unsafe pull requests in CI.<br>
+<sub>Python 3.11, sqlparse, PostgreSQL, GitHub Actions</sub><br>
+<a href="https://github.com/Pradeep-B28/Schema_Sentinel"><b>Source</b></a>
+</td>
+<td valign="top">
+<a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker"><img src="assets/images/projects/ledger.webp" alt="Ledger screenshot"></a>
+<h3>Ledger</h3>
+Personal finance tracker for web and Android with optimistic updates and offline-first storage.<br>
+<sub>React 18, Node.js, MongoDB, Capacitor</sub><br>
+<a href="https://github.com/Pradeep-B28/Ledger_Expense_Tracker"><b>Source</b></a>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<a href="https://delivery-rush-pi.vercel.app/"><img src="assets/images/projects/deliveryrush.webp" alt="Delivery Rush screenshot"></a>
+<h3>Delivery Rush</h3>
+A dispatch game: your decisions against a bot running Min-Heap, BFS and greedy strategies. 3,592 passing headless checks.<br>
+<sub>JavaScript, SVG, Min-Heap, BFS</sub><br>
+<a href="https://delivery-rush-pi.vercel.app/"><b>Live app</b></a> | <a href="https://github.com/Pradeep-B28/Delivery_Rush">Source</a>
+</td>
+<td valign="top">
+<a href="https://split-smart-brown.vercel.app/"><img src="assets/images/projects/splitsmart.webp" alt="Split Smart screenshot"></a>
+<h3>Split Smart</h3>
+Group expense splitter that settles debts in the fewest transfers, using exact integer paise math and bitmask DP.<br>
+<sub>JavaScript, Bitmask DP, strict CSP</sub><br>
+<a href="https://split-smart-brown.vercel.app/"><b>Live app</b></a> | <a href="https://github.com/Pradeep-B28/Split_Smart">Source</a>
+</td>
+</tr>
+</table>
+
+## More projects
+
+| Project | What it does | Links |
+|:--|:--|:--|
+| **Explorer** | A food-delivery app split into five synced layers, with data packets you can follow from screen to database | [Live](https://explorer-mu-nine.vercel.app/) · [Source](https://github.com/Pradeep-B28/Explorer) |
+| **Catch the AI** | Spot the bug in AI-generated code before a 30-second timer runs out | [Live](https://catchtheai.vercel.app/) · [Source](https://github.com/Pradeep-B28/Catch_The_AI) |
+| **The Broken Website** | Debugging escape room with 15 bug tickets, a live editor and sandboxed execution | [Live](https://broken-website.vercel.app/) · [Source](https://github.com/Pradeep-B28/Broken_Website) |
+| **Password Crack Meter** | Password strength and pattern analyzer that never touches the network | [Live](https://password-check-iota.vercel.app/) · [Source](https://github.com/Pradeep-B28/Password_Crack_Meter) |
+| **Find the Skills** | Client-side ATS keyword scanner and skill-gap finder for résumés | [Live](https://find-the-skills.vercel.app/) · [Source](https://github.com/Pradeep-B28/Find_the_Skills) |
+| **List Cleaner** | Contact list deduplication and cleanup, entirely in the browser | [Live](https://listcleaner-mu.vercel.app/) · [Source](https://github.com/Pradeep-B28/List_Cleaner) |
+| **Diwali Sky** | Particle fireworks that write any name across a night sky, with synthesized sound | [Live](https://diwalisky.vercel.app) · [Source](https://github.com/Pradeep-B28/Diwali_Sky) |
+| **Life in Dots** | A whole human lifespan drawn as one dot per week | [Live](https://lifeindots.vercel.app) · [Source](https://github.com/Pradeep-B28/Life_In_Dots) |
+| **GIT-viz** | Turns any GitHub profile into a 3D city skyline or repo galaxy | [Live](https://pradeep-b28.github.io/GIT_3D_Portfolio/) · [Source](https://github.com/Pradeep-B28/GIT_3D_Portfolio) |
+| **Rel_Notes** | Command-line tool that turns git commit history into release notes using Groq | [Source](https://github.com/Pradeep-B28/Rel_Notes) |
+| **Devstarter** | One-click devcontainers for Python, Node, Go, Rust, C++ and Java | [Source](https://github.com/Pradeep-B28/Devstarter) |
+| **Java and DSA roadmap** | Beginner-to-advanced curriculum for Core Java, JVM internals and interview algorithms | [Roadmap](https://github.com/Pradeep-B28/JAVA-DSA-Roadmap) |
+| **Sorting visualizer** | Java Swing app that animates six sorts and binary search step by step | [Source](https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer) |
+| **Portfolio theme suite** | Six 3D portfolio themes built with React 18 and Three.js | [Source](https://github.com/Pradeep-B28/Portfolio) |
+| **MOR** | Private voice-first AI assistant with wake word, neural speech and smart-room control | [Request a demo](mailto:pradeepbashaa@gmail.com?subject=MOR%20demo%20request) |
+
+## Skills
+
+<p>
+  <img src="https://skillicons.dev/icons?i=java,js,ts,react,nodejs,express,python,flask,postgres,mongodb,threejs,docker,githubactions,git,linux&perline=15" alt="Java, JavaScript, TypeScript, React, Node.js, Express, Python, Flask, PostgreSQL, MongoDB, Three.js, Docker, GitHub Actions, Git, Linux">
+</p>
+
+| Java and the JVM | Algorithms | Full-stack and 3D web | Data and DevOps |
+|:--|:--|:--|:--|
+| Core Java, OOP, design patterns | Sliding window, two pointers | JavaScript and TypeScript | PostgreSQL lock analysis, migrations |
+| Collections internals | Trees: BFS, DFS, LCA | React 18, Node.js, Express | MongoDB |
+| Concurrency: executors, locks | Graphs: Dijkstra, A* | Python and Flask 3 | Docker and devcontainers |
+| Memory layout and G1GC tuning | Dynamic programming | Three.js, shaders, particles | GitHub Actions pipelines |
+
+## Teaching
+
+I have mentored more than 7,500 students and engineers in Java, DSA and system design across 10+ intensive bootcamps.
+
+- **Now:** Technical Trainer, Academic Excellence, Sethu Institute of Technology, Madurai
+- **Earlier programs at:** VIT Chennai, VIT Vellore, VIT-AP and KSR, Erode
+- **Approach:** patterns students can rebuild from scratch, not memorized answers
+
+## Activity
+
+<p align="center">
+  <img src="profile-3d-contrib/profile-night-rainbow.svg" alt="3D contribution graph" width="100%">
 </p>
 <p align="center">
-  <a href="https://github.com/Pradeep-B28/SchemaSentinel">Source Code</a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://ledger-mu-nine.vercel.app/">Live Platform</a> · <a href="https://github.com/Pradeep-B28/Ledger">Source Code</a>
+  <img src="assets/images/stats-card.svg" alt="GitHub stats">
 </p>
 
-<br />
+## Contact
 
-### More I've Built
+Email is the fastest way to reach me: **[pradeepbashaa@gmail.com](mailto:pradeepbashaa@gmail.com)**
 
-<details><summary><b>Algorithms (3)</b></summary>
+[LinkedIn](https://www.linkedin.com/in/pradeepb-2k/) · [LeetCode](https://leetcode.com/u/PradeepKrishB/) · [X](https://x.com/Pradeep__krish) · [Reddit](https://www.reddit.com/user/Pradeep_krish/) · [Instagram](https://www.instagram.com/_._p.r.a.d.e.e.p_._._/) · [Portfolio](https://pradeep-b28.github.io/Pradeep-B28/)
 
-- **Delivery Rush** — Benchmark your delivery dispatch decisions against autonomous algorithms on live twin maps. · [Live](https://delivery-rush-pi.vercel.app/) · [Code](https://github.com/Pradeep-B28/Delivery_Rush)
-- **Split Smart** — Simplifies shared group debts into minimal bank transfers with zero server data tracking. · [Live](https://split-smart-brown.vercel.app/) · [Code](https://github.com/Pradeep-B28/Split_Smart)
-- **Java + DSA Roadmap** — A structured curriculum covering Core Java, JVM internals, and interview-ready algorithm patterns. · [Code](https://github.com/Pradeep-B28/JAVA-DSA-Roadmap)
-
-</details>
-
-<details><summary><b>Dev Tools (3)</b></summary>
-
-- **Find the Skills** — Scans resumes against 332 technical skills and 1,901 aliases to identify qualification gaps. · [Live](https://find-the-skills.vercel.app/) · [Code](https://github.com/Pradeep-B28/Find_the_Skills)
-- **Rel_Notes** — Transforms raw Git commit histories into structured markdown release notes using LLM inference. · [Code](https://github.com/Pradeep-B28/Rel_Notes)
-- **Devstarter** — Provides reproducible, one-click Docker devcontainer environments for Python, Go, Java, Rust, and Node. · [Code](https://github.com/Pradeep-B28/Devstarter)
-
-</details>
-
-<details><summary><b>Games (2)</b></summary>
-
-- **The Broken Website** — Test your web debugging skills across 15 interactive client bug tickets in a sandboxed runtime. · [Live](https://broken-website.vercel.app/) · [Code](https://github.com/Pradeep-B28/Broken_Website)
-- **Catch the AI** — Spot subtle algorithmic, concurrency, and syntax bugs in AI-generated code within 30 seconds. · [Live](https://catchtheai.vercel.app/) · [Code](https://github.com/Pradeep-B28/Catch_The_AI)
-
-</details>
-
-<details><summary><b>Privacy & Security (3)</b></summary>
-
-- **Bunk Meter** — Calculates college attendance thresholds and safe skips with zero server tracking. · [Live](https://bunk-meter-one.vercel.app/) · [Code](https://github.com/Pradeep-B28/Bunk_Meter)
-- **Password Crack Meter** — Calculates password crack resistance and patterns using Web Crypto without sending data to servers. · [Live](https://password-check-iota.vercel.app/) · [Code](https://github.com/Pradeep-B28/Password_Crack_Meter)
-- **List Cleaner** — Cleans, normalizes, and deduplicates contact lists entirely in your browser with instant CSV export. · [Live](https://listcleaner-mu.vercel.app/) · [Code](https://github.com/Pradeep-B28/List_Cleaner)
-
-</details>
-
-<details><summary><b>Visualizers (5)</b></summary>
-
-- **Explorer** — Inspect how full-stack requests travel across 5 synchronized application layers in real time. · [Live](https://explorer-mu-nine.vercel.app/) · [Code](https://github.com/Pradeep-B28/Explorer)
-- **Diwali Sky** — Simulates customizable firework particle explosions and procedural sound synthesis across a night sky. · [Live](https://diwalisky.vercel.app) · [Code](https://github.com/Pradeep-B28/Diwali_Sky)
-- **Life in Dots** — Visualizes human lifespan in weekly dot columns with lunar calculations and complete local privacy. · [Live](https://lifeindots.vercel.app) · [Code](https://github.com/Pradeep-B28/Life_In_Dots)
-- **Searching & Sorting Visualizer** — Animates sorting and searching algorithm comparisons frame-by-frame in a Java desktop interface. · [Code](https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer)
-- **Portfolio Theme Suite** — Six distinct 3D WebGL developer portfolio prototypes built with custom shaders and spatial layouts. · [Code](https://github.com/Pradeep-B28/Portfolio)
-
-</details>
-
-<br />
-
-### Toolbox
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=java,python,react,nodejs,ts,js,postgres,mongodb,docker,git,github,linux,html,css&perline=14" alt="Technical Skills" />
-</p>
-
-<br />
-
-### Experience
-
-- **Technical Trainer – Academic Excellence**, Sethu Institute of Technology *(Jul 2026 – Present)*
-- **Technical Training Programs**: VIT Chennai · VIT Vellore · VIT-AP · KSR Erode *(Nov 2022 – Jul 2026)*
-- **10+ Intensive Online Bootcamps**: 7,500+ engineers mentored in Core Java, JVM internals, and algorithmic patterns
-
-<br />
-
-### Activity
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Pradeep-B28/Pradeep-B28/raw/output/profile-3d-contrib/profile-night-rainbow.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://github.com/Pradeep-B28/Pradeep-B28/raw/output/profile-3d-contrib/profile-green-animate.svg">
-    <img src="https://github.com/Pradeep-B28/Pradeep-B28/raw/output/profile-3d-contrib/profile-night-rainbow.svg" alt="GitHub 3D Contribution Graph" width="100%">
-  </picture>
-</div>
-
-<br /><br />
-
-<div align="center">
-  <a href="https://pradeep-b28.github.io/Pradeep-B28/#contact">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="assets/readme/footer-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="assets/readme/footer-light.svg">
-      <img src="assets/readme/footer-dark.svg" width="100%" alt="Let's build something.">
-    </picture>
-  </a>
-  <br /><br />
-  <p>
-    Direct: <a href="mailto:pradeepbashaa@gmail.com"><code>pradeepbashaa@gmail.com</code></a> · Open to SDE roles (remote / relocation)
-  </p>
-</div>
+For SDE roles, training programs or a custom website, write to the address above.
