@@ -10,16 +10,16 @@
 
 <br /><br />
 
-<!-- Theme-Aware Custom Badge Buttons -->
-<a href="https://pradeep-b28.github.io/Pradeep-B28/"><img src="assets/readme/badges/badge-portfolio.svg" height="32" alt="Portfolio Site" /></a>
+<!-- Theme-Aware Custom Badge Buttons (<picture> tags follow GitHub theme setting) -->
+<a href="https://pradeep-b28.github.io/Pradeep-B28/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/badge-portfolio-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/badges/badge-portfolio-light.svg"><img src="assets/readme/badges/badge-portfolio-dark.svg" height="32" alt="Portfolio Site" /></picture></a>
 &nbsp;
-<a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep"><img src="assets/readme/badges/badge-email.svg" height="32" alt="Email Me" /></a>
+<a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/badge-email-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/badges/badge-email-light.svg"><img src="assets/readme/badges/badge-email-dark.svg" height="32" alt="Email Me" /></picture></a>
 &nbsp;
-<a href="https://pradeep-b28.github.io/Pradeep-B28/assets/B_Pradeep_Resume.pdf"><img src="assets/readme/badges/badge-resume.svg" height="32" alt="Download Résumé" /></a>
+<a href="https://pradeep-b28.github.io/Pradeep-B28/assets/B_Pradeep_Resume.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/badge-resume-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/badges/badge-resume-light.svg"><img src="assets/readme/badges/badge-resume-dark.svg" height="32" alt="Download Résumé" /></picture></a>
 &nbsp;
-<a href="https://www.linkedin.com/in/pradeepb-2k/"><img src="assets/readme/badges/badge-linkedin.svg" height="32" alt="LinkedIn" /></a>
+<a href="https://www.linkedin.com/in/pradeepb-2k/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/badge-linkedin-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/badges/badge-linkedin-light.svg"><img src="assets/readme/badges/badge-linkedin-dark.svg" height="32" alt="LinkedIn" /></picture></a>
 &nbsp;
-<a href="https://leetcode.com/u/PradeepKrishB/"><img src="assets/readme/badges/badge-leetcode.svg" height="32" alt="LeetCode" /></a>
+<a href="https://leetcode.com/u/PradeepKrishB/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/badges/badge-leetcode-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/readme/badges/badge-leetcode-light.svg"><img src="assets/readme/badges/badge-leetcode-dark.svg" height="32" alt="LeetCode" /></picture></a>
 
 <br /><br />
 
@@ -168,8 +168,8 @@
 
 ### Experience
 
-- **Technical Trainer – Academic Excellence**, Sethu Institute of Technology *(Current)* <!-- TODO: Pradeep to fill start date -->
-- **Technical Training Programs**: VIT Chennai · VIT Vellore · VIT-AP · KSR Erode <!-- TODO: Pradeep to fill dates -->
+- **Technical Trainer – Academic Excellence**, Sethu Institute of Technology *(Jul 2026 – Present)*
+- **Technical Training Programs**: VIT Chennai · VIT Vellore · VIT-AP · KSR Erode *(Nov 2022 – Jul 2026)*
 - **10+ Intensive Online Bootcamps**: 7,500+ engineers mentored in Core Java, JVM internals, and algorithmic patterns <!-- TODO: Pradeep to fill dates -->
 
 <picture>
