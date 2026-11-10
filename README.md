@@ -1,18 +1,34 @@
-<h1 align="center">B Pradeep</h1>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Bricolage+Grotesque&weight=800&size=34&duration=2600&pause=900&color=1F9D7A&center=true&vCenter=true&width=760&height=60&lines=B+Pradeep;Software+engineer%2C+full-stack+and+3D+web;7%2C500%2B+engineers+mentored+in+Java+and+DSA;14+projects+you+can+open+and+try" alt="B Pradeep, software engineer">
+</p>
 
 <p align="center">
-  <b>Software engineer for full-stack platforms and the 3D web.</b><br>
-  4 years building systems. 7,500+ engineers and students mentored in Java and DSA.<br>
-  Open to SDE roles, remote or on-site.
+  4 years building systems. Open to SDE roles, remote or on-site.
 </p>
 
 <p align="center">
   <a href="https://pradeep-b28.github.io/Pradeep-B28/"><img src="https://img.shields.io/badge/Portfolio-Open_the_site-F2CF63?style=for-the-badge&labelColor=16302A" alt="Portfolio"></a>
   <a href="mailto:pradeepbashaa@gmail.com"><img src="https://img.shields.io/badge/Email-pradeepbashaa@gmail.com-F2CF63?style=for-the-badge&labelColor=16302A" alt="Email"></a>
   <a href="https://www.linkedin.com/in/pradeepb-2k/"><img src="https://img.shields.io/badge/LinkedIn-pradeepb--2k-F2CF63?style=for-the-badge&labelColor=16302A" alt="LinkedIn"></a>
+  <img src="https://komarev.com/ghpvc/?username=Pradeep-B28&style=for-the-badge&color=16302A&label=Profile+views" alt="Profile views">
 </p>
 
 ---
+
+## About me
+
+I build full-stack platforms, database safety tooling and algorithm visualizers, and I teach the same ideas in the classroom.
+
+- **Engineer:** placement portals, PostgreSQL migration tooling, cross-platform apps and 3D web experiences
+- **Teacher:** 7,500+ students and engineers mentored across 10+ intensive bootcamps
+- **Now:** Technical Trainer, Academic Excellence, Sethu Institute of Technology, Madurai
+- **Looking for:** a full-time software engineer role in backend, full-stack or 3D web
+
+## How I build
+
+| Private by default | Proven by tests | Built to be understood |
+|:--|:--|:--|
+| Several of my tools run entirely in the browser under a strict no-network policy, so user data never leaves the device. | Engines ship with their own checks: 47,475 for Split Smart, 21,929 for List Cleaner, 8,292 route tests for Namma Route. | Most projects are visual: you can watch the algorithm work instead of reading about it. |
 
 ## Featured projects
 
@@ -67,7 +83,9 @@ Group expense splitter that settles debts in the fewest transfers, using exact i
 </tr>
 </table>
 
-## More projects
+<details>
+<summary><b>See all the other projects (15 more)</b></summary>
+<br>
 
 | Project | What it does | Links |
 |:--|:--|:--|
@@ -87,9 +105,11 @@ Group expense splitter that settles debts in the fewest transfers, using exact i
 | **Portfolio theme suite** | Six 3D portfolio themes built with React 18 and Three.js | [Source](https://github.com/Pradeep-B28/Portfolio) |
 | **MOR** | Private voice-first AI assistant with wake word, neural speech and smart-room control | [Request a demo](mailto:pradeepbashaa@gmail.com?subject=MOR%20demo%20request) |
 
+</details>
+
 ## Skills
 
-<p>
+<p align="center">
   <img src="https://skillicons.dev/icons?i=java,js,ts,react,nodejs,express,python,flask,postgres,mongodb,threejs,docker,githubactions,git,linux&perline=15" alt="Java, JavaScript, TypeScript, React, Node.js, Express, Python, Flask, PostgreSQL, MongoDB, Three.js, Docker, GitHub Actions, Git, Linux">
 </p>
 
@@ -102,25 +122,52 @@ Group expense splitter that settles debts in the fewest transfers, using exact i
 
 ## Teaching
 
-I have mentored more than 7,500 students and engineers in Java, DSA and system design across 10+ intensive bootcamps.
+| Where | Role |
+|:--|:--|
+| Sethu Institute of Technology, Madurai | Technical Trainer, Academic Excellence (current) |
+| VIT Chennai, VIT Vellore, VIT-AP | Intensive technical training programs |
+| KSR, Erode | Intensive technical training programs |
 
-- **Now:** Technical Trainer, Academic Excellence, Sethu Institute of Technology, Madurai
-- **Earlier programs at:** VIT Chennai, VIT Vellore, VIT-AP and KSR, Erode
-- **Approach:** patterns students can rebuild from scratch, not memorized answers
+I teach patterns students can rebuild from scratch: window bounds, monotonic stacks, DP state graphs, and how the JVM actually spends memory and time.
 
-## Activity
+## Live GitHub activity
 
 <p align="center">
-  <img src="profile-3d-contrib/profile-night-rainbow.svg" alt="3D contribution graph" width="100%">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg">
+    <img src="profile-3d-contrib/profile-green-animate.svg" alt="3D contribution calendar, updated daily" width="100%">
+  </picture>
 </p>
+
 <p align="center">
-  <img src="assets/images/stats-card.svg" alt="GitHub stats">
+  <img src="profile/stats.svg" alt="GitHub stats, updated daily" height="170">
+  <img src="profile/top-langs.svg" alt="Most used languages, updated daily" height="170">
 </p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=Pradeep-B28&background=00000000&border=8B949E&ring=1F9D7A&fire=F2CF63&currStreakNum=1F9D7A&currStreakLabel=1F9D7A&sideNums=8B949E&sideLabels=8B949E&dates=8B949E" alt="Contribution streak, live">
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="profile/snake-dark.svg">
+    <img src="profile/snake.svg" alt="Snake eating my contribution graph, updated daily" width="100%">
+  </picture>
+</p>
+
+### What I did recently
+
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
 
 ## Contact
 
 Email is the fastest way to reach me: **[pradeepbashaa@gmail.com](mailto:pradeepbashaa@gmail.com)**
 
-[LinkedIn](https://www.linkedin.com/in/pradeepb-2k/) · [LeetCode](https://leetcode.com/u/PradeepKrishB/) · [X](https://x.com/Pradeep__krish) · [Reddit](https://www.reddit.com/user/Pradeep_krish/) · [Instagram](https://www.instagram.com/_._p.r.a.d.e.e.p_._._/) · [Portfolio](https://pradeep-b28.github.io/Pradeep-B28/)
+| For | Write with the subject |
+|:--|:--|
+| A software engineer role | [SDE role](mailto:pradeepbashaa@gmail.com?subject=SDE%20role%20for%20B%20Pradeep) |
+| Java and DSA training or a bootcamp | [Training inquiry](mailto:pradeepbashaa@gmail.com?subject=Training%20or%20bootcamp%20inquiry) |
+| A website, portal or 3D build | [Website project](mailto:pradeepbashaa@gmail.com?subject=Website%20or%203D%20project) |
 
-For SDE roles, training programs or a custom website, write to the address above.
+[LinkedIn](https://www.linkedin.com/in/pradeepb-2k/) · [LeetCode](https://leetcode.com/u/PradeepKrishB/) · [X](https://x.com/Pradeep__krish) · [Reddit](https://www.reddit.com/user/Pradeep_krish/) · [Instagram](https://www.instagram.com/_._p.r.a.d.e.e.p_._._/) · [Portfolio](https://pradeep-b28.github.io/Pradeep-B28/)
