@@ -1,576 +1,357 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>B Pradeep — Software Engineer — Full-Stack &amp; Interactive Web</title>
-  <meta name="description" content="I build full-stack platforms, developer tools, and interactive algorithm visualizations. 4 years of engineering, 7,500+ engineers trained." />
-  <link rel="canonical" href="https://pradeep-b28.github.io/Pradeep-B28/" />
-  <meta name="theme-color" content="#0A0B0D" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>B Pradeep, Software Engineer: full-stack and 3D web</title>
+<meta name="description" content="B Pradeep, software engineer. Full-stack platforms, PostgreSQL migration safety tooling and 3D web. 7,500+ engineers mentored in Java and DSA.">
+<meta name="theme-color" content="#16302A">
+<!-- keep your existing og:/twitter: tags here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--board:#16302A;--deep:#0F241F;--chalk:#F1EEE4;--dust:#A9BDB5;--yellow:#F2CF63;--blue:#8FC7E8;--rule:rgba(241,238,228,.16);--ease:cubic-bezier(.2,.7,.2,1);--hand:"Caveat",cursive}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:radial-gradient(120% 70% at 50% 0,#1B3A32,var(--deep)) fixed var(--deep);color:var(--chalk);font:400 17px/1.6 "Bricolage Grotesque",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+ul{list-style:none;padding:0}
+:focus-visible{outline:2px solid var(--yellow);outline-offset:4px;border-radius:3px}
+.wrap{width:min(1160px,92vw);margin-inline:auto}
+h1,h2,h3{line-height:1;letter-spacing:-.02em;font-weight:800}
+h2{font-size:clamp(34px,5vw,60px);font-stretch:85%}
+.sec{padding:104px 0;border-top:1px solid var(--rule)}
+.intro{color:var(--dust);max-width:56ch;margin-top:14px}
+.u{background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .35s var(--ease);padding-bottom:2px}
+.u:hover,.card:hover h3 .u{background-size:100% 1.5px}
 
-  <!-- Open Graph / Meta -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pradeep-b28.github.io/Pradeep-B28/" />
-  <meta property="og:title" content="B Pradeep — Software Engineer — Full-Stack &amp; Interactive Web" />
-  <meta property="og:description" content="I build full-stack platforms, developer tools, and interactive algorithm visualizations. 4 years of engineering, 7,500+ engineers trained." />
-  <meta property="og:image" content="https://pradeep-b28.github.io/Pradeep-B28/assets/images/og-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+/* loader */
+#loader{display:none}
+.js #loader{position:fixed;inset:0;z-index:99;background:var(--deep);display:grid;place-content:center;justify-items:center;gap:14px;clip-path:inset(0);transition:clip-path .7s var(--ease);animation:bail 0s 5s forwards}
+.js #loader.out{clip-path:inset(0 0 100% 0)}
+@keyframes bail{to{visibility:hidden}}
+.bars{display:flex;align-items:flex-end;gap:7px;width:170px;height:80px}
+.bars i{flex:1;background:var(--chalk);opacity:.35;border-radius:2px;transition:height .09s linear,background .2s,opacity .2s}
+.bars i.ok{background:var(--yellow);opacity:1}
+#ldn{font:600 24px var(--hand);color:var(--dust)}
 
-  <!-- Twitter Meta -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="B Pradeep — Software Engineer — Full-Stack &amp; Interactive Web" />
-  <meta name="twitter:description" content="I build full-stack platforms, developer tools, and interactive algorithm visualizations. 4 years of engineering, 7,500+ engineers trained." />
-  <meta name="twitter:image" content="https://pradeep-b28.github.io/Pradeep-B28/assets/images/og-card.png" />
+/* nav */
+.top{position:sticky;top:0;z-index:20;background:rgba(15,36,31,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav{display:flex;align-items:center;gap:26px;height:62px;overflow-x:auto;scrollbar-width:none}
+.logo{font-weight:800;font-size:19px;margin-right:auto;white-space:nowrap}
+.nav .l{font-size:15px;color:var(--dust);white-space:nowrap;transition:color .2s}
+.nav .l:hover,.nav .l.on{color:var(--chalk)}
+.nav .l.on{background-size:100% 1.5px}
+#prog{position:absolute;left:0;bottom:-1px;width:100%;height:2px;background:var(--yellow);transform:scaleX(0);transform-origin:left}
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A0B0D'/><circle cx='16' cy='16' r='6' fill='%23FFB224'/><circle cx='8' cy='22' r='3' fill='%239BA1A6'/><circle cx='24' cy='10' r='3' fill='%239BA1A6'/><line x1='8' y1='22' x2='16' y2='16' stroke='%23FFB224' stroke-width='1.5'/><line x1='16' y1='16' x2='24' y2='10' stroke='%23FFB224' stroke-width='1.5'/></svg>" />
+/* buttons */
+.btn{display:inline-flex;align-items:center;padding:13px 22px;border:1.5px solid var(--chalk);border-radius:6px;font-weight:600;font-size:16px;white-space:nowrap;cursor:pointer;background:none;color:var(--chalk);transition:background .2s,color .2s,transform .25s var(--ease)}
+.btn:hover{background:var(--chalk);color:var(--deep)}
+.btn:active{scale:.97}
+.btn.p{background:var(--yellow);border-color:var(--yellow);color:#2A2205}
+.btn.p:hover{background:#FFE08A;border-color:#FFE08A}
+.btn.s{padding:8px 16px;font-size:14px}
 
-  <!-- Zero-FOUT Theme Initializer (Pre-CSS) -->
-  <script>
-    (function() {
-      try {
-        var m = /[?&]theme=([^&#]*)/.exec(location.search);
-        var t = m ? decodeURIComponent(m[1]) : (localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
-        document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    })();
-  </script>
+/* hero */
+.hero{position:relative;min-height:calc(100svh - 62px);display:grid;align-items:center;padding:64px 0 96px;overflow:hidden}
+#lattice{position:absolute;inset:0;width:100%;height:100%;-webkit-mask-image:linear-gradient(90deg,transparent 8%,#000 62%);mask-image:linear-gradient(90deg,transparent 8%,#000 62%)}
+.hero .wrap{position:relative}
+.status{font:600 24px var(--hand);color:var(--yellow)}
+h1{font-size:clamp(64px,13vw,184px);font-stretch:75%;line-height:.86;margin:6px 0 22px -.04em;clip-path:inset(0 0 -10% 0);transition:clip-path 1.1s var(--ease) .1s}
+.js:not(.ready) h1{clip-path:inset(0 100% -10% 0)}
+.after{transition:opacity .7s .65s}
+.js:not(.ready) .after{opacity:0}
+.role{font-size:clamp(20px,2.4vw,28px);font-weight:500;max-width:24ch;line-height:1.25}
+.pitch{color:var(--dust);max-width:46ch;margin:16px 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 36px;margin-top:52px;font-size:15px;color:var(--dust)}
+.facts b{display:block;color:var(--chalk);font-size:30px;font-stretch:80%;line-height:1.1}
+.now{margin-top:22px;font-size:14.5px;color:var(--dust);max-width:60ch}
+#say{position:absolute;right:4vw;bottom:26px;max-width:290px;text-align:right;font:500 22px/1.15 var(--hand);color:var(--yellow)}
 
-  <!-- Font Origin Preconnect -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+/* work */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 38px}
+.filters button{font:500 15px inherit;font-family:inherit;color:var(--dust);background:none;border:1.5px solid var(--rule);border-radius:6px;padding:8px 14px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
+.filters button:hover{color:var(--chalk);border-color:var(--dust)}
+.filters button[aria-pressed=true]{background:var(--chalk);border-color:var(--chalk);color:var(--deep)}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:52px 28px;grid-auto-flow:dense}
+.card{grid-column:span 2;display:flex;flex-direction:column;gap:9px}
+.card[hidden]{display:none}
+.card.feat{grid-column:span 3}
+.shot{display:block;aspect-ratio:16/9;overflow:hidden;border:1.5px solid var(--rule);border-radius:6px;background:var(--deep);margin-bottom:8px;transition:border-color .3s}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.75);transition:transform .8s var(--ease),filter .4s}
+.card:hover .shot{border-color:var(--yellow)}
+.card:hover .shot img{transform:scale(1.045);filter:none}
+.tag{font-size:13.5px;color:var(--blue)}
+.card h3{font-size:25px;font-stretch:85%}
+.card.feat h3{font-size:32px}
+.desc{color:var(--dust);font-size:15.5px}
+.proof{font-size:15px;border-left:2px solid var(--yellow);padding-left:12px}
+.stack{font-size:13.5px;color:var(--dust)}
+.links{display:flex;gap:22px;font-weight:600;font-size:15px;margin-top:4px}
+.links a:hover{color:var(--yellow)}
+.more{margin-top:56px;color:var(--dust);font-size:15.5px;max-width:78ch}
+.more a{color:var(--chalk)}
 
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
+/* skills, teaching, contact */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:36px 28px;margin-top:44px}
+.cols h3{font-size:21px;font-stretch:85%;margin-bottom:12px}
+.cols li,.cols dd{color:var(--dust);font-size:15.5px;padding:7px 0;border-bottom:1px solid var(--rule)}
+.cols li{transition:color .2s,padding-left .25s var(--ease)}
+.cols li:hover{color:var(--chalk);padding-left:8px}
+.cols dd{border:0;padding:0}
+.mail{display:inline-block;font:800 clamp(24px,5.2vw,64px)/1.1 inherit;font-family:inherit;font-stretch:80%;letter-spacing:-.02em;color:var(--chalk);background:none;border:0;cursor:pointer;margin:26px 0 8px;text-align:left;word-break:break-word;transition:color .2s}
+.mail:hover{color:var(--yellow)}
+.note{font:500 21px var(--hand);color:var(--dust)}
+.ways{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:34px;font-weight:600}
+footer{padding:32px 0 44px;border-top:1px solid var(--rule);color:var(--dust);font-size:14px}
+#toast{position:fixed;left:50%;bottom:28px;translate:-50% 16px;opacity:0;background:var(--chalk);color:var(--deep);font-weight:600;font-size:14.5px;padding:10px 18px;border-radius:6px;pointer-events:none;z-index:50;transition:opacity .3s,translate .3s var(--ease)}
+#toast.on{opacity:1;translate:-50% 0}
 
-  <!-- JSON-LD Person Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "B Pradeep",
-    "jobTitle": "Software Engineer — Full-Stack & Interactive Web",
-    "url": "https://pradeep-b28.github.io/Pradeep-B28/",
-    "sameAs": [
-      "https://www.linkedin.com/in/pradeepb-2k/",
-      "https://github.com/Pradeep-B28",
-      "https://leetcode.com/u/PradeepKrishB/",
-      "https://x.com/Pradeep__krish"
-    ],
-    "knowsAbout": [
-      "Full-Stack Web Development",
-      "Interactive 3D WebGL",
-      "Algorithm Visualizations",
-      "PostgreSQL",
-      "Java",
-      "Python"
-    ]
-  }
-  </script>
+@media(max-width:980px){.card,.card.feat{grid-column:span 3}}
+@media(max-width:640px){
+  .sec{padding:72px 0}.card,.card.feat{grid-column:span 6}.nav{gap:18px}
+  .hero{padding-bottom:210px;align-items:start}
+  #lattice{-webkit-mask-image:linear-gradient(180deg,transparent 45%,#000 80%);mask-image:linear-gradient(180deg,transparent 45%,#000 80%)}
+  #say{left:4vw;right:4vw;text-align:left;max-width:none}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
+<div id="loader" aria-hidden="true"><div class="bars"></div><p id="ldn">sorting…</p></div>
 
-  <!-- Scroll Progress Bar -->
-  <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
+<header class="top">
+  <nav class="nav wrap" aria-label="Main">
+    <a class="logo" href="#top">B Pradeep</a>
+    <a class="l u" href="#work">Work</a>
+    <a class="l u" href="#skills">Skills</a>
+    <a class="l u" href="#teaching">Teaching</a>
+    <a class="l u" href="#contact">Contact</a>
+    <a class="btn p s" href="mailto:pradeepbashaa@gmail.com?subject=SDE%20role%20for%20B%20Pradeep">Hire me</a>
+  </nav>
+  <div id="prog"></div>
+</header>
 
-  <!-- Accessible Skip Link -->
-  <a href="#main" class="skip-link">Skip to main content</a>
-
-  <!-- FLOATING CENTRED PILL NAVIGATION -->
-  <header class="navbar-wrapper" id="navbar">
-    <nav class="nav-pill" aria-label="Main Navigation">
-      <a href="#hero" class="nav-brand" aria-label="BP — B Pradeep Home">
-        <span class="brand-avatar">BP</span>
-      </a>
-
-      <div class="nav-links" id="nav-links">
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#lab" class="nav-link">Lab</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#contact" class="nav-link">Contact</a>
+<main id="top">
+<div class="hero">
+  <canvas id="lattice" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="status after">Open to SDE roles, ready to relocate</p>
+    <h1>B Pradeep</h1>
+    <div class="after">
+      <p class="role">Software engineer for full-stack platforms and the 3D web.</p>
+      <p class="pitch">I build placement portals, database migration safety tools and algorithm visualizers, and I have taught the same ideas to more than 7,500 engineers.</p>
+      <div class="cta">
+        <a class="btn p mag" href="mailto:pradeepbashaa@gmail.com?subject=SDE%20role%20for%20B%20Pradeep">Email me about a role</a>
+        <a class="btn" href="#work">See the work</a>
       </div>
-
-      <div class="nav-actions">
-        <!-- Command Palette Trigger Button -->
-        <button class="palette-nav-btn" id="nav-palette-btn">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <span>Search</span>
-          <kbd aria-hidden="true">⌘K</kbd>
-        </button>
-
-        <!-- Theme Toggle Button -->
-        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark and light theme" aria-pressed="false">
-          <!-- Sun Icon for Light mode switch -->
-          <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/>
-            <line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-          </svg>
-          <!-- Moon Icon for Dark mode switch -->
-          <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
-        </button>
-
-        <!-- Résumé Ghost Button in Nav -->
-        <a href="assets/B_Pradeep_Resume.pdf" class="nav-resume-btn" download="B_Pradeep_Resume.pdf" target="_blank" rel="noopener">
-          <span>Résumé</span>
-        </a>
-
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <main id="main">
-    <!-- 1. HERO SECTION (Columns 1-6 Text, Columns 6-12 Pathfinder City Visual) -->
-    <section class="hero-section" id="hero" aria-label="Introduction and Pathfinder City Visualization">
-      <div class="container hero-container">
-        <div class="hero-grid">
-          <!-- Text Column (Columns 1-6) -->
-          <div class="hero-text-col">
-            <!-- 1. Small status pill with green dot -->
-            <div class="status-pill">
-              <span class="status-dot"></span>
-              <span>Open to SDE roles · Remote / Relocation</span>
-            </div>
-
-            <!-- 2. Name: Instrument Serif, clamp(64px, 8vw, 120px) -->
-            <h1 class="hero-name">B Pradeep</h1>
-
-            <!-- 3. Role: Inter 20px, muted colour (NOT amber, NOT bold) -->
-            <p class="hero-role">Software Engineer — Full-Stack &amp; Interactive Web</p>
-
-            <!-- 4. One-liner: 18px muted, max 46ch -->
-            <p class="hero-oneliner">
-              I build full-stack platforms, developer tools, and interactive algorithm visualizations. 4 years of engineering, 7,500+ engineers trained.
-            </p>
-
-            <!-- 5. Buttons: [View work] amber primary, [Email me] ghost -->
-            <div class="hero-actions">
-              <a href="#work" class="btn btn-primary magnetic-btn">
-                <span>View work</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-              </a>
-              <button class="btn btn-ghost email-action-btn" data-subject="SDE Role Opportunity — B Pradeep">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                <span>Email me</span>
-              </button>
-            </div>
-
-            <!-- 6. Social icons row, 20px, muted -->
-            <div class="hero-social-row">
-              <a href="https://github.com/Pradeep-B28" target="_blank" rel="noopener" class="social-icon-btn" aria-label="GitHub Profile">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-              <a href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn Profile">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-              <a href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LeetCode Profile">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              </a>
-              <a href="https://x.com/Pradeep__krish" target="_blank" rel="noopener" class="social-icon-btn" aria-label="X Profile">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Visual Column (Columns 6-12 bleeding right) -->
-          <div class="hero-visual-col">
-            <div class="hero-canvas-container" id="hero-canvas-container"></div>
-            <!-- Static SVG Solved Frame Fallback -->
-            <div class="hero-static-fallback" id="hero-fallback" aria-hidden="true">
-              <svg viewBox="0 0 600 400" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="600" height="400" fill="transparent"/>
-                <g opacity="0.3" stroke="currentColor" stroke-width="1">
-                  <path d="M50 200 L300 50 L550 200 L300 350 Z"/>
-                  <path d="M100 200 L300 80 L500 200 L300 320 Z"/>
-                  <path d="M150 200 L300 110 L450 200 L300 290 Z"/>
-                </g>
-                <path d="M150 200 L250 140 L300 170 L380 120 L450 200" stroke="#FFB224" stroke-width="3" stroke-linecap="round"/>
-              </svg>
-            </div>
-
-            <!-- Pathfinder City Glass Control & Live Readout Panel -->
-            <div class="pathfinder-glass-panel">
-              <div class="path-chips" role="radiogroup" aria-label="Pathfinding algorithm">
-                <button class="path-chip active" role="radio" aria-checked="true" data-algo="astar">A*</button>
-                <button class="path-chip" role="radio" aria-checked="false" data-algo="dijkstra">Dijkstra</button>
-                <button class="path-chip" role="radio" aria-checked="false" data-algo="bfs">BFS</button>
-              </div>
-              <div class="path-readout" aria-live="polite">
-                <span>visited <strong id="path-visited-count">0</strong> · path <strong id="path-length-count">0</strong></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. PROOF STRIP & MARQUEE -->
-    <section class="proof-section" aria-label="Engineering Proof and Impact">
-      <div class="container">
-        <div class="proof-stats-grid">
-          <div class="proof-stat-item">
-            <div class="proof-stat-val"><span class="proof-stat-num" id="stat-years">4+</span> <span class="proof-stat-unit">yrs</span></div>
-            <span class="proof-stat-label">Full-Stack Engineering</span>
-          </div>
-          <div class="proof-stat-divider" aria-hidden="true"></div>
-          <div class="proof-stat-item">
-            <div class="proof-stat-val"><span class="proof-stat-num" id="stat-trained">7,500+</span></div>
-            <span class="proof-stat-label">Engineers Mentored</span>
-          </div>
-          <div class="proof-stat-divider" aria-hidden="true"></div>
-          <div class="proof-stat-item">
-            <div class="proof-stat-val"><span class="proof-stat-num" id="stat-projects-count">20</span></div>
-            <span class="proof-stat-label">Projects Shipped</span>
-          </div>
-          <div class="proof-stat-divider" aria-hidden="true"></div>
-          <div class="proof-stat-item">
-            <div class="proof-stat-val"><span class="proof-stat-num">10+</span></div>
-            <span class="proof-stat-label">Intensive Bootcamps</span>
-          </div>
-        </div>
-
-        <div class="marquee-wrapper" aria-hidden="true">
-          <div class="marquee-track">
-            <span>Sethu Institute of Technology</span><span class="marquee-sep">·</span>
-            <span>VIT Chennai</span><span class="marquee-sep">·</span>
-            <span>VIT Vellore</span><span class="marquee-sep">·</span>
-            <span>VIT-AP</span><span class="marquee-sep">·</span>
-            <span>KSR Erode</span><span class="marquee-sep">·</span>
-            <span>Sethu Institute of Technology</span><span class="marquee-sep">·</span>
-            <span>VIT Chennai</span><span class="marquee-sep">·</span>
-            <span>VIT Vellore</span><span class="marquee-sep">·</span>
-            <span>VIT-AP</span><span class="marquee-sep">·</span>
-            <span>KSR Erode</span><span class="marquee-sep">·</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. FEATURED WORK (BENTO GRID, 4 COLUMNS DESKTOP) -->
-    <section class="section" id="work" aria-label="Featured Engineering Case Studies">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">01 — WORK</span>
-          <h2 class="section-title">Featured Work</h2>
-          <p class="section-subtitle">
-            Flagship platforms, transit graph solvers, database gatekeepers, and offline-first architectures.
-          </p>
-        </div>
-
-        <div class="bento-grid" id="featured-bento-container">
-          <!-- Populated dynamically via app.js / projects.json -->
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. LAB (3-Column Filterable Grid + Sticky Filter Bar) -->
-    <section class="section" id="lab" aria-label="Interactive Systems &amp; Developer Tooling Lab">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">02 — LAB</span>
-          <h2 class="section-title">The Lab</h2>
-          <p class="section-subtitle">
-            Filterable systems, developer tooling, cryptographic utilities, algorithmic games, and visualizers.
-          </p>
-        </div>
-
-        <!-- Sticky Lab Controls Bar -->
-        <div class="lab-sticky-bar" id="lab-controls">
-          <div class="lab-search-wrapper">
-            <svg class="search-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="text" id="lab-search-input" class="lab-search-input" placeholder="Search projects or tech..." aria-label="Search lab projects" />
-            <button class="clear-search-btn" id="btn-clear-search" aria-label="Clear search query" style="display: none;">✕</button>
-          </div>
-
-          <div class="filter-chips-row" role="tablist" aria-label="Filter projects by category">
-            <button class="filter-chip active" role="tab" aria-selected="true" data-filter="all">All</button>
-            <button class="filter-chip" role="tab" aria-selected="false" data-filter="Algorithms">Algorithms</button>
-            <button class="filter-chip" role="tab" aria-selected="false" data-filter="Dev Tools">Dev Tools</button>
-            <button class="filter-chip" role="tab" aria-selected="false" data-filter="Privacy &amp; Security">Privacy &amp; Security</button>
-            <button class="filter-chip" role="tab" aria-selected="false" data-filter="Games">Games</button>
-            <button class="filter-chip" role="tab" aria-selected="false" data-filter="Visualizers">Visualizers</button>
-          </div>
-
-          <div class="lab-sort-wrapper">
-            <select id="lab-sort-select" class="lab-sort-select" aria-label="Sort projects">
-              <option value="featured">Sort: Featured</option>
-              <option value="az">Sort: A–Z</option>
-              <option value="newest">Sort: Newest</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Result count & live region -->
-        <div class="lab-meta-row" aria-live="polite">
-          <span class="lab-count" id="lab-count-indicator">Showing 15 projects</span>
-        </div>
-
-        <!-- 3-Column Lab Grid -->
-        <div class="lab-grid" id="lab-grid">
-          <!-- Dynamically populated via app.js -->
-        </div>
-
-        <!-- Empty state fallback -->
-        <div class="lab-empty-state" id="lab-empty-state" style="display: none;">
-          <p class="empty-title">No projects match your filter.</p>
-          <button class="btn btn-secondary btn-sm" id="btn-clear-lab">Reset search &amp; filters</button>
-        </div>
-
-        <!-- MOR AI Slim Strip -->
-        <div class="mor-private-strip reveal">
-          <div class="mor-strip-info">
-            <span class="mor-badge">In Private Development</span>
-            <span class="mor-strip-text"><strong>MOR AI</strong> — Voice-first holographic personal AI assistant.</span>
-          </div>
-          <button class="btn btn-secondary btn-sm email-action-btn" data-subject="MOR AI Demo Request — B Pradeep">Request demo →</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. EXPERIENCE (Split Timeline with Mono Dates & Hairline Vertical Line) -->
-    <section class="section" id="experience" aria-label="Professional Experience and Training Leadership">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">03 — EXPERIENCE</span>
-          <h2 class="section-title">Experience</h2>
-          <p class="section-subtitle">
-            Technical training leadership, curriculum architecture, and systems instruction across India's premier engineering institutions.
-          </p>
-        </div>
-
-        <div class="experience-timeline reveal">
-          <!-- Item 1: Current -->
-          <div class="timeline-row">
-            <div class="timeline-date-col">
-              <span class="timeline-mono-date">JUL 2026 — PRESENT</span>
-            </div>
-            <div class="timeline-axis">
-              <span class="timeline-dot current"></span>
-              <div class="timeline-line"></div>
-            </div>
-            <div class="timeline-content-col">
-              <h3 class="timeline-role">Technical Trainer — Academic Excellence</h3>
-              <p class="timeline-org">Sethu Institute of Technology, Madurai</p>
-              <p class="timeline-desc">
-                Direct technical curriculum in Core Java, JVM architecture, data structures, and algorithmic interview preparation for engineering undergraduates across AIML, CSD, and IoT programs.
-              </p>
-            </div>
-          </div>
-
-          <!-- Item 2: Institutional Programs -->
-          <div class="timeline-row">
-            <div class="timeline-date-col">
-              <span class="timeline-mono-date">NOV 2022 — JUL 2026</span>
-            </div>
-            <div class="timeline-axis">
-              <span class="timeline-dot"></span>
-              <div class="timeline-line"></div>
-            </div>
-            <div class="timeline-content-col">
-              <h3 class="timeline-role">Technical Training Programs</h3>
-              <p class="timeline-org">VIT Chennai · VIT Vellore · VIT-AP · KSR Erode</p>
-              <p class="timeline-desc">
-                Conducted large-scale technical training programs focused on high-throughput algorithmic patterns, graph solvers, and competitive programming frameworks. Drove campus placement rates from 70% to 90% across 10+ batches.
-              </p>
-            </div>
-          </div>
-
-          <!-- Item 3: Bootcamps -->
-          <div class="timeline-row">
-            <div class="timeline-date-col">
-              <span class="timeline-mono-date">BOOTCAMPS</span>
-            </div>
-            <div class="timeline-axis">
-              <span class="timeline-dot"></span>
-            </div>
-            <div class="timeline-content-col">
-              <h3 class="timeline-role">10+ Intensive Online Bootcamps</h3>
-              <p class="timeline-org">Placement &amp; Competitive Engineering Preparation</p>
-              <p class="timeline-desc">
-                Mentored 7,500+ aspiring software engineers across live bootcamps covering memory layout, multithreading synchronization, and dynamic programming invariants.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. SKILLS (Icon + Label Tiles in 4 Groups) -->
-    <section class="section" id="skills" aria-label="Technical Skills Matrix">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">04 — SKILLS</span>
-          <h2 class="section-title">Skills &amp; Architecture</h2>
-          <p class="section-subtitle">
-            Technologies and patterns applied across production systems, developer tooling, and algorithms.
-          </p>
-        </div>
-
-        <div class="skills-tiles-grid reveal">
-          <!-- Group 1: Frontend & Creative Web -->
-          <div class="skill-tile-card">
-            <h3 class="skill-group-title">Frontend &amp; Creative Web</h3>
-            <div class="skill-chips-wrap">
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 0-16a8 8 0 0 1 0 16z"/></svg>React 18</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3V3zm16 16V5H5v14h14z"/></svg>TypeScript</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3L2 12l10 9l10-9L12 3zm0 3.5L18.5 12L12 17.5L5.5 12L12 6.5z"/></svg>Three.js WebGL</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3V3z"/></svg>JavaScript ES6+</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L2 7v10l10 5l10-5V7l-10-5z"/></svg>HTML5 Canvas</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v16H4V4z"/></svg>CSS Motion</span>
-            </div>
-          </div>
-
-          <!-- Group 2: Backend & Systems -->
-          <div class="skill-tile-card">
-            <h3 class="skill-group-title">Backend &amp; Systems</h3>
-            <div class="skill-chips-wrap">
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L2 7v10l10 5l10-5V7l-10-5z"/></svg>Node.js</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v16H4V4z"/></svg>Core Java &amp; JVM</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3L2 12l10 9l10-9L12 3z"/></svg>Python 3</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6h16v12H4V6z"/></svg>PostgreSQL</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3V3z"/></svg>Express</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2z"/></svg>REST APIs</span>
-            </div>
-          </div>
-
-          <!-- Group 3: Tooling & Architecture -->
-          <div class="skill-tile-card">
-            <h3 class="skill-group-title">Tooling &amp; Architecture</h3>
-            <div class="skill-chips-wrap">
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3V3z"/></svg>Git Workflows</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2z"/></svg>GitHub Actions CI</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M2 4h20v16H2V4z"/></svg>Docker</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3L2 12l10 9l10-9L12 3z"/></svg>Linux Shell</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v16H4V4z"/></svg>Vite &amp; Bundlers</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3V3z"/></svg>IndexedDB</span>
-            </div>
-          </div>
-
-          <!-- Group 4: Algorithms & Theory -->
-          <div class="skill-tile-card">
-            <h3 class="skill-group-title">Algorithms &amp; Theory</h3>
-            <div class="skill-chips-wrap">
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L2 7v10l10 5l10-5V7l-10-5z"/></svg>Graph Solvers (A*, BFS)</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3V3z"/></svg>Dynamic Programming</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3L2 12l10 9l10-9L12 3z"/></svg>Trees &amp; Binary Search</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v16H4V4z"/></svg>Two Pointers</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M2 4h20v16H2V4z"/></svg>Concurrency &amp; Locks</span>
-              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2z"/></svg>Space Profiling</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. CONTACT SECTION -->
-    <section class="section" id="contact" aria-label="Contact and Collaboration Opportunities">
-      <div class="container">
-        <div class="contact-card-box reveal">
-          <span class="section-eyebrow">05 — CONTACT</span>
-          <h2 class="contact-headline">Let's <em>build something</em>.</h2>
-
-          <div class="contact-email-wrapper">
-            <button class="contact-big-email email-action-btn" data-subject="SDE Role Opportunity — B Pradeep" aria-label="Email Pradeep at pradeepbashaa@gmail.com">
-              pradeepbashaa@gmail.com
-            </button>
-          </div>
-
-          <div class="contact-btn-group">
-            <button class="btn btn-primary email-action-btn" data-subject="SDE Role Opportunity — B Pradeep">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              <span>Email me</span>
-            </button>
-            <a href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener" class="btn btn-secondary">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              <span>LinkedIn</span>
-            </a>
-            <a href="assets/B_Pradeep_Resume.pdf" class="btn btn-secondary" download="B_Pradeep_Resume.pdf" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              <span>Download résumé</span>
-            </a>
-          </div>
-
-          <div class="contact-pills-row">
-            <span class="contact-pill">SDE roles (open to remote/relocation)</span>
-            <span class="contact-pill">Training &amp; bootcamps</span>
-            <span class="contact-pill">Freelance web builds</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- COMMAND PALETTE (⌘K / Ctrl+K) MODAL -->
-  <div class="palette-overlay" id="palette-overlay" role="dialog" aria-modal="true" aria-label="Command Palette" aria-hidden="true">
-    <div class="palette-modal">
-      <div class="palette-header">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" id="palette-input" class="palette-input" placeholder="Search projects, sections, or commands..." autocomplete="off" spellcheck="false" />
-        <span class="palette-kbd-hint">ESC to close</span>
-      </div>
-      <div class="palette-results" id="palette-results">
-        <!-- Dynamically rendered items -->
-      </div>
+      <ul class="facts">
+        <li><b>4 years</b>building full-stack systems</li>
+        <li><b>7,500+</b>engineers and students mentored</li>
+        <li><b>10+</b>placement bootcamps run</li>
+      </ul>
+      <p class="now">Now: Technical Trainer, Academic Excellence, Sethu Institute of Technology, Madurai. Earlier: VIT Chennai, VIT Vellore, VIT-AP and KSR Erode.</p>
     </div>
   </div>
+  <p id="say" class="after" aria-hidden="true">Click or tap any dot to start a breadth-first search.</p>
+</div>
 
-  <!-- PROJECT DETAIL DRAWER (Side Drawer / Mobile Bottom Sheet) -->
-  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
-  <aside class="project-drawer" id="project-drawer" role="dialog" aria-modal="true" aria-label="Project Details" aria-hidden="true" inert>
-    <div class="drawer-header">
-      <div class="drawer-header-left">
-        <span class="drawer-category" id="drawer-category">// CATEGORY</span>
-        <h2 class="drawer-title" id="drawer-title">Project Title</h2>
-      </div>
-      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close project drawer">✕</button>
-    </div>
-    <div class="drawer-body" id="drawer-body">
-      <!-- Populated dynamically via app.js -->
-    </div>
-  </aside>
+<section class="sec" id="work"><div class="wrap">
+  <h2>Work</h2>
+  <p class="intro">Six projects I would show first. Use the filters to see all fourteen.</p>
+  <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+  <div class="grid" id="grid"></div>
+  <noscript><p class="intro">Projects are listed on <a class="u" href="https://github.com/Pradeep-B28">GitHub</a>.</p></noscript>
+  <p class="more">Also on GitHub:
+    <a class="u" href="https://github.com/Pradeep-B28/GIT_3D_Portfolio">GIT-viz 3D skyline</a>,
+    <a class="u" href="https://github.com/Pradeep-B28/Rel_Notes">Rel_Notes</a>,
+    <a class="u" href="https://github.com/Pradeep-B28/Devstarter">Devstarter</a>,
+    <a class="u" href="https://github.com/Pradeep-B28/JAVA-DSA-Roadmap">Java and DSA roadmap</a>,
+    <a class="u" href="https://github.com/Pradeep-B28/JAVA-Searching-Sorting-Visualizer">Sorting visualizer</a> and the
+    <a class="u" href="https://github.com/Pradeep-B28/Portfolio">3D portfolio theme suite</a>.
+    MOR, a private voice-first AI assistant, is available as a
+    <a class="u" href="mailto:pradeepbashaa@gmail.com?subject=MOR%20demo%20request">demo on request</a>.</p>
+</div></section>
 
-  <!-- EMAIL ACTION TOAST (Always visible on Email click: clipboard copy + Gmail + Outlook buttons) -->
-  <div class="email-action-toast" id="email-action-toast" role="alert" aria-live="polite"></div>
+<section class="sec" id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="cols">
+    <div><h3>Java and the JVM</h3><ul><li>Core Java, OOP and design patterns</li><li>Collections internals: HashMap, TreeMap</li><li>Concurrency: executors, locks, atomics</li><li>Memory layout and G1GC tuning</li></ul></div>
+    <div><h3>Algorithms</h3><ul><li>Sliding window, two pointers, Kadane</li><li>Trees: BFS, DFS, LCA, Morris traversal</li><li>Graphs: Dijkstra, A*, topological sort</li><li>Dynamic programming, 1D and 2D</li></ul></div>
+    <div><h3>Full-stack and 3D web</h3><ul><li>JavaScript and TypeScript</li><li>React 18, Node.js, Express, Flask 3</li><li>Three.js: shaders, raycasting, particles</li><li>Capacitor Android and PWAs</li></ul></div>
+    <div><h3>Data and DevOps</h3><ul><li>PostgreSQL: lock analysis, migrations</li><li>MongoDB</li><li>Docker and devcontainers</li><li>GitHub Actions pipelines</li></ul></div>
+  </div>
+</div></section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-left">
-        <span>© 2026 B Pradeep · Software Engineer</span>
-      </div>
-      <div class="footer-right">
-        <button id="back-to-top" class="back-to-top-btn" aria-label="Scroll back to top of page">
-          <span>Back to top</span>
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
-        </button>
-      </div>
-    </div>
-  </footer>
+<section class="sec" id="teaching"><div class="wrap">
+  <h2>Teaching</h2>
+  <p class="intro">I have mentored more than 7,500 students and engineers in Java, DSA and system design, across 10+ bootcamps and programs at Sethu Institute of Technology, VIT Chennai, VIT Vellore, VIT-AP and KSR Erode.</p>
+  <dl class="cols">
+    <div><dt><h3>How the machine behaves</h3></dt><dd>JVM memory layout, cache lines and GC pauses, and what they do to real throughput.</dd></div>
+    <div><dt><h3>Patterns over memorizing</h3></dt><dd>Window bounds, monotonic stacks and DP state graphs that students can rebuild from scratch.</dd></div>
+    <div><dt><h3>Engineering habits</h3></dt><dd>Clean structure, defensive data handling, edge-case tests and automated checks.</dd></div>
+  </dl>
+</div></section>
 
-  <!-- Three.js Pinned Version via Import Map -->
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.module.min.js"
+<section class="sec" id="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <p class="intro">Open to full-time software engineer roles anywhere, remote or on-site.</p>
+  <button class="mail" id="copy" type="button">pradeepbashaa@gmail.com</button>
+  <p class="note">Click the address to copy it.</p>
+  <div class="ways">
+    <a class="u" href="mailto:pradeepbashaa@gmail.com?subject=Training%20or%20bootcamp%20inquiry">Book a training program</a>
+    <a class="u" href="mailto:pradeepbashaa@gmail.com?subject=Website%20or%203D%20project">Commission a website or 3D build</a>
+    <a class="u" href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="u" href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener">LeetCode</a>
+    <a class="u" href="https://github.com/Pradeep-B28" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 B Pradeep. Code released under the <a class="u" href="LICENSE">MIT License</a>.</div></footer>
+<div id="toast" role="status"></div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)],
+  R=document.documentElement,
+  RM=matchMedia('(prefers-reduced-motion:reduce)').matches,
+  HOV=matchMedia('(hover:hover)').matches;
+let t0=0;
+
+/* loader: selection sort, once per session */
+(()=>{
+  const L=$('#loader');let seen=false;
+  try{seen=sessionStorage.getItem('ld');sessionStorage.setItem('ld','1')}catch(e){}
+  const end=()=>{L.classList.add('out');R.classList.add('ready');t0=performance.now();setTimeout(()=>L.remove(),750)};
+  if(RM||seen){L.remove();R.classList.add('ready');return}
+  const hs=[5,9,2,7,10,1,8,3,6,4],box=$('.bars',L),
+    bars=hs.map(h=>{const b=document.createElement('i');b.style.height=h*10+'%';box.append(b);return b});
+  let i=0;
+  (function step(){
+    if(i>=hs.length){$('#ldn').textContent='sorted.';return setTimeout(end,280)}
+    let m=i;for(let j=i+1;j<hs.length;j++)if(hs[j]<hs[m])m=j;
+    [hs[i],hs[m]]=[hs[m],hs[i]];
+    bars[i].style.height=hs[i]*10+'%';bars[m].style.height=hs[m]*10+'%';
+    bars[i].classList.add('ok');i++;setTimeout(step,95);
+  })();
+})();
+
+/* projects: [name, category, first six?, image, live URL, repo, description, proof, stack] */
+const GH='https://github.com/Pradeep-B28/',P=[
+['Softech','Full-stack',1,'softech','https://reachsoftech.onrender.com/home','','Placement portal for campus recruitment drives, live training and candidate evaluation.','In production, with automated code execution and evaluation drives.','Python, Flask 3, PostgreSQL, Render'],
+['Namma Route','Algorithms',1,'nammaroute','https://nammaroute-sigma.vercel.app/','Namma_Route','Road and rail pathfinding across 55 Tamil Nadu cities, comparing Dijkstra, A* and BFS live.','104 nodes, 390 edges, and 8,292 city-pair tests with zero routing failures.','JavaScript, Canvas, A*, Dijkstra'],
+['Schema Sentinel','Tooling',1,'schemasentinel','','Schema_Sentinel','Catches table locks, rewrites and breaking schema changes in PostgreSQL migrations before they deploy.','Scores risk on four axes and blocks unsafe pull requests through a GitHub Action.','Python 3.11, sqlparse, PostgreSQL, GitHub Actions'],
+['Ledger','Full-stack',1,'ledger','','Ledger_Expense_Tracker','Personal finance tracker for web and Android with optimistic updates and offline-first storage.','One codebase ships as a web app and a native Android APK.','React 18, Node.js, MongoDB, Capacitor'],
+['Delivery Rush','Algorithms',1,'deliveryrush','https://delivery-rush-pi.vercel.app/','Delivery_Rush','A dispatch game: your decisions against a bot running Min-Heap, BFS and greedy strategies.','100/100 Lighthouse performance and 3,592 passing headless checks.','JavaScript, SVG, Min-Heap, BFS'],
+['Split Smart','Algorithms',1,'splitsmart','https://split-smart-brown.vercel.app/','Split_Smart','Group expense splitter that settles debts in the fewest transfers, using exact integer paise math.','Bitmask DP with greedy matching, verified by 47,475 engine checks.','JavaScript, Bitmask DP, strict CSP'],
+['Explorer','Interactive',0,'explorer','https://explorer-mu-nine.vercel.app/','Explorer','A food-delivery app split into five synced layers, with data packets you can follow from screen to database.','Zero runtime dependencies and 100/100 Lighthouse mobile accessibility.','JavaScript, FLIP transitions, Canvas'],
+['Catch the AI','Interactive',0,'catchtheai','https://catchtheai.vercel.app/','Catch_The_AI','Spot the bug in AI-generated code before a 30-second timer runs out.','20 verified bug scenarios on a drift-free timer.','JavaScript, event bus, CSS Modules'],
+['The Broken Website','Security',0,'brokenwebsite','https://broken-website.vercel.app/','Broken_Website','A debugging escape room with 15 client bug tickets, a live editor and sandboxed execution.','Sandboxed iframes under a strict CSP, with 10 in-browser test suites.','JavaScript, CSP, sandboxed iframes'],
+['Password Crack Meter','Security',0,'passwordcrack','https://password-check-iota.vercel.app/','Password_Crack_Meter','Password strength and pattern analyzer that never touches the network.','37,080-entry O(1) dictionary and 7,256 headless checks.','Web Crypto API, hash set, strict CSP'],
+['Find the Skills','Tooling',0,'findtheskills','https://find-the-skills.vercel.app/','Find_the_Skills','Client-side ATS keyword scanner and skill-gap finder for résumés.','Matches 332 skills across 1,901 aliases with longest-match parsing.','JavaScript, regex engine'],
+['List Cleaner','Tooling',0,'listcleaner','https://listcleaner-mu.vercel.app/','List_Cleaner','Contact list deduplication and cleanup that runs entirely in the browser.','O(1) hash-set deduplication, verified by 21,929 engine checks.','JavaScript, hash set, merge sort'],
+['Diwali Sky','Interactive',0,'diwalisky','https://diwalisky.vercel.app','Diwali_Sky','Particle fireworks that write any name across a night sky, with synthesized sound.','Particle physics and audio oscillators computed in the browser.','Canvas, Web Audio API'],
+['Life in Dots','Interactive',0,'lifeindots','https://lifeindots.vercel.app','Life_In_Dots','A whole human lifespan drawn as one dot per week, with pan, zoom and lunar layers.','O(1) grid math on a high-DPI, multi-layer canvas.','Canvas, integer UTC math']
+];
+const grid=$('#grid'),fl=$('#filters'),ext='target="_blank" rel="noopener"',
+  CATS=['First six','All','Algorithms','Full-stack','Tooling','Security','Interactive'];
+grid.innerHTML=P.map(([n,t,f,img,live,src,d,m,s],i)=>`
+<article class="card${f?' feat':''}" style="view-transition-name:c${i}">
+  <a class="shot" href="${live||GH+src}" ${ext} tabindex="-1" aria-hidden="true"><img src="assets/images/projects/${img}.webp" alt="" width="640" height="360" loading="lazy" decoding="async"></a>
+  <p class="tag">${t}</p>
+  <h3><span class="u">${n}</span></h3>
+  <p class="desc">${d}</p>
+  <p class="proof">${m}</p>
+  <p class="stack">${s}</p>
+  <p class="links">${live?`<a class="u" href="${live}" ${ext}>Open the live app</a>`:''}${src?`<a class="u" href="${GH+src}" ${ext}>Read the source</a>`:''}</p>
+</article>`).join('');
+fl.innerHTML=CATS.map(c=>`<button type="button">${c}</button>`).join('');
+const cards=$$('.card',grid);
+function apply(c){
+  cards.forEach((el,i)=>el.hidden=!(c==='All'||(c==='First six'?P[i][2]:P[i][1]===c)));
+  $$('button',fl).forEach(b=>b.setAttribute('aria-pressed',b.textContent===c));
+}
+fl.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  const go=()=>apply(b.textContent);
+  document.startViewTransition&&!RM?document.startViewTransition(go):go();
+});
+apply('First six');
+
+/* hero: breadth-first search on a dot lattice */
+const hero=$('.hero'),cv=$('#lattice'),cx=cv.getContext('2d'),say=$('#say'),G=30;
+let W=0,H=0,cols,rows,wall,dist,par,tgt=-1,vis=true,raf=0,msg='';
+const px=c=>[(c%cols)*G+G/2,((c/cols)|0)*G+G/2];
+function bfs(s){
+  wall[s]=false;dist=new Int16Array(cols*rows).fill(-1);par=new Int32Array(cols*rows).fill(-1);
+  dist[s]=0;const q=[s];
+  for(let h=0;h<q.length;h++){
+    const c=q[h],x=c%cols,y=(c/cols)|0;
+    for(const[dx,dy]of[[1,0],[-1,0],[0,1],[0,-1]]){
+      const nx=x+dx,ny=y+dy,n=ny*cols+nx;
+      if(nx<0||ny<0||nx>=cols||ny>=rows||wall[n]||dist[n]>=0)continue;
+      dist[n]=dist[c]+1;par[n]=c;q.push(n);
     }
   }
-  </script>
+  t0=performance.now();
+}
+function size(){
+  const r=cv.getBoundingClientRect();if(r.width===W&&r.height===H)return;
+  const d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;
+  cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0);
+  cols=Math.ceil(W/G);rows=Math.ceil(H/G);tgt=-1;
+  wall=Array.from({length:cols*rows},()=>Math.random()<.22);
+  bfs((rows>>1)*cols+Math.floor(cols*.7));start();
+}
+function draw(now){
+  cx.clearRect(0,0,W,H);
+  const front=RM?1e9:(now-t0)/30;let seen=0;
+  for(let i=0;i<dist.length;i++){
+    if(wall[i])continue;
+    const d=dist[i],on=d>=0&&d<=front,edge=on?Math.max(0,1-(front-d)/8):0,[x,y]=px(i);
+    if(on)seen++;
+    cx.fillStyle=edge>.05?`rgba(242,207,99,${.4+edge*.6})`:on?'rgba(241,238,228,.5)':'rgba(241,238,228,.14)';
+    cx.beginPath();cx.arc(x,y,on?2+edge*2:1.5,0,6.3);cx.fill();
+  }
+  let steps=-1;
+  if(tgt>=0&&dist[tgt]>=0&&dist[tgt]<=front){
+    steps=dist[tgt];cx.strokeStyle='#F2CF63';cx.lineWidth=2.5;cx.lineCap=cx.lineJoin='round';cx.beginPath();
+    for(let c=tgt,k=0;c>=0;c=par[c],k++){const[x,y]=px(c);k?cx.lineTo(x,y):cx.moveTo(x,y)}
+    cx.stroke();
+  }
+  const m=steps>=0?`${seen} dots visited. Shortest path to your cursor: ${steps} steps.`:'Click or tap any dot to start a breadth-first search.';
+  if(m!==msg)say.textContent=msg=m;
+}
+function loop(n){draw(n);raf=vis&&!RM?requestAnimationFrame(loop):0}
+function start(){if(!raf)raf=requestAnimationFrame(loop)}
+const cell=e=>{const r=cv.getBoundingClientRect(),x=Math.floor((e.clientX-r.left)/G),y=Math.floor((e.clientY-r.top)/G);return x<0||y<0||x>=cols||y>=rows?-1:y*cols+x};
+hero.addEventListener('pointermove',e=>{tgt=cell(e);start()});
+hero.addEventListener('pointerleave',()=>{tgt=-1;start()});
+hero.addEventListener('click',e=>{if(e.target.closest('a,button'))return;const c=cell(e);if(c>=0){tgt=c;bfs(c);start()}});
+new IntersectionObserver(([e])=>{vis=e.isIntersecting;if(vis)start()}).observe(hero);
+addEventListener('resize',size);size();
 
-  <!-- Application Controller as ES Module -->
-  <script type="module" src="app.js"></script>
+/* nav: progress and active link */
+const prog=$('#prog'),links=$$('.nav .l');
+addEventListener('scroll',()=>{prog.style.transform=`scaleX(${scrollY/Math.max(1,R.scrollHeight-innerHeight)})`},{passive:true});
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.hash==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+$$('section[id]').forEach(s=>so.observe(s));
+
+/* magnetic primary button */
+if(HOV&&!RM)$$('.mag').forEach(b=>{
+  b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.22}px,${(e.clientY-r.top-r.height/2)*.32}px)`});
+  b.addEventListener('pointerleave',()=>b.style.transform='');
+});
+
+/* copy email */
+const toast=$('#toast');let tt;
+$('#copy').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText('pradeepbashaa@gmail.com');toast.textContent='Email copied';toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),1800)}
+  catch(e){location.href='mailto:pradeepbashaa@gmail.com'}
+});
+</script>
 </body>
 </html>
