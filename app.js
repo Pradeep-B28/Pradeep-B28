@@ -1,10 +1,9 @@
 /**
  * app.js - Main Application Controller
  * Vanilla JS ES Module Architecture
- * Handles Theme Switching (View Transitions API), Direct Mail Integration,
- * Command Palette (⌘K), Project Detail Drawer, Lab Filtering/Search/Sort with FLIP,
- * GitHub API Badges, Animated Count-Up, Scroll Progress, Magnetic Buttons,
- * and Diwali Sky "HIRED?" Easter Egg.
+ * Handles Theme Switching (View Transitions API), Universal Visible Email UX (Clipboard + Toast + Webmail Links),
+ * Command Palette (⌘K), Project Detail Drawer, Bento Grid, Lab Filtering/Search/Sort with FLIP,
+ * GitHub API Badges, Animated Count-Up, Scroll Progress, and Pathfinder City Three.js Integration.
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 2. Initialize Scroll Progress Bar
   setupScrollProgress();
 
-  // 3. Render Featured Work & Lab
+  // 3. Render Bento Featured Work & Lab
   renderFeaturedWork(allProjects.filter(p => p.featured));
   const labProjects = allProjects.filter(p => !p.featured);
   renderLab(labProjects);
@@ -38,74 +37,61 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 5. Initialize Command Palette (⌘K)
   setupCommandPalette(allProjects);
 
-  // 6. Fetch GitHub Recently Updated Badges (Deferred until idle)
+  // 6. Universal Email Action Handlers
+  setupEmailActionHandlers();
+
+  // 7. Fetch GitHub Recently Updated Badges (Deferred until idle)
   if ('requestIdleCallback' in window) {
     window.requestIdleCallback(() => fetchGithubRepoUpdates(allProjects), { timeout: 8000 });
   } else {
     setTimeout(() => fetchGithubRepoUpdates(allProjects), 8000);
   }
 
-  // 9. Lazy-init Three.js Hero Graph via Dynamic Import
+  // 8. Init Pathfinder City Three.js Hero Visual via Dynamic Import
   const heroContainer = document.getElementById('hero-canvas-container');
   if (heroContainer) {
     let graphLoaded = false;
-    const loadGraph = async () => {
+    const startGraph = () => {
       if (graphLoaded) return;
       graphLoaded = true;
-      cleanupListeners();
-      try {
-        const { initHeroGraph } = await import('./hero-graph.js');
-        initHeroGraph(heroContainer, allProjects);
-      } catch (err) {
-        console.warn('Three.js hero graph dynamic load fallback:', err);
-      }
+      cleanup();
+      import('./hero-graph.js')
+        .then(({ initHeroGraph }) => {
+          initHeroGraph(heroContainer);
+        })
+        .catch(err => {
+          console.warn('Three.js hero graph dynamic load fallback:', err);
+        });
     };
 
-    const onUserInteraction = (e) => {
-      if (e && e.isTrusted) {
-        loadGraph();
-      }
+    const cleanup = () => {
+      ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(evt => {
+        window.removeEventListener(evt, startGraph);
+      });
     };
 
-    const events = ['pointerdown', 'mousemove', 'keydown', 'scroll', 'touchstart'];
-    const cleanupListeners = () => {
-      events.forEach(evt => window.removeEventListener(evt, onUserInteraction));
-    };
-
-    events.forEach(evt => {
-      window.addEventListener(evt, onUserInteraction, { once: true, passive: true });
+    ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(evt => {
+      window.addEventListener(evt, startGraph, { once: true, passive: true });
     });
 
-    // Idle fallback after quiet load window
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(() => {
-        setTimeout(loadGraph, 10000);
-      });
-    } else {
-      setTimeout(loadGraph, 12000);
-    }
+    const isMobile = window.innerWidth <= 768;
+    setTimeout(startGraph, isMobile ? 6500 : 600);
   }
 
-  // 10. Setup Scroll Reveals & Active Nav Highlight
+  // 9. Setup Scroll Reveals & Active Nav Highlight
   setupScrollReveals();
   setupNavActiveObserver();
 
-  // 11. Setup Hero Stats Count-Up Animation
+  // 10. Setup Hero Stats Count-Up Animation
   setupStatsCountUp(allProjects.length);
 
-  // 12. Setup Magnetic Hover for Primary Buttons (Desktop only)
+  // 11. Setup Magnetic Hover for Primary Buttons (Desktop only)
   setupMagneticButtons();
 
-  // 13. Setup Easter Egg ("hire" -> amber particle burst)
-  setupEasterEgg();
-
-  // 14. Setup Copy Email Button in Contact section
-  setupCopyEmailButtons();
-
-  // 15. Setup Mobile Nav Toggle
+  // 12. Setup Mobile Nav Toggle
   setupMobileNav();
 
-  // 16. Setup Back to Top Button
+  // 13. Setup Back to Top Button
   setupBackToTop();
 });
 
@@ -191,139 +177,165 @@ function setupScrollProgress() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 3. RENDER FEATURED WORK                                                    */
+/* 3. RENDER FEATURED WORK (BENTO GRID: 4 COLS DESKTOP)                       */
 /* -------------------------------------------------------------------------- */
 function renderFeaturedWork(featuredProjects) {
-  const container = document.getElementById('featured-container');
+  const container = document.getElementById('featured-bento-container') || document.getElementById('featured-container');
   if (!container) return;
 
-  container.innerHTML = featuredProjects.map((p, idx) => {
-    const isEven = idx % 2 === 1;
+  container.innerHTML = featuredProjects.map((p) => {
     const techChips = (p.tech || []).slice(0, 3).map(t => `<span class="tech-chip">${escapeHtml(t)}</span>`).join('');
 
-    const liveBtn = p.liveUrl 
-      ? `<a href="${p.liveUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" onclick="event.stopPropagation()">
-           <span>Live Platform</span>
-           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-         </a>` 
-      : '';
-
-    const codeBtn = p.codeUrl 
-      ? `<a href="${p.codeUrl}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" onclick="event.stopPropagation()">
-           <span>Source Code</span>
-           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-         </a>` 
-      : '';
-
-    return `
-      <article class="featured-case-row ${isEven ? 'row-reversed' : ''} reveal" id="project-${p.id}" data-id="${p.id}" tabindex="0" role="button" aria-label="View details for ${escapeHtml(p.title)}">
-        <div class="featured-media-wrapper">
-          <img 
-            src="${p.image}" 
-            alt="Screenshot of ${escapeHtml(p.title)}" 
-            width="1200" 
-            height="675" 
-            loading="lazy" 
-            class="featured-img"
-          />
-        </div>
-        <div class="featured-details">
-          <div class="featured-header-meta">
-            <span class="category-tag">// ${escapeHtml(p.category.toUpperCase())}</span>
-            <span class="proof-metric">${escapeHtml(p.metric)}</span>
-          </div>
-          <h3 class="featured-title">${escapeHtml(p.title)}</h3>
-          <p class="featured-oneliner">${escapeHtml(p.oneLiner)}</p>
-
-          <div class="case-study-breakdown">
-            <div class="breakdown-item">
-              <span class="breakdown-label">Problem</span>
-              <p class="breakdown-text">${escapeHtml(p.problem || '')}</p>
+    if (p.id === 'softech') {
+      return `
+        <article class="bento-card bento-2x2 reveal" data-id="${p.id}">
+          <div class="browser-frame">
+            <div class="browser-header">
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-url-pill">reachsoftech.onrender.com</span>
             </div>
-            <div class="breakdown-item">
-              <span class="breakdown-label">What I built</span>
-              <p class="breakdown-text">${escapeHtml(p.built || '')}</p>
+            <img src="${p.image}" alt="Screenshot of ${escapeHtml(p.title)}" class="browser-img" width="1200" height="675" loading="lazy" />
+          </div>
+          <div class="bento-details">
+            <div class="bento-meta">
+              <span class="bento-num">01</span>
+              <span class="bento-link-slide">Case study →</span>
             </div>
-            <div class="breakdown-item">
-              <span class="breakdown-label">Result</span>
-              <p class="breakdown-text">${escapeHtml(p.result || '')}</p>
+            <h3 class="bento-title"><a href="#project/${p.id}" class="bento-title-link">${escapeHtml(p.title)}</a></h3>
+            <p class="bento-oneliner">${escapeHtml(p.oneLiner)}</p>
+            <div class="bento-chips-row">${techChips}</div>
+          </div>
+        </article>
+      `;
+    }
+
+    if (p.id === 'nammaroute') {
+      return `
+        <article class="bento-card bento-2x1 reveal" data-id="${p.id}">
+          <div class="browser-frame">
+            <div class="browser-header">
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-url-pill">nammaroute-sigma.vercel.app</span>
             </div>
+            <img src="${p.image}" alt="Screenshot of ${escapeHtml(p.title)}" class="browser-img" width="1200" height="675" loading="lazy" />
           </div>
+          <div class="bento-details">
+            <div class="bento-meta">
+              <span class="bento-num">02</span>
+              <span class="bento-link-slide">Case study →</span>
+            </div>
+            <h3 class="bento-title"><a href="#project/${p.id}" class="bento-title-link">${escapeHtml(p.title)}</a></h3>
+            <p class="bento-oneliner">${escapeHtml(p.oneLiner)}</p>
+            <div class="bento-chips-row">${techChips}</div>
+          </div>
+        </article>
+      `;
+    }
 
-          <div class="tech-stack-row">
-            ${techChips}
+    if (p.id === 'schemasentinel') {
+      return `
+        <article class="bento-card bento-1x1 reveal" data-id="${p.id}">
+          <div class="terminal-frame" aria-hidden="true">
+            <div class="browser-header" style="background:transparent; border-bottom:1px solid rgba(255,255,255,0.06); margin:-14px -16px 12px; padding:6px 12px;">
+              <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+              <span class="browser-url-pill">sentinel v1.4</span>
+            </div>
+            <p><span class="terminal-prompt">$</span> sentinel verify --strict</p>
+            <p class="terminal-success">✔ 24 schemas validated</p>
+            <p class="terminal-success">✔ 0 breaking drift detected</p>
+            <p class="terminal-muted">100% offline — zero egress</p>
           </div>
+          <div class="bento-details">
+            <div class="bento-meta">
+              <span class="bento-num">03</span>
+              <span class="bento-link-slide">Case study →</span>
+            </div>
+            <h3 class="bento-title"><a href="#project/${p.id}" class="bento-title-link">${escapeHtml(p.title)}</a></h3>
+            <p class="bento-oneliner">${escapeHtml(p.oneLiner)}</p>
+            <div class="bento-chips-row">${techChips}</div>
+          </div>
+        </article>
+      `;
+    }
 
-          <div class="case-actions">
-            ${liveBtn}
-            ${codeBtn}
+    if (p.id === 'ledger') {
+      return `
+        <article class="bento-card bento-1x1 reveal" data-id="${p.id}">
+          <div class="phone-mockup-frame" aria-hidden="true">
+            <div class="phone-notch"></div>
+            <img src="${p.image}" alt="Screenshot of ${escapeHtml(p.title)}" class="browser-img" width="1200" height="675" loading="lazy" />
           </div>
-        </div>
-      </article>
-    `;
+          <div class="bento-details">
+            <div class="bento-meta">
+              <span class="bento-num">04</span>
+              <span class="bento-link-slide">Case study →</span>
+            </div>
+            <h3 class="bento-title"><a href="#project/${p.id}" class="bento-title-link">${escapeHtml(p.title)}</a></h3>
+            <p class="bento-oneliner">${escapeHtml(p.oneLiner)}</p>
+            <div class="bento-chips-row">${techChips}</div>
+          </div>
+        </article>
+      `;
+    }
+
+    return '';
   }).join('');
 
-  // Card click triggers drawer
-  container.querySelectorAll('.featured-case-row').forEach(row => {
-    row.addEventListener('click', () => {
-      const id = row.getAttribute('data-id');
-      window.location.hash = `#project/${id}`;
+  // Add click listeners to bento cards to open detail drawer
+  container.querySelectorAll('.bento-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const id = card.getAttribute('data-id');
+      if (id) {
+        window.location.hash = `#project/${id}`;
+      }
     });
-    row.addEventListener('keydown', (e) => {
+    card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        const id = row.getAttribute('data-id');
-        window.location.hash = `#project/${id}`;
+        card.click();
       }
     });
   });
 }
 
 /* -------------------------------------------------------------------------- */
-/* 6. RENDER LAB GRID                                                         */
+/* 4. RENDER LAB GRID                                                         */
 /* -------------------------------------------------------------------------- */
 function renderLab(labProjects) {
   const grid = document.getElementById('lab-grid');
   if (!grid) return;
 
   grid.innerHTML = labProjects.map(p => {
-    const techChips = (p.tech || []).slice(0, 3).map(t => `<span class="tech-chip">${escapeHtml(t)}</span>`).join('');
-
     const liveBtn = p.liveUrl 
-      ? `<a href="${p.liveUrl}" target="_blank" rel="noopener" class="card-link" onclick="event.stopPropagation()" aria-label="Launch ${escapeHtml(p.title)}">Live →</a>` 
+      ? `<a href="${p.liveUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" onclick="event.stopPropagation()" aria-label="Live demo: ${escapeHtml(p.title)}">Live →</a>` 
       : '';
 
     const codeBtn = p.codeUrl 
-      ? `<a href="${p.codeUrl}" target="_blank" rel="noopener" class="card-link card-link-muted" onclick="event.stopPropagation()" aria-label="Source code for ${escapeHtml(p.title)}">Code</a>` 
+      ? `<a href="${p.codeUrl}" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" onclick="event.stopPropagation()" aria-label="Code repository: ${escapeHtml(p.title)}">Code</a>` 
       : '';
 
     return `
-      <article class="lab-card reveal" id="project-${p.id}" data-id="${p.id}" data-category="${escapeHtml(p.category)}" data-title="${escapeHtml(p.title.toLowerCase())}" data-codeurl="${p.codeUrl || ''}" tabindex="0" role="button" aria-label="View details for ${escapeHtml(p.title)}">
-        <div class="lab-card-media">
+      <article class="lab-card reveal" id="project-${p.id}" data-id="${p.id}" data-category="${escapeHtml(p.category)}" data-title="${escapeHtml(p.title.toLowerCase())}" data-codeurl="${p.codeUrl || ''}">
+        <div class="lab-card-thumb-wrapper">
           <img 
             src="${p.image}" 
             alt="Preview of ${escapeHtml(p.title)}" 
             width="600" 
-            height="338" 
+            height="375" 
             loading="lazy" 
-            class="lab-img"
+            class="lab-card-thumb"
           />
-          <span class="lab-category-badge">${escapeHtml(p.category)}</span>
         </div>
         <div class="lab-card-body">
-          <h3 class="lab-card-title">${escapeHtml(p.title)}</h3>
-          <p class="lab-card-desc">${escapeHtml(p.oneLiner)}</p>
+          <h3 class="lab-card-title"><a href="#project/${p.id}" class="lab-card-title-link">${escapeHtml(p.title)}</a></h3>
+          <p class="lab-card-oneliner">${escapeHtml(p.oneLiner)}</p>
+          <span class="lab-card-metric">${escapeHtml(p.metric)}</span>
 
-          <div class="lab-card-metric">
-            <span class="metric-dot"></span>
-            <span>${escapeHtml(p.metric)}</span>
-          </div>
-
-          <div class="tech-stack-row">
-            ${techChips}
-          </div>
-
-          <div class="lab-card-footer">
+          <div class="lab-card-actions">
             ${liveBtn}
             ${codeBtn}
           </div>
@@ -348,44 +360,42 @@ function renderLab(labProjects) {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 7. LAB CONTROLS (Search, Filters, Sort, FLIP Animation)                    */
+/* 5. LAB SEARCH, FILTER & SORT (WITH FLIP ANIMATION)                         */
 /* -------------------------------------------------------------------------- */
 function setupLabControls(initialLabProjects, allProjects) {
-  const searchInput = document.getElementById('lab-search');
-  const sortSelect = document.getElementById('lab-sort');
-  const countBadge = document.getElementById('lab-count-badge');
+  const searchInput = document.getElementById('lab-search-input');
+  const clearSearchBtn = document.getElementById('btn-clear-search');
+  const filterChips = document.querySelectorAll('.filter-chip');
+  const sortSelect = document.getElementById('lab-sort-select');
+  const countBadge = document.getElementById('lab-count-indicator');
   const emptyState = document.getElementById('lab-empty-state');
   const resetBtn = document.getElementById('btn-clear-lab');
-  const filterChips = document.querySelectorAll('.filter-bar .filter-chip');
   const grid = document.getElementById('lab-grid');
 
-  let activeCategory = 'All';
+  if (!grid) return;
+
+  let activeCategory = 'all';
   let searchQuery = '';
-  let activeSort = 'default';
+  let activeSort = 'featured';
 
   function applyFilters() {
-    const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const cards = Array.from(grid.querySelectorAll('.lab-card'));
+    const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Record First bounding rects for FLIP
+    // FLIP First state
     const firstRects = new Map();
     if (!isReduced) {
-      cards.forEach(card => {
-        if (card.style.display !== 'none') {
-          firstRects.set(card, card.getBoundingClientRect());
-        }
-      });
+      cards.forEach(card => firstRects.set(card, card.getBoundingClientRect()));
     }
 
     let visibleCount = 0;
 
-    // Filter cards
     cards.forEach(card => {
       const id = card.getAttribute('data-id');
       const project = allProjects.find(p => p.id === id);
       if (!project) return;
 
-      const matchesCat = activeCategory === 'All' || project.category === activeCategory;
+      const matchesCat = activeCategory === 'all' || project.category === activeCategory;
       const q = searchQuery.toLowerCase().trim();
       const matchesSearch = !q || 
         project.title.toLowerCase().includes(q) ||
@@ -398,7 +408,6 @@ function setupLabControls(initialLabProjects, allProjects) {
       if (isVisible) visibleCount++;
     });
 
-    // Sort visible cards
     const visibleCards = cards.filter(card => card.style.display !== 'none');
     if (activeSort === 'az') {
       visibleCards.sort((a, b) => {
@@ -408,7 +417,6 @@ function setupLabControls(initialLabProjects, allProjects) {
       });
       visibleCards.forEach(card => grid.appendChild(card));
     } else if (activeSort === 'newest') {
-      // Sort by recent badge or id
       visibleCards.sort((a, b) => {
         const hasA = a.querySelector('.badge-updated') !== null;
         const hasB = b.querySelector('.badge-updated') !== null;
@@ -417,17 +425,14 @@ function setupLabControls(initialLabProjects, allProjects) {
       visibleCards.forEach(card => grid.appendChild(card));
     }
 
-    // Update Result Count Badge
     if (countBadge) {
       countBadge.textContent = `Showing ${visibleCount} of ${initialLabProjects.length} projects`;
     }
 
-    // Toggle Empty State
     if (emptyState) {
-      emptyState.classList.toggle('hidden', visibleCount > 0);
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
     }
 
-    // Execute FLIP Animation
     if (!isReduced) {
       visibleCards.forEach(card => {
         const first = firstRects.get(card);
@@ -449,10 +454,9 @@ function setupLabControls(initialLabProjects, allProjects) {
     }
   }
 
-  // Filter Chips Listeners
   filterChips.forEach(chip => {
     chip.addEventListener('click', () => {
-      activeCategory = chip.getAttribute('data-filter') || 'All';
+      activeCategory = chip.getAttribute('data-filter') || 'all';
       filterChips.forEach(c => {
         const isActive = c === chip;
         c.classList.toggle('active', isActive);
@@ -462,19 +466,25 @@ function setupLabControls(initialLabProjects, allProjects) {
     });
   });
 
-  // Search Input Listener (Debounced)
   let searchDebounce;
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      if (clearSearchBtn) clearSearchBtn.style.display = searchQuery ? 'block' : 'none';
       clearTimeout(searchDebounce);
-      searchDebounce = setTimeout(() => {
-        searchQuery = e.target.value;
-        applyFilters();
-      }, 100);
+      searchDebounce = setTimeout(applyFilters, 100);
     });
   }
 
-  // Sort Dropdown Listener
+  if (clearSearchBtn) {
+    clearSearchBtn.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      searchQuery = '';
+      clearSearchBtn.style.display = 'none';
+      applyFilters();
+    });
+  }
+
   if (sortSelect) {
     sortSelect.addEventListener('change', (e) => {
       activeSort = e.target.value;
@@ -482,16 +492,16 @@ function setupLabControls(initialLabProjects, allProjects) {
     });
   }
 
-  // Reset Filters Button
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
-      activeCategory = 'All';
+      activeCategory = 'all';
       searchQuery = '';
-      activeSort = 'default';
+      activeSort = 'featured';
       if (searchInput) searchInput.value = '';
-      if (sortSelect) sortSelect.value = 'default';
+      if (clearSearchBtn) clearSearchBtn.style.display = 'none';
+      if (sortSelect) sortSelect.value = 'featured';
       filterChips.forEach(c => {
-        const isAll = c.getAttribute('data-filter') === 'All';
+        const isAll = c.getAttribute('data-filter') === 'all';
         c.classList.toggle('active', isAll);
         c.setAttribute('aria-selected', isAll ? 'true' : 'false');
       });
@@ -501,102 +511,217 @@ function setupLabControls(initialLabProjects, allProjects) {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 8. PROJECT DETAIL DRAWER & DEEP LINKING (#project/<id>)                    */
+/* 6. UNIVERSAL EMAIL UX (COPY + 6S TOAST + GMAIL + OUTLOOK + HIDDEN MAILTO)   */
 /* -------------------------------------------------------------------------- */
-function setupProjectDrawer(allProjects) {
-  const backdrop = document.getElementById('drawer-backdrop');
-  const drawer = document.getElementById('project-drawer');
-  const closeBtn = document.getElementById('drawer-close-btn');
-  const categoryEl = document.getElementById('drawer-category');
-  const titleEl = document.getElementById('drawer-title');
-  const bodyEl = document.getElementById('drawer-body');
+let emailToastTimer = null;
 
-  if (!drawer || !backdrop) return;
+function fallbackCopy(text) {
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    ta.style.top = '0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    document.execCommand('copy');
+    ta.remove();
+  } catch (e) {}
+}
+
+export function handleEmailClick(options = {}) {
+  const email = 'pradeepbashaa@gmail.com';
+  const subject = options.subject || 'SDE Role Opportunity — B Pradeep';
+  const encodedSubject = encodeURIComponent(subject);
+
+  // 1) Copy to clipboard
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).catch(() => {
+        fallbackCopy(email);
+      });
+    } else {
+      fallbackCopy(email);
+    }
+  } catch (e) {
+    fallbackCopy(email);
+  }
+
+  // 2) Show toast for 6 seconds with action buttons
+  showEmailActionToast(email, encodedSubject);
+
+  // 3) Trigger mailto via hidden anchor
+  try {
+    const hiddenAnchor = document.createElement('a');
+    hiddenAnchor.href = `mailto:${email}?subject=${encodedSubject}`;
+    hiddenAnchor.style.display = 'none';
+    document.body.appendChild(hiddenAnchor);
+    hiddenAnchor.click();
+    setTimeout(() => hiddenAnchor.remove(), 500);
+  } catch (e) {}
+}
+
+function showEmailActionToast(email, encodedSubject) {
+  let toast = document.getElementById('email-action-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'email-action-toast';
+    toast.className = 'email-action-toast';
+    toast.setAttribute('role', 'alert');
+    toast.setAttribute('aria-live', 'polite');
+    document.body.appendChild(toast);
+  }
+
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodedSubject}`;
+  const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=${email}&subject=${encodedSubject}`;
+
+  toast.innerHTML = `
+    <div class="toast-content">
+      <div class="toast-header-row">
+        <span class="toast-dot"></span>
+        <span class="toast-message toast-title">Email copied — <strong>${email}</strong></span>
+        <button class="toast-close-btn" id="toast-close-btn" aria-label="Close notification">✕</button>
+      </div>
+      <div class="toast-actions">
+        <a href="${gmailUrl}" target="_blank" rel="noopener" id="toast-gmail-btn" class="toast-btn toast-btn-primary">
+          <span>Open Gmail</span>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="${outlookUrl}" target="_blank" rel="noopener" id="toast-outlook-btn" class="toast-btn toast-btn-secondary">
+          <span>Open Outlook</span>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  `;
+
+  toast.classList.add('visible');
+
+  if (emailToastTimer) clearTimeout(emailToastTimer);
+
+  const closeBtn = toast.querySelector('.toast-close-btn');
+  if (closeBtn) {
+    closeBtn.onclick = () => {
+      toast.classList.remove('visible');
+    };
+  }
+
+  emailToastTimer = setTimeout(() => {
+    toast.classList.remove('visible');
+  }, 6000);
+}
+
+function setupEmailActionHandlers() {
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.email-action-btn, .contact-big-email');
+    if (btn) {
+      e.preventDefault();
+      const subject = btn.getAttribute('data-subject') || 'SDE Role Opportunity — B Pradeep';
+      handleEmailClick({ subject });
+    }
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* 7. PROJECT DETAIL DRAWER & DEEP LINK HASH ROUTING                          */
+/* -------------------------------------------------------------------------- */
+const BLOCKED_IFRAME_IDS = ['softech', 'schemasentinel'];
+
+function setupProjectDrawer(allProjects) {
+  const drawer = document.getElementById('project-drawer');
+  const backdrop = document.getElementById('drawer-backdrop');
+  const body = document.getElementById('drawer-body');
+  const title = document.getElementById('drawer-title');
+  const category = document.getElementById('drawer-category');
+  const closeBtn = document.getElementById('drawer-close-btn');
+
+  if (!drawer || !backdrop || !body) return;
 
   function openDrawer(projectId) {
-    const project = allProjects.find(p => p.id === projectId);
-    if (!project) return;
+    const p = allProjects.find(item => item.id === projectId);
+    if (!p) return;
 
-    if (categoryEl) categoryEl.textContent = `// ${project.category.toUpperCase()}`;
-    if (titleEl) titleEl.textContent = project.title;
+    if (title) title.textContent = p.title;
+    if (category) category.textContent = `// ${p.category.toUpperCase()}`;
 
-    const techChips = (project.tech || []).map(t => `<span class="tech-chip">${escapeHtml(t)}</span>`).join('');
+    const techChips = (p.tech || []).map(t => `<span class="tech-chip">${escapeHtml(t)}</span>`).join('');
 
-    let breakdownHtml = '';
-    if (project.featured) {
-      breakdownHtml = `
-        <div class="case-study-breakdown">
-          <div class="breakdown-item">
+    const liveBtn = p.liveUrl 
+      ? `<a href="${p.liveUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+           <span>Launch App</span>
+           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+         </a>` 
+      : '';
+
+    const codeBtn = p.codeUrl 
+      ? `<a href="${p.codeUrl}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+           <span>Source Code</span>
+           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+         </a>` 
+      : '';
+
+    let contentHtml = '';
+    if (p.featured && p.problem) {
+      contentHtml = `
+        <div class="drawer-case-breakdown">
+          <div class="drawer-breakdown-item">
             <span class="breakdown-label">Problem</span>
-            <p class="breakdown-text">${escapeHtml(project.problem || '')}</p>
+            <p>${escapeHtml(p.problem)}</p>
           </div>
-          <div class="breakdown-item">
-            <span class="breakdown-label">What I built</span>
-            <p class="breakdown-text">${escapeHtml(project.built || '')}</p>
+          <div class="drawer-breakdown-item">
+            <span class="breakdown-label">What I Built</span>
+            <p>${escapeHtml(p.built)}</p>
           </div>
-          <div class="breakdown-item">
-            <span class="breakdown-label">Result</span>
-            <p class="breakdown-text">${escapeHtml(project.result || '')}</p>
+          <div class="drawer-breakdown-item">
+            <span class="breakdown-label">Result &amp; Impact</span>
+            <p>${escapeHtml(p.result)}</p>
           </div>
         </div>
       `;
     } else {
-      breakdownHtml = `
-        <p class="drawer-desc" style="font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 16px;">
-          ${escapeHtml(project.oneLiner)}
-        </p>
-        <div class="drawer-metric-box" style="margin-bottom: 20px;">
-          <strong style="color: var(--accent-text);">Proof metric:</strong> ${escapeHtml(project.metric)}
+      contentHtml = `
+        <p class="drawer-oneliner">${escapeHtml(p.oneLiner)}</p>
+        <div class="drawer-metric-box">
+          <span class="metric-label">Key Metric</span>
+          <p class="metric-val">${escapeHtml(p.metric)}</p>
         </div>
       `;
     }
 
-    const liveBtn = project.liveUrl
-      ? `<a href="${project.liveUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
-           <span>Launch Live App</span>
-           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-         </a>`
-      : '';
-
-    const codeBtn = project.codeUrl
-      ? `<a href="${project.codeUrl}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
-           <span>Source Code</span>
-           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-         </a>`
-      : '';
-
-    // "Try it here" Sandboxed Iframe (Hidden if app blocks framing)
+    const canFrame = p.liveUrl && !BLOCKED_IFRAME_IDS.includes(p.id);
     let iframeHtml = '';
-    if (project.liveUrl && project.allowsFraming) {
+    if (canFrame) {
       iframeHtml = `
-        <div class="drawer-iframe-container">
-          <div class="drawer-iframe-header">
-            <span class="drawer-section-title">Try it here</span>
-            <a href="${project.liveUrl}" target="_blank" rel="noopener" class="card-link" style="font-size: 12px;">Open full screen ↗</a>
+        <div class="drawer-preview-box">
+          <div class="preview-header">
+            <span>Interactive Live Sandbox</span>
+            <a href="${p.liveUrl}" target="_blank" rel="noopener" class="preview-ext-link">Full Screen ↗</a>
           </div>
           <iframe 
+            src="${p.liveUrl}" 
+            title="Interactive preview of ${escapeHtml(p.title)}" 
             class="drawer-iframe" 
-            src="${project.liveUrl}" 
-            sandbox="allow-scripts allow-same-origin allow-forms" 
             loading="lazy" 
-            title="${escapeHtml(project.title)} interactive preview"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
           ></iframe>
         </div>
       `;
     }
 
-    bodyEl.innerHTML = `
-      <img src="${project.image}" alt="Preview of ${escapeHtml(project.title)}" width="1200" height="675" class="drawer-img" />
-      ${breakdownHtml}
-      <div class="drawer-stack-group" style="margin-bottom: 20px;">
-        <span class="drawer-section-title">Technology Stack</span>
-        <div class="tech-stack-row" style="margin-top: 8px;">
+    body.innerHTML = `
+      <div class="drawer-media">
+        <img src="${p.image}" alt="Screenshot of ${escapeHtml(p.title)}" class="drawer-img" width="1200" height="675" />
+      </div>
+      <div class="drawer-info-section">
+        ${contentHtml}
+        <div class="tech-stack-row" style="margin: 20px 0;">
           ${techChips}
         </div>
-      </div>
-      <div class="drawer-actions-row">
-        ${liveBtn}
-        ${codeBtn}
+        <div class="drawer-actions">
+          ${liveBtn}
+          ${codeBtn}
+        </div>
       </div>
       ${iframeHtml}
     `;
@@ -605,6 +730,7 @@ function setupProjectDrawer(allProjects) {
     backdrop.setAttribute('aria-hidden', 'false');
     drawer.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');
+    drawer.removeAttribute('inert');
     document.body.style.overflow = 'hidden';
 
     if (closeBtn) closeBtn.focus();
@@ -616,9 +742,9 @@ function setupProjectDrawer(allProjects) {
     backdrop.setAttribute('aria-hidden', 'true');
     drawer.classList.remove('open');
     drawer.setAttribute('aria-hidden', 'true');
+    drawer.setAttribute('inert', '');
     document.body.style.overflow = '';
 
-    // Revert hash if it points to a project
     if (window.location.hash.startsWith('#project/')) {
       history.pushState(null, '', window.location.pathname + window.location.search);
     }
@@ -633,7 +759,6 @@ function setupProjectDrawer(allProjects) {
     }
   });
 
-  // Deep Link Routing on hash change and page load
   function handleHash() {
     const hash = window.location.hash;
     if (hash.startsWith('#project/')) {
@@ -647,14 +772,13 @@ function setupProjectDrawer(allProjects) {
   window.addEventListener('hashchange', handleHash);
   window.addEventListener('popstate', handleHash);
 
-  // Check initial hash on page load
   if (window.location.hash.startsWith('#project/')) {
     setTimeout(handleHash, 100);
   }
 }
 
 /* -------------------------------------------------------------------------- */
-/* 9. COMMAND PALETTE (⌘K / Ctrl+K)                                           */
+/* 8. COMMAND PALETTE (⌘K / Ctrl+K)                                           */
 /* -------------------------------------------------------------------------- */
 function setupCommandPalette(allProjects) {
   const overlay = document.getElementById('palette-overlay');
@@ -666,9 +790,10 @@ function setupCommandPalette(allProjects) {
 
   const actions = [
     { title: 'Download Résumé', badge: 'Action', handler: () => window.open('assets/B_Pradeep_Resume.pdf', '_blank') },
-    { title: 'Send Email', badge: 'Action', handler: () => { window.location.href = 'mailto:pradeepbashaa@gmail.com?subject=' + encodeURIComponent('SDE Role Opportunity — B Pradeep'); } },
+    { title: 'Send Email', badge: 'Action', handler: () => handleEmailClick() },
     { title: 'Compose in Gmail', badge: 'Action', handler: () => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=pradeepbashaa@gmail.com&su=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep', '_blank') },
-    { title: 'Copy Email Address', badge: 'Action', handler: () => { copyToClipboard('pradeepbashaa@gmail.com'); showToast('Email copied: pradeepbashaa@gmail.com'); } },
+    { title: 'Compose in Outlook', badge: 'Action', handler: () => window.open('https://outlook.live.com/mail/0/deeplink/compose?to=pradeepbashaa@gmail.com&subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep', '_blank') },
+    { title: 'Copy Email Address', badge: 'Action', handler: () => { copyToClipboard('pradeepbashaa@gmail.com'); showEmailActionToast('pradeepbashaa@gmail.com', encodeURIComponent('SDE Role Opportunity — B Pradeep')); } },
     { title: 'Toggle Theme', badge: 'Action', handler: () => document.getElementById('theme-toggle-btn')?.click() },
     { title: 'Open GitHub Profile', badge: 'Link', handler: () => window.open('https://github.com/Pradeep-B28', '_blank') },
     { title: 'Open LinkedIn Profile', badge: 'Link', handler: () => window.open('https://www.linkedin.com/in/pradeepb-2k/', '_blank') },
@@ -679,7 +804,7 @@ function setupCommandPalette(allProjects) {
     { title: 'Go to Featured Work', hash: '#work' },
     { title: 'Go to Engineering Lab', hash: '#lab' },
     { title: 'Go to Experience & Timeline', hash: '#experience' },
-    { title: 'Go to Core Specialization Skills', hash: '#skills' },
+    { title: 'Go to Skills & Architecture', hash: '#skills' },
     { title: 'Go to Contact Section', hash: '#contact' }
   ];
 
@@ -703,11 +828,8 @@ function setupCommandPalette(allProjects) {
     const q = query.toLowerCase().trim();
     currentItems = [];
 
-    // Filter Actions
     const matchedActions = actions.filter(a => !q || a.title.toLowerCase().includes(q));
-    // Filter Sections
     const matchedSections = sections.filter(s => !q || s.title.toLowerCase().includes(q));
-    // Filter Projects
     const matchedProjects = allProjects.filter(p => !q || 
       p.title.toLowerCase().includes(q) || 
       p.category.toLowerCase().includes(q) ||
@@ -717,7 +839,7 @@ function setupCommandPalette(allProjects) {
     let html = '';
 
     if (matchedActions.length > 0) {
-      html += `<div class="palette-group-title">Commands &amp; Actions</div>`;
+      html += `<div class="palette-group-title" style="padding: 6px 12px; font-size: 11px; text-transform: uppercase; color: var(--muted); font-family: var(--font-mono);">Commands &amp; Actions</div>`;
       matchedActions.forEach(a => {
         const itemIdx = currentItems.length;
         currentItems.push({ type: 'action', data: a });
@@ -734,7 +856,7 @@ function setupCommandPalette(allProjects) {
     }
 
     if (matchedSections.length > 0) {
-      html += `<div class="palette-group-title">Navigation</div>`;
+      html += `<div class="palette-group-title" style="padding: 6px 12px; font-size: 11px; text-transform: uppercase; color: var(--muted); font-family: var(--font-mono);">Navigation</div>`;
       matchedSections.forEach(s => {
         const itemIdx = currentItems.length;
         currentItems.push({ type: 'section', data: s });
@@ -751,14 +873,14 @@ function setupCommandPalette(allProjects) {
     }
 
     if (matchedProjects.length > 0) {
-      html += `<div class="palette-group-title">Projects (${matchedProjects.length})</div>`;
-      matchedProjects.forEach(p => {
+      html += `<div class="palette-group-title" style="padding: 6px 12px; font-size: 11px; text-transform: uppercase; color: var(--muted); font-family: var(--font-mono);">Projects</div>`;
+      matchedProjects.slice(0, 8).forEach(p => {
         const itemIdx = currentItems.length;
         currentItems.push({ type: 'project', data: p });
         html += `
           <div class="palette-item ${itemIdx === 0 ? 'active' : ''}" data-index="${itemIdx}">
             <div class="palette-item-left">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
               <span>${escapeHtml(p.title)}</span>
             </div>
             <span class="palette-item-badge">${escapeHtml(p.category)}</span>
@@ -767,111 +889,99 @@ function setupCommandPalette(allProjects) {
       });
     }
 
-    if (currentItems.length === 0) {
-      html = `<div class="palette-empty">No results found for "${escapeHtml(query)}"</div>`;
-    }
-
-    results.innerHTML = html;
+    results.innerHTML = html || `<div style="padding: 24px; text-align: center; color: var(--muted); font-size: 13px;">No commands or projects found.</div>`;
     selectedIndex = 0;
-    highlightItem(0);
-
-    // Click handler for rendered items
-    results.querySelectorAll('.palette-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const idx = parseInt(item.getAttribute('data-index'), 10);
-        executeItem(idx);
-      });
-    });
   }
 
-  function highlightItem(index) {
-    const items = results.querySelectorAll('.palette-item');
-    items.forEach((item, i) => {
-      item.classList.toggle('active', i === index);
-      if (i === index) {
-        item.scrollIntoView({ block: 'nearest' });
-      }
-    });
-  }
-
-  function executeItem(index) {
-    if (!currentItems[index]) return;
-    const item = currentItems[index];
+  function executeSelectedItem() {
+    const item = currentItems[selectedIndex];
+    if (!item) return;
 
     closePalette();
-
     if (item.type === 'action') {
       item.data.handler();
     } else if (item.type === 'section') {
-      const el = document.querySelector(item.data.hash);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      window.location.hash = item.data.hash;
     } else if (item.type === 'project') {
       window.location.hash = `#project/${item.data.id}`;
     }
   }
 
-  // Keyboard Navigation inside Palette
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      if (currentItems.length > 0) {
-        selectedIndex = (selectedIndex + 1) % currentItems.length;
-        highlightItem(selectedIndex);
-      }
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (currentItems.length > 0) {
-        selectedIndex = (selectedIndex - 1 + currentItems.length) % currentItems.length;
-        highlightItem(selectedIndex);
-      }
-    } else if (e.key === 'Enter') {
-      e.preventDefault();
-      executeItem(selectedIndex);
-    } else if (e.key === 'Escape') {
-      closePalette();
-    }
-  });
-
-  input.addEventListener('input', (e) => {
-    renderPaletteResults(e.target.value);
-  });
-
-  if (navBtn) {
-    navBtn.addEventListener('click', openPalette);
-  }
-
-  // Global ⌘K / Ctrl+K listener
-  window.addEventListener('keydown', (e) => {
-    if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) {
+  // Keyboard Navigation
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
       e.preventDefault();
       if (overlay.classList.contains('open')) {
         closePalette();
       } else {
         openPalette();
       }
+      return;
+    }
+
+    if (!overlay.classList.contains('open')) return;
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closePalette();
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (currentItems.length > 0) {
+        selectedIndex = (selectedIndex + 1) % currentItems.length;
+        updateSelectedHighlight();
+      }
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (currentItems.length > 0) {
+        selectedIndex = (selectedIndex - 1 + currentItems.length) % currentItems.length;
+        updateSelectedHighlight();
+      }
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      executeSelectedItem();
     }
   });
 
-  // Close when clicking overlay backdrop
+  function updateSelectedHighlight() {
+    const items = results.querySelectorAll('.palette-item');
+    items.forEach((it, idx) => {
+      it.classList.toggle('active', idx === selectedIndex);
+      if (idx === selectedIndex) {
+        it.scrollIntoView({ block: 'nearest' });
+      }
+    });
+  }
+
+  input.addEventListener('input', (e) => {
+    renderPaletteResults(e.target.value);
+  });
+
+  results.addEventListener('click', (e) => {
+    const it = e.target.closest('.palette-item');
+    if (!it) return;
+    selectedIndex = parseInt(it.getAttribute('data-index'), 10);
+    executeSelectedItem();
+  });
+
+  if (navBtn) navBtn.addEventListener('click', openPalette);
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) closePalette();
   });
 }
 
 /* -------------------------------------------------------------------------- */
-/* 10. GITHUB API RECENT UPDATES (Cached in sessionStorage)                    */
+/* 9. GITHUB REPO RECENT UPDATES API CALL (SessionStorage Cached)              */
 /* -------------------------------------------------------------------------- */
 async function fetchGithubRepoUpdates(allProjects) {
   const CACHE_KEY = 'gh_repo_updates_v2';
-  const ONE_HOUR = 3600000;
+  const CACHE_TTL = 3600 * 1000;
 
   let repos = null;
-
   try {
     const cached = sessionStorage.getItem(CACHE_KEY);
     if (cached) {
       const parsed = JSON.parse(cached);
-      if (Date.now() - parsed.timestamp < ONE_HOUR) {
+      if (Date.now() - parsed.timestamp < CACHE_TTL) {
         repos = parsed.data;
       }
     }
@@ -887,14 +997,12 @@ async function fetchGithubRepoUpdates(allProjects) {
         } catch (e) {}
       }
     } catch (e) {
-      // Silent error: on rate-limit or offline, show nothing
       return;
     }
   }
 
   if (!Array.isArray(repos)) return;
 
-  // Build map of lowercase repo name -> updated date
   const updateMap = new Map();
   repos.forEach(r => {
     if (r.name && r.pushed_at) {
@@ -902,7 +1010,6 @@ async function fetchGithubRepoUpdates(allProjects) {
     }
   });
 
-  // Stamp cards
   document.querySelectorAll('.lab-card').forEach(card => {
     const codeUrl = card.getAttribute('data-codeurl') || '';
     if (!codeUrl || !codeUrl.includes('github.com/Pradeep-B28/')) return;
@@ -925,6 +1032,7 @@ async function fetchGithubRepoUpdates(allProjects) {
       if (titleEl && !titleEl.querySelector('.badge-updated')) {
         const badge = document.createElement('span');
         badge.className = 'badge-updated';
+        badge.style.cssText = 'font-size:10px; font-family:var(--font-mono); color:var(--accent-text); background:var(--accent-muted); padding:2px 6px; border-radius:4px; margin-left:8px; font-weight:400;';
         badge.textContent = label;
         titleEl.appendChild(badge);
       }
@@ -933,17 +1041,16 @@ async function fetchGithubRepoUpdates(allProjects) {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 11. ANIMATED STATS COUNT-UP                                                */
+/* 10. ANIMATED STATS COUNT-UP                                                */
 /* -------------------------------------------------------------------------- */
 function setupStatsCountUp(projectCount) {
   const statYears = document.getElementById('stat-years');
   const statTrained = document.getElementById('stat-trained');
   const statProjects = document.getElementById('stat-projects-count');
 
-  const statsRow = document.querySelector('.hero-stats-row');
+  const statsRow = document.querySelector('.proof-stats-grid');
   if (!statsRow) return;
 
-  // On mobile or reduced-motion, preserve pre-rendered HTML values without layout thrashing
   const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile = window.innerWidth <= 768;
   if (isReduced || isMobile) return;
@@ -953,9 +1060,9 @@ function setupStatsCountUp(projectCount) {
   const startAnimation = () => {
     if (hasAnimated) return;
     hasAnimated = true;
-    animateNumber(statYears, 0, 4, 800, ' yrs engineering');
-    animateNumber(statTrained, 0, 7500, 1000, '+ engineers trained');
-    animateNumber(statProjects, 0, projectCount, 800, ' projects shipped');
+    animateNumber(statYears, 0, 4, 800, '+');
+    animateNumber(statTrained, 0, 7500, 1000, '+');
+    animateNumber(statProjects, 0, projectCount, 800, '');
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -972,10 +1079,6 @@ function setupStatsCountUp(projectCount) {
 
 function animateNumber(element, start, end, duration, suffix = '') {
   if (!element) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    element.textContent = `${end.toLocaleString()}${suffix}`;
-    return;
-  }
   const startTime = performance.now();
   let lastVal = start;
 
@@ -999,7 +1102,7 @@ function animateNumber(element, start, end, duration, suffix = '') {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 12. MAGNETIC BUTTON HOVER (Desktop only)                                    */
+/* 11. MAGNETIC BUTTON HOVER (Desktop only)                                   */
 /* -------------------------------------------------------------------------- */
 function setupMagneticButtons() {
   if (window.matchMedia('(hover: none) or (prefers-reduced-motion: reduce)').matches) return;
@@ -1014,230 +1117,62 @@ function setupMagneticButtons() {
     });
 
     btn.addEventListener('mouseleave', () => {
-      btn.style.transform = 'translate(0px, 0px)';
+      btn.style.transform = '';
     });
   });
 }
 
 /* -------------------------------------------------------------------------- */
-/* 13. EASTER EGG ("hire" -> Amber Diwali Sky Firework Burst)                  */
+/* 12. SCROLL REVEALS & NAV ACTIVE OBSERVER                                   */
 /* -------------------------------------------------------------------------- */
-function setupEasterEgg() {
-  const targetCode = 'hire';
-  let buffer = '';
-
-  window.addEventListener('keydown', (e) => {
-    const tag = document.activeElement ? document.activeElement.tagName : '';
-    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || document.activeElement.isContentEditable) {
-      return;
-    }
-
-    if (e.key && e.key.length === 1) {
-      buffer += e.key.toLowerCase();
-      if (buffer.length > targetCode.length) {
-        buffer = buffer.slice(-targetCode.length);
-      }
-
-      if (buffer === targetCode) {
-        buffer = '';
-        triggerHiredFirework();
-      }
-    }
-  });
-}
-
-function triggerHiredFirework() {
-  const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (isReduced) {
-    showToast('✨ Diwali Sky firework: You found the secret code "HIRED!"');
-    return;
-  }
-
-  const canvas = document.createElement('canvas');
-  canvas.id = 'easter-egg-canvas';
-  canvas.style.position = 'fixed';
-  canvas.style.inset = '0';
-  canvas.style.width = '100vw';
-  canvas.style.height = '100vh';
-  canvas.style.pointerEvents = 'none';
-  canvas.style.zIndex = '10000';
-  document.body.appendChild(canvas);
-
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  const particles = [];
-  const particleCount = 240;
-  const centerX = canvas.width / 2;
-  const centerY = canvas.height / 2;
-
-  // Generate explosion particles
-  for (let i = 0; i < particleCount; i++) {
-    const angle = Math.random() * Math.PI * 2;
-    const speed = 2 + Math.random() * 8;
-    particles.push({
-      x: centerX,
-      y: centerY,
-      vx: Math.cos(angle) * speed,
-      vy: Math.sin(angle) * speed,
-      alpha: 1,
-      decay: 0.008 + Math.random() * 0.012,
-      size: 2 + Math.random() * 3,
-      color: Math.random() > 0.3 ? '#FFB224' : '#FFE89E'
-    });
-  }
-
-  let startTime = performance.now();
-  let reqId;
-
-  function loop(now) {
-    const elapsed = now - startTime;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Draw central "HIRED?" glowing title
-    const textAlpha = Math.max(0, Math.min(1, (3000 - elapsed) / 1000));
-    ctx.save();
-    ctx.font = 'bold 54px "Instrument Serif", Georgia, serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillStyle = `rgba(255, 178, 36, ${textAlpha})`;
-    ctx.shadowColor = '#FFB224';
-    ctx.shadowBlur = 24;
-    ctx.fillText('HIRED?', centerX, centerY);
-    ctx.restore();
-
-    // Draw firework particles
-    particles.forEach(p => {
-      p.x += p.vx;
-      p.y += p.vy;
-      p.vy += 0.06; // gravity
-      p.vx *= 0.98; // drag
-      p.alpha -= p.decay;
-
-      if (p.alpha > 0) {
-        ctx.save();
-        ctx.globalAlpha = Math.max(0, p.alpha);
-        ctx.fillStyle = p.color;
-        ctx.shadowColor = p.color;
-        ctx.shadowBlur = 8;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
+function setupScrollReveals() {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
       }
     });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    if (elapsed < 3000) {
-      reqId = requestAnimationFrame(loop);
-    } else {
-      cancelAnimationFrame(reqId);
-      canvas.remove();
-    }
-  }
-
-  reqId = requestAnimationFrame(loop);
+  reveals.forEach(el => observer.observe(el));
 }
 
-/* -------------------------------------------------------------------------- */
-/* 14. ACTIVE SECTION OBSERVER (Nav link highlight)                           */
-/* -------------------------------------------------------------------------- */
 function setupNavActiveObserver() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links .nav-link');
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const id = entry.target.getAttribute('id');
         navLinks.forEach(link => {
-          const href = link.getAttribute('href');
-          link.classList.toggle('active', href === `#${id}`);
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
         });
       }
     });
-  }, { rootMargin: '-20% 0px -70% 0px' });
+  }, { threshold: 0.3 });
 
-  sections.forEach(s => observer.observe(s));
+  sections.forEach(sec => observer.observe(sec));
 }
 
 /* -------------------------------------------------------------------------- */
-/* 15. UTILITIES: TOAST & CLIPBOARD                                           */
+/* 13. MOBILE NAV TOGGLE & BACK TO TOP                                        */
 /* -------------------------------------------------------------------------- */
-function setupCopyEmailButtons() {
-  const copyBtn = document.getElementById('copy-email-btn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
-      copyToClipboard('pradeepbashaa@gmail.com');
-      showToast('Email address copied: pradeepbashaa@gmail.com');
-    });
-  }
-}
-
-function copyToClipboard(text) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
-  } else {
-    fallbackCopy(text);
-  }
-}
-
-function fallbackCopy(text) {
-  const textArea = document.createElement('textarea');
-  textArea.value = text;
-  textArea.style.position = 'fixed';
-  textArea.style.opacity = '0';
-  document.body.appendChild(textArea);
-  textArea.select();
-  try {
-    document.execCommand('copy');
-  } catch (err) {}
-  document.body.removeChild(textArea);
-}
-
-let toastTimer;
-function showToast(message) {
-  const toast = document.getElementById('copy-toast');
-  if (!toast) return;
-
-  toast.textContent = message;
-  toast.classList.add('show');
-
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => {
-    toast.classList.remove('show');
-  }, 2600);
-}
-
-function setupScrollReveals() {
-  const revealElements = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  revealElements.forEach(el => observer.observe(el));
-}
-
 function setupMobileNav() {
   const toggle = document.getElementById('mobile-toggle');
-  const navLinks = document.getElementById('nav-links');
-  if (!toggle || !navLinks) return;
+  const links = document.getElementById('nav-links');
+  if (!toggle || !links) return;
 
   toggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('is-open');
-    toggle.classList.toggle('is-active', isOpen);
+    const isOpen = links.classList.toggle('open');
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
-  navLinks.querySelectorAll('a').forEach(link => {
+  links.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-      navLinks.classList.remove('is-open');
-      toggle.classList.remove('is-active');
+      links.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
     });
   });
@@ -1245,10 +1180,20 @@ function setupMobileNav() {
 
 function setupBackToTop() {
   const btn = document.getElementById('back-to-top');
-  if (!btn) return;
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  if (btn) {
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* 14. CLIPBOARD & UTILITIES                                                  */
+/* -------------------------------------------------------------------------- */
+function copyToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).catch(() => {});
+  }
 }
 
 function escapeHtml(str) {
@@ -1258,5 +1203,5 @@ function escapeHtml(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+    .replace(/'/g, '&#39;');
 }

@@ -42,7 +42,7 @@
   <!-- Font Origin Preconnect -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Main Stylesheet (Relative path for GitHub Pages subpath) -->
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 
   <!-- JSON-LD Person Schema -->
@@ -78,25 +78,19 @@
   <!-- Accessible Skip Link -->
   <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- Floating Tooltip for Hero Graph -->
-  <div class="hero-tooltip" id="hero-tooltip" role="tooltip" aria-hidden="true"></div>
-
-  <!-- STICKY MINIMAL NAVIGATION -->
-  <header class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="#hero" class="brand-logo" aria-label="B Pradeep Home">
-        <span class="brand-dot"></span>
-        <span class="brand-name">B Pradeep</span>
+  <!-- FLOATING CENTRED PILL NAVIGATION -->
+  <header class="navbar-wrapper" id="navbar">
+    <nav class="nav-pill" aria-label="Main Navigation">
+      <a href="#hero" class="nav-brand" aria-label="BP — B Pradeep Home">
+        <span class="brand-avatar">BP</span>
       </a>
 
-      <nav class="nav-links" id="nav-links" aria-label="Main Navigation">
+      <div class="nav-links" id="nav-links">
         <a href="#work" class="nav-link">Work</a>
         <a href="#lab" class="nav-link">Lab</a>
         <a href="#experience" class="nav-link">Experience</a>
-        <a href="#skills" class="nav-link">Skills</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="assets/B_Pradeep_Resume.pdf" class="nav-link nav-resume-link" download="B_Pradeep_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
-      </nav>
+      </div>
 
       <div class="nav-actions">
         <!-- Command Palette Trigger Button -->
@@ -109,7 +103,7 @@
         <!-- Theme Toggle Button -->
         <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark and light theme" aria-pressed="false">
           <!-- Sun Icon for Light mode switch -->
-          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <circle cx="12" cy="12" r="5"/>
             <line x1="12" y1="1" x2="12" y2="3"/>
             <line x1="12" y1="21" x2="12" y2="23"/>
@@ -121,14 +115,14 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
           </svg>
           <!-- Moon Icon for Dark mode switch -->
-          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
         </button>
 
-        <!-- Direct Nav Email Link -->
-        <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-primary btn-sm">
-          Email me
+        <!-- Résumé Ghost Button in Nav -->
+        <a href="assets/B_Pradeep_Resume.pdf" class="nav-resume-btn" download="B_Pradeep_Resume.pdf" target="_blank" rel="noopener">
+          <span>Résumé</span>
         </a>
 
         <!-- Mobile Menu Toggle -->
@@ -136,149 +130,203 @@
           <span></span><span></span><span></span>
         </button>
       </div>
-    </div>
+    </nav>
   </header>
 
   <main id="main">
-    <!-- 1. HERO SECTION -->
-    <section class="hero-section" id="hero" aria-label="Introduction and Interactive Algorithm Graph">
-      <!-- Three.js Algorithm Graph Canvas -->
-      <div class="hero-canvas-container" id="hero-canvas-container"></div>
-      <div class="hero-static-fallback" id="hero-fallback" aria-hidden="true"></div>
-
-      <div class="container">
-        <div class="hero-content">
-          <div class="status-pill">
-            <span class="status-dot"></span>
-            <span>Open to SDE roles · Remote / Relocation</span>
-          </div>
-
-          <h1 class="hero-name">B Pradeep</h1>
-          <p class="hero-title">Software Engineer — Full-Stack &amp; Interactive Web</p>
-          <p class="hero-oneliner">
-            I build full-stack platforms, developer tools, and interactive algorithm visualizations. 4 years of engineering, 7,500+ engineers trained.
-          </p>
-
-          <div class="hero-cta-group">
-            <a href="#work" class="btn btn-primary magnetic-btn">
-              <span>View work</span>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </a>
-            <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-secondary">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              <span>Email me</span>
-            </a>
-            <a href="assets/B_Pradeep_Resume.pdf" class="btn btn-secondary" download="B_Pradeep_Resume.pdf" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              <span>Download résumé</span>
-            </a>
-          </div>
-
-          <div class="hero-social-links">
-            <a href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener" class="hero-social-link" title="LinkedIn Profile">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              <span>LinkedIn</span>
-            </a>
-            <a href="https://github.com/Pradeep-B28" target="_blank" rel="noopener" class="hero-social-link" title="GitHub Profile">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              <span>GitHub</span>
-            </a>
-            <a href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener" class="hero-social-link" title="LeetCode Profile">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              <span>LeetCode</span>
-            </a>
-          </div>
-
-          <!-- Hero Proof Stats (Animated count-up) -->
-          <div class="hero-stats-row">
-            <span class="hero-stat-chip" id="stat-years">4 yrs engineering</span>
-            <span class="hero-stat-chip" id="stat-trained">7,500+ engineers trained</span>
-            <span class="hero-stat-chip" id="stat-projects-count">19 projects shipped</span>
-          </div>
-
-          <!-- Hero Algorithm Switcher & Mono Readout -->
-          <div class="hero-algo-panel">
-            <div class="algo-switcher" role="radiogroup" aria-label="Pathfinding algorithm">
-              <span class="algo-label">Algorithm:</span>
-              <button class="algo-chip active" role="radio" aria-checked="true" data-algo="astar">A*</button>
-              <button class="algo-chip" role="radio" aria-checked="false" data-algo="dijkstra">Dijkstra</button>
-              <button class="algo-chip" role="radio" aria-checked="false" data-algo="bfs">BFS</button>
+    <!-- 1. HERO SECTION (Columns 1-6 Text, Columns 6-12 Pathfinder City Visual) -->
+    <section class="hero-section" id="hero" aria-label="Introduction and Pathfinder City Visualization">
+      <div class="container hero-container">
+        <div class="hero-grid">
+          <!-- Text Column (Columns 1-6) -->
+          <div class="hero-text-col">
+            <!-- 1. Small status pill with green dot -->
+            <div class="status-pill">
+              <span class="status-dot"></span>
+              <span>Open to SDE roles · Remote / Relocation</span>
             </div>
-            <div class="algo-readout" id="algo-readout" aria-live="polite">
-              <span>nodes visited: <strong id="algo-visited">0</strong></span>
-              <span class="readout-divider">·</span>
-              <span>path length: <strong id="algo-length">0.0</strong></span>
+
+            <!-- 2. Name: Instrument Serif, clamp(64px, 8vw, 120px) -->
+            <h1 class="hero-name">B Pradeep</h1>
+
+            <!-- 3. Role: Inter 20px, muted colour (NOT amber, NOT bold) -->
+            <p class="hero-role">Software Engineer — Full-Stack &amp; Interactive Web</p>
+
+            <!-- 4. One-liner: 18px muted, max 46ch -->
+            <p class="hero-oneliner">
+              I build full-stack platforms, developer tools, and interactive algorithm visualizations. 4 years of engineering, 7,500+ engineers trained.
+            </p>
+
+            <!-- 5. Buttons: [View work] amber primary, [Email me] ghost -->
+            <div class="hero-actions">
+              <a href="#work" class="btn btn-primary magnetic-btn">
+                <span>View work</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </a>
+              <button class="btn btn-ghost email-action-btn" data-subject="SDE Role Opportunity — B Pradeep">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <span>Email me</span>
+              </button>
+            </div>
+
+            <!-- 6. Social icons row, 20px, muted -->
+            <div class="hero-social-row">
+              <a href="https://github.com/Pradeep-B28" target="_blank" rel="noopener" class="social-icon-btn" aria-label="GitHub Profile">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn Profile">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LeetCode Profile">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </a>
+              <a href="https://x.com/Pradeep__krish" target="_blank" rel="noopener" class="social-icon-btn" aria-label="X Profile">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Visual Column (Columns 6-12 bleeding right) -->
+          <div class="hero-visual-col">
+            <div class="hero-canvas-container" id="hero-canvas-container"></div>
+            <!-- Static SVG Solved Frame Fallback -->
+            <div class="hero-static-fallback" id="hero-fallback" aria-hidden="true">
+              <svg viewBox="0 0 600 400" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="600" height="400" fill="transparent"/>
+                <g opacity="0.3" stroke="currentColor" stroke-width="1">
+                  <path d="M50 200 L300 50 L550 200 L300 350 Z"/>
+                  <path d="M100 200 L300 80 L500 200 L300 320 Z"/>
+                  <path d="M150 200 L300 110 L450 200 L300 290 Z"/>
+                </g>
+                <path d="M150 200 L250 140 L300 170 L380 120 L450 200" stroke="#FFB224" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+
+            <!-- Pathfinder City Glass Control & Live Readout Panel -->
+            <div class="pathfinder-glass-panel">
+              <div class="path-chips" role="radiogroup" aria-label="Pathfinding algorithm">
+                <button class="path-chip active" role="radio" aria-checked="true" data-algo="astar">A*</button>
+                <button class="path-chip" role="radio" aria-checked="false" data-algo="dijkstra">Dijkstra</button>
+                <button class="path-chip" role="radio" aria-checked="false" data-algo="bfs">BFS</button>
+              </div>
+              <div class="path-readout" aria-live="polite">
+                <span>visited <strong id="path-visited-count">0</strong> · path <strong id="path-length-count">0</strong></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. FEATURED WORK (4 Case-Study Style Rows) -->
+    <!-- 2. PROOF STRIP & MARQUEE -->
+    <section class="proof-section" aria-label="Engineering Proof and Impact">
+      <div class="container">
+        <div class="proof-stats-grid">
+          <div class="proof-stat-item">
+            <div class="proof-stat-val"><span class="proof-stat-num" id="stat-years">4+</span> <span class="proof-stat-unit">yrs</span></div>
+            <span class="proof-stat-label">Full-Stack Engineering</span>
+          </div>
+          <div class="proof-stat-divider" aria-hidden="true"></div>
+          <div class="proof-stat-item">
+            <div class="proof-stat-val"><span class="proof-stat-num" id="stat-trained">7,500+</span></div>
+            <span class="proof-stat-label">Engineers Mentored</span>
+          </div>
+          <div class="proof-stat-divider" aria-hidden="true"></div>
+          <div class="proof-stat-item">
+            <div class="proof-stat-val"><span class="proof-stat-num" id="stat-projects-count">19</span></div>
+            <span class="proof-stat-label">Projects Shipped</span>
+          </div>
+          <div class="proof-stat-divider" aria-hidden="true"></div>
+          <div class="proof-stat-item">
+            <div class="proof-stat-val"><span class="proof-stat-num">10+</span></div>
+            <span class="proof-stat-label">Intensive Bootcamps</span>
+          </div>
+        </div>
+
+        <div class="marquee-wrapper" aria-hidden="true">
+          <div class="marquee-track">
+            <span>Sethu Institute of Technology</span><span class="marquee-sep">·</span>
+            <span>VIT Chennai</span><span class="marquee-sep">·</span>
+            <span>VIT Vellore</span><span class="marquee-sep">·</span>
+            <span>VIT-AP</span><span class="marquee-sep">·</span>
+            <span>KSR Erode</span><span class="marquee-sep">·</span>
+            <span>Sethu Institute of Technology</span><span class="marquee-sep">·</span>
+            <span>VIT Chennai</span><span class="marquee-sep">·</span>
+            <span>VIT Vellore</span><span class="marquee-sep">·</span>
+            <span>VIT-AP</span><span class="marquee-sep">·</span>
+            <span>KSR Erode</span><span class="marquee-sep">·</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURED WORK (BENTO GRID, 4 COLUMNS DESKTOP) -->
     <section class="section" id="work" aria-label="Featured Engineering Case Studies">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-kicker">FLAGSHIP CASE STUDIES</span>
+          <span class="section-eyebrow">01 — WORK</span>
           <h2 class="section-title">Featured Work</h2>
           <p class="section-subtitle">
-            Deep-dive production platforms, graph pathfinders, and database gatekeepers built with verified proof metrics. Click any card to inspect full details.
+            Flagship platforms, transit graph solvers, database gatekeepers, and offline-first architectures.
           </p>
         </div>
 
-        <div class="featured-list" id="featured-container">
-          <!-- Dynamically populated from data/projects.json -->
+        <div class="bento-grid" id="featured-bento-container">
+          <!-- Populated dynamically via app.js / projects.json -->
         </div>
       </div>
     </section>
 
-    <!-- 3. LAB (Search, Filters, Sort, Grid, Drawer) -->
-    <section class="section" id="lab" aria-label="Engineering Lab & Interactive Open Source">
+    <!-- 4. LAB (3-Column Filterable Grid + Sticky Filter Bar) -->
+    <section class="section" id="lab" aria-label="Interactive Systems &amp; Developer Tooling Lab">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-kicker">EXPERIMENTS &amp; OPEN SOURCE</span>
-          <h2 class="section-title">Engineering Lab</h2>
+          <span class="section-eyebrow">02 — LAB</span>
+          <h2 class="section-title">The Lab</h2>
           <p class="section-subtitle">
-            Filterable systems, developer tooling, cryptographic utilities, algorithmic games, and 3D visualizers. Click any card for interactive previews.
+            Filterable systems, developer tooling, cryptographic utilities, algorithmic games, and visualizers.
           </p>
         </div>
 
-        <!-- Lab Controls: Search, Sort, Filters, Count -->
-        <div class="lab-controls-bar reveal">
-          <div class="lab-search-sort-row">
-            <div class="lab-search-wrapper">
-              <svg class="lab-search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="search" id="lab-search" class="lab-search-input" placeholder="Search projects by name, stack, or problem..." aria-label="Search lab projects" />
-            </div>
-
-            <select id="lab-sort" class="lab-sort-select" aria-label="Sort lab projects">
-              <option value="default">Sort: Featured</option>
-              <option value="newest">Sort: Recently Updated</option>
-              <option value="az">Sort: Alphabetical (A–Z)</option>
-            </select>
-
-            <span class="lab-count-badge" id="lab-count-badge">Showing 15 of 15 projects</span>
+        <!-- Sticky Lab Controls Bar -->
+        <div class="lab-sticky-bar" id="lab-controls">
+          <div class="lab-search-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="lab-search-input" class="lab-search-input" placeholder="Search projects or tech..." aria-label="Search lab projects" />
+            <button class="clear-search-btn" id="btn-clear-search" aria-label="Clear search query" style="display: none;">✕</button>
           </div>
 
-          <!-- Category Filter Chips -->
-          <div class="filter-bar" role="tablist" aria-label="Project Category Filters">
-            <button class="filter-chip active" role="tab" aria-selected="true" data-filter="All">All</button>
+          <div class="filter-chips-row" role="tablist" aria-label="Filter projects by category">
+            <button class="filter-chip active" role="tab" aria-selected="true" data-filter="all">All</button>
             <button class="filter-chip" role="tab" aria-selected="false" data-filter="Algorithms">Algorithms</button>
             <button class="filter-chip" role="tab" aria-selected="false" data-filter="Dev Tools">Dev Tools</button>
             <button class="filter-chip" role="tab" aria-selected="false" data-filter="Privacy &amp; Security">Privacy &amp; Security</button>
             <button class="filter-chip" role="tab" aria-selected="false" data-filter="Games">Games</button>
             <button class="filter-chip" role="tab" aria-selected="false" data-filter="Visualizers">Visualizers</button>
           </div>
+
+          <div class="lab-sort-wrapper">
+            <select id="lab-sort-select" class="lab-sort-select" aria-label="Sort projects">
+              <option value="featured">Sort: Featured</option>
+              <option value="az">Sort: A–Z</option>
+              <option value="newest">Sort: Newest</option>
+            </select>
+          </div>
         </div>
 
-        <!-- Filterable Grid -->
+        <!-- Result count & live region -->
+        <div class="lab-meta-row" aria-live="polite">
+          <span class="lab-count" id="lab-count-indicator">Showing 15 projects</span>
+        </div>
+
+        <!-- 3-Column Lab Grid -->
         <div class="lab-grid" id="lab-grid">
-          <!-- Dynamically populated from data/projects.json -->
+          <!-- Dynamically populated via app.js -->
         </div>
 
-        <!-- Empty State (Shown when search/filter has zero matches) -->
-        <div class="lab-empty-state hidden" id="lab-empty-state" role="status">
-          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-          <p>No projects match your search or filter criteria.</p>
+        <!-- Empty state fallback -->
+        <div class="lab-empty-state" id="lab-empty-state" style="display: none;">
+          <p class="empty-title">No projects match your filter.</p>
           <button class="btn btn-secondary btn-sm" id="btn-clear-lab">Reset search &amp; filters</button>
         </div>
 
@@ -288,173 +336,185 @@
             <span class="mor-badge">In Private Development</span>
             <span class="mor-strip-text"><strong>MOR AI</strong> — Voice-first holographic personal AI assistant.</span>
           </div>
-          <a href="mailto:pradeepbashaa@gmail.com?subject=MOR%20AI%20Demo%20Request%20%E2%80%94%20B%20Pradeep" class="btn btn-secondary btn-sm">Request demo →</a>
+          <button class="btn btn-secondary btn-sm email-action-btn" data-subject="MOR AI Demo Request — B Pradeep">Request demo →</button>
         </div>
       </div>
     </section>
 
-    <!-- 4. EXPERIENCE (Vertical Timeline) -->
-    <section class="section" id="experience" aria-label="Experience & Technical Training Timeline">
+    <!-- 5. EXPERIENCE (Split Timeline with Mono Dates & Hairline Vertical Line) -->
+    <section class="section" id="experience" aria-label="Professional Experience and Training Leadership">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-kicker">CAREER &amp; MENTORSHIP</span>
+          <span class="section-eyebrow">03 — EXPERIENCE</span>
           <h2 class="section-title">Experience</h2>
           <p class="section-subtitle">
-            Technical instruction, institutional curriculum delivery, and engineering leadership.
+            Technical training leadership, curriculum architecture, and systems instruction across India's premier engineering institutions.
           </p>
         </div>
 
         <div class="experience-timeline reveal">
-          <div class="timeline-item">
-            <span class="timeline-marker active"></span>
-            <div class="timeline-header">
-              <h3 class="timeline-title">Technical Trainer — Academic Excellence</h3>
-              <span class="timeline-date">Jul 2026 – Present</span>
+          <!-- Item 1: Current -->
+          <div class="timeline-row">
+            <div class="timeline-date-col">
+              <span class="timeline-mono-date">JUL 2026 — PRESENT</span>
             </div>
-            <p class="timeline-org">Sethu Institute of Technology, Madurai</p>
-            <p class="timeline-desc">
-              Direct technical curriculum in Core Java, JVM architecture, data structures, and algorithmic interview preparation for engineering undergraduates.
-            </p>
+            <div class="timeline-axis">
+              <span class="timeline-dot current"></span>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content-col">
+              <h3 class="timeline-role">Technical Trainer — Academic Excellence</h3>
+              <p class="timeline-org">Sethu Institute of Technology, Madurai</p>
+              <p class="timeline-desc">
+                Direct technical curriculum in Core Java, JVM architecture, data structures, and algorithmic interview preparation for engineering undergraduates across AIML, CSD, and IoT programs.
+              </p>
+            </div>
           </div>
 
-          <div class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-header">
-              <h3 class="timeline-title">Technical Training Programs</h3>
-              <span class="timeline-date">Nov 2022 – Jul 2026</span>
+          <!-- Item 2: Institutional Programs -->
+          <div class="timeline-row">
+            <div class="timeline-date-col">
+              <span class="timeline-mono-date">NOV 2022 — JUL 2026</span>
             </div>
-            <p class="timeline-org">VIT Chennai · VIT Vellore · VIT-AP · KSR Erode</p>
-            <p class="timeline-desc">
-              Conducted intensive technical training programs focused on high-throughput algorithmic patterns, graph solvers, and competitive programming frameworks.
-            </p>
+            <div class="timeline-axis">
+              <span class="timeline-dot"></span>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content-col">
+              <h3 class="timeline-role">Technical Training Programs</h3>
+              <p class="timeline-org">VIT Chennai · VIT Vellore · VIT-AP · KSR Erode</p>
+              <p class="timeline-desc">
+                Conducted large-scale technical training programs focused on high-throughput algorithmic patterns, graph solvers, and competitive programming frameworks. Drove campus placement rates from 70% to 90% across 10+ batches.
+              </p>
+            </div>
           </div>
 
-          <div class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-header">
-              <h3 class="timeline-title">10+ Intensive Online Bootcamps</h3>
+          <!-- Item 3: Bootcamps -->
+          <div class="timeline-row">
+            <div class="timeline-date-col">
+              <span class="timeline-mono-date">BOOTCAMPS</span>
             </div>
-            <p class="timeline-org">Placement &amp; Competitive Engineering Preparation</p>
-            <p class="timeline-desc">
-              Mentored 7,500+ aspiring software engineers across live bootcamps covering memory layout, multithreading synchronization, and dynamic programming invariants.
-            </p>
+            <div class="timeline-axis">
+              <span class="timeline-dot"></span>
+            </div>
+            <div class="timeline-content-col">
+              <h3 class="timeline-role">10+ Intensive Online Bootcamps</h3>
+              <p class="timeline-org">Placement &amp; Competitive Engineering Preparation</p>
+              <p class="timeline-desc">
+                Mentored 7,500+ aspiring software engineers across live bootcamps covering memory layout, multithreading synchronization, and dynamic programming invariants.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. SKILLS (4 Compact Columns, Max 6 items each) -->
+    <!-- 6. SKILLS (Icon + Label Tiles in 4 Groups) -->
     <section class="section" id="skills" aria-label="Technical Skills Matrix">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-kicker">CORE SPECIALIZATION</span>
-          <h2 class="section-title">Skills</h2>
+          <span class="section-eyebrow">04 — SKILLS</span>
+          <h2 class="section-title">Skills &amp; Architecture</h2>
           <p class="section-subtitle">
             Technologies and patterns applied across production systems, developer tooling, and algorithms.
           </p>
         </div>
 
-        <div class="skills-columns-grid reveal">
-          <!-- Col 1: Languages & Backend -->
-          <div class="skills-col">
-            <h3 class="skills-col-header">Languages &amp; Backend</h3>
-            <ul class="skills-list">
-              <li><span class="skill-bullet"></span><span>Core Java (OOP &amp; Collections)</span></li>
-              <li><span class="skill-bullet"></span><span>JVM Internals &amp; GC Tuning</span></li>
-              <li><span class="skill-bullet"></span><span>Python (Flask 3)</span></li>
-              <li><span class="skill-bullet"></span><span>Node.js &amp; Express</span></li>
-              <li><span class="skill-bullet"></span><span>TypeScript &amp; Modern JS</span></li>
-              <li><span class="skill-bullet"></span><span>REST API Architecture</span></li>
-            </ul>
+        <div class="skills-tiles-grid reveal">
+          <!-- Group 1: Frontend & Creative Web -->
+          <div class="skill-tile-card">
+            <h3 class="skill-group-title">Frontend &amp; Creative Web</h3>
+            <div class="skill-chips-wrap">
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 0-16a8 8 0 0 1 0 16z"/></svg>React 18</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3V3zm16 16V5H5v14h14z"/></svg>TypeScript</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3L2 12l10 9l10-9L12 3zm0 3.5L18.5 12L12 17.5L5.5 12L12 6.5z"/></svg>Three.js WebGL</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3V3z"/></svg>JavaScript ES6+</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L2 7v10l10 5l10-5V7l-10-5z"/></svg>HTML5 Canvas</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v16H4V4z"/></svg>CSS Motion</span>
+            </div>
           </div>
 
-          <!-- Col 2: Frontend & 3D -->
-          <div class="skills-col">
-            <h3 class="skills-col-header">Frontend &amp; 3D</h3>
-            <ul class="skills-list">
-              <li><span class="skill-bullet"></span><span>JavaScript (ES6+ Vanilla)</span></li>
-              <li><span class="skill-bullet"></span><span>React 18 &amp; State Models</span></li>
-              <li><span class="skill-bullet"></span><span>Three.js WebGL &amp; Shaders</span></li>
-              <li><span class="skill-bullet"></span><span>HTML5 Canvas 2D API</span></li>
-              <li><span class="skill-bullet"></span><span>Web Audio API</span></li>
-              <li><span class="skill-bullet"></span><span>CSS Architecture &amp; Motion</span></li>
-            </ul>
+          <!-- Group 2: Backend & Systems -->
+          <div class="skill-tile-card">
+            <h3 class="skill-group-title">Backend &amp; Systems</h3>
+            <div class="skill-chips-wrap">
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L2 7v10l10 5l10-5V7l-10-5z"/></svg>Node.js</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v16H4V4z"/></svg>Core Java &amp; JVM</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3L2 12l10 9l10-9L12 3z"/></svg>Python 3</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6h16v12H4V6z"/></svg>PostgreSQL</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3V3z"/></svg>Express</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2z"/></svg>REST APIs</span>
+            </div>
           </div>
 
-          <!-- Col 3: Data & DevOps -->
-          <div class="skills-col">
-            <h3 class="skills-col-header">Data &amp; DevOps</h3>
-            <ul class="skills-list">
-              <li><span class="skill-bullet"></span><span>PostgreSQL (AST Lock Analysis)</span></li>
-              <li><span class="skill-bullet"></span><span>Docker &amp; Devcontainers</span></li>
-              <li><span class="skill-bullet"></span><span>GitHub Actions CI/CD</span></li>
-              <li><span class="skill-bullet"></span><span>Git Rebase &amp; Branch Workflows</span></li>
-              <li><span class="skill-bullet"></span><span>Linux &amp; Shell Scripting</span></li>
-              <li><span class="skill-bullet"></span><span>MongoDB</span></li>
-            </ul>
+          <!-- Group 3: Tooling & Architecture -->
+          <div class="skill-tile-card">
+            <h3 class="skill-group-title">Tooling &amp; Architecture</h3>
+            <div class="skill-chips-wrap">
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3V3z"/></svg>Git Workflows</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2z"/></svg>GitHub Actions CI</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M2 4h20v16H2V4z"/></svg>Docker</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3L2 12l10 9l10-9L12 3z"/></svg>Linux Shell</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v16H4V4z"/></svg>Vite &amp; Bundlers</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3V3z"/></svg>IndexedDB</span>
+            </div>
           </div>
 
-          <!-- Col 4: CS Fundamentals -->
-          <div class="skills-col">
-            <h3 class="skills-col-header">CS Fundamentals</h3>
-            <ul class="skills-list">
-              <li><span class="skill-bullet"></span><span>Graph Solvers (Dijkstra, A*, BFS)</span></li>
-              <li><span class="skill-bullet"></span><span>Dynamic Programming &amp; DAGs</span></li>
-              <li><span class="skill-bullet"></span><span>Two Pointers &amp; Sliding Window</span></li>
-              <li><span class="skill-bullet"></span><span>Trees &amp; Binary Search Trees</span></li>
-              <li><span class="skill-bullet"></span><span>Concurrency &amp; Thread Safety</span></li>
-              <li><span class="skill-bullet"></span><span>Complexity &amp; Space Profiling</span></li>
-            </ul>
+          <!-- Group 4: Algorithms & Theory -->
+          <div class="skill-tile-card">
+            <h3 class="skill-group-title">Algorithms &amp; Theory</h3>
+            <div class="skill-chips-wrap">
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L2 7v10l10 5l10-5V7l-10-5z"/></svg>Graph Solvers (A*, BFS)</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3V3z"/></svg>Dynamic Programming</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3L2 12l10 9l10-9L12 3z"/></svg>Trees &amp; Binary Search</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v16H4V4z"/></svg>Two Pointers</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M2 4h20v16H2V4z"/></svg>Concurrency &amp; Locks</span>
+              <span class="skill-tile"><svg class="skill-tile-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2z"/></svg>Space Profiling</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 6. CONTACT SECTION -->
+    <!-- 7. CONTACT SECTION -->
     <section class="section" id="contact" aria-label="Contact and Collaboration Opportunities">
       <div class="container">
         <div class="contact-card-box reveal">
+          <span class="section-eyebrow">05 — CONTACT</span>
           <h2 class="contact-headline">Let's <em>build something</em>.</h2>
 
+          <div class="contact-email-wrapper">
+            <button class="contact-big-email email-action-btn" data-subject="SDE Role Opportunity — B Pradeep" aria-label="Email Pradeep at pradeepbashaa@gmail.com">
+              pradeepbashaa@gmail.com
+            </button>
+          </div>
+
           <div class="contact-btn-group">
-            <a href="mailto:pradeepbashaa@gmail.com?subject=SDE%20Role%20Opportunity%20%E2%80%94%20B%20Pradeep" class="btn btn-primary">
+            <button class="btn btn-primary email-action-btn" data-subject="SDE Role Opportunity — B Pradeep">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               <span>Email me</span>
-            </a>
-            <button class="btn btn-secondary" id="copy-email-btn" aria-label="Copy email address to clipboard">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              <span>Copy address</span>
             </button>
+            <a href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>LinkedIn</span>
+            </a>
             <a href="assets/B_Pradeep_Resume.pdf" class="btn btn-secondary" download="B_Pradeep_Resume.pdf" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               <span>Download résumé</span>
             </a>
           </div>
 
-          <p class="contact-email-plain">
-            <a href="mailto:pradeepbashaa@gmail.com" class="contact-email-link">pradeepbashaa@gmail.com</a>
-          </p>
-
           <div class="contact-pills-row">
             <span class="contact-pill">SDE roles (open to remote/relocation)</span>
             <span class="contact-pill">Training &amp; bootcamps</span>
             <span class="contact-pill">Freelance web builds</span>
-          </div>
-
-          <div class="contact-social-row">
-            <a href="https://www.linkedin.com/in/pradeepb-2k/" target="_blank" rel="noopener" class="contact-social-link">LinkedIn</a>
-            <a href="https://github.com/Pradeep-B28" target="_blank" rel="noopener" class="contact-social-link">GitHub</a>
-            <a href="https://leetcode.com/u/PradeepKrishB/" target="_blank" rel="noopener" class="contact-social-link">LeetCode</a>
-            <a href="https://x.com/Pradeep__krish" target="_blank" rel="noopener" class="contact-social-link">X</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ---------------------------------------------------------------------- -->
-  <!-- COMMAND PALETTE (⌘K / Ctrl+K) MODAL                                     -->
-  <!-- ---------------------------------------------------------------------- -->
+  <!-- COMMAND PALETTE (⌘K / Ctrl+K) MODAL -->
   <div class="palette-overlay" id="palette-overlay" role="dialog" aria-modal="true" aria-label="Command Palette" aria-hidden="true">
     <div class="palette-modal">
       <div class="palette-header">
@@ -468,11 +528,9 @@
     </div>
   </div>
 
-  <!-- ---------------------------------------------------------------------- -->
-  <!-- PROJECT DETAIL DRAWER (Side Drawer / Mobile Bottom Sheet)                -->
-  <!-- ---------------------------------------------------------------------- -->
+  <!-- PROJECT DETAIL DRAWER (Side Drawer / Mobile Bottom Sheet) -->
   <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
-  <aside class="project-drawer" id="project-drawer" role="dialog" aria-modal="true" aria-label="Project Details" aria-hidden="true">
+  <aside class="project-drawer" id="project-drawer" role="dialog" aria-modal="true" aria-label="Project Details" aria-hidden="true" inert>
     <div class="drawer-header">
       <div class="drawer-header-left">
         <span class="drawer-category" id="drawer-category">// CATEGORY</span>
@@ -485,8 +543,8 @@
     </div>
   </aside>
 
-  <!-- Toast Notification -->
-  <div class="toast" id="copy-toast" role="status" aria-live="polite"></div>
+  <!-- EMAIL ACTION TOAST (Always visible on Email click: clipboard copy + Gmail + Outlook buttons) -->
+  <div class="email-action-toast" id="email-action-toast" role="alert" aria-live="polite"></div>
 
   <!-- FOOTER -->
   <footer class="footer">

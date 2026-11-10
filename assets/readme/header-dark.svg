@@ -1,166 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360">
   <defs>
-    <style>
-      .bg { fill: #0A0B0D; }
-      .card-border { stroke: #1F232A; stroke-width: 1.5; fill: #121418; rx: 14; }
-      .name-text {
-        font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-        font-size: 52px;
-        font-weight: 400;
-        fill: #ECEDEE;
-        letter-spacing: -0.01em;
-      }
-      .title-text {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-        fill: #FFB224;
-      }
-      .oneliner-text {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size: 14.5px;
-        line-height: 22px;
-        fill: #9BA1A6;
-      }
-      .mono-pill {
-        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        fill: #FFB224;
-      }
-      .mono-stat {
-        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
-        font-size: 12px;
-        font-weight: 600;
-        fill: #ECEDEE;
-      }
-      .graph-edge {
-        stroke: #222730;
-        stroke-width: 1.2;
-      }
-      .path-edge {
-        stroke: #FFB224;
-        stroke-width: 2.2;
-        stroke-linecap: round;
-        stroke-dasharray: 8 4;
-        animation: dash 4s linear infinite;
-      }
-      .graph-node {
-        fill: #161A22;
-        stroke: #2E3644;
-        stroke-width: 1.5;
-      }
-      .target-node {
-        fill: #FFB224;
-        stroke: #FFFFFF;
-        stroke-width: 2;
-      }
-      .pulse-dot {
-        animation: pulse 2.5s ease-in-out infinite;
-      }
-      @keyframes pulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.35; transform: scale(0.8); }
-      }
-    </style>
+    <radialGradient id="headerGlow" cx="85%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FFB224" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#FFB224" stop-opacity="0" />
+    </radialGradient>
   </defs>
 
-  <!-- Container -->
-  <rect x="2" y="2" width="1196" height="356" rx="14" fill="#0A0B0D" stroke="#1F232A" stroke-width="1.5"/>
+  <!-- Background -->
+  <rect width="1280" height="360" fill="#0A0B0D" rx="16"/>
+  <rect width="1280" height="360" fill="url(#headerGlow)" rx="16"/>
+  <rect width="1278" height="358" x="1" y="1" fill="none" stroke="#1F232A" stroke-width="1" rx="15"/>
 
-  <!-- Subtle Blueprint Grid -->
-  <g opacity="0.4">
-    <line x1="60" y1="2" x2="60" y2="358" stroke="#141820" stroke-width="1"/>
-    <line x1="180" y1="2" x2="180" y2="358" stroke="#141820" stroke-width="1"/>
-    <line x1="300" y1="2" x2="300" y2="358" stroke="#141820" stroke-width="1"/>
-    <line x1="420" y1="2" x2="420" y2="358" stroke="#141820" stroke-width="1"/>
-    <line x1="540" y1="2" x2="540" y2="358" stroke="#141820" stroke-width="1"/>
-    <line x1="660" y1="2" x2="660" y2="358" stroke="#141820" stroke-width="1"/>
-    <line x1="2" y1="90" x2="1198" y2="90" stroke="#141820" stroke-width="1"/>
-    <line x1="2" y1="180" x2="1198" y2="180" stroke="#141820" stroke-width="1"/>
-    <line x1="2" y1="270" x2="1198" y2="270" stroke="#141820" stroke-width="1"/>
-  </g>
-
-  <!-- Left Editorial Column -->
-  <g transform="translate(60, 45)">
+  <!-- Left Side: Typography -->
+  <g transform="translate(64, 56)">
     <!-- Status Pill -->
-    <rect x="0" y="0" width="310" height="28" rx="14" fill="#141820" stroke="#262D38" stroke-width="1"/>
-    <circle cx="16" cy="14" r="4.5" fill="#FFB224">
-      <animate attributeName="opacity" values="1;0.35;1" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="32" y="18" class="mono-pill">OPEN TO SDE ROLES · REMOTE / RELOCATION</text>
+    <rect width="250" height="26" rx="13" fill="#121418" stroke="#1F232A" stroke-width="1"/>
+    <circle cx="16" cy="13" r="3.5" fill="#10B981"/>
+    <text x="28" y="17" fill="#9BA1A6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" letter-spacing="0.02em">Open to SDE roles · Remote / Relocation</text>
 
     <!-- Name -->
-    <text x="0" y="88" class="name-text">B Pradeep</text>
+    <text x="0" y="98" fill="#ECEDEE" font-family="Georgia, 'Instrument Serif', serif" font-size="68" font-weight="400" letter-spacing="-0.02em">B Pradeep</text>
 
-    <!-- Title -->
-    <text x="0" y="128" class="title-text">Software Engineer — Full-Stack &amp; Interactive Web</text>
+    <!-- Role -->
+    <text x="0" y="136" fill="#9BA1A6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="400">Software Engineer — Full-Stack &amp; Interactive Web</text>
 
-    <!-- One-liner (2 lines) -->
-    <text x="0" y="166" class="oneliner-text">I build full-stack platforms, developer tools, and interactive algorithm visualizations.</text>
-    <text x="0" y="190" class="oneliner-text">4 years of engineering, 7,500+ engineers trained.</text>
+    <!-- One-liner -->
+    <text x="0" y="176" fill="#9BA1A6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="400">I build full-stack platforms, developer tools, and interactive algorithm visualizations.</text>
+    <text x="0" y="198" fill="#9BA1A6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="400">4 years of engineering, 7,500+ engineers trained.</text>
 
-    <!-- 3 Proof Stats in Mono -->
-    <g transform="translate(0, 230)">
-      <rect x="0" y="0" width="165" height="34" rx="6" fill="#12151B" stroke="#1F242C" stroke-width="1"/>
-      <text x="14" y="21" class="mono-stat">4 yrs engineering</text>
+    <!-- Proof stat chips -->
+    <g transform="translate(0, 222)">
+      <rect width="90" height="24" rx="4" fill="#121418" stroke="#1F232A" stroke-width="1"/>
+      <text x="45" y="16" text-anchor="middle" fill="#ECEDEE" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="11" font-weight="500">4+ YRS</text>
 
-      <rect x="177" y="0" width="220" height="34" rx="6" fill="#12151B" stroke="#1F242C" stroke-width="1"/>
-      <text x="191" y="21" class="mono-stat">7,500+ engineers trained</text>
+      <rect x="98" width="132" height="24" rx="4" fill="#121418" stroke="#1F232A" stroke-width="1"/>
+      <text x="164" y="16" text-anchor="middle" fill="#ECEDEE" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="11" font-weight="500">7,500+ TRAINED</text>
 
-      <rect x="409" y="0" width="180" height="34" rx="6" fill="#12151B" stroke="#1F242C" stroke-width="1"/>
-      <text x="423" y="21" class="mono-stat">19 projects shipped</text>
+      <rect x="238" width="140" height="24" rx="4" fill="#121418" stroke="#1F232A" stroke-width="1"/>
+      <text x="308" y="16" text-anchor="middle" fill="#ECEDEE" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="11" font-weight="500">19 SHIPPED</text>
     </g>
   </g>
 
-  <!-- Right Side: Algorithmic Node Graph Scene (A* Shortest Path to Project) -->
-  <g transform="translate(730, 45)">
-    <!-- Graph Background Surface -->
-    <rect x="0" y="0" width="410" height="270" rx="12" fill="#101217" stroke="#1D2128" stroke-width="1"/>
-
-    <!-- A* Path Visualizer Tag -->
-    <text x="20" y="30" class="mono-pill" fill="#9BA1A6" font-size="10">A* PATHFINDING // SHORTEST PATH TO WORK</text>
-
-    <!-- Graph Connections -->
-    <g transform="translate(20, 20)">
-      <!-- Inactive Edges -->
-      <line x1="40" y1="180" x2="90" y2="100" class="graph-edge"/>
-      <line x1="90" y1="100" x2="160" y2="50" class="graph-edge"/>
-      <line x1="90" y1="100" x2="150" y2="130" class="graph-edge"/>
-      <line x1="160" y1="50" x2="250" y2="40" class="graph-edge"/>
-      <line x1="160" y1="50" x2="230" y2="110" class="graph-edge"/>
-      <line x1="150" y1="130" x2="210" y2="190" class="graph-edge"/>
-      <line x1="210" y1="190" x2="290" y2="180" class="graph-edge"/>
-      <line x1="250" y1="40" x2="330" y2="80" class="graph-edge"/>
-      <line x1="230" y1="110" x2="330" y2="80" class="graph-edge"/>
-      <line x1="290" y1="180" x2="330" y2="140" class="graph-edge"/>
-
-      <!-- Active A* Shortest Path (Cursor -> Project Node) -->
-      <path d="M 40,180 L 150,130 L 230,110 L 330,80" class="path-edge">
-        <animate attributeName="stroke-dashoffset" values="48;0" dur="2s" repeatCount="indefinite"/>
-      </path>
-
-      <!-- Junction Nodes -->
-      <circle cx="90" cy="100" r="5" class="graph-node"/>
-      <circle cx="160" cy="50" r="5" class="graph-node"/>
-      <circle cx="250" cy="40" r="5" class="graph-node"/>
-      <circle cx="210" cy="190" r="5" class="graph-node"/>
-      <circle cx="290" cy="180" r="5" class="graph-node"/>
-      <circle cx="330" cy="140" r="5" class="graph-node"/>
-
-      <!-- Path Nodes -->
-      <circle cx="40" cy="180" r="7" fill="#ECEDEE" stroke="#9BA1A6" stroke-width="2"/>
-      <text x="15" y="206" class="mono-pill" fill="#9BA1A6" font-size="9">CURSOR</text>
-
-      <circle cx="150" cy="130" r="6" fill="#FFB224" stroke="#FFFFFF" stroke-width="1.5"/>
-      <circle cx="230" cy="110" r="6" fill="#FFB224" stroke="#FFFFFF" stroke-width="1.5"/>
-
-      <!-- Target Node: Highlighted Project -->
-      <circle cx="330" cy="80" r="10" class="target-node">
-        <animate attributeName="r" values="9;12;9" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <text x="270" y="60" class="mono-pill" fill="#FFB224" font-size="10">PROJECT NODE</text>
-    </g>
+  <!-- Right Side: Isometric Pathfinder Grid Visual -->
+  <g>
+    <polygon points="960,98 998,120 960,142 922,120" fill="#15181E" stroke="#1F232A" stroke-width="1">
+                  <animate attributeName="fill" values="#15181E;#FFB224;#FFB224;#15181E" 
+                    keyTimes="0;0.2;0.8;1" dur="4s" begin="0.0s" repeatCount="indefinite" />
+                </polygon>
+    <polygon points="998,120 1036,142 998,164 960,142" fill="#15181E" stroke="#1F232A" stroke-width="1">
+                  <animate attributeName="fill" values="#15181E;#FFB224;#FFB224;#15181E" 
+                    keyTimes="0;0.2;0.8;1" dur="4s" begin="0.25s" repeatCount="indefinite" />
+                </polygon>
+    <polygon points="1036,142 1074,164 1036,186 998,164" fill="#0C0D11" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="1074,164 1112,186 1074,208 1036,186" fill="#0C0D11" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="1112,186 1150,208 1112,230 1074,208" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="1150,208 1188,230 1150,252 1112,230" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="1188,230 1226,252 1188,274 1150,252" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="922,120 960,142 922,164 884,142" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="960,142 998,164 960,186 922,164" fill="#15181E" stroke="#1F232A" stroke-width="1">
+                  <animate attributeName="fill" values="#15181E;#FFB224;#FFB224;#15181E" 
+                    keyTimes="0;0.2;0.8;1" dur="4s" begin="0.5s" repeatCount="indefinite" />
+                </polygon>
+    <polygon points="998,164 1036,186 998,208 960,186" fill="#15181E" stroke="#1F232A" stroke-width="1">
+                  <animate attributeName="fill" values="#15181E;#FFB224;#FFB224;#15181E" 
+                    keyTimes="0;0.2;0.8;1" dur="4s" begin="0.75s" repeatCount="indefinite" />
+                </polygon>
+    <polygon points="1036,186 1074,208 1036,230 998,208" fill="#15181E" stroke="#1F232A" stroke-width="1">
+                  <animate attributeName="fill" values="#15181E;#FFB224;#FFB224;#15181E" 
+                    keyTimes="0;0.2;0.8;1" dur="4s" begin="1.0s" repeatCount="indefinite" />
+                </polygon>
+    <polygon points="1074,208 1112,230 1074,252 1036,230" fill="#0C0D11" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="1112,230 1150,252 1112,274 1074,252" fill="#0C0D11" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="1150,252 1188,274 1150,296 1112,274" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="884,142 922,164 884,186 846,164" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="922,164 960,186 922,208 884,186" fill="#0C0D11" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="960,186 998,208 960,230 922,208" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="998,208 1036,230 998,252 960,230" fill="#15181E" stroke="#1F232A" stroke-width="1">
+                  <animate attributeName="fill" values="#15181E;#FFB224;#FFB224;#15181E" 
+                    keyTimes="0;0.2;0.8;1" dur="4s" begin="1.25s" repeatCount="indefinite" />
+                </polygon>
+    <polygon points="1036,230 1074,252 1036,274 998,252" fill="#15181E" stroke="#1F232A" stroke-width="1">
+                  <animate attributeName="fill" values="#15181E;#FFB224;#FFB224;#15181E" 
+                    keyTimes="0;0.2;0.8;1" dur="4s" begin="1.5s" repeatCount="indefinite" />
+                </polygon>
+    <polygon points="1074,252 1112,274 1074,296 1036,274" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="1112,274 1150,296 1112,318 1074,296" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="846,164 884,186 846,208 808,186" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="884,186 922,208 884,230 846,208" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="922,208 960,230 922,252 884,230" fill="#0C0D11" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="960,230 998,252 960,274 922,252" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="998,252 1036,274 998,296 960,274" fill="#15181E" stroke="#1F232A" stroke-width="1">
+                  <animate attributeName="fill" values="#15181E;#FFB224;#FFB224;#15181E" 
+                    keyTimes="0;0.2;0.8;1" dur="4s" begin="1.75s" repeatCount="indefinite" />
+                </polygon>
+    <polygon points="1036,274 1074,296 1036,318 998,296" fill="#15181E" stroke="#1F232A" stroke-width="1">
+                  <animate attributeName="fill" values="#15181E;#FFB224;#FFB224;#15181E" 
+                    keyTimes="0;0.2;0.8;1" dur="4s" begin="2.0s" repeatCount="indefinite" />
+                </polygon>
+    <polygon points="1074,296 1112,318 1074,340 1036,318" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="808,186 846,208 808,230 770,208" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="846,208 884,230 846,252 808,230" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="884,230 922,252 884,274 846,252" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="922,252 960,274 922,296 884,274" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="960,274 998,296 960,318 922,296" fill="#15181E" stroke="#1F232A" stroke-width="1"/>
+    <polygon points="998,296 1036,318 998,340 960,318" fill="#15181E" stroke="#1F232A" stroke-width="1">
+                  <animate attributeName="fill" values="#15181E;#FFB224;#FFB224;#15181E" 
+                    keyTimes="0;0.2;0.8;1" dur="4s" begin="2.25s" repeatCount="indefinite" />
+                </polygon>
+    <polygon points="1036,318 1074,340 1036,362 998,340" fill="#15181E" stroke="#1F232A" stroke-width="1">
+                  <animate attributeName="fill" values="#15181E;#FFB224;#FFB224;#15181E" 
+                    keyTimes="0;0.2;0.8;1" dur="4s" begin="2.5s" repeatCount="indefinite" />
+                </polygon>
   </g>
 </svg>
