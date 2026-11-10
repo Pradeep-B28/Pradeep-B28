@@ -170,7 +170,7 @@
 
 - **Technical Trainer – Academic Excellence**, Sethu Institute of Technology *(Jul 2026 – Present)*
 - **Technical Training Programs**: VIT Chennai · VIT Vellore · VIT-AP · KSR Erode *(Nov 2022 – Jul 2026)*
-- **10+ Intensive Online Bootcamps**: 7,500+ engineers mentored in Core Java, JVM internals, and algorithmic patterns <!-- TODO: Pradeep to fill dates -->
+- **10+ Intensive Online Bootcamps**: 7,500+ engineers mentored in Core Java, JVM internals, and algorithmic patterns
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/readme/divider-dark.svg">
