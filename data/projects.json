@@ -174,10 +174,27 @@
                      "Hash Set DSA",
                      "Merge Sort"
                  ],
-        "metric":  "Runs 100% offline in your browser â€” no data leaves the device",
+        "metric":  "Runs 100% offline in your browser \u2014 no data leaves the device",
         "liveUrl":  "https://listcleaner-mu.vercel.app/",
         "codeUrl":  "https://github.com/Pradeep-B28/List_Cleaner",
         "image":  "assets/images/projects/listcleaner.webp",
+        "featured":  false,
+        "allowsFraming":  false
+    },
+    {
+        "id":  "bunkmeter",
+        "title":  "Bunk Meter",
+        "oneLiner":  "Calculates college attendance thresholds and safe skips with zero server tracking.",
+        "category":  "Privacy \u0026 Security",
+        "tech":  [
+                     "JavaScript",
+                     "Closed-Form DSA",
+                     "SVG Dial"
+                 ],
+        "metric":  "Runs 100% offline in your browser \u2014 zero telemetry or tracking",
+        "liveUrl":  "https://bunk-meter-one.vercel.app/",
+        "codeUrl":  "https://github.com/Pradeep-B28/Bunk_Meter",
+        "image":  "assets/images/projects/bunkmeter.webp",
         "featured":  false,
         "allowsFraming":  false
     },

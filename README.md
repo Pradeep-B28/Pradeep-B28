@@ -102,8 +102,9 @@
 
 </details>
 
-<details><summary><b>Privacy & Security (2)</b></summary>
+<details><summary><b>Privacy & Security (3)</b></summary>
 
+- **Bunk Meter** — Calculates college attendance thresholds and safe skips with zero server tracking. · [Live](https://bunk-meter-one.vercel.app/) · [Code](https://github.com/Pradeep-B28/Bunk_Meter)
 - **Password Crack Meter** — Calculates password crack resistance and patterns using Web Crypto without sending data to servers. · [Live](https://password-check-iota.vercel.app/) · [Code](https://github.com/Pradeep-B28/Password_Crack_Meter)
 - **List Cleaner** — Cleans, normalizes, and deduplicates contact lists entirely in your browser with instant CSV export. · [Live](https://listcleaner-mu.vercel.app/) · [Code](https://github.com/Pradeep-B28/List_Cleaner)
 
