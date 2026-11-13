@@ -350,5 +350,25 @@
         "image":  "assets/images/projects/portfoliosuite.webp",
         "featured":  false,
         "allowsFraming":  false
+    },
+    {
+        "id": "websitepricetag",
+        "title": "The Website Price Tag",
+        "oneLiner": "An interactive taxi-style commercial website cost estimator for Indian agency rates with 31,808 verification checks.",
+        "category": "Dev Tools",
+        "tech": [
+            "JavaScript",
+            "CSS3 Variables",
+            "Web Storage API"
+        ],
+        "metric": "31,808 automated verification checks & 0-dependency architecture",
+        "problem": "Non-technical founders, small business owners, and students face opaque and inconsistent website development quotes.",
+        "built": "A dependency-free estimator with real-time taxi meter ticking, 15 site categories, 21 features, and itemised receipt printing.",
+        "result": "Zero-dependency client-side app with 31,808 automated tests, strict CSP, and 100% offline capability.",
+        "liveUrl": "https://website-price-three.vercel.app/",
+        "codeUrl": "https://github.com/Pradeep-B28/Website_Price",
+        "image": "assets/images/projects/websitepricetag.png",
+        "featured": false,
+        "allowsFraming": true
     }
 ]
