@@ -84,12 +84,13 @@ Group expense splitter that settles debts in the fewest transfers, using exact i
 </table>
 
 <details>
-<summary><b>See all the other projects (17 more)</b></summary>
+<summary><b>See all the other projects (18 more)</b></summary>
 <br>
 
 | Project | What it does | Links |
 |:--|:--|:--|
 | **The Website Price Tag** | Interactive taxi-style web development cost estimator for Indian agency rates in 2026 with 31,808 verification checks | [Live](https://website-price-three.vercel.app/) · [Source](https://github.com/Pradeep-B28/Website_Price) |
+| **Sketch the Site** | Wireframe-to-website builder turning hand-drawn sketches into responsive HTML/CSS layouts | [Live](https://sketch-the-site.vercel.app/) · [Source](https://github.com/Pradeep-B28/Sketch_the_Site) |
 | **Bunk Meter** | Privacy-first college attendance threshold calculator and bunk planning engine | [Live](https://bunk-meter-one.vercel.app/) · [Source](https://github.com/Pradeep-B28/Bunk_Meter) |
 | **Explorer** | A food-delivery app split into five synced layers, with data packets you can follow from screen to database | [Live](https://explorer-mu-nine.vercel.app/) · [Source](https://github.com/Pradeep-B28/Explorer) |
 | **Catch the AI** | Spot the bug in AI-generated code before a 30-second timer runs out | [Live](https://catchtheai.vercel.app/) · [Source](https://github.com/Pradeep-B28/Catch_The_AI) |

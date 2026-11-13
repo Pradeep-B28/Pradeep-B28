@@ -370,5 +370,25 @@
         "image": "assets/images/projects/websitepricetag.png",
         "featured": false,
         "allowsFraming": true
+    },
+    {
+        "id": "sketchthesite",
+        "title": "Sketch the Site",
+        "oneLiner": "An interactive wireframe-to-website builder converting hand-drawn rough sketches into clean, responsive HTML/CSS layouts.",
+        "category": "Dev Tools",
+        "tech": [
+            "JavaScript",
+            "Canvas API",
+            "HTML5/CSS3"
+        ],
+        "metric": "Real-time stroke-snapping with zero-lag live code synthesis",
+        "problem": "Translating paper design wireframes into clean semantic HTML markup is manual and repetitive.",
+        "built": "A canvas drawing playground with stroke detection, real-time code typing animation, and live responsive preview.",
+        "result": "Instant wireframe-to-code compiler running entirely in the browser with one-click export.",
+        "liveUrl": "https://sketch-the-site.vercel.app/",
+        "codeUrl": "https://github.com/Pradeep-B28/Sketch_the_Site",
+        "image": "assets/images/projects/sketchthesite.png",
+        "featured": false,
+        "allowsFraming": true
     }
 ]
