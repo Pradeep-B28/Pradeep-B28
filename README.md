@@ -84,11 +84,12 @@ Group expense splitter that settles debts in the fewest transfers, using exact i
 </table>
 
 <details>
-<summary><b>See all the other projects (18 more)</b></summary>
+<summary><b>See all the other projects (19 more)</b></summary>
 <br>
 
 | Project | What it does | Links |
 |:--|:--|:--|
+| **Dream Site Swipe** | Card-swiping website design discovery engine synthesizing design blueprints and starter CSS with 95,692 verification checks | [Live](https://dream-site-zeta.vercel.app/) · [Source](https://github.com/Pradeep-B28/Dream_Site) |
 | **The Website Price Tag** | Interactive taxi-style web development cost estimator for Indian agency rates in 2026 with 31,808 verification checks | [Live](https://website-price-three.vercel.app/) · [Source](https://github.com/Pradeep-B28/Website_Price) |
 | **Sketch the Site** | Wireframe-to-website builder turning hand-drawn sketches into responsive HTML/CSS layouts | [Live](https://sketch-the-site.vercel.app/) · [Source](https://github.com/Pradeep-B28/Sketch_the_Site) |
 | **Bunk Meter** | Privacy-first college attendance threshold calculator and bunk planning engine | [Live](https://bunk-meter-one.vercel.app/) · [Source](https://github.com/Pradeep-B28/Bunk_Meter) |

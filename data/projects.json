@@ -390,5 +390,26 @@
         "image": "assets/images/projects/sketchthesite.png",
         "featured": false,
         "allowsFraming": true
+    },
+    {
+        "id": "dreamsiteswipe",
+        "title": "Dream Site Swipe",
+        "oneLiner": "An interactive card-swiping website design discovery engine synthesizing personalized blueprints, WCAG AA contrast audits, and starter CSS.",
+        "category": "Dev Tools",
+        "tech": [
+            "JavaScript",
+            "CSS Container Queries",
+            "Pointer Events",
+            "Web Storage API"
+        ],
+        "metric": "95,692 automated verification checks & 4,096 contrast mixes tested",
+        "problem": "Non-technical founders, students, and beginners face decision paralysis when choosing website colors, fonts, layouts, and shapes.",
+        "built": "A dependency-free 3-card swipe stack with mood-affinity sorting, container-query mini website previews, and a 7-step build checklist.",
+        "result": "Zero-dependency client-side engine with 95,692 automated tests, strict CSP, and 18 in-browser self-tests with zero failures.",
+        "liveUrl": "https://dream-site-zeta.vercel.app/",
+        "codeUrl": "https://github.com/Pradeep-B28/Dream_Site",
+        "image": "assets/images/projects/dreamsiteswipe.png",
+        "featured": false,
+        "allowsFraming": true
     }
 ]
